@@ -1,0 +1,53 @@
+L
+A
+mergesort
+2021-07-01
+C++
+ordenacion por mezcla
+A
+radixsort
+2021-07-07
+C++
+ordenacion radix
+A
+cocktailsort
+2021-07-02
+Python
+ordenacion burbuja bidireccional
+B
+heapsort
+O
+heapsort
+O
+mergesort
+A
+quicksort
+2021-07-03
+C++
+ordenacion de Hoare
+A
+quicksort
+2021-07-03
+C++
+metodo rapido
+A
+burbuja
+2021-07-05
+Ada
+ordenacion intercambio directo
+L
+B
+cocktailsort
+NL
+C++
+NL
+Fortran
+NO
+2021-06-01
+P
+2021-06-01
+NO
+2021-07-04
+P
+2021-07-04
+L

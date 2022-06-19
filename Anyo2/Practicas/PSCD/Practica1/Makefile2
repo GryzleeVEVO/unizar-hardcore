@@ -1,0 +1,22 @@
+#
+# Programación de sistemas concurrentes y distribuidos
+# Practica 1
+# Makefile
+# Autor: Wozniak, Dorian Boleslaw
+# NIP: 817570
+#
+
+CC = g++
+CPPFLAGS = -std=c++11 -pthread
+
+all: ejercicio_2 ejercicio_3
+
+ejercicio_2: ejercicio_2.cpp
+
+	${CC} ejercicio_2.cpp -o ejercicio_2 ${CPPFLAGS}
+
+ejercicio_3: ejercicio_3.cpp
+
+	${CC} ejercicio_3.cpp -o ejercicio_3 ${CPPFLAGS}
+
+

@@ -1,0 +1,240 @@
+INTRODUCIDO: ultimo:::2000-01-01:::C:::01_ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+NO LOCALIZADO: centro
+NO LOCALIZADO: zentro
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: C:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+NO INTRODUCIDO: ultimo:::2000-01-01:::C_BIS:::01_ultimo_BIS
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+NO LOCALIZADO: centro
+NO LOCALIZADO: zentro
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: C:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+INTRODUCIDO: primero:::1996-01-23:::Java:::02_primero
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+LOCALIZADO: primero:::1996-01-23:::Java:::02_primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::primero
+ANTERIORES A: 2010-12-31:::primero:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::primero
+LENGUAJE: C:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+NO INTRODUCIDO: primero:::1996-01-23:::Java_BIS:::02_primero_BIS
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+LOCALIZADO: primero:::1996-01-23:::Java:::02_primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::primero
+ANTERIORES A: 2010-12-31:::primero:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::primero
+LENGUAJE: C:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+BORRADO: primero
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+NO LOCALIZADO: primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::
+LENGUAJE: C:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+INTRODUCIDO: primero:::1996-01-23:::Java:::02_primero
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+LOCALIZADO: primero:::1996-01-23:::Java:::02_primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::primero
+ANTERIORES A: 2010-12-31:::primero:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::primero
+LENGUAJE: C:::ultimo
+-----LISTADO: 2
+primero:::1996-01-23:::Java:::02_primero
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+PURGADOS: 2000-01-01
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+NO LOCALIZADO: primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::
+LENGUAJE: C:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+PURGADOS: 2010-12-31
+-----LISTADO: 0
+-----
+NO LOCALIZADO: ultimo
+NO LOCALIZADO: primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 0
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::
+-----LISTADO: 0
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::
+LENGUAJE: C:::
+-----LISTADO: 0
+-----
+INTRODUCIDO: ultimo:::2000-01-01:::C:::01_ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LOCALIZADO: ultimo:::2000-01-01:::C:::01_ultimo
+NO LOCALIZADO: primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::
+LENGUAJE: C:::ultimo
+-----LISTADO: 1
+ultimo:::2000-01-01:::C:::01_ultimo
+-----
+BORRADO: ultimo
+-----LISTADO: 0
+-----
+NO LOCALIZADO: ultimo
+NO LOCALIZADO: primero
+NO LOCALIZADO: centro
+NO LOCALIZADO: tentro
+NO LOCALIZADO: zentro
+-----LISTADO: 0
+-----
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 2000-01-01:::
+ANTERIORES A: 2010-12-31:::
+-----LISTADO: 0
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Java:::
+LENGUAJE: C:::
+-----LISTADO: 0
+-----
+-----LISTADO: 0
+-----

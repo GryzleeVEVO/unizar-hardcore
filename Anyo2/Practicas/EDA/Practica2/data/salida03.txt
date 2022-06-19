@@ -1,0 +1,480 @@
+INTRODUCIDO: PHS:::1996-01-23:::Java:::06_uno
+-----LISTADO: 1
+PHS:::1996-01-23:::Java:::06_uno
+-----
+INTRODUCIDO: PBS:::1980-02-01:::Ada:::01_dos
+-----LISTADO: 2
+PBS:::1980-02-01:::Ada:::01_dos
+PHS:::1996-01-23:::Java:::06_uno
+-----
+INTRODUCIDO: PCS:::1985-10-14:::C++:::02_tres
+-----LISTADO: 3
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PHS:::1996-01-23:::Java:::06_uno
+-----
+INTRODUCIDO: PFS:::2010-10-10:::C++:::04_cuatro
+-----LISTADO: 4
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+-----
+INTRODUCIDO: PPS:::1991-02-20:::Phyton:::12_cinco
+-----LISTADO: 5
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: POS:::2021-10-25:::Ada:::11_seis
+-----LISTADO: 6
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: PJS:::2000-10-12:::C:::07_siete
+-----LISTADO: 7
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: PDS:::2021-10-25:::C:::03_ocho
+-----LISTADO: 8
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: PKS:::2010-10-10:::C:::08_nueve
+-----LISTADO: 9
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: PGS:::2021-10-25:::Phyton:::05_diez
+-----LISTADO: 10
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+-----
+INTRODUCIDO: PQS:::1972-01-01:::C:::13_once
+-----LISTADO: 11
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+INTRODUCIDO: PLS:::2021-10-25:::C++:::09_doce
+-----LISTADO: 12
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+INTRODUCIDO: PMS:::1998-12-31:::Ada:::10_trece
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO LOCALIZADO: PRN
+NO LOCALIZADO: PNN
+NO LOCALIZADO: PIN
+NO LOCALIZADO: PEN
+NO LOCALIZADO: PAN
+LOCALIZADO: PQS:::1972-01-01:::C:::13_once
+LOCALIZADO: PBS:::1980-02-01:::Ada:::01_dos
+LOCALIZADO: PHS:::1996-01-23:::Java:::06_uno
+LOCALIZADO: PDS:::2021-10-25:::C:::03_ocho
+LOCALIZADO: POS:::2021-10-25:::Ada:::11_seis
+LOCALIZADO: PGS:::2021-10-25:::Phyton:::05_diez
+LOCALIZADO: PJS:::2000-10-12:::C:::07_siete
+LOCALIZADO: PPS:::1991-02-20:::Phyton:::12_cinco
+LOCALIZADO: PCS:::1985-10-14:::C++:::02_tres
+LOCALIZADO: PLS:::2021-10-25:::C++:::09_doce
+LOCALIZADO: PFS:::2010-10-10:::C++:::04_cuatro
+LOCALIZADO: PMS:::1998-12-31:::Ada:::10_trece
+LOCALIZADO: PKS:::2010-10-10:::C:::08_nueve
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PQS:::1972-01-01:::C:::13_once_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PBS:::1980-02-01:::Ada:::01_dos_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PHS:::1996-01-23:::Java:::06_uno_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PDS:::2021-10-25:::C:::03_ocho_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: POS:::2021-10-25:::Ada:::11_seis_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PGS:::2021-10-25:::Phyton:::05_diez_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PJS:::2000-10-12:::C:::07_siete_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PPS:::1991-02-20:::Phyton:::12_cinco_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PCS:::1985-10-14:::C++:::02_tres_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PLS:::2021-10-25:::C++:::09_doce_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PFS:::2010-10-10:::C++:::04_cuatro_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PMS:::1998-12-31:::Ada:::10_trece_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO INTRODUCIDO: PKS:::2010-10-10:::C:::08_nueve_BIS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO LOCALIZADO: PRN
+NO LOCALIZADO: PNN
+NO LOCALIZADO: PIN
+NO LOCALIZADO: PEN
+NO LOCALIZADO: PAN
+LOCALIZADO: PPS:::1991-02-20:::Phyton:::12_cinco
+LOCALIZADO: PLS:::2021-10-25:::C++:::09_doce
+LOCALIZADO: PKS:::2010-10-10:::C:::08_nueve
+LOCALIZADO: PFS:::2010-10-10:::C++:::04_cuatro
+LOCALIZADO: PCS:::1985-10-14:::C++:::02_tres
+LOCALIZADO: PBS:::1980-02-01:::Ada:::01_dos
+LOCALIZADO: POS:::2021-10-25:::Ada:::11_seis
+LOCALIZADO: PMS:::1998-12-31:::Ada:::10_trece
+LOCALIZADO: PJS:::2000-10-12:::C:::07_siete
+LOCALIZADO: PGS:::2021-10-25:::Phyton:::05_diez
+LOCALIZADO: PHS:::1996-01-23:::Java:::06_uno
+LOCALIZADO: PQS:::1972-01-01:::C:::13_once
+LOCALIZADO: PDS:::2021-10-25:::C:::03_ocho
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+LENGUAJE: Pascal:::
+LENGUAJE: Cobol:::
+LENGUAJE: Ada:::PBS:::PMS:::POS
+LENGUAJE: C:::PDS:::PJS:::PKS:::PQS
+LENGUAJE: C++:::PCS:::PFS:::PLS
+LENGUAJE: Java:::PHS
+LENGUAJE: Phyton:::PGS:::PPS
+ANTERIORES A: 1971-01-01:::
+ANTERIORES A: 1972-10-10:::PQS
+ANTERIORES A: 1980-11-11:::PBS:::PQS
+ANTERIORES A: 2000-01-01:::PBS:::PCS:::PHS:::PMS:::PPS:::PQS
+ANTERIORES A: 2010-12-31:::PBS:::PCS:::PFS:::PHS:::PJS:::PKS:::PMS:::PPS:::PQS
+ANTERIORES A: 2022-10-25:::PBS:::PCS:::PDS:::PFS:::PGS:::PHS:::PJS:::PKS:::PLS:::PMS:::POS:::PPS:::PQS
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+NO LOCALIZADO: PRN
+NO LOCALIZADO: PNN
+NO LOCALIZADO: PIN
+NO LOCALIZADO: PEN
+NO LOCALIZADO: PAN
+LOCALIZADO: PPS:::1991-02-20:::Phyton:::12_cinco
+LOCALIZADO: PLS:::2021-10-25:::C++:::09_doce
+LOCALIZADO: PKS:::2010-10-10:::C:::08_nueve
+LOCALIZADO: PFS:::2010-10-10:::C++:::04_cuatro
+LOCALIZADO: PCS:::1985-10-14:::C++:::02_tres
+LOCALIZADO: PBS:::1980-02-01:::Ada:::01_dos
+LOCALIZADO: POS:::2021-10-25:::Ada:::11_seis
+LOCALIZADO: PMS:::1998-12-31:::Ada:::10_trece
+LOCALIZADO: PJS:::2000-10-12:::C:::07_siete
+LOCALIZADO: PGS:::2021-10-25:::Phyton:::05_diez
+LOCALIZADO: PHS:::1996-01-23:::Java:::06_uno
+LOCALIZADO: PQS:::1972-01-01:::C:::13_once
+LOCALIZADO: PDS:::2021-10-25:::C:::03_ocho
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----
+-----LISTADO: 13
+PBS:::1980-02-01:::Ada:::01_dos
+PCS:::1985-10-14:::C++:::02_tres
+PDS:::2021-10-25:::C:::03_ocho
+PFS:::2010-10-10:::C++:::04_cuatro
+PGS:::2021-10-25:::Phyton:::05_diez
+PHS:::1996-01-23:::Java:::06_uno
+PJS:::2000-10-12:::C:::07_siete
+PKS:::2010-10-10:::C:::08_nueve
+PLS:::2021-10-25:::C++:::09_doce
+PMS:::1998-12-31:::Ada:::10_trece
+POS:::2021-10-25:::Ada:::11_seis
+PPS:::1991-02-20:::Phyton:::12_cinco
+PQS:::1972-01-01:::C:::13_once
+-----

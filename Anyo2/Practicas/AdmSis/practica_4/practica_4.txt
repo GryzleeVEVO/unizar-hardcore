@@ -1,0 +1,35 @@
+#817570, Wozniak, Dorian, M, 3, A
+#820532, Pérez Guillén, Marcos, M, 3, A
+
+Configuración:
+
+Host                192.128.56.1        fe80:800:27ff:fe00:0
+debian_as_base      192.168.56.10       fe80:800:27ff:0800:275f:72f3
+debian_as_1         192.168.56.11       fe80:800:27ff:0800:27b8:f0ed
+debian_as_2         192.168.56.12       fe80:800:27ff:0800:274e:d8c1
+
+Para cada máquina:
+
+en /etc/sudoers
+
+as      ALL=(ALL) NOPASSWD:ALL
+
+en /etc/network/interfaces
+
+auto enp0s8
+iface enp0s8 inet static
+    address: <dirección_ip>
+    netmask: 255.255.255.0
+
+en /etc/ssh/sshd_config, modificar la línea PermitRootLogin así
+
+PermitRootLogin no
+
+Con ssh-keygen -t ed25519 -f ~/.ssh/id_as_ed25519 en la máquina base,
+crear el par de claves. Enviar mediante scp a debian_as_1 y 2 id_as_ed25519.pub
+en ~/ssh/authorized_keys
+
+En la máquina host, primero eval `ssh-agent -s` y luego ssh-add ~/-ssh/id_as_ed25519
+
+El script envía a cada máquina alcanzable una copia de la práctica 3 y la lista de usuarios,
+la ejecuta remotamente y las elimina una vez terminado.

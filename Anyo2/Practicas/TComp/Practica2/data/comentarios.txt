@@ -1,0 +1,11 @@
+/*
+        CABECERA /*\
+*/
+
+int main(){
+    /* \**56/*/ 
+    printf("/**//*?8?*8*?/8*?*88*/8"); // /**//**//**/
+    return 0; // Deberia funcionar
+}
+
+

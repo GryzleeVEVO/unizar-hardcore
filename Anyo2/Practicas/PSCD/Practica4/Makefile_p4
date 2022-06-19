@@ -1,0 +1,59 @@
+# Programación de sistemas concurrentes y distribuidos
+# Práctica 4
+# Autores: 	Dorian Boleslaw Wozniak		817570
+#	   		Jaime Velasco Gimeno		816818
+# Makefile para generar el ejecutable para la práctica 4, modificado a partir del makefile
+# de la práctica 3
+#
+# Ejecutar "make -f Makefile_p4" para compilar
+# Ejecutar "make -f Makefile_p4 clean" para limpiar (borrar lo que genere)
+
+# MACROS
+
+# Cmd para limpiar
+RM = /bin/rm -f
+# Compilador
+CC = g++
+
+# DIRECTORIOS Y CLASES OBJETIVO
+
+# Directorio de librería Logger
+LOG_LIB = ./librerias/Logger_V3
+# Clase Logger
+LOGGER = ${LOG_LIB}/Logger
+
+
+CTL_CAB = ./ControlCabinas
+
+# OPCIONES DE COMPILACIÓN Y ENLAZADO
+
+CPPFLAGS = -I. -I${LOG_LIB} -O2 -std=c++11 -fmax-errors=1 -fcommon -D LOGGING_MODE
+LDFLAGS = -pthread
+
+# EJECUTABLE OBJETIVO
+
+EJEC = practica_4
+
+# REGLAS
+
+all: ${EJEC}
+
+# Enlazado
+
+${EJEC}: ${LOGGER}.o ${CTL_CAB}.o ${EJEC}.o
+	${CC} ${LOGGER}.o ${CTL_CAB}.o ${EJEC}.o -o ${EJEC} ${CPPFLAGS} ${LDFLAGS}
+
+# Compilado
+
+${EJEC}.o: ${EJEC}.cpp
+	${CC} -c ${EJEC}.cpp -o ${EJEC}.o ${CPPFLAGS}
+
+${LOGGER}.o: ${LOGGER}.hpp ${LOGGER}.cpp
+	${CC} -c ${LOGGER}.cpp -o ${LOGGER}.o ${CPPFLAGS}
+
+${CTL_CAB}.o: ${CTL_CAB}.hpp ${CTL_CAB}.cpp
+	${CC} -c ${CTL_CAB}.cpp -o ${CTL_CAB}.o ${CPPFLAGS}
+
+# Limpieza (no hay prompt de confirmación, rm elimina directamente)
+clean:
+	$(RM) ${CTL_CAB}.o ${LOGGER}.o ${EJEC}.o ${EJEC}

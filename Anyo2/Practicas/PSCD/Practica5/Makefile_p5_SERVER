@@ -1,0 +1,43 @@
+#
+#
+#
+#
+#
+
+CC=g++
+
+SOCKET_DIR=Socket
+SOCKET=${SOCKET_DIR}/Socket
+
+LOGGER_DIR=Logger_V3
+LOGGER=${LOGGER_DIR}/Logger
+
+CTLCAB_DIR=ControlCabinas
+CTLCAB=${CTLCAB_DIR}/ControlCabinas
+
+SERVER=practica_5_SERVER
+
+CPPFLAGS=-I. -I${SOCKET_DIR} -I${LOGGER_DIR} -I${CTLCAB_DIR} -O2 -std=c++11 -lsockets -D LOGGING_MODE
+LDFLAGS=-pthread
+
+#SOCKETSFLAGS=-lsocket -lsnl 
+
+all: ${SERVER}
+
+${LOGGER}.o: ${LOGGER}.hpp ${LOGGER}.cpp
+	${CC} -c ${CPPFLAGS} ${LOGGER}.cpp -o ${LOGGER}.o
+
+${SOCKET}.o: ${SOCKET}.hpp ${SOCKET}.cpp
+	${CC} -c ${CPPFLAGS} ${SOCKET}.cpp -o ${SOCKET}.o
+
+${CTLCAB}.o: ${CTLCAB}.hpp ${CTLCAB}.cpp
+	${CC} -c ${CPPFLAGS} ${CTLCAB}.cpp -o ${CTLCAB}.o
+
+${SERVER}.o: ${SERVER}.cpp
+	${CC} -c ${CPPFLAGS} ${SERVER}.cpp -o ${SERVER}.o
+
+${SERVER}: ${SOCKET}.o ${LOGGER}.o ${CTLCAB}.o ${SERVER}.o
+	${CC} ${LDFLAGS} ${SOCKET}.o ${LOGGER}.o ${CTLCAB}.o ${SERVER}.o -o ${SERVER} ${SOCKETSFLAGS}
+
+clear:
+	${RM} ${SOCKET}.o ${LOGGER}.o ${CTLCAB}.o ${CLIENT} ${CLIENT}.o

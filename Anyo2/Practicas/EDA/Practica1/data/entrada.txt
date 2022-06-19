@@ -1,0 +1,53 @@
+L
+A
+Manzanas
+2021-10-18
+Ada
+ordenacion manzanas
+O
+platanos
+A
+Naranjas
+2021-09-17
+C++
+ordenacion naranjas
+A
+Manzanas
+2021-10-10
+Ada
+ordenacion Manzanas 2
+NL
+Java
+B
+Platanos
+O
+Manzanas
+A
+Platanos
+2021-12-19
+C++
+ordenacion platanos
+B
+Naranjas
+A
+Uvas
+2021-09-08
+Phyton
+ordenacion uvas
+P
+2020-07-09
+L
+NO
+2021-12-29
+A
+Limon
+2022-01-02
+C++
+ordenacion limon
+P
+2021-10-15
+NO
+2021-01-30
+NL
+C++
+L
