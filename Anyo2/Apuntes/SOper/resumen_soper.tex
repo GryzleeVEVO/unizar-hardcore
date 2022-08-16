@@ -1,0 +1,106 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[bottom=0.5cm, right=1.5cm, left=1.5cm, top=1.5cm]{geometry} 
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\title{Resumen Sistemas Operativos}
+\date{}
+\author{}
+
+\lstset{
+    language=c,
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily,
+    columns=fullflexible,
+    breakatwhitespace=false,
+    captionpos=b,
+    commentstyle=\color{OliveGreen},
+    extendedchars=true,
+    frame=single,
+    keepspaces=true,
+    keywordstyle=\color{blue},
+    numbers=none,
+    numbersep=5pt,
+    numberstyle=\tiny\color{blue},
+    rulecolor=\color{black},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stepnumber=5,
+    tabsize=3,
+    breaklines=true,
+    emph={lis},
+    emphstyle={\color{purple}},
+    literate=
+    {0}{{{\color{red}0}}}1
+    {-1}{{{\color{red}-1}}}1
+    {1e9}{{{\color{red}1e9}}}1
+}
+
+\setlength\parindent{0pt}
+\setlength\parskip{1em}
+
+\begin{document}
+    \pagenumbering{gobble}
+    \maketitle
+    \newpage
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{Funciones y llamadas al sistema}
+        \subsection{Procesos}
+            \subsubsection{fork()}
+
+            \begin{lstlisting}[language=c]
+#include <unistd.h>
+
+pid_t fork(void);
+            \end{lstlisting}
+
+            Crea duplicado del proceso invocador, que continúa a partir del punto de la llamada.
+
+            Devuelve: PID del hijo al padre, 0 al hijo, -1 si falla
+
+            No comparten memoria. Hijo hereda contexto del padre al momento de bifurcar.
+        
+            Hereda comportamientos programados pero no señales pendientes.
+
+            \subsubsection{exec()}
+            \begin{lstlisting}[language=c]
+#include <unistd.h>
+
+int execl(const char *pathname, const char *arg, ... /*, (char *) NULL */);
+int execlp(const char *file, const char *arg, ... /*, (char *) NULL */);
+int execle(const char *pathname, const char *arg, ... /*, (char *) NULL, char *const envp[] */);
+int execv(const char *pathname, char *const argv[]);
+int execvp(const char *file, char *const argv[]);
+int execvpe(const char *file, char *const argv[], char *const envp[]);
+            \end{lstlisting}
+
+            Sustituye la imágen del proceso invocador por la del programa almacenado en un fichero. Inicia su ejecución desde main().
+            
+            \begin{table}
+            \begin{tabular}{ll}
+                l   Argumentos listados uno a uno   \\
+            \end{tabular}
+            \end{table}
+
+
+            
+
+
+
+
+        \subsection{Señales no seguras}
+
+        \subsection{Señales seguras}
+
+        \subsection{Ficheros}
+
+        \subsection{Hilos}
+
+        \subsection{Memoria}
+
+
+\end{document}

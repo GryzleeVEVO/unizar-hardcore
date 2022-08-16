@@ -18,5 +18,4 @@ pandoc "chuleta.md" \
 	--highlight-style haddock \
 	-V geometry:a4paper \
 	-V geometry:margin=2cm \
-	-N \
 	-o "chuleta.pdf"
