@@ -1,0 +1,9 @@
+Por hacer:
+
+	- Analizar funcionamiento/rendimiento (bloque activación, tiempo y pasos, etc...)
+	- Hacer conecta4_buscar_alineamiento_arm
+	- Hacer conecta4_hay_linea_arm_c
+	- Hacer conecta4_hay_linea_arm_arm
+
+	- Hacer verificador automático (ver todos los casos)
+	- Comparar rendimiento (sin/con optimizaciones, C vs ASM)
