@@ -17,10 +17,9 @@ uint8_t C4_calcular_fila(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t columna){
 };
 
 // devuelve la longitud de la línea más larga
-uint8_t conecta4_buscar_alineamiento_c
-	(CELDA cuadricula[TAM_FILS][TAM_COLS], 
-	uint8_t fila, uint8_t columna, uint8_t color, 
-	int8_t delta_fila, int8_t delta_columna)
+uint8_t conecta4_buscar_alineamiento_c(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t
+	fila, uint8_t columna, uint8_t color, int8_t delta_fila, int8_t
+	delta_columna)
 {
     // avanzar hasta que cela esté vacía, sea distinto color o lleguemos al borde
     if (!C4_fila_valida(fila) || ! C4_columna_valida(columna)) {
@@ -72,12 +71,8 @@ void C4_actualizar_tablero(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t fila,
 }
 
 int C4_comprobar_empate(CELDA cuadricula[TAM_FILS][TAM_COLS]){
-	// MOD: Se itera sobre la fila 6. Si cuadricula[TAM_FILS][i] & 
-	
-	for (int i = 1; i <= NUM_COLUMNAS ; i++) 
-		if (celda_vacia(cuadricula[NUM_FILAS][i]))
-			return 0;
-	return 1;
+//TO DO comprobar si esta jugada llena todo el tablero y hay empate
+	return(0);
 }
 
 int C4_verificar_4_en_linea(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t fila, uint8_t columna, uint8_t color){

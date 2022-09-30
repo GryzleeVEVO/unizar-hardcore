@@ -5,7 +5,6 @@ author: Dorian Wozniak
 ---
 
 # FASE DE REQUISITOS
-
 ## **Requisitos**
 
 Los **requisitos** son características que deben incluirse en el sistema.
@@ -53,9 +52,7 @@ Una vez recopilados, los requisitos se sintetizan en un catálogo:
 
 Los requisitos son representados en una tabla. Cada requisito tiene un código y una descripción. Los requisitos se pueden agrupar o ordenar tal que sea mas conveniente.
 
-**Ej**: "Construir tabla de requisitos para la aplicación "Gestión Aula Informática""
-
-Un aula informática de una escuela universitaria tiene la siguiente política de reservas:
+**Ej**: Un aula informática de una escuela universitaria tiene la siguiente política de reservas:
 
 - Los alumnos pueden reservar un máximo de 4 horas a la semana.
 - Las reservas pueden realizarse hasta el día anterior al uso.
@@ -98,13 +95,16 @@ Si un requisito describe una toma de decisión, se puede especificar mediante un
 
 Un árbol de decisión la raíz comienza la secuencia de decisiones, yendo a una rama según las condiciones que cumpla.
 
+<br>
+
 **Ej**: A un cliente se le dará trato preferencial si cumple una de estas tres condiciones:
 
 - Compra más de 10.000 € por año y tiene una buena historia de pagos
 - Compra más de 10.000 € por año y ha comerciado con nosotros por más de 20 años
 - Compran 10.000 € o menos por año, pero tiene una buena historia de pagos 
 
-![Árbol de decisión](./IngSoft/resources/arbol_decisiones.jpg){ height=250px }
+![Árbol de decisión](./IngSoft/resources/arbol_decisiones.jpg){ height=20% }
+
 
 Una tabla se divide en dos partes y cuatro secciones:
 
@@ -137,4 +137,118 @@ La **validación** es un proceso manual donde se comprueba que los requisitos:
 - Manejable
 - Libre de detalles de implementación
 
-[//]: <> (TODO: Ejemplo validación requisitos)
+**Ej**:  El Centro de Vacaciones del Alto Pirineo, dependiente de la DGA, tiene un conjunto de plazas reservadas en una serie de zonas de acampada para disfrute exclusivo de los niños descendientes de habitantes del alto Pirineo Aragonés
+
+Se desea construir un sistema de reservas de plazas que pueda operarse en un PC con la siguiente política de reservas:
+
+1. Hay tres zonas de acampada con las siguientes capacidades:
+   1. Campo principal: 50 campistas máximo
+   2. Campo secundario: 30 campistas máximo
+   3. Campo terciario: 30 campistas máximo
+2. Cada zona de acampada esta dividida en el siguiente número de áreas:
+   1. Campo principal: 5 áreas
+   2.  Campo secundario: 3 áreas
+   3. Campo terciario: 3 áreas
+3. Algunas áreas pueden ser cerradas al público cuando se necesitan para eventos especiales de Agencia.
+4. Máximo 10 personas por reserva.
+5. Las reservas se realizan con no más de un mes de adelanto. Un periodo de espera de un mes debe transcurrir entre reservas, comenzando a contar desde el día que la llave de acceso es devuelta.
+6. Una reserva consiste en una lista de nombres de adultos y niños. Por lo menos el 30% deben ser niños.
+7. Las reservas están limitadas a:
+   1. 7 días consecutivos durante el periodo escolar
+   2. 4 días / 3 noches durante vacaciones escolares
+8. Las reservas pueden ser canceladas llamando con al menos dos días de adelanto. Una no presentación es un aviso. El segundo aviso implica una suspensión de tres meses de derecho de reserva. El tercer aviso son seis meses de suspensión.
+9. Se solicita un depósito de 9 € a la entrega de la llave. Este depósito es devuelto cuando se devuelve la llave. Las llaves deben ser recogidas en día laborable y no antes de una semana antes de la reserva. Las llaves deben ser devueltas el primer día laborable después de la estancia. El retraso en la devolución de la llave implica la pérdida del depósito. La perdida de una llave implica tres meses de suspensión y pérdida del depósito.
+
+- Problemas de ambiguedad:
+  - 1\) ¿campo = zona? ¿campista = tienda?
+  - 3\) no utiliza artículos indeterminados
+  - 6\) ¿hasta qué edad se considera adulto? 
+- Problemas de consistencia:
+  - 2\) con 1\): ¿área = 10 campistas?
+  - 5\) con 3\): ¿podemos reservar áreas con reservas ya realizadas?
+- Problemas de completitud:
+  - 4\) ¿cuál es el mínimo?
+  - 5\) ¿a quién afecta la espera?
+  - 6\) ¿hay un procentaje mínimo/máximo de adultos?
+
+## Casos de uso
+
+Un **caso de uso** es una descripción de una secuencia de acciones, mas variantes, que ejecuta un sistema para producir un resultado observable de valor para un actor.
+
+- Cada caso de uso se representa con una elipse. Tiene un nombre además de poder incluir una descripción, secuencia de pasos, condiciones, etc...
+- Un **actor** es un agente que solicita un servicio al sistema.
+- El comportamiento se puede especificar textualmente con un **flujo de eventos**.
+- Se puede expresar el flujo de eventos graficamente mediante un **diagrama de secuencia**.
+
+![Diagrama de casos de uso con actores](./IngSoft/resources/diag_casos_uso_2.jpg){ height=250 }
+
+Relaciones UML:
+
+- Comunicación: Un actor realiza un caso de uso
+- Generalización: Un caso de uso hijo es un subtipo de otro padre
+- Inclusión: Un caso base incorpora explicitamente el comportamiento de otro caso proveedor
+- Extensión: Un caso base incorpora implicitamente el comportamiento de otro caso proveedor
+
+![Diagrama de casos de uso con todas los tipos de relaciones](./IngSoft/resources/diag_casos_uso_1.jpg){ height=20% }
+
+**Ej**: *(ver enunciado Aulas Informaticas)*
+
+![Diagrama casos de uso de ejemplo "Aulas Informáticas"](./IngSoft/resources/diag_casos_uso_aula.jpg){ height=20% }
+
+*Caso de uso "Reservar equipo"*
+
+1. El caso de uso comienza cuando el alumno introduce el nº de expediente
+2. El alumno rellena día, hora, equipo
+3. El sistema verifica restricciones: máximo de 4 horas semanales, entre 10:00 y 18:00, hora en punto, día lectivo, día posterior a fecha actual
+4. *include* Imprimir (nº expediente + nombre + equipo + fecha y hora)
+
+*Caso de uso "Generar listado"*
+
+1. El caso de uso comienza cuando el administrador introduce la fecha actual
+2. El sistema recupera todas las reservas de la fecha del paso 1
+3. *include* Imprimir (fecha + lista <nombre, equipo, hora>)
+
+**Ej**: Se quiere construir una aplicación para gestionar notas en un dispositivo móvil y se han identificado los siguientes requisitos funcionales:
+
+- RF 1. El usuario puede crear una nota.
+- RF 2. El usuario puede modificar una nota existente.
+- RF 3. El usuario puede eliminar una nota existente.
+- RF 4. El usuario puede consultar el listado de notas ya creadas.
+- RF 5. Las notas constan de título y cuerpo.
+
+![Diagrama casos de uso de ejemplo "Gestión notas"](./IngSoft/resources/diag_casos_uso_notas.jpg){ height=20% }
+
+*Caso de uso "Nueva nota"*
+
+1. El caso de uso comienza cuando el usuario solicita la creación de una nota
+2. El usuario da un título a la nota, e introduce un texto para el cuerpo
+3. El sistema guarda la nota
+
+*Caso de uso "Modificar nota"*
+
+1. El caso de uso comienza cuando el usuario selecciona una nota existente y solicita su modificación
+2. El usuario modifica título y cuerpo
+3. El sistema guarda la nota
+
+*Caso de uso "Eliminar nota"*
+
+1. El caso de uso comienza cuando el usuario selecciona una nota existente y solicita su eliminación
+2. El sistema borra la nota seleccionada
+
+*Caso de uso "Consultar notas"*
+
+Flujo de eventos principal:
+
+1. El caso de uso comienza cuando se arranca la aplicación
+2. El sistema recupera todas las notas
+3. El sistema muestra las notas al usuario
+
+Flujos de eventos alternativos:
+
+1. El caso de uso comienza cuando el usuario acaba de crear/modificar/eliminar una nota
+2. El sistema recupera todas las notas, incluyendo la que se acaba de crear/modificar, o excluyendo la que se acaba de eliminar
+3. El sistema muestra las notas al usuario
+
+# FASE DE ANÁLISIS
+
+## Estática del sistema
