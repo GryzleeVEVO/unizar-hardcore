@@ -3,10 +3,7 @@
 
 #include <inttypes.h>
 
-enum
-{
-    ALIGN_8 = 8
-};
+enum { ALIGN_8 = 8 };
 
 // hay nueva jugada? (alguien ha modificado asincronamente el contenido de memoria)
 uint8_t entrada_nueva(volatile uint8_t entrada[ALIGN_8]);

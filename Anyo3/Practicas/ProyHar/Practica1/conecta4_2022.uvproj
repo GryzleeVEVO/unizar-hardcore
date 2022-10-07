@@ -351,8 +351,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -426,6 +426,26 @@
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
             </File>
+            <File>
+              <FileName>conecta4_buscar_alineamiento.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_buscar_alineamiento.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_llinea_asm_c.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_llinea_asm_c.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_linea_asm_asm.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_linea_asm_asm.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_buscar_alineamiento_iter.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_buscar_alineamiento_iter.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -450,6 +470,11 @@
               <FileName>entrada.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\entrada.h</FilePath>
+            </File>
+            <File>
+              <FileName>jugadas.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\jugadas.h</FilePath>
             </File>
           </Files>
         </Group>

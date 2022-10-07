@@ -1,0 +1,202 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000                 AREA             datos, DATA
+    3 00000000         
+    4 00000000 00000006 
+                       NUM_FILAS
+                               EQU              6
+    5 00000000 00000007 
+                       NUM_COLUMNAS
+                               EQU              7
+    6 00000000 00000001 
+                       PADDING_FIL
+                               EQU              1
+    7 00000000 00000001 
+                       PADDING_COL
+                               EQU              1
+    8 00000000 00000007 
+                       TAM_FILS
+                               EQU              NUM_FILAS + PADDING_FIL
+    9 00000000 00000008 
+                       TAM_COLS
+                               EQU              NUM_COLUMNAS + PADDING_COL
+   10 00000000         
+   11 00000000 00000004 
+                       CELDA_VACIA
+                               EQU              0x04
+   12 00000000 00000003 
+                       CELDA_COLOR
+                               EQU              0x03
+   13 00000000         
+   14 00000000 00000000 
+                       FALSE   EQU              0
+   15 00000000 00000001 
+                       TRUE    EQU              1
+   16 00000000         
+   17 00000000 00 FF FF 
+              01       deltas_fila
+                               DCB              0, -1, -1, 1
+   18 00000004 FF 00 FF 
+              FF       deltas_columna
+                               DCB              -1, 0, -1, -1
+   19 00000008         
+   20 00000008                 EXPORT           NUM_FILAS
+   21 00000008                 EXPORT           NUM_COLUMNAS
+   22 00000008                 EXPORT           PADDING_FIL
+   23 00000008                 EXPORT           PADDING_COL
+   24 00000008                 EXPORT           TAM_FILS
+   25 00000008                 EXPORT           TAM_COLS
+   26 00000008         
+   27 00000008                 EXPORT           CELDA_VACIA
+   28 00000008                 EXPORT           CELDA_COLOR
+   29 00000008         
+   30 00000008                 EXPORT           FALSE
+   31 00000008                 EXPORT           TRUE
+   32 00000008         
+   33 00000008                 EXPORT           deltas_fila
+   34 00000008                 EXPORT           deltas_columna
+                       
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\datos.d -o.\objects\datos.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\C
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+MSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefi
+ne="__UVISION_VERSION SETA 526" --list=.\listings\datos.lst datos.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+datos 00000000
+
+Symbol: datos
+   Definitions
+      At line 2 in file datos.s
+   Uses
+      None
+Comment: datos unused
+deltas_columna 00000004
+
+Symbol: deltas_columna
+   Definitions
+      At line 18 in file datos.s
+   Uses
+      At line 34 in file datos.s
+Comment: deltas_columna used once
+deltas_fila 00000000
+
+Symbol: deltas_fila
+   Definitions
+      At line 17 in file datos.s
+   Uses
+      At line 33 in file datos.s
+Comment: deltas_fila used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CELDA_COLOR 00000003
+
+Symbol: CELDA_COLOR
+   Definitions
+      At line 12 in file datos.s
+   Uses
+      At line 28 in file datos.s
+Comment: CELDA_COLOR used once
+CELDA_VACIA 00000004
+
+Symbol: CELDA_VACIA
+   Definitions
+      At line 11 in file datos.s
+   Uses
+      At line 27 in file datos.s
+Comment: CELDA_VACIA used once
+FALSE 00000000
+
+Symbol: FALSE
+   Definitions
+      At line 14 in file datos.s
+   Uses
+      At line 30 in file datos.s
+Comment: FALSE used once
+NUM_COLUMNAS 00000007
+
+Symbol: NUM_COLUMNAS
+   Definitions
+      At line 5 in file datos.s
+   Uses
+      At line 9 in file datos.s
+      At line 21 in file datos.s
+
+NUM_FILAS 00000006
+
+Symbol: NUM_FILAS
+   Definitions
+      At line 4 in file datos.s
+   Uses
+      At line 8 in file datos.s
+      At line 20 in file datos.s
+
+PADDING_COL 00000001
+
+Symbol: PADDING_COL
+   Definitions
+      At line 7 in file datos.s
+   Uses
+      At line 9 in file datos.s
+      At line 23 in file datos.s
+
+PADDING_FIL 00000001
+
+Symbol: PADDING_FIL
+   Definitions
+      At line 6 in file datos.s
+   Uses
+      At line 8 in file datos.s
+      At line 22 in file datos.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+
+TAM_COLS 00000008
+
+Symbol: TAM_COLS
+   Definitions
+      At line 9 in file datos.s
+   Uses
+      At line 25 in file datos.s
+Comment: TAM_COLS used once
+TAM_FILS 00000007
+
+Symbol: TAM_FILS
+   Definitions
+      At line 8 in file datos.s
+   Uses
+      At line 24 in file datos.s
+Comment: TAM_FILS used once
+TRUE 00000001
+
+Symbol: TRUE
+   Definitions
+      At line 15 in file datos.s
+   Uses
+      At line 31 in file datos.s
+Comment: TRUE used once
+10 symbols
+345 symbols in table

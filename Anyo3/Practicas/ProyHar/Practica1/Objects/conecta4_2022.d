@@ -5,3 +5,4 @@
 .\objects\conecta4_2022.o: celda.h
 .\objects\conecta4_2022.o: entrada.h
 .\objects\conecta4_2022.o: tableros.h
+.\objects\conecta4_2022.o: jugadas.h

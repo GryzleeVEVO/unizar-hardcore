@@ -6,15 +6,13 @@
 * FICHERO: server.go
 * DESCRIPCIÓN: contiene la funcionalidad esencial para realizar los servidores
 *				correspondientes a la práctica 1
-*/
+ */
 package main
 
 import (
-	"encoding/gob"
 	"fmt"
 	"net"
 	"os"
-	"io"
 	"practica1/com"
 )
 
@@ -37,7 +35,8 @@ func IsPrime(n int) (foundDivisor bool) {
 
 // PRE: interval.A < interval.B
 // POST: FindPrimes devuelve todos los números primos comprendidos en el
-// 		intervalo [interval.A, interval.B]
+//
+//	intervalo [interval.A, interval.B]
 func FindPrimes(interval com.TPInterval) (primes []int) {
 	for i := interval.A; i <= interval.B; i++ {
 		if IsPrime(i) {
@@ -56,6 +55,5 @@ func main() {
 	defer conn.Close()
 	checkError(err)
 
-    // TO DO
+	// TO DO
 }
-

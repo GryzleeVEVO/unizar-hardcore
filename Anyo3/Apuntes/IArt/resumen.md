@@ -100,9 +100,9 @@ Se expande el nodo no expandido menos profundo. La frontera es una cola FIFO.
 
 **Optimalidad**          **SI** siempre que el coste no decrezca con la profundidad
 
-**Complejidad temporal** $\bold{O(b^{d+1})}$ (se generan todos los nodos del último nivel)
+**Complejidad temporal** $\bold{O(b^d)}$ (se generan todos los nodos del último nivel)
 
-**Complejidad espacial** $\bold{O(b^{d+1})}$ (determinado por nodos en la frontera)
+**Complejidad espacial** $\bold{O(b^d)}$ (determinado por nodos en la frontera)
 ------------------------ -----------------------------------------------------------------------------
 
 Aunque puede garantizar encontrar el resultado óptimo, tiene **complejidad exponencial**.
@@ -185,15 +185,15 @@ Se busca simultaneamente desde el nodo inicial y desde el objetivo. Se comprueba
 
 La idea detrás de las búsquedas de tipo "primero el mejor" es usar:
 
-- **Función de evaluación** ($\bold{f(n)}$): Estimación del coste, determina lo "prometedor" de un nodo. Se elige el nodo con menor coste según este. La elección de $f(n)$ determina la estrategia a utilizar.
-- **Función heurística** ($\bold{h(n)}$): Estimación del coste del camino menos costoso desde el estado n hasta el objetivo. La mayoría de algoritmos lo incluyen. No negativa, objetivo es igual a 0.
+- **Función de evaluación** $\bold{f(n)}$: Estimación del coste, determina lo "prometedor" de un nodo. Se elige el nodo con menor coste según este. La elección de $f(n)$ determina la estrategia a utilizar.
+- **Función heurística** $\bold{h(n)}$: Estimación del coste del camino menos costoso desde el estado n hasta el objetivo. La mayoría de algoritmos lo incluyen. No negativa, objetivo es igual a 0.
 
 ## Algoritmo voraz
 
 Se expande siempre el nodo que parece estar más próximo al objetivo más próximo.
 
 ------------------------ -----------------------------------------------------------------------------
-**Completitud**          **NO** en búsqueda en árbol o en grafo si el espacio es infinito
+**Completitud**          **NO** en búsqueda en árbol. **SI** en búsqueda en grafo si el espacio es finito
 
 **Optimalidad**          **NO**
 
@@ -222,12 +222,5 @@ Trata de evitar expandir nodos que tienen caminos costosos.
       - Una heurísitica es consistente si el coste de llegar desde n hasta el objetivo G es menor que desde la suma del coste de ir del nodo n a otro n' más el coste del camino desde n' al objetivo.  
       - $h(n) \le c(n,a,n') + h(n)$
       - $f(n)$ es no decreciente a lo largo de cualquier camino: no puede haber un "desvío" mas barato que el camino directo.
------------------------- -----------------------------------------------------------------------------
-**Completitud**          **SI** si la función cumple propiedades anteriores
 
-**Optimalidad**          **SI** si la función cumple propiedades anteriores
 
-**Complejidad temporal** $\bold{O(b^m)}$
-
-**Complejidad espacial** $\bold{O(b^m)}$
------------------------- -----------------------------------------------------------------------------
