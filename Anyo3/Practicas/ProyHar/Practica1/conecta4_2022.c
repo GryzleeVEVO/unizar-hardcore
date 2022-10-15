@@ -1,320 +1,270 @@
 /*
-	Conecta 4
+    Proyecto Hardware
+    Práctica 1
+
+    Fichero: conecta4_2022.c
+
+    Autores:
+        Dorian Boleslaw Wozniak   (817570@unizar.es)
+        Pablo Latre Villacampa    (778543@unizar.es)
+
+    Descripción: Implementación de un juego conecta 4. Especificamente, el
+					fichero contiene:
+					
+		- conecta4_jugar(): Bucle principal del juego
+		- conecta4_hay_linea() y conecta4_buscar_alineamiento(): Obtienen
+			el número de celdas del mismo color consecutivas máximas y, si
+			hay una línea con 4 celdas o más, gana la partida
+		- C4_calcular_fila(): Obtiene la celda donde introducir una ficha a
+			partir de una columna
+		- C4_actualizar_tablero: Actualiza la posición dada con una ficha nueva
+		- C4_comprobar_empate(): Acaba el juego si el tablero está lleno y
+			nadie ha ganado
 */
 
-#include "conecta4_2022.h"	// Declaraciones y constantes
-#include "entrada.h"				// Para control E/S
+#include "conecta4_2022.h"
+#include "entrada.h"
 
+/* --- FUNCIONES INTERNAS --- */
 
-/*
-	Devuelve la fila en la que coloca la ficha solo si
-		- La columna está dentro del tablero
-		- La fila donde coloca la 
-*/
+// Devuelve la primera fila disponible para introducir una ficha en la columna
+// dada, o ERROR si la columna está fuera del tablero o si se intenta introducir
+// la ficha en una fila fuera del tablero
 uint8_t 
 C4_calcular_fila(CELDA cuadricula[TAM_FILS][TAM_COLS], uint8_t columna) {
-
 	uint8_t fila = 1;
 
-	/* La columna debe estar entre 1 y NUM_COLUMNAS (7) */
 	if ((columna < 1) || (columna > NUM_COLUMNAS)) return ERROR; 
 
-	/* Itera hasta encontrar una fila con la celda vacía o llegar al fin del tablero*/
-	while ((fila <= NUM_FILAS) && (celda_vacia(cuadricula[fila][columna]) == FALSE))
+	while ((fila <= NUM_FILAS) 
+			&& (celda_vacia(cuadricula[fila][columna]) == FALSE))
 		fila++;
 	
-	/* Devuelve la fila donde la ha colocado o error si ha salido del tablero */
 	return fila <= NUM_FILAS ? fila : ERROR;
 }
 
+// Introduce una ficha de color val en @cuadricula[fila][columna]
+void C4_actualizar_tablero(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+							uint8_t fila, uint8_t columna, uint8_t val)
+	{ celda_poner_valor(&cuadricula[(fila)][(columna)], val); }
+
+
+
+// Devuelve verdad sólo si el tablero está lleno sin que ningún jugador
+// haya ganado
+int C4_comprobar_empate(CELDA cuadricula[TAM_FILS][TAM_COLS]) {
+
+	for (uint8_t i = 1; i <= NUM_COLUMNAS; i++)
+		if (celda_vacia(cuadricula[NUM_FILAS][i]))
+			return FALSE;
+	return TRUE;
+}
+/* -------------------------------------------------------------------------- */
+
+/* --- FUNCIÓN BUSCAR_ALINEAMIENTO --- */
 /*
-
-	FUNCIONES DE JUEGO EN C
-
-*/
-
-/*
-	Obtiene el largo de la línea de fichas del mismo color más larga
-
-	Deltas son desfase de índices para la cada llamada seguida
+	Obtiene el número de celdas sucesivas desde cuadricula[fila][columna] 
+	del mismo color dada una dirección delta_fila, delta_columna
 */
 uint8_t conecta4_buscar_alineamiento_c
 	(CELDA cuadricula[TAM_FILS][TAM_COLS],
 	uint8_t fila, uint8_t columna, uint8_t color, 
 	int8_t delta_fila, int8_t delta_columna) {
 
-	/* Comprueba que la posición actual este dentro del tablero*/
+	// Acaba si la posición está fuera del tablero
 	if (!C4_fila_valida(fila) || !C4_columna_valida(columna)) return 0;
 
-	/* Comprueba que la celda actual contenga una ficha del mismo color */
-	if (celda_vacia(cuadricula[fila][columna]) || (celda_color(cuadricula[fila][columna]) != color))
+	// Acaba si la celda es vacía o de otro color
+	if (celda_vacia(cuadricula[fila][columna]) 
+		|| (celda_color(cuadricula[fila][columna]) != color))
 		return 0;
 
-	/* Avanza índices */
+	// Avanza índices
 	uint8_t nueva_fila = fila + delta_fila;
 	uint8_t nueva_columna = columna + delta_columna;
 
-	/* Comprueba siguiente línea aplicando los deltas */
+	// Añade 1 y llamada recursiva
 	return 1 + conecta4_buscar_alineamiento_c(cuadricula, nueva_fila, nueva_columna, color, delta_fila, delta_columna);
 }
+/* -------------------------------------------------------------------------- */
 
-
-
-/******************************************************************************/
-/* CONECTA_4_HAY_LINEA																												*/
-/******************************************************************************/
-
+/* --- FUNCIONES CONECTA4_HAY_LINEA --- */
 /*
-		Devuelve TRUE si ha encontrado una línea con 4 celdas consecutivas o mas
-		del mismo color dada una celda inicial cuadricula[fila][columna]
+	Comprueba que con la ficha introducida hay una línea de 4 fichas del mismo
+	color o más.
 
-		En caso contrario devuelve FALSE
+	Devuelve TRUE solo si ha encontrado dicha línea, 
+	en caso contrario devuelve FALSE
+
+	Se definen dos versiones de la función en este fichero:
+
+	- conecta4_hay_linea_c_c: Versíon en C con llamadas a versión de
+								buscar_alineamiento en C
+	- conecta4_hay_linea_c_arm: Versíon en C con llamadas a versión de
+								buscar_alineamiento en ensamblador
+							
+	Se comprueba línea en las siguientes líneas, en este orden:
+
+		- Izquierda + derecha
+		- Arriba + abajo
+		- Diag. sup. izda. + Diag. inf. dcha.
+		- Diag. inf. izda. + Diag. sup. dcha
 */
 
-
-// C + C
+// C-C
 uint8_t conecta4_hay_linea_c_c(CELDA cuadricula[TAM_FILS][TAM_COLS], 
 								uint8_t fila, uint8_t columna, uint8_t color) {
-	/*
-		Deltas indican las direcciones que comprobará si hay conecta 4
 
-		Estas son:
-			- Izquierda
-			- Arriba
-			- Diagonal inferior izquierda
-			- Diagonal superior izquierda
-
-		Luego se calcula invirtiendo los elementos
-			- Derecha
-			- Abajo
-			- Diagonal inferior derecha
-			- Diahonal superior derecha
-	*/
+	// Deltas 							
 	int8_t deltas_fila[4] = {0, -1, -1, 1};
 	int8_t deltas_columna[4] = {-1, 0, -1, -1};
 
-	/* Itera */
-	unsigned int i = 0;
-	uint8_t linea = FALSE;
-	uint8_t long_linea = 0;
+	// Variables
+	unsigned int i = 0;		// Índice
+	uint8_t linea = FALSE;	// Se ha encontrado línea
+	uint8_t long_linea = 0;	// Tamaño de línea
 
-	/* Busca linea en fila, columna y diagonales */
 	for (i = 0; (i < 4) && (linea == FALSE); ++i) {
-
-		// Buscar sentido normal
+		// Comprueba en dirección de las deltas
 		long_linea = conecta4_buscar_alineamiento_c
-			(cuadricula, 
-			fila, columna, color, 
-			deltas_fila[i], deltas_columna[i]);
+						(cuadricula, 
+						fila, columna, color, 
+						deltas_fila[i], deltas_columna[i]);
 
-		// Guarda camino mas largo y prueba si ya ha encontrado 4 en raya
 		linea = long_linea >= 4;
 		if (linea) continue;
 
-		// Buscar sentido inverso
-		long_linea += conecta4_buscar_alineamiento_c
-			(cuadricula, 
-			fila - deltas_fila[i], columna - deltas_columna[i], color, 
-			-deltas_fila[i], -deltas_columna[i]);
+		// Comprueba en dirección contraria, suma a la línea encontrada antes
+		long_linea += 
+			conecta4_buscar_alineamiento_c
+				(cuadricula, 
+				fila - deltas_fila[i], columna - deltas_columna[i], color, 
+				-deltas_fila[i], -deltas_columna[i]);
 
-		// Prueba si sumando los caminos mas largos es mayor que 4
 		linea = long_linea >= 4;
 	}
 
 	return linea;
 }
+
+// C-ARM
+uint8_t conecta4_hay_linea_c_arm(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color) {
+
+	// Deltas 							
+	int8_t deltas_fila[4] = {0, -1, -1, 1};
+	int8_t deltas_columna[4] = {-1, 0, -1, -1};
+
+	// Variables
+	unsigned int i = 0;		// Índice
+	uint8_t linea = FALSE;	// Se ha encontrado línea
+	uint8_t long_linea = 0;	// Tamaño de línea
+
+	for (i = 0; (i < 4) && (linea == FALSE); ++i) {
+		// Comprueba en dirección de las deltas
+		long_linea = conecta4_buscar_alineamiento_arm
+						(cuadricula, 
+						fila, columna, color, 
+						deltas_fila[i], deltas_columna[i]);
+
+		linea = long_linea >= 4;
+		if (linea) continue;
+
+		// Comprueba en dirección contraria, suma a la línea encontrada antes
+		long_linea += 
+			conecta4_buscar_alineamiento_arm
+				(cuadricula, 
+				fila - deltas_fila[i], columna - deltas_columna[i], color, 
+				-deltas_fila[i], -deltas_columna[i]);
+
+		linea = long_linea >= 4;
+	}
+
+	return linea;
+}
+/* -------------------------------------------------------------------------- */
 				
-
-/*			C + ASM																															 */
-uint8_t conecta4_hay_linea_c_asm(CELDA cuadricula[TAM_FILS][TAM_COLS], 
-								uint8_t fila, uint8_t columna, uint8_t color) {
-
-	int8_t deltas_fila[4] = {0, -1, -1, 1};
-	int8_t deltas_columna[4] = {-1, 0, -1, -1};
-
-	unsigned int i = 0;
-	uint8_t linea = FALSE;
-	uint8_t long_linea = 0;
-
-	for (i = 0; (i < 4) && (linea == FALSE); ++i) {
-
-		long_linea = conecta4_buscar_alineamiento_asm
-			(cuadricula, 
-			fila, columna, color, 
-			deltas_fila[i], deltas_columna[i]);
-
-		// Guarda camino mas largo y prueba si ya ha encontrado 4 en raya
-		linea = long_linea >= 4;
-		if (linea) continue;
-
-		// Buscar sentido inverso
-		long_linea += conecta4_buscar_alineamiento_asm
-			(cuadricula, 
-			fila - deltas_fila[i], columna - deltas_columna[i], color, 
-			-deltas_fila[i], -deltas_columna[i]);
-
-		// Prueba si sumando los caminos mas largos es mayor que 4
-		linea = long_linea >= 4;
-	}
-
-	return linea;
-}
-								
-
-/*			C + ASM	iterativo																										 */
-uint8_t conecta4_hay_linea_c_asm_iter(CELDA cuadricula[TAM_FILS][TAM_COLS], 
-								uint8_t fila, uint8_t columna, uint8_t color) {
-
-	int8_t deltas_fila[4] = {0, -1, -1, 1};
-	int8_t deltas_columna[4] = {-1, 0, -1, -1};
-
-	unsigned int i = 0;
-	uint8_t linea = FALSE;
-	uint8_t long_linea = 0;
-
-	for (i = 0; (i < 4) && (linea == FALSE); ++i) {
-
-		long_linea = conecta4_buscar_alineamiento_asm
-			(cuadricula, 
-			fila, columna, color, 
-			deltas_fila[i], deltas_columna[i]);
-
-		// Guarda camino mas largo y prueba si ya ha encontrado 4 en raya
-		linea = long_linea >= 4;
-		if (linea) continue;
-
-		// Buscar sentido inverso
-		long_linea += conecta4_buscar_alineamiento_asm_iter
-			(cuadricula, 
-			fila - deltas_fila[i], columna - deltas_columna[i], color, 
-			-deltas_fila[i], -deltas_columna[i]);
-
-		// Prueba si sumando los caminos mas largos es mayor que 4
-		linea = long_linea >= 4;
-	}
-
-	return linea;
-}
-
-/******************************************************************************/
-
-
-/* Actualiza el tablero si la jugada dada es válida */
-void C4_actualizar_tablero(CELDA cuadricula[TAM_FILS][TAM_COLS], 
-							uint8_t fila, uint8_t columna, uint8_t val)
-
-	{ celda_poner_valor(&cuadricula[(fila)][(columna)], val); }
-
+/* --- FUNCIÓN VERIFICAR_4_EN_LÍNEA --- */
 /*
-	MODIFICADO
-
-	Devuelve verdad solo si todas las columnas de la última fila tienen ficha
-*/
-int C4_comprobar_empate(CELDA cuadricula[TAM_FILS][TAM_COLS]) {
-
-	for (uint8_t i = 1; i <= NUM_COLUMNAS; i++)
-		if (celda_vacia(cuadricula[NUM_FILAS][i]))
-			return 0;
-	return 1;
-}
-
-/*
-	Llama a la función para verificar si hay 4 en raya
-
-	MODIFICAR A QUÉ FUCIÓN LLAMA AQUÍ
+	Invoca la función o funciones hay_linea() y devuelve su resultado.
+	
+	Modificar según la versión a probar
 */
 int C4_verificar_4_en_linea(CELDA cuadricula[TAM_FILS][TAM_COLS], 
-							uint8_t fila, uint8_t columna, uint8_t color)
-{
-	//uint8_t resultado_c_c = conecta4_hay_linea_c_c(cuadricula, fila, columna, color);
-	//uint8_t resultado_c_asm = conecta4_hay_linea_c_asm(cuadricula, fila, columna, color);
-	//uint8_t resultado_asm_c = conecta4_hay_linea_asm_c(cuadricula, fila, columna, color);
-	//uint8_t resultado_asm_asm = conecta4_hay_linea_asm_asm(cuadricula, fila, columna, color);
+							uint8_t fila, uint8_t columna, uint8_t color) {
 	
-	uint8_t resultado_c_asm_iter = conecta4_hay_linea_c_asm_iter(cuadricula, fila, columna, color);
+	uint8_t resultado_c_c = conecta4_hay_linea_c_c(cuadricula, fila, columna, color);
 
-	
-	//if (resultado_c_c != resultado_c_asm || resultado_c_c != resultado_asm_c || resultado_c_c != resultado_asm_asm)
-	//	while(1);
-	
-	//return resultado_c_c;
-	//return resultado_c_asm;
-	//return resultado_asm_c;
-	//return resultado_asm_asm;
-	
-	return resultado_c_asm_iter;
+	return resultado_c_c;
 }
+/* -------------------------------------------------------------------------- */
 
-/* Función principal */
-void conecta4_jugar(void)
-{
+/* --- FUNCIÓN DE JUEGO PRINCIPAL --- */
+void conecta4_jugar(void) {
 
+	/* --- MEMORIA Y DEFINICIONES --- */
+	// La memoria estática comienza en @0x40000000
+
+	// Vector de entrada
 	static volatile uint8_t entrada[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-	// Tablero a usar
+	// Tablero a usar.
 	#include "tableros.h" 
-
-	// Vector de movimientos
+	// Vector de movimientos. Descomentar para jugar automaticamente
 	#include "jugadas.h" 
-	
-	// Nombre del tablero y jugadas a usar. Solo debe haber un tablero y vector en memoria
-	#define CUADRICULA cuadricula_2
-	#define PARTIDA j_test_perf
-	//#define __DESHACER_JUGADA_GANADORA__
+	// La tabla y vector de movimientos a utilizar se definen en los
+	// ficheros incluidos con los símbolos TABLERO y JUGADA
 
-	// Empiezan blancas
+	/* --- JUEGO --- */
 	uint8_t column, row, colour;
-	colour = 1; 
+	colour = 1; //Empiezan blancas 
 	
-	#ifdef __JUGADAS_H__ 
+	// Índice para vector de movimientos
+	#ifdef JUGADAS_H 
 		uint8_t i = 0; 
-	#endif
+	#endif // JUGADAS_H
 	
-	// Empieza el juego
+
 	while (1) {
 
-		// Esta parte solo se ejecuta si se incluye jugadas.h
-		#ifdef __JUGADAS_H__
-			// Si hay siguiente movimento (!= 0) lo introduce
-			if (PARTIDA[i] != 0) 
-				{ entrada[0] = 1; entrada[1] = PARTIDA[i]; i++; }
-		
-			// En caso contrario, pasa a control manual
-		#endif
+		// Obtiene siguiente movimiento de JUGADA. Si no hay mas movimientos,
+		// se debe introducir un movimiento manualmente
+		#ifdef JUGADAS_H
+			if (JUGADA[i] != 0) 
+				{ entrada[0] = 1; entrada[1] = JUGADA[i]; i++; }
+		#endif // JUGADAS_H
 			
-		// Se detiene aquí si se juega manualmente
+		// Espera a siguiente movimiento
 		while (entrada_nueva(entrada) == 0);
 
-		// Obtiene columna simunistrada
+		// Obtiene columna introducida, y la fila donde introducir 
+		// siguiente ficha
 		column = entrada_leer(entrada);
+		row = C4_calcular_fila(TABLERO, column);
 
-		// Si la columna es correcta y no esta llena, devuelve fila donde colocar la ficha
-		row = C4_calcular_fila(CUADRICULA, column);
-
-		// Comprueba que la jugada sea válida
 		if (C4_fila_valida(row) && C4_columna_valida(column)) {
-
-			// Actualiza el tablero
-			C4_actualizar_tablero(CUADRICULA, row, column, colour);
-
-			/* Si hay 4 en raya, se queda aquí */
-			if (C4_verificar_4_en_linea(CUADRICULA, row, column, colour))
-					#ifndef __DESHACER_JUGADA_GANADORA__
-					while(1);
-					#else
-					celda_borrar_valor(&CUADRICULA[(row)][(column)]);
-					#endif
 			
+			// Si es válido, introduce el movimiento
+			C4_actualizar_tablero(TABLERO, row, column, colour);
+
+			// Comprueba si se ha ganado. Según lo definido se para o deshace
+			// la jugada
+			if (C4_verificar_4_en_linea(TABLERO, row, column, colour))
+				#ifndef UNDO_IF_WIN
+					while(1);
+				#else
+					celda_borrar_valor(&TABLERO[(row)][(column)]);
+				#endif
 					
-			/* Si hay empate, se queda aquí */
-			if (C4_comprobar_empate(CUADRICULA))
+			// Comprueba si hay empate. En caso afirmativo para
+			if (C4_comprobar_empate(TABLERO))
 				while (1);
 
-			/* Si no es fin de juego, pasa turno */
+			// Pasa turno
 			colour = C4_alternar_color(colour);
 		}
 
-		/* Limpia entrada anterior para obtener siguiente movimiento */
+		// Limpia vector entrada
 		entrada_inicializar(entrada);
 	}
 }

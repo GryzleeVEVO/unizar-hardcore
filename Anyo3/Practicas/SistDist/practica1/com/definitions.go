@@ -1,37 +1,43 @@
 /*
-* AUTOR: Rafael Tolosana Calasanz
+* AUTOR: Rafael Tolosana Calasanz y Unai Arronategui
 * ASIGNATURA: 30221 Sistemas Distribuidos del Grado en Ingeniería Informática
 *			Escuela de Ingeniería y Arquitectura - Universidad de Zaragoza
-* FECHA: septiembre de 2021
+* FECHA: septiembre de 2022
 * FICHERO: definitions.go
 * DESCRIPCIÓN: contiene las definiciones de estructuras de datos necesarias para
 *			la práctica 1
-*/
+ */
 package com
 
-import "time"
+import (
+	"fmt"
+	"os"
+	"time"
+)
 
 type TPInterval struct {
-    A int
-    B int
+	Min int
+	Max int
 }
 
 type Request struct {
-    Id int
-    Interval TPInterval
+	Id       int
+	Interval TPInterval
 }
 
-type TimeRequest struct {
-    Id int
-    T time.Time
+type TimeCommEvent struct {
+	Id int
+	T  time.Time
 }
 
 type Reply struct {
-    Id int
-    Primes []int
+	Id     int
+	Primes []int
 }
 
-type TimeReply struct {
-    Id int
-    T time.Time
+func CheckError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
+	}
 }

@@ -15,7 +15,7 @@ TRUE            EQU 1
 	
 		AREA codigo, CODE
 						
-		EXPORT conecta4_buscar_alineamiento_asm
+		EXPORT conecta4_buscar_alineamiento_arm
 
 ;   Entrada:
 ;       r0 -> @cuadricula
@@ -28,19 +28,19 @@ TRUE            EQU 1
 ;   Salida
 ;       r0 <- longuitud linea
 ;
-;   Descripción
+;   Descripciï¿½n
 ;
-;       Devuelve el número de celdas del mismo color consecutivas en
-;       la línea recta dada por delta_fila y delta_columna a partir de 
+;       Devuelve el nï¿½mero de celdas del mismo color consecutivas en
+;       la lï¿½nea recta dada por delta_fila y delta_columna a partir de 
 ;       cuadricula[fila][columna]
 
-conecta4_buscar_alineamiento_asm
+conecta4_buscar_alineamiento_arm
                 ; Prologo
                 mov     r12, r13   
                 stmdb   r13!, { r4 - r10, r11, r12, r14, r15 }
                 sub     r11, r12, #4
 
-                ;   Bloque de activación:
+                ;   Bloque de activaciï¿½n:
                 ;
                 ;   r13' ->  r4 - r10        buscar_alineamiento
                 ;           r11
@@ -59,7 +59,7 @@ conecta4_buscar_alineamiento_asm
                 add     r9, r11, #0x04  ; Calcula @ base de parametros
                 ldmia   r9, { r8 - r9 } ; r8, r9 = delta_columna, delta_fila
 
-                mov     r0, #0          ; Devolverá 0 si no supera los condicionales
+                mov     r0, #0          ; Devolverï¿½ 0 si no supera los condicionales
 
                 ; if
                 ;   !C4_fila_valida(fila) (! 1 <= fila <= NUM_FILAS)
@@ -93,12 +93,12 @@ conecta4_buscar_alineamiento_asm
 
                 ; Prepara llamada recursiva
                 mov     r0, r4
-                add     r1, r5, r8  ; Avanza índices
+                add     r1, r5, r8  ; Avanza ï¿½ndices
                 add     r2, r6, r9
                 mov     r3, r7
                 stmdb   r13!, { r8 - r9 }
 
-                bl conecta4_buscar_alineamiento_asm
+                bl conecta4_buscar_alineamiento_arm
 
                 ; Obtiene resultado y regresa
                 add     r0, r0, #1

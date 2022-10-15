@@ -21,7 +21,7 @@ deltas_columna  DCB -1, 0, -1, -1
 		IMPORT conecta4_buscar_alineamiento_c
 		PRESERVE8 {TRUE}	
 
-		EXPORT conecta4_hay_linea_asm_c
+		EXPORT conecta4_hay_linea_arm_c
 			
 
 ;   Entrada:
@@ -33,17 +33,17 @@ deltas_columna  DCB -1, 0, -1, -1
 ;   Salida
 ;       r0 <- >= 1 si hay linea, 0 si no hay linea
 ;
-;   Descrir15ión
+;   Descrir15iï¿½n
 ;
 ;    
 
-conecta4_hay_linea_asm_c
+conecta4_hay_linea_arm_c
                 ; Prologo
                 mov     r12, r13   
                 stmdb   r13!, { r4 - r10, r11, r12, r14, r15 }
                 sub     r11, r12, #4
 
-                ;   Bloque de activación:
+                ;   Bloque de activaciï¿½n:
                 ;
                 ;   r13' ->  r4 - r10        hay_linea
                 ;           r11

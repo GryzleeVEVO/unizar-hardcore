@@ -19,12 +19,12 @@ deltas_columna  DCB -1, 0, -1, -1
 
 		AREA codigo, CODE
 		
-		IMPORT conecta4_buscar_alineamiento_asm
+		IMPORT conecta4_buscar_alineamiento_arm
 		PRESERVE8 {TRUE}
 		
-		EXPORT conecta4_hay_linea_asm_asm    
+		EXPORT conecta4_hay_linea_arm_arm    
 		
-conecta4_hay_linea_asm_asm
+conecta4_hay_linea_arm_arm
                 ; Prologo
                 mov     r12, r13   
                 stmdb   r13!, { r4 - r10, r11, r12, r14, r15 }
@@ -74,7 +74,7 @@ hl2_for         cmp     r8, #4
                 mov     r2, r6
                 mov     r3, r7
 
-                bl      conecta4_buscar_alineamiento_asm
+                bl      conecta4_buscar_alineamiento_arm
 
                 ;   linea = long_linea >= 4
                 mov     r10, r0
@@ -100,7 +100,7 @@ hl2_for         cmp     r8, #4
                 mov     r0, r4
                 mov     r3, r7
 
-                bl      conecta4_buscar_alineamiento_asm
+                bl      conecta4_buscar_alineamiento_arm
 
                 ;   linea = long_linea >= 4
                 add     r10, r10, r0

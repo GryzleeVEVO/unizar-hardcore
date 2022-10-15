@@ -15,7 +15,7 @@ TRUE            EQU 1
 	
 		AREA codigo, CODE
 						
-		EXPORT conecta4_buscar_alineamiento_asm_iter
+		EXPORT conecta4_buscar_alineamiento_arm_iter
 
 ;   Entrada:
 ;       r0 -> @cuadricula
@@ -28,19 +28,19 @@ TRUE            EQU 1
 ;   Salida
 ;       r0 <- longuitud linea
 ;
-;   Descripción
+;   Descripciï¿½n
 ;
-;       Devuelve el número de celdas del mismo color consecutivas en
-;       la línea recta dada por delta_fila y delta_columna a partir de 
+;       Devuelve el nï¿½mero de celdas del mismo color consecutivas en
+;       la lï¿½nea recta dada por delta_fila y delta_columna a partir de 
 ;       cuadricula[fila][columna]
 
-conecta4_buscar_alineamiento_asm_iter
+conecta4_buscar_alineamiento_arm_iter
                 ; Prologo
                 mov     r12, r13   
                 stmdb   r13!, { r4 - r10, r11, r12, r14, r15 }
                 sub     r11, r12, #4
 
-                ;   Bloque de activación:
+                ;   Bloque de activaciï¿½n:
                 ;
                 ;   r13' ->  r4 - r10        buscar_alineamiento
                 ;           r11
@@ -90,7 +90,7 @@ ba_while        cmp     r5, #1
                 cmp     r3, r7
                 bne     ba_return_zero
 
-                ; 	Actualiza índices
+                ; 	Actualiza ï¿½ndices
                 add     r5, r5, r8
                 add     r6, r6, r9
 				

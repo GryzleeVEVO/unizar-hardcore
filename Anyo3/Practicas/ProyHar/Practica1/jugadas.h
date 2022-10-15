@@ -1,39 +1,52 @@
 /*
-		Proyecto Hardware
-		Practica 1
-		
-		Autores:
-				Dorian Boleslaw Wozniak (817570)
-				Pablo Latre ... (...)
-	
-	Descripci�n:
-				El fichero contiene una serie de jugadas 
+    Proyecto Hardware
+    Práctica 1
+
+    Fichero: jugadas.h
+
+    Autores:
+        Dorian Boleslaw Wozniak   (817570@unizar.es)
+        Pablo Latre Villacampa    (778543@unizar.es)
+
+    Descripción: Implementación de la automatización del juego conecta 4 para
+					depuración y medicion del rendimiento
 */
 
-#ifndef __JUGADAS_H__
-#define __JUGADAS_H__
+#ifndef JUGADAS_H
+#define JUGADAS_H
 
-#include "conecta4_2022.h" // Para las constantes del tama�o del tablero
+#include "conecta4_2022.h" // Solo se usan constantes
 
 /*
-		En cada partida se pueden realizar como m�ximo (asumiendo que el tablero 
-		sea vac�o) COLUMNAS x FILAS jugadas
-		
-		Las posiciones pares corresponden a fichas blancas, las impares a fichas negras
-		
-		Empiezan blancas. El valor de partida_1[i] es donde coloca la ficha
+	Seleccionar jugadas a realizar aquí. Las jugadas disponibles son:
+
+	- TEST_1: Comprueba que no se detectan celdas vacías, fuera de rango y
+				de otro color como una celda del mismo color. Al acabar no
+				debería detectar una jugada ganadora. Utilizar con tabla
+				TABLA_TEST_1
+	- TEST_2: Comprueba que no se detectan celdas de color diferente como 
+				celdas del mismo color. Utilizar con tabla TABLA_TEST_2
+	- TEST_3: Comprueba que detecta correctamente victoria al colocar una pieza
+				en el extemo de una diagonal. Utilizar con TABLA_TEST_3
+	- TEST_4: Comprueba que detecta correctamente victoria al colocar una pieza
+				en medio de una diagonal. Utilizar con TABLA_TEST_4
+	- TEST_5: Comprueba que detecta correctamente victoria al colocar una pieza
+				en un extremo y en medio de una línea horizontal, y al colocarla
+				en una línea vertical. Utilizara con TABLA_TEST_5
+	- TEST_PERF: Partida normal para medir rendimiento. Usar con TABLA_VACIA
+
+	No definir dos 
+*/
+#define TEST_1
+
+/* 
+	Algunas jugadas también definiran un símbolo UNDO_IF_WIN si se está 
+	comprobando que se detecte una línea ganadora correctamente
 */
 
-
-/*
-		Test 1: Se va llenando el tablero tal que al final de las jugadas se haya probado
-		que en ning�n momento detecta 4 en raya.
-		
-		
-*/
-/*
-static uint8_t j_test_1[NUM_FILAS * NUM_COLUMNAS] = 
-{ 
+#ifdef TEST_1
+#define JUGADA j_test_1
+static uint8_t j_test_1[NUM_FILAS * NUM_COLUMNAS] = { 
 	1, 6,
 	1, 7,
 	2, 7,
@@ -51,44 +64,42 @@ static uint8_t j_test_1[NUM_FILAS * NUM_COLUMNAS] =
 	5, 3,
 	5, 1,
 	5, 3,
-	6, 2
-}; 
-*/
-/*
-Test 2: Prueba que se detecten bien fichas de color opuesto
-*/
+	6, 2 }; 
+#endif // TEST_1
 
-/*
-static uint8_t j_test_2[NUM_FILAS * NUM_COLUMNAS] = 
-{
-	2, 6
-}
-*/
+#ifdef TEST_2
+#define JUGADA j_test_2
+static uint8_t j_test_2[NUM_FILAS * NUM_COLUMNAS] = {
+	2, 6 };
+#endif // TEST_2
 
-/*
-static uint8_t j_test_3[NUM_FILAS * NUM_COLUMNAS] = 
-{
+#ifdef TEST_3
+#define JUGADA j_test_3
+#define UNDO_IF_WIN
+static uint8_t j_test_3[NUM_FILAS * NUM_COLUMNAS] = {
 	2, 2,
 	6, 6,
 	2, 6,
 	6, 2,
 	1, 2,
-	7, 6
-};
-*/
+	7, 6 };
+#endif // TEST_3
 
-/*
-static uint8_t j_test_4[NUM_FILAS * NUM_COLUMNAS] = 
-{
+#ifdef TEST_4
+#define JUGADA j_test_4
+#define UNDO_IF_WIN
+static uint8_t j_test_4[NUM_FILAS * NUM_COLUMNAS] = {
 	2, 2,
 	7, 2,
 	7, 5,
 	5, 7,
-	5
-};
-*/
+	5     };
+#endif // TEST_4
 
-/*
+
+#ifdef TEST_5
+#define JUGADA j_test_4
+#define UNDO_IF_WIN
 static uint8_t j_test_5[NUM_FILAS * NUM_COLUMNAS] =
 {
 	2, 2,
@@ -96,53 +107,33 @@ static uint8_t j_test_5[NUM_FILAS * NUM_COLUMNAS] =
 	2, 4,
 	1, 1,
 	5, 5,
-	3
-};
-*/
+	3     };
+#endif // TEST_5
 
-static uint8_t j_test_perf[NUM_FILAS * NUM_COLUMNAS] = 
-{
-4,
-4,
-4,
-4,
-4,
-1,
-5,
-6,
-6,
-6,
-6,
-1,
-4,
-2,
-2,
-2,
-2,
-1,
-1,
-1,
-2,
-1,
-2,
-3,
-6,
-3,
-6,
-3,
-3,
-5,
-5,
-7,
-3,
-3,
-7,
-7,
-7,
-7,
-5,
-5,
-7
-};
+#ifdef TEST_PERF
+#define JUGADA j_test_perf
+static uint8_t j_test_perf[NUM_FILAS * NUM_COLUMNAS] = {
+	4,4,
+	4,4,
+	4,1,
+	5,6,
+	6,6,
+	6,1,
+	4,2,
+	2,2,
+	2,1,
+	1,1,
+	2,1,
+	2,3,
+	6,3,
+	6,3,
+	3,5,
+	5,7,
+	3,3,
+	7,7,
+	7,7,
+	5,5,
+	7 };
+#endif // TEST_PERF
 
-#endif
+#endif 	// JUGADAS_H
