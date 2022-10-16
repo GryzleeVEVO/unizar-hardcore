@@ -234,7 +234,7 @@
 
   <Group>
     <GroupName>Assembly</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -281,8 +281,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\conecta4_hay_llinea_arm_c.s</PathWithFileName>
-      <FilenameWithoutPath>conecta4_hay_llinea_arm_c.s</FilenameWithoutPath>
+      <PathWithFileName>.\conecta4_hay_linea_arm_c.s</PathWithFileName>
+      <FilenameWithoutPath>conecta4_hay_linea_arm_c.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -362,7 +362,7 @@
 
   <Group>
     <GroupName>Includes</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -430,7 +430,7 @@
 
   <Group>
     <GroupName>Sources</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

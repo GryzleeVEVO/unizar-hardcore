@@ -437,9 +437,9 @@
               <FilePath>.\conecta4_hay_linea_arm_arm.s</FilePath>
             </File>
             <File>
-              <FileName>conecta4_hay_llinea_arm_c.s</FileName>
+              <FileName>conecta4_hay_linea_arm_c.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\conecta4_hay_llinea_arm_c.s</FilePath>
+              <FilePath>.\conecta4_hay_linea_arm_c.s</FilePath>
             </File>
             <File>
               <FileName>conecta4_buscar_alineamiento_arm_opt1.s</FileName>
