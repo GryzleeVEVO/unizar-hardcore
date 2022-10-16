@@ -1,0 +1,364 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;
+    2 00000000         ;    Proyecto Hardware
+    3 00000000         ;    Práctica 1
+    4 00000000         ;
+    5 00000000         ;    Fichero: conecta4_hay_linea_arm_arm_opt4.s
+    6 00000000         ;
+    7 00000000         ;    Autores:
+    8 00000000         ;        Dorian Boleslaw Wozniak   (817570@unizar.es)
+    9 00000000         ;        Pablo Latre Villacampa    (778543@unizar.es)
+   10 00000000         ;
+   11 00000000         ;    Descripción: Implementación de la función hay_linea
+                        en código ensamblador
+   12 00000000         ;     con llamada a buscar_alineamiento_arm_opt2. Además
+                        de la
+   13 00000000         ;     optimización de opt3, mejora el uso de las deltas 
+                       para 
+   14 00000000         ;     reducir el número de cargas
+   15 00000000         
+   16 00000000                 AREA             datos, DATA
+   17 00000000         
+   18 00000000 00000006 
+                       NUM_FILAS
+                               EQU              6
+   19 00000000 00000007 
+                       NUM_COLUMNAS
+                               EQU              7
+   20 00000000 00000001 
+                       PADDING_FIL
+                               EQU              1
+   21 00000000 00000001 
+                       PADDING_COL
+                               EQU              1
+   22 00000000 00000007 
+                       TAM_FILS
+                               EQU              NUM_FILAS + PADDING_FIL
+   23 00000000 00000008 
+                       TAM_COLS
+                               EQU              NUM_COLUMNAS + PADDING_COL
+   24 00000000         
+   25 00000000 00000004 
+                       CELDA_VACIA
+                               EQU              0x04
+   26 00000000 00000003 
+                       CELDA_COLOR
+                               EQU              0x03
+   27 00000000         
+   28 00000000 00000000 
+                       FALSE   EQU              0
+   29 00000000 00000001 
+                       TRUE    EQU              1
+   30 00000000         
+   31 00000000 00 FF FF 
+              00 FF FF 
+              01 FF    deltas  DCB              0, -1, -1, 0, -1, -1, 1, -1
+   32 00000008         
+   33 00000008         
+   34 00000008                 AREA             codigo, CODE
+   35 00000000         
+   36 00000000                 IMPORT           conecta4_buscar_alineamiento_ar
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+m_opt2
+   37 00000000                 PRESERVE8        {TRUE}
+   38 00000000         
+   39 00000000                 EXPORT           conecta4_hay_linea_arm_arm_opt4
+   40 00000000         
+   41 00000000         ;   Entrada:
+   42 00000000         ;       r0 -> @cuadricula
+   43 00000000         ;       r1 -> fila
+   44 00000000         ;       r2 -> columna
+   45 00000000         ;       r3 -> color
+   46 00000000         ;
+   47 00000000         ;   Salida
+   48 00000000         ;       r0 <- >= 1 si hay linea, 0 si no hay linea
+   49 00000000         ;
+   50 00000000         ;   Descripción:
+   51 00000000         ;  Devuelve verdad si ha encontrado una línea de celdas 
+                       del mismo color al
+   52 00000000         ;  dado de 4 celdas o más. En caso contrario, devueve fa
+                       lso.
+   53 00000000         conecta4_hay_linea_arm_arm_opt4
+   54 00000000         ; Prologo
+   55 00000000 E1A0C00D        mov              r12, r13
+   56 00000004 E92DDFF0        stmdb            r13!, { r4 - r10, r11, r12, r14
+, r15 }
+   57 00000008 E24CB004        sub              r11, r12, #4
+   58 0000000C         
+   59 0000000C         ;   Bloque de activación:
+   60 0000000C         ;
+   61 0000000C         ;   SP  -> | r4 - r10          | hay_linea
+   62 0000000C         ;          | FP anterior    |
+   63 0000000C         ;          | SP anterior       |
+   64 0000000C         ;          | LR anterior       |
+   65 0000000C         ;   FP -> | PC anterior    |
+   66 0000000C         ;          | ----------------- |
+   67 0000000C         ;          |              | C4_verificar_4_en_linea
+   68 0000000C         
+   69 0000000C         ; Mueve parametros a registros variables
+   70 0000000C E1A04000        mov              r4, r0      ; r4 = @cuadricula
+   71 00000010 E1A05001        mov              r5, r1      ; r5 = fila
+   72 00000014 E1A06002        mov              r6, r2      ; r6 = columna
+   73 00000018 E1A07003        mov              r7, r3      ; r7 = color
+   74 0000001C         
+   75 0000001C         ; Inicializa variables del bucle
+   76 0000001C E3A08000        mov              r8, #0      ; i              
+   77 00000020 E59FA07C        LDR              r10, =deltas ; @deltas  
+   78 00000024         ; for()
+   79 00000024 E3A09001 
+                       hl_for  mov              r9, #1      ; long_linea
+   80 00000028         
+   81 00000028         ;   i < 4
+   82 00000028 E3580004        cmp              r8, #4
+   83 0000002C A3A00000        movge            r0, #FALSE
+   84 00000030 AA00001A        bge              hl_return
+   85 00000034         
+   86 00000034         ;   Obtiene deltas[i]
+   87 00000034 E0DA00D1        ldrsb            r0, [r10], #1
+   88 00000038 E0DA30D1        ldrsb            r3, [r10], #1
+   89 0000003C         
+   90 0000003C         ;   Prepara primera llamada a buscar_alineamiento
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   91 0000003C E0851000        add              r1, r5, r0
+   92 00000040 E0862003        add              r2, r6, r3
+   93 00000044 E92D0009        stmdb            r13!, {r0, r3}
+   94 00000048 E1A00004        mov              r0, r4
+   95 0000004C E1A03007        mov              r3, r7
+   96 00000050         
+   97 00000050 EBFFFFFE        bl               conecta4_buscar_alineamiento_ar
+m_opt2
+   98 00000054         
+   99 00000054         ;   long_linea >= 4
+  100 00000054 E0809009        add              r9, r0, r9
+  101 00000058 E3590004        cmp              r9, #4
+  102 0000005C A3A00001        movge            r0, #TRUE
+  103 00000060 AA00000E        bge              hl_return
+  104 00000064         
+  105 00000064         ;   Recupera y niega deltas
+  106 00000064 E8BD0009        ldmia            r13!, { r0, r3 }
+  107 00000068 E2600000        rsb              r0, r0, #0
+  108 0000006C E2633000        rsb              r3, r3, #0
+  109 00000070         
+  110 00000070         ;   Prepara segunda llamada a buscar_alineamiento
+  111 00000070 E0851000        add              r1, r5, r0
+  112 00000074 E0862003        add              r2, r6, r3
+  113 00000078 E92D0009        stmdb            r13!, {r0, r3}
+  114 0000007C E1A00004        mov              r0, r4
+  115 00000080 E1A03007        mov              r3, r7
+  116 00000084         
+  117 00000084 EBFFFFFE        bl               conecta4_buscar_alineamiento_ar
+m_opt2
+  118 00000088         
+  119 00000088         ;   long_linea >= 4
+  120 00000088 E0899000        add              r9, r9, r0
+  121 0000008C E3590004        cmp              r9, #4
+  122 00000090 A3A00001        movge            r0, #TRUE
+  123 00000094 AA000001        bge              hl_return
+  124 00000098         
+  125 00000098         ;   i++
+  126 00000098 E2888001        add              r8, r8, #1
+  127 0000009C EAFFFFE0        b                hl_for
+  128 000000A0         
+  129 000000A0 E91BAFF0 
+                       hl_return
+                               ldmdb            r11, { r4 - r10, r11, r13, r15 
+}
+  130 000000A4         
+  131 000000A4                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\conecta4_hay_linea_arm_arm_opt4.d -o.\objects\conecta4_hay_linea_arm_arm
+_opt4.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\A
+RM\INC\Philips --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 
+526" --list=.\listings\conecta4_hay_linea_arm_arm_opt4.lst conecta4_hay_linea_a
+rm_arm_opt4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+datos 00000000
+
+Symbol: datos
+   Definitions
+      At line 16 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: datos unused
+deltas 00000000
+
+Symbol: deltas
+   Definitions
+      At line 31 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 77 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: deltas used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+codigo 00000000
+
+Symbol: codigo
+   Definitions
+      At line 34 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: codigo unused
+conecta4_hay_linea_arm_arm_opt4 00000000
+
+Symbol: conecta4_hay_linea_arm_arm_opt4
+   Definitions
+      At line 53 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 39 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: conecta4_hay_linea_arm_arm_opt4 used once
+hl_for 00000024
+
+Symbol: hl_for
+   Definitions
+      At line 79 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 127 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: hl_for used once
+hl_return 000000A0
+
+Symbol: hl_return
+   Definitions
+      At line 129 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 84 in file conecta4_hay_linea_arm_arm_opt4.s
+      At line 103 in file conecta4_hay_linea_arm_arm_opt4.s
+      At line 123 in file conecta4_hay_linea_arm_arm_opt4.s
+
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CELDA_COLOR 00000003
+
+Symbol: CELDA_COLOR
+   Definitions
+      At line 26 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: CELDA_COLOR unused
+CELDA_VACIA 00000004
+
+Symbol: CELDA_VACIA
+   Definitions
+      At line 25 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: CELDA_VACIA unused
+FALSE 00000000
+
+Symbol: FALSE
+   Definitions
+      At line 28 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 83 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: FALSE used once
+NUM_COLUMNAS 00000007
+
+Symbol: NUM_COLUMNAS
+   Definitions
+      At line 19 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 23 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: NUM_COLUMNAS used once
+NUM_FILAS 00000006
+
+Symbol: NUM_FILAS
+   Definitions
+      At line 18 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 22 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: NUM_FILAS used once
+PADDING_COL 00000001
+
+Symbol: PADDING_COL
+   Definitions
+      At line 21 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 23 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: PADDING_COL used once
+PADDING_FIL 00000001
+
+Symbol: PADDING_FIL
+   Definitions
+      At line 20 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 22 in file conecta4_hay_linea_arm_arm_opt4.s
+Comment: PADDING_FIL used once
+TAM_COLS 00000008
+
+Symbol: TAM_COLS
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 23 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: TAM_COLS unused
+TAM_FILS 00000007
+
+Symbol: TAM_FILS
+   Definitions
+      At line 22 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      None
+Comment: TAM_FILS unused
+TRUE 00000001
+
+Symbol: TRUE
+   Definitions
+      At line 29 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 102 in file conecta4_hay_linea_arm_arm_opt4.s
+      At line 122 in file conecta4_hay_linea_arm_arm_opt4.s
+
+10 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+conecta4_buscar_alineamiento_arm_opt2 00000000
+
+Symbol: conecta4_buscar_alineamiento_arm_opt2
+   Definitions
+      At line 36 in file conecta4_hay_linea_arm_arm_opt4.s
+   Uses
+      At line 97 in file conecta4_hay_linea_arm_arm_opt4.s
+      At line 117 in file conecta4_hay_linea_arm_arm_opt4.s
+
+1 symbol
+351 symbols in table

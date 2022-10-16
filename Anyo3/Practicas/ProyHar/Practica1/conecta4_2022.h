@@ -63,8 +63,16 @@ uint8_t conecta4_buscar_alineamiento_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
 uint8_t conecta4_buscar_alineamiento_arm(CELDA cuadricula[TAM_FILS][TAM_COLS], 
 								uint8_t fila, uint8_t columna, uint8_t color, 
 								int8_t delta_fila, int8_t delta_columna);
-
 								
+uint8_t conecta4_buscar_alineamiento_arm_opt1(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color, 
+								int8_t delta_fila, int8_t delta_columna);
+
+uint8_t conecta4_buscar_alineamiento_arm_opt2(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color, 
+								int8_t delta_fila, int8_t delta_columna);
+
+
 
 uint8_t conecta4_hay_linea_c_c(CELDA cuadricula[TAM_FILS][TAM_COLS], 
 								uint8_t fila, uint8_t columna, uint8_t color);
@@ -76,6 +84,18 @@ uint8_t conecta4_hay_linea_arm_c(CELDA cuadricula[TAM_FILS][TAM_COLS],
 								uint8_t fila, uint8_t columna, uint8_t color);
 
 uint8_t conecta4_hay_linea_arm_arm(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color);
+
+uint8_t conecta4_hay_linea_arm_arm_opt1(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color);
+							
+uint8_t conecta4_hay_linea_arm_arm_opt2(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color);
+
+uint8_t conecta4_hay_linea_arm_arm_opt3(CELDA cuadricula[TAM_FILS][TAM_COLS], 
+								uint8_t fila, uint8_t columna, uint8_t color);
+								
+uint8_t conecta4_hay_linea_arm_arm_opt4(CELDA cuadricula[TAM_FILS][TAM_COLS], 
 								uint8_t fila, uint8_t columna, uint8_t color);
 
 

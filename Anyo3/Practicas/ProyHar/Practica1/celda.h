@@ -40,10 +40,8 @@ typedef uint8_t CELDA;
     Sólo está definida si al compilar se define que se deshaga 
     una jugada ganadora y continuar el juego
 */
-#ifdef UNDO_IF_WIN
 __inline static void
 celda_borrar_valor(CELDA *celdaptr) { *celdaptr = 0x00; }
-#endif // UNDO_IF_WIN
 
 /*
     Vuelve la celda en @celdaptr en una celda ocupada (= 4) que contiene una

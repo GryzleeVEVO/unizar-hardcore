@@ -427,24 +427,49 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>conecta4_buscar_alineamiento.s</FileName>
+              <FileName>conecta4_buscar_alineamiento_arm.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\conecta4_buscar_alineamiento.s</FilePath>
+              <FilePath>.\conecta4_buscar_alineamiento_arm.s</FilePath>
             </File>
             <File>
-              <FileName>conecta4_hay_llinea_asm_c.s</FileName>
+              <FileName>conecta4_hay_linea_arm_arm.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\conecta4_hay_llinea_asm_c.s</FilePath>
+              <FilePath>.\conecta4_hay_linea_arm_arm.s</FilePath>
             </File>
             <File>
-              <FileName>conecta4_hay_linea_asm_asm.s</FileName>
+              <FileName>conecta4_hay_llinea_arm_c.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\conecta4_hay_linea_asm_asm.s</FilePath>
+              <FilePath>.\conecta4_hay_llinea_arm_c.s</FilePath>
             </File>
             <File>
-              <FileName>conecta4_buscar_alineamiento_iter.s</FileName>
+              <FileName>conecta4_buscar_alineamiento_arm_opt1.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\conecta4_buscar_alineamiento_iter.s</FilePath>
+              <FilePath>.\conecta4_buscar_alineamiento_arm_opt1.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_buscar_alineamiento_arm_opt2.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_buscar_alineamiento_arm_opt2.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_linea_arm_arm_opt1.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_linea_arm_arm_opt1.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_linea_arm_arm_opt2.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_linea_arm_arm_opt2.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_linea_arm_arm_opt3.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_linea_arm_arm_opt3.s</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_hay_linea_arm_arm_opt4.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\conecta4_hay_linea_arm_arm_opt4.s</FilePath>
             </File>
           </Files>
         </Group>

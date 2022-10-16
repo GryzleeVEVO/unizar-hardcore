@@ -20,7 +20,7 @@
 /*
 	Seleccionar tabla inicial aquí. Las tablas disponibles son:
 
-	- TABLA_VACIA
+	- TABLA_VACIA: Tabla vacía
 	- TABLA_INICIADA: Tabla igual a la dada en el enunciado
 	- TABLERO_TEST_1: Usar con TEST_1 de jugadas.h
 	- TABLERO_TEST_2: Usar con TEST_2 de jugadas.h

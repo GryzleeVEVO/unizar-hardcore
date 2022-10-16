@@ -156,7 +156,7 @@ uint8_t conecta4_hay_linea_c_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
 	int8_t deltas_columna[4] = {-1, 0, -1, -1};
 
 	// Variables
-	unsigned int i = 0;		// Índice
+	unsigned int i = 0;		  // Índice
 	uint8_t linea = FALSE;	// Se ha encontrado línea
 	uint8_t long_linea = 0;	// Tamaño de línea
 
@@ -193,9 +193,30 @@ uint8_t conecta4_hay_linea_c_arm(CELDA cuadricula[TAM_FILS][TAM_COLS],
 int C4_verificar_4_en_linea(CELDA cuadricula[TAM_FILS][TAM_COLS], 
 							uint8_t fila, uint8_t columna, uint8_t color) {
 	
-	uint8_t resultado_c_c = conecta4_hay_linea_c_c(cuadricula, fila, columna, color);
+	//uint8_t resultado_c_c 		= conecta4_hay_linea_c_c(cuadricula, fila, columna, color);
+	//uint8_t resultado_c_arm 	= conecta4_hay_linea_c_arm(cuadricula, fila, columna, color);
+	//uint8_t resultado_arm_c 	= conecta4_hay_linea_arm_c(cuadricula, fila, columna, color);
+	//uint8_t resultado_arm_arm = conecta4_hay_linea_arm_arm(cuadricula, fila, columna, color);
+	//uint8_t resultado_arm_arm_opt1 = conecta4_hay_linea_arm_arm_opt1(cuadricula, fila, columna, color);
+	//uint8_t resultado_arm_arm_opt2 = conecta4_hay_linea_arm_arm_opt2(cuadricula, fila, columna, color);					
+	//uint8_t resultado_arm_arm_opt3 = conecta4_hay_linea_arm_arm_opt3(cuadricula, fila, columna, color);					
+	uint8_t resultado_arm_arm_opt4 = conecta4_hay_linea_arm_arm_opt4(cuadricula, fila, columna, color);					
 
-	return resultado_c_c;
+							
+	/*
+	if ( resultado_c_c != resultado_c_arm
+			&& resultado_c_c != resultado_arm_c
+			&& resultado_c_c != resultado_arm_arm
+			&& resultado_c_c != resultado_arm_arm_opt1
+			&& resultado_c_c != resultado_arm_arm_opt2
+			&& resultado_c_c != resultado_arm_arm_opt3
+			&& resultado_c_c != resultado_arm_arm_opt4
+
+		)
+		while(1);
+	*/
+								
+	return resultado_arm_arm_opt4;
 }
 /* -------------------------------------------------------------------------- */
 

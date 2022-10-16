@@ -34,10 +34,8 @@
 				en un extremo y en medio de una línea horizontal, y al colocarla
 				en una línea vertical. Utilizara con TABLA_TEST_5
 	- TEST_PERF: Partida normal para medir rendimiento. Usar con TABLA_VACIA
-
-	No definir dos 
 */
-#define TEST_1
+#define TEST_PERF
 
 /* 
 	Algunas jugadas también definiran un símbolo UNDO_IF_WIN si se está 
@@ -98,7 +96,7 @@ static uint8_t j_test_4[NUM_FILAS * NUM_COLUMNAS] = {
 
 
 #ifdef TEST_5
-#define JUGADA j_test_4
+#define JUGADA j_test_5
 #define UNDO_IF_WIN
 static uint8_t j_test_5[NUM_FILAS * NUM_COLUMNAS] =
 {

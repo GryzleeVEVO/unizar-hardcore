@@ -1,3 +1,16 @@
+;
+;    Proyecto Hardware
+;    Práctica 1
+;
+;    Fichero: conecta4_buscar_alineamiento_arm_opt1.s
+;
+;    Autores:
+;        Dorian Boleslaw Wozniak   (817570@unizar.es)
+;        Pablo Latre Villacampa    (778543@unizar.es)
+;
+;    Descripción: Implementación de la función buscar_alineamiento en código ensamblador
+;					sustituyendo el algoritmo recursivo por uno iterativo
+
 		AREA datos, DATA
 
 NUM_FILAS       EQU 6
@@ -15,7 +28,7 @@ TRUE            EQU 1
 	
 		AREA codigo, CODE
 						
-		EXPORT conecta4_buscar_alineamiento_arm
+		EXPORT conecta4_buscar_alineamiento_arm_opt1
 
 ;   Entrada:
 ;       r0 -> @cuadricula
@@ -25,31 +38,30 @@ TRUE            EQU 1
 ;       r11 + 4 -> *deltas_fila[i]
 ;       r11 + 8 -> *deltas_columna[i]
 ;
-;   Salida
+;   Salida:
 ;       r0 <- longuitud linea
 ;
-;   Descripci�n
-;
-;       Devuelve el n�mero de celdas del mismo color consecutivas en
-;       la l�nea recta dada por delta_fila y delta_columna a partir de 
+;   Descripción:
+;       Devuelve el número de celdas del mismo color consecutivas en
+;       la línea recta dada por delta_fila y delta_columna a partir de 
 ;       cuadricula[fila][columna]
 
-conecta4_buscar_alineamiento_arm
+conecta4_buscar_alineamiento_arm_opt1
                 ; Prologo
                 mov     r12, r13   
                 stmdb   r13!, { r4 - r10, r11, r12, r14, r15 }
                 sub     r11, r12, #4
 
-                ;   Bloque de activaci�n:
+                ;   Bloque de activación:
                 ;
-                ;   r13' ->  r4 - r10        buscar_alineamiento
-                ;           r11
-                ;           r13
-                ;           r14
-                ;   r11' ->  r15
-                ;           --------------
-                ;           delta_fila[i]   hay_linea
-                ;           delta_columna[i]
+                ;   SP  -> | r4 - r10          | buscar_alineamiento
+                ;          | FP anterior	   |
+                ;          | SP anterior       |
+                ;          | LR	anterior       |
+                ;   FP	-> | PC	anterior	   |
+                ;          | ----------------- |
+                ;          | delta_fila[i]     | hay_linea
+                ;          | delta_columna[i]  |
 
                 ; Mueve parametros a registros variables
                 mov     r4, r0          ; r4 = @cuadricula
@@ -58,51 +70,44 @@ conecta4_buscar_alineamiento_arm
                 mov     r7, r3          ; r7 = color
                 add     r9, r11, #0x04  ; Calcula @ base de parametros
                 ldmia   r9, { r8 - r9 } ; r8, r9 = delta_columna, delta_fila
-
-                mov     r0, #0          ; Devolver� 0 si no supera los condicionales
-
-                ; if
+				mov		r0 , #0			; i = num lineas encontradas
+						
+                ; while
                 ;   !C4_fila_valida(fila) (! 1 <= fila <= NUM_FILAS)
-                cmp     r5, #1
-                blt     ba_return_zero 
+ba_while        cmp     r5, #1
+                blt     ba_return 
                 cmp     r5, #NUM_FILAS
-                bgt     ba_return_zero
+                bgt     ba_return
 
                 ;   !C4_columna_valida(columna)) (! 1 <= columna <= NUM_COLUMNAS)
                 cmp     r6, #1
-                blt     ba_return_zero 
+                blt     ba_return 
                 cmp     r6, #NUM_COLUMNAS
-                bgt     ba_return_zero
-
+                bgt     ba_return
 
                 ;   Obtiene valor de celda en cuadricula[fila][columna]
                 add     r10, r4, r5, lsl #3     ; r10 = @cuadricula[fila][0] (@cuad + 8 * filas)
                 ldrb    r10, [r10, r6]          ; r10 = *cuadricula[fila][columna]
 
                 ;   celda_vacia(cuadricula[fila][columna]) ( celda & 0x04 == 0)
-
                 and     r3, r10, #CELDA_VACIA
                 cmp     r3, #0
-                beq     ba_return_zero
+                beq     ba_return
             
                 ;   celda_color(cuadricula[fila][columna] != ) ( celda & 0x03 != color)
                 and     r3, r10, #CELDA_COLOR
                 cmp     r3, r7
-                bne     ba_return_zero
+                bne     ba_return
 
+                ; 	Actualiza índices
+                add     r5, r5, r8
+                add     r6, r6, r9
+				
+				;	Suma 1 al resultado
+				add		r0, r0 , #1
 
-                ; Prepara llamada recursiva
-                mov     r0, r4
-                add     r1, r5, r8  ; Avanza �ndices
-                add     r2, r6, r9
-                mov     r3, r7
-                stmdb   r13!, { r8 - r9 }
+                b ba_while
 
-                bl conecta4_buscar_alineamiento_arm
-
-                ; Obtiene resultado y regresa
-                add     r0, r0, #1
-
-ba_return_zero  ldmdb   r11, { r4 - r10, r11, r13, r15 }
+ba_return  		ldmdb   r11, { r4 - r10, r11, r13, r15 }
 
 				END
