@@ -35,7 +35,7 @@
 				en una línea vertical. Utilizara con TABLA_TEST_5
 	- TEST_PERF: Partida normal para medir rendimiento. Usar con TABLA_VACIA
 */
-#define TEST_PERF
+#define TEST_3
 
 /* 
 	Algunas jugadas también definiran un símbolo UNDO_IF_WIN si se está 

@@ -91,7 +91,7 @@ La **complejidad** se mide según la dificultad del problema:
 
 Las **búsquedas ciegas** solo utilizan la información de la definición del problema.
 
-## **Primero en anchura (BFS)**
+## **Primero en anchura (Breadth first search)**
 
 Se expande el nodo no expandido menos profundo. La frontera es una cola FIFO.
 
@@ -108,7 +108,7 @@ Se expande el nodo no expandido menos profundo. La frontera es una cola FIFO.
 Aunque puede garantizar encontrar el resultado óptimo, tiene **complejidad exponencial**.
 
 
-## **Coste uniforme (UCS)**
+## **Coste uniforme (Universal cost search)**
 
 Modificaciónd de BFS donde se expande el nodo con menor coste (cola ordenada).
 
@@ -122,7 +122,7 @@ Modificaciónd de BFS donde se expande el nodo con menor coste (cola ordenada).
 **Complejidad espacial** $\bold{O(b^{1+(C* / \epsilon)})}$ donde $C*$ es el coste de la solución optima
 ------------------------ -----------------------------------------------------------------------------
 
-## **Primero en profundidad (DFS)**
+## **Primero en profundidad (Depth first search)**
 
 Se expande el nodo más profundo primero. La frontera es una pila LIFO.
 
@@ -140,7 +140,7 @@ Se expande el nodo más profundo primero. La frontera es una pila LIFO.
 
 La DFS es la base para otras técnicas de búsqueda por su **eficiencia espacial**.
 
-## **Profundidad limitada (DLS)**
+## **Profundidad limitada (Depth limited search)**
 
 Se aplica un límite de profundidad $l$ al algoritmo DFS.
 
@@ -153,7 +153,7 @@ Se aplica un límite de profundidad $l$ al algoritmo DFS.
 
 Puede paliar el mal rendimiento de la DFS, pero o es incompleta o poco poco óptima según la profundidad del camino menos costoso.
 
-## **Profundidad iterativa (IDS)**
+## **Profundidad iterativa (Iterative deepening search)**
 
 Intenta combinar el coste espacial de la DFS con la optimalidad del BFS. Realiza búsquedas en profundidad sucesivas con un nivel de profundidad máximo acotado que crece con cada iteración.
 
@@ -167,7 +167,7 @@ Intenta combinar el coste espacial de la DFS con la optimalidad del BFS. Realiza
 **Complejidad espacial** $\bold{O(bd)}$
 ------------------------ -----------------------------------------------------------------------------
 
-## **Bidireccional (BS)**
+## **Bidireccional (Bidirectional search)**
 
 Se busca simultaneamente desde el nodo inicial y desde el objetivo. Se comprueba que un nodo pertenezca a la otra frontera antes de expandir.
 
@@ -188,7 +188,7 @@ La idea detrás de las búsquedas de tipo "primero el mejor" es usar:
 - **Función de evaluación** $\bold{f(n)}$: Estimación del coste, determina lo "prometedor" de un nodo. Se elige el nodo con menor coste según este. La elección de $f(n)$ determina la estrategia a utilizar.
 - **Función heurística** $\bold{h(n)}$: Estimación del coste del camino menos costoso desde el estado n hasta el objetivo. La mayoría de algoritmos lo incluyen. No negativa, objetivo es igual a 0.
 
-## Algoritmo voraz
+## **Algoritmo voraz (Greedy search)**
 
 Se expande siempre el nodo que parece estar más próximo al objetivo más próximo.
 
@@ -204,7 +204,9 @@ Se expande siempre el nodo que parece estar más próximo al objetivo más próx
 
 La reducción de la complejidad dependerá del problema y de la calidad de la heurística aplicada.
 
-## Búsqueda A*
+## **Búsqueda A\***
+
+[TODO]: # (Arreglar este desaste)
 
 Trata de evitar expandir nodos que tienen caminos costosos.
 
@@ -224,3 +226,12 @@ Trata de evitar expandir nodos que tienen caminos costosos.
       - $f(n)$ es no decreciente a lo largo de cualquier camino: no puede haber un "desvío" mas barato que el camino directo.
 
 
+# BÚSQUEDA LOCAL
+
+Los algoritmos de búsqueda local trabajan utilizando un único nodo en curso en vez de una frontera o múltiples caminos, y generalmente solo se mueven a nodos vecinos. Usan poca memoria y encuentran una solución razonable incluso en espacios de estado grandes e infinitos. Son útiles para resolver problemas de optimización. 
+
+## **Escalada (Hill climbing)**
+
+## **Enfriamiento simulado (Simulated annealing)**
+
+## **Búsqueda en haz (Local beam search)**

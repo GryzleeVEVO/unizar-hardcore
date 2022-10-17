@@ -28,7 +28,7 @@
 	- TABLERO_TEST_4: Usar con TEST_4 de jugadas.h
 	- TABLERO_TEST_5: Usar con TEST_5 de jugadas.h
 */
-#define TABLA_VACIA
+#define TABLA_TEST_3
 
 #ifdef TABLA_INICIADA
 #define TABLERO cuadricula_iniciada
