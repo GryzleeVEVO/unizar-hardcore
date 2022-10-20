@@ -2,12 +2,6 @@
 
 # Autor: Dorian Wozniak
 # Genera a partir de ficheros Markdown apuntes en formato PDF
-# Los ficheros a generar son los siguientes:
-#
-#
-#
-#
-#
 #
 # Para generarlos se requiere:
 #       - pandoc

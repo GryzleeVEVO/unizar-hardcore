@@ -6,103 +6,219 @@ author: Dorian Wozniak
 
 # INTRODUCCIÓN
 
-**Datos**: Valores en crudo que representan hechos.
+# EVOLUCIÓN DE LA WEB
 
-**Información**: Colección de datos organizados de forma que proporcionen valor añadido.
+# WEB ESTÁTICA
 
-**Conocimiento**: Conciencia o familiaridad adquirida por la experiencia de echos o situaciones a través del aprendizaje, observación o introspección.
+## HTML
 
-**Proceso**: Conjunto de tareas lógicamente relacionadas que a partir de datos de entrada proporciona resultados.
+Es un **lenguaje de marcado** basado en **\<etiquetas\>** que encierran secciones del código. Las etiquetas pueden contener **atributos**, no contener contenido, y no son sensibles al tipo de letra, aunque es recomendado usar solo minusculas.
 
-**Algoritmo**: Lista ordenada de pasos o especificación de instrucciones para llevar a cabo una determinada tarea.
+Hay varios estándares de HTML, siendo el mas reciente **HTML5** (2012)
 
-**Sistema**: Conjunto de elementos que interactúan para lograr un objetivo
+### Estructura básica
 
-## Sistemas de información
+```html
+<!DOCTYPE html>
+<!-- Comentario -->
+<html lang="es">
+    <head>
+        <title> Título </title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1> Cabecera </h1>
+        <p> Párrafo 1</p>
+         
+        <p> 
+            <strong> Resaltado </strong>
+            <br/> <!-- Salto de línea -->
+            <em> Énfasis </em>
+        </p>
+    </body>
+</html>
+```
 
-Un **sistema de información** es un sistema que está compuesto por un conjunto de elementos interrelacionados que **recogen** (entrada), **manipulan** (proceso), **almacenan** información, **diseminan** datos (salida) y proporcionan **mecanismos correctores** (retroalimentación) para alcanzar un objetivo.
+### Enlaces y multimedia
 
-Se pueden clasificar en:
+```html
+<!-- Metainformación sobre elementos -->
+<meta name="elem" content="descripcion"/>
+<!-- Enlaces (elemento al que se enlaza se denomina anchor) -->
+<a href="https://pagina.web"> Un enlace </a>
+<!-- Imagenes -->
+<img src="ruta" alt="texto alternativo"/>
+<!-- Audio -->
+<audio src="ruta" preload="none||auto||metadata" controls autoplay loop muted> </audio>
+<audio preload autoplay controls loop>
+    <source src="ruta.mp3" type="audio/mpeg"/>
+    <source src="ruta.ogg" type="audio/ogg"/>
+    Si ves este mensaje, tu navegador no soporta audio
+</audio>
+<!-- Video -->
+<video controls>
+    <source src="ruta.mp4" type="video/mp4" codecs="avc1.42E01E,mp4a.40.2"/>
+    <source src="ruta.ogg" type="video/ogg"/>
+    Si ves este mensaje, tu navegador no soporta video
+</video>
+```
 
-- **Sistemas de procesado transaccional** (TPS): Gestionan información referente a las transacciones diarias de una organización. Centrado en recolección de datos.
-- **Sistemas de información de gestión** (MIS): Orientados a los responsables técnicos de las diferentes áreas de la organización para procedimientos rutinarios.
-- **Sistemas de información de apoyo a la toma de decisiones** (DSS): Dan soporte a la toma de decisiones para un problema complejo específico. En general la información a considerar para analizar el problema no está definida.
-- **Sistemas de información empresarial** (EIS): DSS para altos ejecutivos, datos solo parcialmente extraidos. Uso informativo para alcanzar objetivos estratégicos.
+### Tablas
 
-## Aplicaciones empresariales
+```html
+<table>
+    <tr> <th>Cabecera 1</th>    <th>Cabecera 2</th> </tr>
+    <tr> <td>F1C1</td>          <td>F1C2</td> </tr>
+    <tr> <td>F2C1</td>          <td>F2C2</td> </tr>
+</table>
+```
 
-Las aplicaciones empresariales presentan las siguientes **características**:
+### Listados
 
-- **Almacenan y manipulan datos**
-  - Bases de datos (relacionales, no relacionales, objetuales, etc...)
-  - Ficheros (XML, JSON, etc...)
-- **Realizan transacciones** (propiedades ACID)
-  - Atomicidad
-  - Consistencia
-  - Aislamiento
-  - Durabilidad
-- Escalables (horizontal/verticalmente)
-- Disponibles (mínimo tiempo sin servicio)
-- Seguras
-- Integración
+```html
+<!-- Listas no ordenadas-->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+<!-- Listas ordenadas-->
+<ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ol>
+<!-- Listas de definiciones-->
+<dl>
+    <dt>Item 1</dt> <dd>Definición 1</dd>
+    <dt>Item 2</dt> <dd>Definición 2</dd>
+</dl>
+```
 
-Se pueden encontrar en diferentes **arquitecturas**:
+### Formularios
 
-- Aplicaciones **monocapa**
-  - Modelo de datos sin tener en cuenta integración
-  - Persistencia en ficheros
-  - Rápidos y de proposito específico
-  - No portable, duplicidad
-- Aplicaciones de **dos capas**
-  - Separación entre interfaz y modelo
-  - Cada capa puede ser desarrollada por personal con perfiles específicos
-  - Reuso de capa modelo para diferentes dispositivos
-  - Cambios en el modelo requieren reinstalación en todos los clientes
-- Aplicaciones de **tres capas**
-  - Cambios en el modelo solo afectan al servidor de la aplicación
-  - Clientes ligeros
-  - Cambios en interfaz requieren reinstalación en las máquinas cliente
-- Aplicaciones de **tres capas con interfaz web**
-  - Cambios en la interfaz solo requieren reinstalación en capa interfaz del servidor de aplicaciones web
-  - Los servidores web suelen gestionar bien escalabilidad y disponibilidad
-- Aplicaciones de **cuatro capas**
-  - Se utiliza cuando la interfaz web y la capa modelo estan construidas con tecnologías diferentes
-  
-Se utilizan las siguientes **tecnologías**:
+```html
+<form name="ejemplo" action="procesar.do" method="get">
+    <!-- Introducción de texto -->
+    <label for="campo1"> Nombre </label>
+    <input type="text" name="nombre" id="campo1"/> 
 
-- **Acceso a bases de datos**
-  - JDBC
-  - ODBC
-- **Aplicaciones Web**
-  - Servlets y JSP (interfaz), Java EE (modelo)
-  - ASP.NEet (interfaz), C# y ADO.Net (modelo)
-  - Otros (PHP, Ruby on Rails, Python, MEAN,...)
-- **Servidores Web**
-  - Tomcat, Jboss, Jetty, WebSphere
-  - Internet Information Server
+    <label for="campo2"> Contraseña </label>
+    <input type="password" name="contraseña"/>
 
-## *Cloud computing*
+    <!-- Selección única -->
+    <input type="radio" name="sex" value="H"/>
+    <input type="radio" name="sex" value="M"/>
 
-La **computación en la nube** es un paradigma que permite el acceso ubicuo bajo demanda a servicios TIC a través de Internet. Es fruto de externalizar servicios y para ahorrar costes.
+    <!-- Selección múltiple -->
+    <input type="checkbox" name="vehiculo" value="coche"/>
+    <input type="checkbox" name="vehiculo" value="moto"/>
+    <input type="checkbox" name="vehiculo" value="bici"/>
 
-Se pueden clasificar en:
+    <!-- Botones-->
+    <input type="submit"/>                               <!-- Envío -->
+    <input type="reset"/>                                <!-- Reinicio-->
+    <input type="button" onclick="función"/>             <!-- Botón genérico-->
+    <input type="hidden" name="variable" value="valor"/> <!-- Campos ocultos --> 
 
-- Funcionalidad
-  - **Software as a service** (SaaS) (ej. Google Play)
-    - Se ofrecen aplicaciones sin controlar cliente, infraestructura ni configuración
-    - Clientes comparten infrasetructura, con espacio personal para cada cliente 
-  - **Platform as a service** (PaaS) (ej. *Marketplaces*)
-    - Entornos de desarrollo comperativo y despliegue rápido
-    - Diseñado para sustentar ciclo de vida de apliacaciones
-  - **Infrastructure as a service** (IaaS) (ej. AWS)
-    - Ofrece recursos de computación
-    - Virtualización
-    - Eficiente, seguro y baja inversión inicial
-- Compartición
-  - Público
-  - Privado
-  - Híbrido
-  - Comunitario
+    <!-- Listas desplegables -->
+    <select name="Marca_Vehiculo">
+        <option value="volvo"> Volvo </option>
+        <option value="saab"> Saab </option>
+        <option value="fiat"> Fiat </option>
+    </select>
 
-# SISTEMAS DE INFORMACIÓN EN RED: LA WEB
+    <!-- Introducción de texto mas grande -->
+    <textarea name="resupesta" rows="4" columns="50">
+        Escriba aquí su respuesta
+    </textarea>
+</form>
+```
 
+### Secciones
+
+```html
+<style>
+    .myDiv {
+        border: 5px outset red;
+        background-color: lightblue;
+        text-align: center;
+    }
+</style>
+
+<div class="myDiv">
+    <!-- Contenido -->
+</div>
+```
+
+Las secciones \<div\> por defecto no se visualizan, pero se pueden aplicar estilos sobre estos. Son importantes al poder desplazarse respecto a otras secciones.
+
+### Estilos y scripts
+
+El código HTML genera un Modelo de Objetos del Documento (DOM) al ser interpretado por el navegador, el cual muestra y aplica estilos y *scripts* sobre la página generada
+
+```html
+<!-- Definición de estilos -->
+<style> 
+    h1 {
+        text-align:center;
+        font-size:12;
+    }
+</style>
+<h1 style="text-align:center" > Ejemplo </h1>                    <!-- Inline -->
+<!-- Definición de scripts -->
+<script> </script>
+<!-- Enlace a recurso externo -->
+<link rel="stylesheet" href="style.css" type="text/css"/>
+```
+
+## CSS
+
+Es un lenguaje de definición de **hojas de estilo**. Cada estilo se compone de un **selector** y una serie de **propiedades**.
+
+```css
+/* Selector básico (sobre etiqueta) */
+h1 {
+    text-align:center;
+    font-size:12;
+}
+/* Selector de clase */
+.efecto1 {
+    text-align:left;
+    font-size:24;
+}
+/* Selector de identificador (para un único elemento de la página) */
+#id1 {
+    text-align:center;
+    font-size:12; 
+}
+```
+
+[//]: # (TODO: Añadir salidas HTML)
+
+# WEB DINÁMICA
+
+## Patrón VO/DAO (Value Objetct/Data Access Object)
+
+Es un patrón que utiliza clases **VO** (*Value Object*) para representar entidades de información equivalentes a las de una base de datos persistente; y una interfaz **DAO** (*Data Access Object*) entre la aplicación y la base de datos para abstraer detalles de la segunda.
+
+Los elementos constructivos de un VO son:
+
+- Propiedades, que representan los atributos de la BBDD
+- Metodos set/get para acceder y modificar estas propiedades
+- Un constructor que permite generar un nuevo objeto VO a partir de unas propiedades dadas
+
+La DAO la forman clases que implementan el acceso a datos entre la BBDD y la aplicación. Las operaciones se abstraen utilizando el modelo conceptual de la base en vez del implementado.
+
+## Servlets
+
+Un **servlet** es un ejecutable escrito en Java que se ejecuta normalmente como respuesta a una petición HTTP, procesandola y generando una respuesta en tiempo de ejecución. Se diferencia de los CGI en que se ejecutan en hilos diferentes del proceso servidor, y son independientes de plataforma.
+
+- Cada servlet se asocia a URLs, y el contenedor de aplicaciones las asocia
+- El método **init()** se ejecuta cuando el servidor de aplicaciones carga el servlet en memoria, y **destroy()** cuando decide eliminarlo
+- El método **service()** se ejecuta cuando se requiere del servicio del servlet
+  - La petición se almacena en una clase **ServletRequest**
+  - La respuesta se almacena en una clase **ServletResponse**
+- Un servlet HTTP contiene los métodos **doGet()** y **doPost()**, que se basan en **service()**
+  - La petición se almacena en una clase **HttpServletRequest**
+  - La respuesta se almacena en una clase **HttpServletResponse**
+
+## Java Server Pages
