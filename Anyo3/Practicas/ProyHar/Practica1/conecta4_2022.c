@@ -194,13 +194,13 @@ int C4_verificar_4_en_linea(CELDA cuadricula[TAM_FILS][TAM_COLS],
 							uint8_t fila, uint8_t columna, uint8_t color) {
 	
 	//uint8_t resultado_c_c 		= conecta4_hay_linea_c_c(cuadricula, fila, columna, color);
-	//uint8_t resultado_c_arm 	= conecta4_hay_linea_c_arm(cuadricula, fila, columna, color);
+	uint8_t resultado_c_arm 	= conecta4_hay_linea_c_arm(cuadricula, fila, columna, color);
 	//uint8_t resultado_arm_c 	= conecta4_hay_linea_arm_c(cuadricula, fila, columna, color);
 	//uint8_t resultado_arm_arm = conecta4_hay_linea_arm_arm(cuadricula, fila, columna, color);
 	//uint8_t resultado_arm_arm_opt1 = conecta4_hay_linea_arm_arm_opt1(cuadricula, fila, columna, color);
 	//uint8_t resultado_arm_arm_opt2 = conecta4_hay_linea_arm_arm_opt2(cuadricula, fila, columna, color);					
 	//uint8_t resultado_arm_arm_opt3 = conecta4_hay_linea_arm_arm_opt3(cuadricula, fila, columna, color);					
-	uint8_t resultado_arm_arm_opt4 = conecta4_hay_linea_arm_arm_opt4(cuadricula, fila, columna, color);					
+	//uint8_t resultado_arm_arm_opt4 = conecta4_hay_linea_arm_arm_opt4(cuadricula, fila, columna, color);					
 
 							
 	/*
@@ -216,7 +216,7 @@ int C4_verificar_4_en_linea(CELDA cuadricula[TAM_FILS][TAM_COLS],
 		while(1);
 	*/
 								
-	return resultado_arm_arm_opt4;
+	return resultado_c_arm;
 }
 /* -------------------------------------------------------------------------- */
 

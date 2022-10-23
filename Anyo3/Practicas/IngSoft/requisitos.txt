@@ -1,0 +1,48 @@
+Enunciado:
+
+- F1: El sistema debe permitir añadir habitaciones nuevas
+- F1.1: Una habitación consta de un identificador único, una descripción, un 
+    número máximo de ocupantes, su precio por noche/ocupante y recargo por
+    ocupantes extra
+
+- F2: El sistema debe permitir consultar habitaciones creadas
+- F2.1: Las consultas se deben poner ordenar por identificador, número máximo 
+    de ocupantes o precio por noche
+
+- F3: El sistema debe permitir modificar habitaciones previamente creadas
+- F4: El sistema debe permitir eliminar habitaciones previamente creadas
+
+- F5: El sistema debe permitir crear una reserva
+- F5.1: El sistema permite calcular el precio total de una reserva
+- F5.2: Una reserva consta de un nombre del cliente, número móvil del cliente,
+    fechas de entrada y salida, una selección de habitaciones reservadas,
+    y número de ocupantes por cada habitación seleccionada
+
+- F6: El sistema se asegura de que una reserva sea válida, es decir, que
+    no se produzcan solapes con otras reservas, donde existan reservas de
+    la misma habitación en el mismo periodo de tiempo, ni que se supere 
+    la cantidad maxima de ocupantes por habitación seleccionada
+
+- F7: El sistema debe permitir consultar reservas creadas
+- F7.1: Las reservas se deben poder ordenar por nombre de cliente, número de
+    móvil o fecha de entrada
+
+- F7: El sistema debe permitir modificar las reservas previamente creadas 
+
+- F8: El sistema debe permitir confirmar una reserva ya realizada
+- F8.1: El sistema, al confirmarse una reserva, debe permitir envíar un mensaje 
+    al teléfono móvil del cliente que figura en dicha reserva
+- NF8.2: El mensaje contiene la información de la reserva, y además incluye
+    el precio total de la reserva
+
+- F9: El sistema debe permitir eliminar las reservas previamente creadas
+
+- NF5: El sistema almacena como máximo 100 habitaciones
+- NF6: El sistema almacena como máximo 2000 reservas
+
+- Restricciones
+    - ???
+
+- Actores
+    - Propietario
+  
