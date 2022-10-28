@@ -29,7 +29,7 @@ const (
 	MAXMESSAGES = 10000
 )
 
-func checkError(err error) {
+func CheckError(err error) {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
 		os.Exit(1)
@@ -38,7 +38,7 @@ func checkError(err error) {
 
 func parsePeers(path string) (lines []string) {
 	file, err := os.Open(path)
-	checkError(err)
+	CheckError(err)
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
@@ -52,9 +52,10 @@ func parsePeers(path string) (lines []string) {
 // Post: envía el mensaje msg a pid
 func (ms *MessageSystem) Send(pid int, msg Message) {
 	conn, err := net.Dial("tcp", ms.peers[pid-1])
-	checkError(err)
+	CheckError(err)
 	encoder := gob.NewEncoder(conn)
 	err = encoder.Encode(&msg)
+	CheckError(err)
 	conn.Close()
 }
 
@@ -85,11 +86,11 @@ func New(whoIam int, usersFile string, messageTypes []Message) (ms MessageSystem
 	ms.me = whoIam
 	ms.peers = parsePeers(usersFile)
 	ms.mbox = make(chan Message, MAXMESSAGES)
-	ms.done = make(chan bool)
+	ms.done = make(chan bool, 1) // Se bufferiza para poder desbloquear
 	Register(messageTypes)
 	go func() {
 		listener, err := net.Listen("tcp", ms.peers[ms.me-1])
-		checkError(err)
+		CheckError(err)
 		fmt.Println("Process listening at " + ms.peers[ms.me-1])
 		defer close(ms.mbox)
 		for {
@@ -98,10 +99,11 @@ func New(whoIam int, usersFile string, messageTypes []Message) (ms MessageSystem
 				return
 			default:
 				conn, err := listener.Accept()
-				checkError(err)
+				CheckError(err)
 				decoder := gob.NewDecoder(conn)
 				var msg Message
 				err = decoder.Decode(&msg)
+				CheckError(err)
 				conn.Close()
 				ms.mbox <- msg
 			}
@@ -114,4 +116,5 @@ func New(whoIam int, usersFile string, messageTypes []Message) (ms MessageSystem
 // Post: termina la ejecución de este ms
 func (ms *MessageSystem) Stop() {
 	ms.done <- true
+	ms.Send(ms.me, false) // Desbloqueamos canal de Mailbox
 }
