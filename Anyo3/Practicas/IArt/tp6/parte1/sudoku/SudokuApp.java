@@ -15,7 +15,7 @@
  *					de cada sudoku
  * */
 
-package aima.gui.demo.search.TP6;
+package aima.gui.demo.search;
 
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.BacktrackingStrategy;

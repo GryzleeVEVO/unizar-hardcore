@@ -1,0 +1,17 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\retarget.o"
+".\main.o"
+".\cola_eventos.o"
+".\cola_msg.o"
+".\tiempo.o"
+".\gpio.o"
+".\power.o"
+".\boton.o"
+".\pll.o"
+".\g_alarm.o"
+".\g_energia.o"
+".\g_io.o"
+".\g_boton.o"
+--strict --scatter ".\keil_reversi.sct"
+--summary_stderr --info summarysizes -o .\keil_reversi.axf

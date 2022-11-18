@@ -1,0 +1,338 @@
+[127.0.0.1_32003] 17:50:38.307842 raft.go:451: Traza iniciada
+[127.0.0.1_32003] 17:50:38.307911 raft.go:451: Se encuentran disponibles los siguientes nodos:
+	1	127.0.0.1:32000
+	2	127.0.0.1:32001
+	3	127.0.0.1:32002
+	4	127.0.0.1:32003
+	5	127.0.0.1:32004
+[127.0.0.1_32003] 17:50:38.307931 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:38.307941 raft.go:451: El nodo ahora es SEGUIDOR
+[127.0.0.1_32003] 17:50:38.308122 raft.go:451: RPC registradas, se inicia la escucha
+[127.0.0.1_32003] 17:50:38.456859 raft.go:451: RPC PedirVoto: He recibido mandato 1, índice 1
+[127.0.0.1_32003] 17:50:38.456893 raft.go:451: RPC PedirVoto: Mi mandato es 0, he votado a -1
+[127.0.0.1_32003] 17:50:38.456908 raft.go:451: RPC PedirVoto: He enviado mandato 1, voto true
+[127.0.0.1_32003] 17:50:38.457233 raft.go:451: RPC PedirVoto: He recibido mandato 1, índice 5
+[127.0.0.1_32003] 17:50:38.457251 raft.go:451: RPC PedirVoto: Mi mandato es 1, he votado a 1
+[127.0.0.1_32003] 17:50:38.457268 raft.go:451: RPC PedirVoto: He enviado mandato 1, voto false
+[127.0.0.1_32003] 17:50:38.457979 raft.go:451: El tiempo para recibir un latido se ha acabado
+[127.0.0.1_32003] 17:50:38.457997 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:38.458008 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:38.458036 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:38.458692 raft.go:451: RPC PedirVoto: He recibido mandato 1, índice 2
+[127.0.0.1_32003] 17:50:38.458723 raft.go:451: RPC PedirVoto: Mi mandato es 2, he votado a -1
+[127.0.0.1_32003] 17:50:38.458833 raft.go:451: RPC PedirVoto: He enviado mandato 2, voto false
+[127.0.0.1_32003] 17:50:38.460746 raft.go:451: enviarPedirVoto: He recibido mandato 2, voto true
+[127.0.0.1_32003] 17:50:38.460775 raft.go:451: enviarPedirVoto: Mi mandato es 2, he votado a 2
+[127.0.0.1_32003] 17:50:38.460860 raft.go:451: RPC PedirVoto: He recibido mandato 2, índice 3
+[127.0.0.1_32003] 17:50:38.460877 raft.go:451: RPC PedirVoto: Mi mandato es 2, he votado a 2
+[127.0.0.1_32003] 17:50:38.460890 raft.go:451: RPC PedirVoto: He enviado mandato 2, voto false
+[127.0.0.1_32003] 17:50:38.461051 raft.go:451: enviarPedirVoto: He recibido mandato 2, voto false
+[127.0.0.1_32003] 17:50:38.461072 raft.go:451: enviarPedirVoto: Mi mandato es 2, he votado a 2
+[127.0.0.1_32003] 17:50:38.668745 raft.go:451: RPC PedirVoto: He recibido mandato 3, índice 3
+[127.0.0.1_32003] 17:50:38.668772 raft.go:451: RPC PedirVoto: Mi mandato es 2, he votado a 2
+[127.0.0.1_32003] 17:50:38.668786 raft.go:451: RPC PedirVoto: He enviado mandato 3, voto false
+[127.0.0.1_32003] 17:50:38.679291 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:38.679326 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:38.679341 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:38.679385 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:38.680128 raft.go:451: enviarPedirVoto: He recibido mandato 4, voto false
+[127.0.0.1_32003] 17:50:38.680148 raft.go:451: enviarPedirVoto: Mi mandato es 4, he votado a -1
+[127.0.0.1_32003] 17:50:38.680211 raft.go:451: enviarPedirVoto: He recibido mandato 4, voto true
+[127.0.0.1_32003] 17:50:38.680225 raft.go:451: enviarPedirVoto: Mi mandato es 4, he votado a -1
+[127.0.0.1_32003] 17:50:38.890332 raft.go:451: RPC PedirVoto: He recibido mandato 5, índice 2
+[127.0.0.1_32003] 17:50:38.890359 raft.go:451: RPC PedirVoto: Mi mandato es 4, he votado a -1
+[127.0.0.1_32003] 17:50:38.890375 raft.go:451: RPC PedirVoto: He enviado mandato 5, voto true
+[127.0.0.1_32003] 17:50:39.070691 raft.go:451: RPC PedirVoto: He recibido mandato 6, índice 3
+[127.0.0.1_32003] 17:50:39.070711 raft.go:451: RPC PedirVoto: Mi mandato es 5, he votado a 2
+[127.0.0.1_32003] 17:50:39.070720 raft.go:451: RPC PedirVoto: He enviado mandato 6, voto false
+[127.0.0.1_32003] 17:50:39.070945 raft.go:451: RPC PedirVoto: He recibido mandato 6, índice 2
+[127.0.0.1_32003] 17:50:39.070964 raft.go:451: RPC PedirVoto: Mi mandato es 6, he votado a 2
+[127.0.0.1_32003] 17:50:39.070979 raft.go:451: RPC PedirVoto: He enviado mandato 6, voto true
+[127.0.0.1_32003] 17:50:39.172125 raft.go:451: RPC PedirVoto: He recibido mandato 7, índice 3
+[127.0.0.1_32003] 17:50:39.172157 raft.go:451: RPC PedirVoto: Mi mandato es 6, he votado a 2
+[127.0.0.1_32003] 17:50:39.172172 raft.go:451: RPC PedirVoto: He enviado mandato 7, voto false
+[127.0.0.1_32003] 17:50:39.177640 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:39.177665 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:39.177674 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:39.177700 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:39.178474 raft.go:451: enviarPedirVoto: He recibido mandato 8, voto true
+[127.0.0.1_32003] 17:50:39.178510 raft.go:451: enviarPedirVoto: Mi mandato es 8, he votado a -1
+[127.0.0.1_32003] 17:50:39.464184 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:39.464275 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:39.464289 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:39.464336 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:39.465319 raft.go:451: enviarPedirVoto: He recibido mandato 9, voto true
+[127.0.0.1_32003] 17:50:39.465342 raft.go:451: enviarPedirVoto: Mi mandato es 9, he votado a -1
+[127.0.0.1_32003] 17:50:39.552279 raft.go:451: RPC PedirVoto: He recibido mandato 10, índice 3
+[127.0.0.1_32003] 17:50:39.552309 raft.go:451: RPC PedirVoto: Mi mandato es 9, he votado a -1
+[127.0.0.1_32003] 17:50:39.552323 raft.go:451: RPC PedirVoto: He enviado mandato 10, voto true
+[127.0.0.1_32003] 17:50:39.631759 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:39.631802 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:39.631812 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:39.631848 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:39.633027 raft.go:451: enviarPedirVoto: He recibido mandato 11, voto true
+[127.0.0.1_32003] 17:50:39.633057 raft.go:451: enviarPedirVoto: Mi mandato es 11, he votado a -1
+[127.0.0.1_32003] 17:50:39.800416 raft.go:451: RPC PedirVoto: He recibido mandato 12, índice 3
+[127.0.0.1_32003] 17:50:39.800432 raft.go:451: RPC PedirVoto: Mi mandato es 11, he votado a -1
+[127.0.0.1_32003] 17:50:39.800440 raft.go:451: RPC PedirVoto: He enviado mandato 12, voto true
+[127.0.0.1_32003] 17:50:39.857897 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:39.858006 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:39.858023 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:39.858085 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:39.859008 raft.go:451: enviarPedirVoto: He recibido mandato 13, voto true
+[127.0.0.1_32003] 17:50:39.859029 raft.go:451: enviarPedirVoto: Mi mandato es 13, he votado a -1
+[127.0.0.1_32003] 17:50:39.945015 raft.go:451: RPC PedirVoto: He recibido mandato 14, índice 3
+[127.0.0.1_32003] 17:50:39.945053 raft.go:451: RPC PedirVoto: Mi mandato es 13, he votado a -1
+[127.0.0.1_32003] 17:50:39.945068 raft.go:451: RPC PedirVoto: He enviado mandato 14, voto true
+[127.0.0.1_32003] 17:50:40.136861 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:40.136911 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:40.136923 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:40.136957 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:40.137965 raft.go:451: enviarPedirVoto: He recibido mandato 15, voto true
+[127.0.0.1_32003] 17:50:40.137983 raft.go:451: enviarPedirVoto: Mi mandato es 15, he votado a -1
+[127.0.0.1_32003] 17:50:40.380191 raft.go:451: RPC PedirVoto: He recibido mandato 16, índice 3
+[127.0.0.1_32003] 17:50:40.380224 raft.go:451: RPC PedirVoto: Mi mandato es 15, he votado a -1
+[127.0.0.1_32003] 17:50:40.380241 raft.go:451: RPC PedirVoto: He enviado mandato 16, voto true
+[127.0.0.1_32003] 17:50:40.485929 raft.go:451: RPC PedirVoto: He recibido mandato 17, índice 3
+[127.0.0.1_32003] 17:50:40.485970 raft.go:451: RPC PedirVoto: Mi mandato es 16, he votado a 3
+[127.0.0.1_32003] 17:50:40.485986 raft.go:451: RPC PedirVoto: He enviado mandato 17, voto true
+[127.0.0.1_32003] 17:50:40.610331 raft.go:451: RPC PedirVoto: He recibido mandato 18, índice 3
+[127.0.0.1_32003] 17:50:40.610352 raft.go:451: RPC PedirVoto: Mi mandato es 17, he votado a 3
+[127.0.0.1_32003] 17:50:40.610366 raft.go:451: RPC PedirVoto: He enviado mandato 18, voto true
+[127.0.0.1_32003] 17:50:40.614766 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:40.614800 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:40.614813 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:40.614855 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:40.615986 raft.go:451: enviarPedirVoto: He recibido mandato 19, voto true
+[127.0.0.1_32003] 17:50:40.616003 raft.go:451: enviarPedirVoto: Mi mandato es 19, he votado a -1
+[127.0.0.1_32003] 17:50:40.800465 raft.go:451: RPC PedirVoto: He recibido mandato 20, índice 3
+[127.0.0.1_32003] 17:50:40.800492 raft.go:451: RPC PedirVoto: Mi mandato es 19, he votado a -1
+[127.0.0.1_32003] 17:50:40.800509 raft.go:451: RPC PedirVoto: He enviado mandato 20, voto true
+[127.0.0.1_32003] 17:50:41.005205 raft.go:451: RPC PedirVoto: He recibido mandato 21, índice 3
+[127.0.0.1_32003] 17:50:41.005240 raft.go:451: RPC PedirVoto: Mi mandato es 20, he votado a 3
+[127.0.0.1_32003] 17:50:41.005261 raft.go:451: RPC PedirVoto: He enviado mandato 21, voto true
+[127.0.0.1_32003] 17:50:41.017997 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:41.018035 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:41.018050 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:41.018108 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:41.019257 raft.go:451: enviarPedirVoto: He recibido mandato 22, voto true
+[127.0.0.1_32003] 17:50:41.019275 raft.go:451: enviarPedirVoto: Mi mandato es 22, he votado a -1
+[127.0.0.1_32003] 17:50:41.172851 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:41.172949 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:41.172959 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:41.172989 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:41.173858 raft.go:451: enviarPedirVoto: He recibido mandato 23, voto true
+[127.0.0.1_32003] 17:50:41.173873 raft.go:451: enviarPedirVoto: Mi mandato es 23, he votado a -1
+[127.0.0.1_32003] 17:50:41.271923 raft.go:451: RPC PedirVoto: He recibido mandato 24, índice 3
+[127.0.0.1_32003] 17:50:41.271955 raft.go:451: RPC PedirVoto: Mi mandato es 23, he votado a -1
+[127.0.0.1_32003] 17:50:41.271969 raft.go:451: RPC PedirVoto: He enviado mandato 24, voto true
+[127.0.0.1_32003] 17:50:41.386518 raft.go:451: RPC PedirVoto: He recibido mandato 25, índice 3
+[127.0.0.1_32003] 17:50:41.386539 raft.go:451: RPC PedirVoto: Mi mandato es 24, he votado a 3
+[127.0.0.1_32003] 17:50:41.386554 raft.go:451: RPC PedirVoto: He enviado mandato 25, voto true
+[127.0.0.1_32003] 17:50:41.563075 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:41.563127 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:41.563144 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:41.563194 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:41.564538 raft.go:451: enviarPedirVoto: He recibido mandato 26, voto true
+[127.0.0.1_32003] 17:50:41.564565 raft.go:451: enviarPedirVoto: Mi mandato es 26, he votado a -1
+[127.0.0.1_32003] 17:50:41.865315 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:41.865395 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:41.865407 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:41.865474 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:41.866371 raft.go:451: enviarPedirVoto: He recibido mandato 27, voto true
+[127.0.0.1_32003] 17:50:41.866404 raft.go:451: enviarPedirVoto: Mi mandato es 27, he votado a -1
+[127.0.0.1_32003] 17:50:41.873198 raft.go:451: RPC PedirVoto: He recibido mandato 28, índice 3
+[127.0.0.1_32003] 17:50:41.873227 raft.go:451: RPC PedirVoto: Mi mandato es 27, he votado a -1
+[127.0.0.1_32003] 17:50:41.873243 raft.go:451: RPC PedirVoto: He enviado mandato 28, voto true
+[127.0.0.1_32003] 17:50:42.343549 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:42.343610 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:42.343641 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:42.343691 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:42.345278 raft.go:451: enviarPedirVoto: He recibido mandato 29, voto true
+[127.0.0.1_32003] 17:50:42.345298 raft.go:451: enviarPedirVoto: Mi mandato es 29, he votado a -1
+[127.0.0.1_32003] 17:50:42.349562 raft.go:451: RPC PedirVoto: He recibido mandato 30, índice 3
+[127.0.0.1_32003] 17:50:42.349577 raft.go:451: RPC PedirVoto: Mi mandato es 29, he votado a -1
+[127.0.0.1_32003] 17:50:42.349585 raft.go:451: RPC PedirVoto: He enviado mandato 30, voto true
+[127.0.0.1_32003] 17:50:42.504239 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:42.504301 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:42.504312 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:42.504349 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:42.505374 raft.go:451: enviarPedirVoto: He recibido mandato 31, voto true
+[127.0.0.1_32003] 17:50:42.505390 raft.go:451: enviarPedirVoto: Mi mandato es 31, he votado a -1
+[127.0.0.1_32003] 17:50:42.532242 raft.go:451: RPC PedirVoto: He recibido mandato 32, índice 3
+[127.0.0.1_32003] 17:50:42.532265 raft.go:451: RPC PedirVoto: Mi mandato es 31, he votado a -1
+[127.0.0.1_32003] 17:50:42.532280 raft.go:451: RPC PedirVoto: He enviado mandato 32, voto true
+[127.0.0.1_32003] 17:50:42.782346 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:42.782406 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:42.782421 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:42.782452 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:42.784969 raft.go:451: enviarPedirVoto: He recibido mandato 33, voto true
+[127.0.0.1_32003] 17:50:42.784996 raft.go:451: enviarPedirVoto: Mi mandato es 33, he votado a -1
+[127.0.0.1_32003] 17:50:42.837099 raft.go:451: RPC PedirVoto: He recibido mandato 34, índice 3
+[127.0.0.1_32003] 17:50:42.837118 raft.go:451: RPC PedirVoto: Mi mandato es 33, he votado a -1
+[127.0.0.1_32003] 17:50:42.837129 raft.go:451: RPC PedirVoto: He enviado mandato 34, voto true
+[127.0.0.1_32003] 17:50:43.097553 raft.go:451: RPC PedirVoto: He recibido mandato 35, índice 3
+[127.0.0.1_32003] 17:50:43.097576 raft.go:451: RPC PedirVoto: Mi mandato es 34, he votado a 3
+[127.0.0.1_32003] 17:50:43.097590 raft.go:451: RPC PedirVoto: He enviado mandato 35, voto true
+[127.0.0.1_32003] 17:50:43.118059 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:43.118157 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:43.118166 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:43.118199 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:43.119127 raft.go:451: enviarPedirVoto: He recibido mandato 36, voto true
+[127.0.0.1_32003] 17:50:43.119155 raft.go:451: enviarPedirVoto: Mi mandato es 36, he votado a -1
+[127.0.0.1_32003] 17:50:43.390707 raft.go:451: RPC PedirVoto: He recibido mandato 37, índice 3
+[127.0.0.1_32003] 17:50:43.390743 raft.go:451: RPC PedirVoto: Mi mandato es 36, he votado a -1
+[127.0.0.1_32003] 17:50:43.390759 raft.go:451: RPC PedirVoto: He enviado mandato 37, voto true
+[127.0.0.1_32003] 17:50:43.484242 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:43.484309 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:43.484366 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:43.484444 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:43.485448 raft.go:451: enviarPedirVoto: He recibido mandato 38, voto true
+[127.0.0.1_32003] 17:50:43.485473 raft.go:451: enviarPedirVoto: Mi mandato es 38, he votado a -1
+[127.0.0.1_32003] 17:50:43.756952 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:43.756979 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:43.756992 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:43.757054 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:43.758422 raft.go:451: enviarPedirVoto: He recibido mandato 39, voto true
+[127.0.0.1_32003] 17:50:43.758447 raft.go:451: enviarPedirVoto: Mi mandato es 39, he votado a -1
+[127.0.0.1_32003] 17:50:43.808383 raft.go:451: RPC PedirVoto: He recibido mandato 40, índice 3
+[127.0.0.1_32003] 17:50:43.808416 raft.go:451: RPC PedirVoto: Mi mandato es 39, he votado a -1
+[127.0.0.1_32003] 17:50:43.808432 raft.go:451: RPC PedirVoto: He enviado mandato 40, voto true
+[127.0.0.1_32003] 17:50:43.946966 raft.go:451: RPC PedirVoto: He recibido mandato 41, índice 3
+[127.0.0.1_32003] 17:50:43.946999 raft.go:451: RPC PedirVoto: Mi mandato es 40, he votado a 3
+[127.0.0.1_32003] 17:50:43.947017 raft.go:451: RPC PedirVoto: He enviado mandato 41, voto true
+[127.0.0.1_32003] 17:50:44.001602 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:44.001654 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:44.001688 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:44.001730 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:44.002625 raft.go:451: enviarPedirVoto: He recibido mandato 42, voto true
+[127.0.0.1_32003] 17:50:44.002645 raft.go:451: enviarPedirVoto: Mi mandato es 42, he votado a -1
+[127.0.0.1_32003] 17:50:44.273190 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:44.273284 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:44.273304 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:44.273334 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:44.274294 raft.go:451: enviarPedirVoto: He recibido mandato 43, voto true
+[127.0.0.1_32003] 17:50:44.274320 raft.go:451: enviarPedirVoto: Mi mandato es 43, he votado a -1
+[127.0.0.1_32003] 17:50:44.281353 raft.go:451: RPC PedirVoto: He recibido mandato 44, índice 3
+[127.0.0.1_32003] 17:50:44.281371 raft.go:451: RPC PedirVoto: Mi mandato es 43, he votado a -1
+[127.0.0.1_32003] 17:50:44.281385 raft.go:451: RPC PedirVoto: He enviado mandato 44, voto true
+[127.0.0.1_32003] 17:50:44.643355 raft.go:451: RPC PedirVoto: He recibido mandato 45, índice 3
+[127.0.0.1_32003] 17:50:44.643394 raft.go:451: RPC PedirVoto: Mi mandato es 44, he votado a 3
+[127.0.0.1_32003] 17:50:44.643409 raft.go:451: RPC PedirVoto: He enviado mandato 45, voto true
+[127.0.0.1_32003] 17:50:44.734072 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:44.734140 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:44.734154 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:44.734218 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:44.735380 raft.go:451: enviarPedirVoto: He recibido mandato 46, voto true
+[127.0.0.1_32003] 17:50:44.735413 raft.go:451: enviarPedirVoto: Mi mandato es 46, he votado a -1
+[127.0.0.1_32003] 17:50:44.819655 raft.go:451: RPC PedirVoto: He recibido mandato 47, índice 3
+[127.0.0.1_32003] 17:50:44.819670 raft.go:451: RPC PedirVoto: Mi mandato es 46, he votado a -1
+[127.0.0.1_32003] 17:50:44.819679 raft.go:451: RPC PedirVoto: He enviado mandato 47, voto true
+[127.0.0.1_32003] 17:50:44.875211 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:44.875292 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:44.875498 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:44.875596 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:44.876503 raft.go:451: enviarPedirVoto: He recibido mandato 48, voto true
+[127.0.0.1_32003] 17:50:44.876524 raft.go:451: enviarPedirVoto: Mi mandato es 48, he votado a -1
+[127.0.0.1_32003] 17:50:45.126067 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:45.126096 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:45.126119 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:45.126169 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:45.126976 raft.go:451: enviarPedirVoto: He recibido mandato 49, voto true
+[127.0.0.1_32003] 17:50:45.126996 raft.go:451: enviarPedirVoto: Mi mandato es 49, he votado a -1
+[127.0.0.1_32003] 17:50:45.240582 raft.go:451: RPC PedirVoto: He recibido mandato 50, índice 3
+[127.0.0.1_32003] 17:50:45.240604 raft.go:451: RPC PedirVoto: Mi mandato es 49, he votado a -1
+[127.0.0.1_32003] 17:50:45.240620 raft.go:451: RPC PedirVoto: He enviado mandato 50, voto true
+[127.0.0.1_32003] 17:50:45.369215 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:45.369274 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:45.369306 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:45.369357 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:45.371181 raft.go:451: enviarPedirVoto: He recibido mandato 51, voto true
+[127.0.0.1_32003] 17:50:45.371206 raft.go:451: enviarPedirVoto: Mi mandato es 51, he votado a -1
+[127.0.0.1_32003] 17:50:45.622436 raft.go:451: RPC PedirVoto: He recibido mandato 52, índice 3
+[127.0.0.1_32003] 17:50:45.622455 raft.go:451: RPC PedirVoto: Mi mandato es 51, he votado a -1
+[127.0.0.1_32003] 17:50:45.622464 raft.go:451: RPC PedirVoto: He enviado mandato 52, voto true
+[127.0.0.1_32003] 17:50:45.747992 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:45.748080 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:45.748094 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:45.748133 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:45.749071 raft.go:451: enviarPedirVoto: He recibido mandato 53, voto true
+[127.0.0.1_32003] 17:50:45.749089 raft.go:451: enviarPedirVoto: Mi mandato es 53, he votado a -1
+[127.0.0.1_32003] 17:50:45.758769 raft.go:451: RPC PedirVoto: He recibido mandato 54, índice 3
+[127.0.0.1_32003] 17:50:45.758799 raft.go:451: RPC PedirVoto: Mi mandato es 53, he votado a -1
+[127.0.0.1_32003] 17:50:45.758814 raft.go:451: RPC PedirVoto: He enviado mandato 54, voto true
+[127.0.0.1_32003] 17:50:45.883572 raft.go:451: RPC PedirVoto: He recibido mandato 55, índice 3
+[127.0.0.1_32003] 17:50:45.883594 raft.go:451: RPC PedirVoto: Mi mandato es 54, he votado a 3
+[127.0.0.1_32003] 17:50:45.883618 raft.go:451: RPC PedirVoto: He enviado mandato 55, voto true
+[127.0.0.1_32003] 17:50:46.068057 raft.go:451: RPC PedirVoto: He recibido mandato 56, índice 3
+[127.0.0.1_32003] 17:50:46.068086 raft.go:451: RPC PedirVoto: Mi mandato es 55, he votado a 3
+[127.0.0.1_32003] 17:50:46.068104 raft.go:451: RPC PedirVoto: He enviado mandato 56, voto true
+[127.0.0.1_32003] 17:50:46.122528 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:46.122585 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:46.122600 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:46.122709 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:46.124028 raft.go:451: enviarPedirVoto: He recibido mandato 57, voto true
+[127.0.0.1_32003] 17:50:46.124053 raft.go:451: enviarPedirVoto: Mi mandato es 57, he votado a -1
+[127.0.0.1_32003] 17:50:46.207058 raft.go:451: RPC PedirVoto: He recibido mandato 58, índice 3
+[127.0.0.1_32003] 17:50:46.207088 raft.go:451: RPC PedirVoto: Mi mandato es 57, he votado a -1
+[127.0.0.1_32003] 17:50:46.207102 raft.go:451: RPC PedirVoto: He enviado mandato 58, voto true
+[127.0.0.1_32003] 17:50:46.362820 raft.go:451: RPC PedirVoto: He recibido mandato 59, índice 3
+[127.0.0.1_32003] 17:50:46.362852 raft.go:451: RPC PedirVoto: Mi mandato es 58, he votado a 3
+[127.0.0.1_32003] 17:50:46.362867 raft.go:451: RPC PedirVoto: He enviado mandato 59, voto true
+[127.0.0.1_32003] 17:50:46.599460 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:46.599504 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:46.599515 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:46.599557 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:46.600394 raft.go:451: enviarPedirVoto: He recibido mandato 60, voto true
+[127.0.0.1_32003] 17:50:46.600418 raft.go:451: enviarPedirVoto: Mi mandato es 60, he votado a -1
+[127.0.0.1_32003] 17:50:46.787513 raft.go:451: RPC PedirVoto: He recibido mandato 61, índice 3
+[127.0.0.1_32003] 17:50:46.787541 raft.go:451: RPC PedirVoto: Mi mandato es 60, he votado a -1
+[127.0.0.1_32003] 17:50:46.787557 raft.go:451: RPC PedirVoto: He enviado mandato 61, voto true
+[127.0.0.1_32003] 17:50:46.956047 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:46.956085 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:46.956099 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:46.956138 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:46.956950 raft.go:451: RPC PedirVoto: He recibido mandato 62, índice 3
+[127.0.0.1_32003] 17:50:46.956976 raft.go:451: RPC PedirVoto: Mi mandato es 62, he votado a -1
+[127.0.0.1_32003] 17:50:46.956994 raft.go:451: RPC PedirVoto: He enviado mandato 62, voto true
+[127.0.0.1_32003] 17:50:46.958056 raft.go:451: enviarPedirVoto: He recibido mandato 62, voto true
+[127.0.0.1_32003] 17:50:46.958078 raft.go:451: enviarPedirVoto: Mi mandato es 62, he votado a 3
+[127.0.0.1_32003] 17:50:47.363066 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:47.363241 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:47.363277 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:47.363411 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:47.364252 raft.go:451: enviarPedirVoto: He recibido mandato 63, voto true
+[127.0.0.1_32003] 17:50:47.364271 raft.go:451: enviarPedirVoto: Mi mandato es 63, he votado a -1
+[127.0.0.1_32003] 17:50:47.396898 raft.go:451: RPC PedirVoto: He recibido mandato 64, índice 3
+[127.0.0.1_32003] 17:50:47.396919 raft.go:451: RPC PedirVoto: Mi mandato es 63, he votado a -1
+[127.0.0.1_32003] 17:50:47.396932 raft.go:451: RPC PedirVoto: He enviado mandato 64, voto true
+[127.0.0.1_32003] 17:50:47.640025 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:47.640112 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:47.640144 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:47.640248 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:47.643722 raft.go:451: enviarPedirVoto: He recibido mandato 65, voto true
+[127.0.0.1_32003] 17:50:47.643775 raft.go:451: enviarPedirVoto: Mi mandato es 65, he votado a -1
+[127.0.0.1_32003] 17:50:47.783244 raft.go:451: RPC PedirVoto: He recibido mandato 66, índice 3
+[127.0.0.1_32003] 17:50:47.783264 raft.go:451: RPC PedirVoto: Mi mandato es 65, he votado a -1
+[127.0.0.1_32003] 17:50:47.783274 raft.go:451: RPC PedirVoto: He enviado mandato 66, voto true
+[127.0.0.1_32003] 17:50:47.914827 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:47.914876 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:47.914886 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:47.914924 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:47.915908 raft.go:451: enviarPedirVoto: He recibido mandato 67, voto true
+[127.0.0.1_32003] 17:50:47.915930 raft.go:451: enviarPedirVoto: Mi mandato es 67, he votado a -1
+[127.0.0.1_32003] 17:50:48.091984 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:48.092036 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:48.092070 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:48.092116 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:48.094040 raft.go:451: enviarPedirVoto: He recibido mandato 68, voto true
+[127.0.0.1_32003] 17:50:48.094068 raft.go:451: enviarPedirVoto: Mi mandato es 68, he votado a -1
+[127.0.0.1_32003] 17:50:48.171876 raft.go:451: RPC PedirVoto: He recibido mandato 69, índice 3
+[127.0.0.1_32003] 17:50:48.171908 raft.go:451: RPC PedirVoto: Mi mandato es 68, he votado a -1
+[127.0.0.1_32003] 17:50:48.171926 raft.go:451: RPC PedirVoto: He enviado mandato 69, voto true
+[127.0.0.1_32003] 17:50:48.201636 raft.go:451: Fin de votación: No se ha encontrado un líder
+[127.0.0.1_32003] 17:50:48.201700 raft.go:451: Seleccionando estado...
+[127.0.0.1_32003] 17:50:48.201713 raft.go:451: El nodo ahora es CANDIDATO
+[127.0.0.1_32003] 17:50:48.201748 raft.go:451: El nodo ha comenzado una elección
+[127.0.0.1_32003] 17:50:48.202671 raft.go:451: enviarPedirVoto: He recibido mandato 70, voto true
+[127.0.0.1_32003] 17:50:48.202690 raft.go:451: enviarPedirVoto: Mi mandato es 70, he votado a -1
