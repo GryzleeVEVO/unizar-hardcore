@@ -37,7 +37,7 @@ void alarma_programar(uint32_t msg);
             la alarma. Si el tiempo a vencer es menor que el periodo 
             transcurrido, encola el mensaje programado
 */
-void alarma_refrescar(void);
+void alarma_refrescar(uint32_t periodo);
 
 #endif // G_ALARM_H
 

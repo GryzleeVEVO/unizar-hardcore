@@ -13,12 +13,17 @@
 #include "power.h"
 #include "boton.h"
 
+// Constantes globales para el planificador
+enum {
+    PERIODO = 1 // Periodo de actualización de timer0/alarma
+};
+
 /* Trata el evento recibido */
 void tratar_evento(evento* e) {
     switch (e -> ID_evento) {
         
         // Contador periodico expira -> Comprueba alarmas pendientes
-        case T0_PERIODO:    alarma_refrescar(); break;
+        case T0_PERIODO:    alarma_refrescar(PERIODO); break;
         
         // Temporizador desborda -> No hacer nada, solo depuración
         case T1_OVERFLOW:   break;
@@ -61,8 +66,7 @@ int main(void) {
     temporizador_iniciar();
     temporizador_empezar();
     
-    uint32_t periodo = 1;
-    temporizador_reloj(periodo);
+    temporizador_reloj(PERIODO);
     
     // Structs para almacenar lo desencolado
     evento e = {0, 0}; 

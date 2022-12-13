@@ -1,6 +1,0 @@
-NIA		Apellidos			Nombre
-_________________________________________________
-
-819425	Seral Gracia		Alvaro
-816456	Selivanov Dobrisan	Cristian Andrei
-817570	Boleslaw Wozniak		Dorian

@@ -149,10 +149,7 @@ void alarma_programar(uint32_t msg) {
             la alarma. Si el tiempo a vencer es menor que el periodo 
             transcurrido, encola el mensaje programado
 */
-void alarma_refrescar() {  
-
-    uint32_t periodo = 1;
-    
+void alarma_refrescar(uint32_t periodo) {  
     // Actualiza todas las alarmas activas
     for (uint8_t i = 0; i < NUM_ALARMAS; i++) if (alarmas[i].mensaje != 0) {
         
