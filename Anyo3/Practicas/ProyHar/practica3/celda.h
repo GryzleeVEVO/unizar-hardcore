@@ -61,10 +61,10 @@ celda_color(CELDA celda)    { return (celda & 0x03); }
 
 // Devuelve distinto de 0 si la celda contiene una ficha blanca
 __inline static uint8_t
-celda_blanca(CELDA celda)   { return celda & 0x05; }
+celda_blanca(CELDA celda)   { return celda == 0x05; }
 
 // Devuelve distinto de 0 si la celda contiene una ficha negra
 __inline static uint8_t
-celda_negra(CELDA celda)    { return celda & 0x06; }
+celda_negra(CELDA celda)    { return celda == 0x06; }
 
 #endif // CELDA_H

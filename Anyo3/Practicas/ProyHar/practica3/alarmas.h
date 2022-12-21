@@ -19,8 +19,8 @@ enum {
     ALARM_CHK_BOTON1_OFF_MSG    = (CHK_BOTON1 << 24)    | NO_PERIODICO  | 0,
     ALARM_CHK_BOTON2_OFF_MSG    = (CHK_BOTON2 << 24)    | NO_PERIODICO  | 0,
     
-     // Comprueba valor entrada cada 100ms
-    ALARM_CHK_ENT_MSG           = (CHK_ENTRADA << 24)   | PERIODICO     | 100,
+    ALARM_SIG_ON_MSG            = (SIGUIENTE << 24)     | NO_PERIODICO  | 1000,
+    ALARM_SIG_OFF_MSG           = (SIGUIENTE << 24)     | NO_PERIODICO  | 0,
     
     // Alterna estado latido cada 250ms (parpadea cada 0,5 segundos)
     ALARM_PARPADEAR_MSG         = (PARPADEAR << 24)     | PERIODICO     | 250,

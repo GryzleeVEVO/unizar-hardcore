@@ -12,8 +12,8 @@ static uint32_t primero = 0;        // Índice al primer elemento
 static uint32_t ultimo  = 0;        // Índice al último elemento
 
 
-void buffer_anyadir(int8_t* c, uint32_t n) { 
-    for (uint32_t i = 0; i < n; i++) {
+void buffer_anyadir(char* c) { 
+    for (uint32_t i = 0; c[i] != '\0'; i++) {
         // Si desborda se detiene.
         if ((ultimo + 1) % TAM_COLA == primero) {
             IO_marcar_overflow();

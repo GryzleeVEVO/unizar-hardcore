@@ -3,6 +3,7 @@
 #include <LPC210X.h>
 #include <inttypes.h>
 #include "cola_eventos.h"
+#include "cola_buffer.h"
 
 enum {
     PIN_0_0 = (0x3 << 0),
@@ -74,13 +75,15 @@ void uart0_echo(uint8_t ch) {
     U0THR = ch;
 }
 
-void uart0_enviar_array(uint8_t ch) {
-    U0THR = ch;
+void uart0_enviar_array(char*  ch) {
+    uint8_t estabaVacio = buffer_vacio();
+    buffer_anyadir(ch);
+    if (estabaVacio) U0THR = buffer_siguiente();
 }
 
-void uart0_continuar_envio(uint8_t ch) {
-    if (ch != 0) {
-        U0THR = ch; 
+void uart0_continuar_envio() {
+    if (!buffer_vacio()) {
+        U0THR = buffer_siguiente(); 
     }
 }
 

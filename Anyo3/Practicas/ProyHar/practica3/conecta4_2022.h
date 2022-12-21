@@ -23,12 +23,15 @@
 */
 void conecta4_iniciar(void);
 
+void conecta4_mostrar_tablero(uint8_t mostrar_marcada);
+
+
 /*
     Pre: 1 <= columna <= NUM_COLUMNAS
     Post: Devuelve la fila en la que se puede introducir una ficha, o ERROR
             si la fila o columna dada se encuentran fuera del rango
 */
-uint8_t conecta4_comprobar_entrada(void);
+void conecta4_comprobar_entrada(uint32_t c);
     
 /*
     Pre: 1 <= fila <= NUM_FILAS, 1 <= columna <= NUM_COLUMNAS
@@ -37,6 +40,10 @@ uint8_t conecta4_comprobar_entrada(void);
             (pasar turno / victoria blancas / victoria negras / empate)
 */
 void conecta4_realizar_jugada(void);
+
+void conecta4_cancelar_jugada(void);
+
+void conecta4_detener(uint32_t razon);
 
 #endif // CONECTA4_H_2022
 

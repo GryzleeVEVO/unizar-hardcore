@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 
-void buffer_anyadir(int8_t* c, uint32_t n);
+void buffer_anyadir(char* c);
 
 uint8_t buffer_vacio(void);
 

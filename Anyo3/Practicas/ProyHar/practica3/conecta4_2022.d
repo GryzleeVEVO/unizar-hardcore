@@ -7,5 +7,6 @@
 .\conecta4_2022.o: cola_msg.h
 .\conecta4_2022.o: msg.h
 .\conecta4_2022.o: G_IO.h
+.\conecta4_2022.o: G_serie.h
 .\conecta4_2022.o: G_Alarm.h
 .\conecta4_2022.o: alarmas.h

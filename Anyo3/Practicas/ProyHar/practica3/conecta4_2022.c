@@ -12,11 +12,13 @@
         con periféricos, con lógica del juego gestionada por un planificador
         basado en eventos
 */
+
 #include "tableros.h"           // tablero = cuadricula[][]
 #include "conecta4_2022.h"
 #include "celda.h"
 #include "cola_msg.h"
 #include "G_IO.h"
+#include "G_serie.h"
 #include "G_Alarm.h"
 
 
@@ -32,9 +34,9 @@ enum {
 
 // Estado del juego
 static uint8_t color = 1;      // Jugador actual
-static uint8_t fin = 0;        // Fin de juego
 static uint8_t columna = 0;    // Columna a insertar
 static uint8_t fila = 0;       // Fila a insertar
+static uint8_t pendiente = 0;
 
 // Cambia el color del jugador (1 es blancas, 2 es negras)
 static inline uint8_t C4_alternar_color(uint8_t colour)
@@ -62,21 +64,10 @@ int C4_comprobar_empate() {
 }
 
 // Lee la entrada y obtiene la columna y fila donde realizar la jugada
-uint8_t C4_comprobar_columna(uint8_t entrada) {
-    // Obtiene la columna a leer. Si hay dos pines marcados lo indicará
-    uint8_t c = 0;
-    
-    for (uint8_t i = 1; i <= NUM_COLUMNAS; i++) {
-        if ((entrada & 0x1) == 0) {
-            if (c == 0) { c = i; }
-            else { return 0; }
-        }
-        entrada >>= 1;
-    }
-    
-    uint8_t f = 1;
-    
+uint8_t C4_comprobar_columna(uint8_t c) {    
     if (C4_columna_valida(c)) {
+        uint8_t f = 1;
+
         while ((f <= NUM_FILAS) && (!celda_vacia(cuadricula[f][c]))) { f++; }
         
         if (C4_fila_valida(f)) {
@@ -144,6 +135,26 @@ uint8_t C4_hay_linea(uint8_t f, uint8_t c) {
     return linea;
 }
 
+void conecta4_mostrar_tablero(uint8_t mostrar_marcada) {
+    for (uint8_t i = NUM_FILAS; i >= 1; i--) { 
+        char linea[32] = {' ', ' ', ' ', ' ', serie_itoa(i)};
+        int k = 5;
+        
+        for (uint8_t j = 1; j <= NUM_COLUMNAS; j++) {
+            linea[k++] = '|';
+            if (mostrar_marcada && fila == i && columna == j) linea[k++] = 'X';
+            else if (celda_blanca(cuadricula[i][j])) linea[k++] = 'B';
+            else if (celda_negra(cuadricula[i][j])) linea[k++] = 'N';
+            else linea[k++] = ' ';
+        }
+        linea[k] = '|';
+        serie_print(linea);
+    }
+    
+    serie_print("     ---------------");
+    serie_print("     |1|2|3|4|5|6|7|\n");
+}
+
 /*
     Pre: ---
     Post: Inicializa el estado del juego
@@ -154,39 +165,44 @@ void conecta4_iniciar() {
         for (uint8_t j = 1; j <= NUM_COLUMNAS; j++)
             celda_borrar_valor(&cuadricula[i][j]);
     
-    color = 1; fin = 0; columna = 0; fila = 0;
+    color = 1; pendiente = 0; columna = 0; fila = 0;
+    
+    IO_nueva_partida(); 
+    conecta4_mostrar_tablero(0);
 }
 
 // Devuelve si la entrada ha cambiado a partir de la entrada dada
-uint8_t conecta4_comprobar_entrada() {
-    static uint8_t ultima_entrada = 0;
-    
-    uint8_t res = 0, entrada = IO_leer_entrada();
-    
-    // Mira si la entrada
-    if (entrada != ultima_entrada) {
-        ultima_entrada = entrada;
-        res = 1;
+void conecta4_comprobar_entrada(uint32_t c) {  
+    if (C4_comprobar_columna(c & 0xff)) { 
+        pendiente = 1;
+        IO_indicar_jugada_valida();
+        conecta4_mostrar_tablero(1);
+        serie_print("Pulsa boton 1 (GPIO 14) para cancelar");
+        cola_msg(SET_ALARMA, ALARM_SIG_ON_MSG);
     }
     
-    if (C4_comprobar_columna(entrada)) { IO_indicar_jugada_valida(); } 
-    else { IO_indicar_jugada_invalida(); }
-    
-    return res;
+    else {
+        IO_indicar_jugada_invalida();
+        serie_print("Columna incorrecta");        
+    }
 }
 
 // Lee la entrada y, si es correcta, realiza la jugada dada
 void conecta4_realizar_jugada() {
-    if (!fin && C4_comprobar_columna(IO_leer_entrada())) {
+    if (pendiente) {
         C4_actualizar_tablero(fila, columna);
-
+        
+        conecta4_mostrar_tablero(0);
+        
+        pendiente = 0;
+        
         if (C4_hay_linea(fila, columna)) {
-            fin = 1;
             IO_victoria();
+            cola_msg(ACABAR, color - 1);
         } 
         else if (C4_comprobar_empate()) {
-            fin = 1;
             IO_empate();
+            cola_msg(ACABAR, 2);
         }
         else {
             color = C4_alternar_color(color);
@@ -194,5 +210,22 @@ void conecta4_realizar_jugada() {
             cola_msg(SET_ALARMA, ALARM_OFF_REALIZAR_MSG);;
         }  
     }  
+}
+
+void conecta4_cancelar_jugada() {
+    if (pendiente) {
+        pendiente = 0;
+        conecta4_mostrar_tablero(0);
+    }
+}
+
+void conecta4_detener(uint32_t razon) {
+    pendiente = 0;
+    switch (razon) {
+        case 0: serie_print("Victoria de las blancas"); break;
+        case 1: serie_print("Victoria de las negras"); break;
+        case 2: serie_print("Empate"); break;
+        case 3: serie_print("Detenido por el usuario"); break;
+    }
 }
 

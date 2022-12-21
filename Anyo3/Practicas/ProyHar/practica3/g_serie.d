@@ -4,5 +4,4 @@
 .\g_serie.o: G_serie.h
 .\g_serie.o: cola_msg.h
 .\g_serie.o: msg.h
-.\g_serie.o: cola_buffer.h
 .\g_serie.o: uart.h

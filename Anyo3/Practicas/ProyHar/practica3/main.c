@@ -38,6 +38,7 @@ enum {
 
 // Indica si el procesador se ha dormido
 static uint8_t dormido = 0;
+static uint8_t jugando = 0;
 
 /* Trata el evento recibido */
 void tratar_evento(evento* e) {    
@@ -51,26 +52,29 @@ void tratar_evento(evento* e) {
         case T1_OVERFLOW:
             break;
         
-        // Boton 1 -> Realizar jugada
+        // Boton 1 -> Cancela jugada (o inicia partida si no ha empezado)
         case BOTON1:
             cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
             boton1_pulsado();
-            if (dormido == 0) {
-                conecta4_realizar_jugada(); 
+            if (!dormido) {
+                if (jugando) conecta4_cancelar_jugada();  
+                else cola_msg(INICIAR, 0);
             } else dormido = 0;
             break;
         
-        // Boton 2 -> Reinicia la partida
+        // Boton 2 -> Detiene la partida (o inicia partida si no ha empezado)
         case BOTON2:
             cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
             boton2_pulsado();
             if (dormido == 0) {
-                IO_nueva_partida(); 
-                conecta4_iniciar();
+                if (jugando) {
+                    cola_msg(ACABAR, 3);
+                } else cola_msg(INICIAR, 0);
             } else dormido = 1;
             break;
         
         case UART0_LEER:
+            cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
             serie_leer(e -> auxData);
             break;
         
@@ -100,9 +104,7 @@ void tratar_mensaje (msg* m) {
         
         // Comprobar entrada
         case CHK_ENTRADA:
-            if (conecta4_comprobar_entrada()) {
-                cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
-            }
+            if (jugando) conecta4_comprobar_entrada(m -> mensaje);
             break;
         
         // Alternar estado latido
@@ -115,9 +117,24 @@ void tratar_mensaje (msg* m) {
             IO_bajar_jugada_realizada();
             break;
         
-        //case SERIE_ACCION:
-         //   serie_escribir();
-          //  break;
+        case INICIAR:
+            if (!jugando) {
+                conecta4_iniciar();
+                jugando = 1;
+            }
+            break;
+        
+        case SIGUIENTE:
+            conecta4_realizar_jugada();
+            break;
+        
+        case ACABAR:
+            if (jugando) {
+                conecta4_detener(m -> mensaje);
+                serie_mensaje_reinicio();
+                jugando = 0;
+            }
+            break;
         
         // Mandar el procesador a dormir
         case GO_SLEEP:      
@@ -144,19 +161,12 @@ int main(void) {
     msg m = {0, 0};
     
     // Prepara la partida
-    cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
-    cola_msg(SET_ALARMA, ALARM_CHK_ENT_MSG);
+    cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG); 
     cola_msg(SET_ALARMA, ALARM_PARPADEAR_MSG);
     cola_msg(SET_ALARMA, ALARM_FEED_WD_MSG);
+
+    serie_pantalla_bienvenida();
     
-    IO_nueva_partida(); // Configura GPIO
-    conecta4_iniciar(); // Inicializa Conecta 4
-    serie_pantalla_bienvenida();
-    serie_pantalla_bienvenida();
-    serie_pantalla_bienvenida();
-
-
-        
     // Bucle del planificador
     while (1) {
         // Mira si hay eventos pendientes

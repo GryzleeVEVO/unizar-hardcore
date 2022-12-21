@@ -144,7 +144,7 @@ void alarma_programar(uint32_t msg) {
     }
     
     // Si no esta y hay espacio para mas alarmas, la introduce
-    else if (alarmas_activas < NUM_ALARMAS) {
+    else if (alarmas_activas < NUM_ALARMAS && retardo != 0) {
         alarma_crear(alarma_obtener(0), mensaje, periodico, retardo);
         alarmas_activas++;
     }

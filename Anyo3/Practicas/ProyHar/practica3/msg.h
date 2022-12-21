@@ -33,10 +33,13 @@ enum {
     PARPADEAR       = 5,    // Alternar LED latido
     OFF_REALIZAR    = 6,    // Apagar LED jugada realizada
     
-    SERIE_ACCION    = 7,    // Realizar acción línea serie
+    REINICIAR       = 7,    // Realizar acción línea serie
+    INICIAR         = 8,
+    SIGUIENTE       = 9,
+    ACABAR          = 10,        
     
-    GO_SLEEP        = 8,    // Dormir procesador
-    FEED_WD         = 9     // Alimentar WD para evitar reinicio
+    GO_SLEEP        = 11,    // Dormir procesador
+    FEED_WD         = 12     // Alimentar WD para evitar reinicio
 }; 
 
 // Definición de un evento

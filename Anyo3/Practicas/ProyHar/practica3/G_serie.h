@@ -11,6 +11,13 @@ void serie_escribir(void);
 
 void serie_pantalla_bienvenida(void);
 
-#endif // G_SERIE_H
+void serie_mensaje_reinicio(void);
 
+void serie_print(char* linea);
+
+char serie_itoa(uint8_t i);
+
+uint8_t serie_atoi(char i);
+
+#endif // G_SERIE_H
 
