@@ -23,10 +23,13 @@
 
 // Tipos de mensajes disponibles
 enum {
-    SET_ALARMA = 1,  // Añadir/reprogramar/cancelar alarma
-    CHK_BOTON1 = 2,  // Comprobar pulsación boton 1
-    CHK_BOTON2 = 3,  // Comprobar pulsación boton 2
-    GO_SLEEP   = 4   // Dormir procesador
+    SET_ALARMA  = 1,  // Añadir/reprogramar/cancelar alarma
+    CHK_BOTON1  = 2,  // Comprobar pulsación boton 1
+    CHK_BOTON2  = 3,  // Comprobar pulsación boton 2
+    GO_SLEEP    = 4,  // Dormir procesador
+    CHK_ENTRADA = 6,  // Comrpueba si entrada valida    
+    PARPADEAR   = 8,  // Cambia el estado del latido
+    APAGAR_REAL = 9   // Apaga la marca de jugada realizada
 }; 
 
 // Tipo mensaje

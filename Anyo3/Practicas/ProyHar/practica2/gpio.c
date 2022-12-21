@@ -46,18 +46,21 @@ uint32_t GPIO_leer(uint8_t bit_inicial, uint8_t num_bits)
     Pre:  ---
     Post: GPIO (bit_inicial + num_bits - 1, bit_inicial) = 1
 */
-void GPIO_escribir(uint8_t bit_inicial, uint8_t num_bits, uint32_t valor) 
-    { IOSET |= (GPIO_mascara(0, num_bits) & valor) << bit_inicial; }
+void GPIO_escribir(uint8_t bit_inicial, uint8_t num_bits, uint32_t valor) { 
+    
+    IOCLR |= (GPIO_mascara(0, num_bits) & ~valor) << bit_inicial; 
+    IOSET |= (GPIO_mascara(0, num_bits) & valor) << bit_inicial; 
+}
 
 /*
-    Pre:
+    Pre: ---
     Post: GPIO (bit_inicial + num_bits - 1, bit_inicial) = entrada
 */
 void GPIO_marcar_entrada(uint8_t bit_inicial, uint8_t num_bits) 
     { IODIR &= ~GPIO_mascara(bit_inicial, num_bits); }
 
 /*
-    Pre:
+    Pre: ---
     Post: GPIO (bit_inicial + num_bits - 1, bit_inicial) = salida
 */
 void GPIO_marcar_salida(uint8_t bit_inicial, uint8_t num_bits) 

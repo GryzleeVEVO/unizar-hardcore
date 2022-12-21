@@ -1,0 +1,15 @@
+.\main.o: main.c
+.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\main.o: conecta4_2022.h
+.\main.o: cola_eventos.h
+.\main.o: eventos.h
+.\main.o: cola_msg.h
+.\main.o: msg.h
+.\main.o: G_Alarm.h
+.\main.o: alarmas.h
+.\main.o: G_Energia.h
+.\main.o: G_Boton.h
+.\main.o: G_IO.h
+.\main.o: G_serie.h
+.\main.o: tiempo.h

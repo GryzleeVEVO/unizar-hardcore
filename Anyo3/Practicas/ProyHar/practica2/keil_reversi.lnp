@@ -2,6 +2,7 @@
 ".\startup.o"
 ".\retarget.o"
 ".\main.o"
+".\conecta4_2022.o"
 ".\cola_eventos.o"
 ".\cola_msg.o"
 ".\tiempo.o"

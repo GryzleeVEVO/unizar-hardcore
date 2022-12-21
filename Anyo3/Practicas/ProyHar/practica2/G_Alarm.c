@@ -19,6 +19,7 @@
 
 #include "G_Alarm.h"
 #include "cola_msg.h"
+#include "tiempo.h"
 
 // Constantes
 enum {
@@ -27,9 +28,7 @@ enum {
 
 // Booleanos
 enum {
-    TRUE    = 1,
-    FALSE   = 0,
-    ERROR   = -1
+    ERROR   = 0xFF
 };
 
 // Tipo alarma
@@ -41,7 +40,7 @@ typedef struct AlarmaGestor {
 } alarma ;
 
 // Vector de alarmas
-static alarma alarmas[NUM_ALARMAS];
+static __align(8) alarma alarmas[NUM_ALARMAS];
 
 static uint8_t alarmas_activas = 0; // Cuenta de alarmas activas
 
@@ -62,12 +61,28 @@ uint32_t alarma_mascara(uint8_t bit_inicial, uint8_t num_bits) {
     Post: Devuelve índice al alarma dado el tipo de mensaje programado
             Devuelve ERROR si no hay alarmas con ese tipo de mensaje
 */
-int8_t alarma_obtener(uint8_t mensaje) {
+uint8_t alarma_obtener(uint8_t mensaje) {
     for (int8_t i = 0; i < NUM_ALARMAS; i++)
         if (alarmas[i].mensaje == mensaje)
             return i;
     return ERROR;
 }
+
+
+/*
+    Pre: ---
+    Post: Inicializa el gestor de alarmas, incluyendo los periféricos Timer0 con
+            el periodo dado y Timer1
+*/
+void alarma_iniciar(uint32_t periodo) {
+    // Contador de tiempo
+    temporizador_iniciar();
+    temporizador_empezar();
+    
+    // Tempor
+    temporizador_reloj(periodo);
+}
+
 
 /*
     Pre:  i < NUM_ALARMAS
@@ -87,6 +102,9 @@ void alarma_crear(uint8_t i, uint8_t mensaje, uint8_t periodico,
 */
 void alarma_eliminar(uint8_t i) {
     alarmas[i].mensaje      = 0;
+    alarmas[i].periodico    = 0;
+    alarmas[i].retardo      = 0;
+    alarmas[i].restante     = 0;
 }
 
 /*
@@ -95,14 +113,35 @@ void alarma_eliminar(uint8_t i) {
 */
 void alarma_lanzar_mensaje(uint8_t i) { 
     switch (alarmas[i].mensaje) {
-        
         // Comprobar botón 1
-        case CHK_BOTON1: cola_msg(CHK_BOTON1, 0); break;
+        case CHK_BOTON1: 
+            cola_msg(CHK_BOTON1, 0); 
+            break;
         
         // Comprobar botón 2
-        case CHK_BOTON2: cola_msg(CHK_BOTON2, 0); break;
+        case CHK_BOTON2: 
+            cola_msg(CHK_BOTON2, 0);
+            break;
         
-        default: break;
+        // Comprobar entrada
+        case CHK_ENTRADA:
+            cola_msg(CHK_ENTRADA, 0);
+            break;
+            
+        // Alternar latido
+        case PARPADEAR:
+            cola_msg(PARPADEAR, 0);
+            break;
+        
+        // Apagar jugada realizada
+        case APAGAR_REAL:
+            cola_msg(APAGAR_REAL, 0);
+            break;
+        
+        // Dormir procesador
+        case GO_SLEEP:
+            cola_msg(GO_SLEEP, 0);
+            break;
     }
 }
 
@@ -123,7 +162,7 @@ void alarma_programar(uint32_t msg) {
     uint32_t retardo    = (msg & alarma_mascara(0, 23));
     
     // Busca si la alarma ya esta programada
-    int8_t i = alarma_obtener(mensaje);
+    uint8_t i = alarma_obtener(mensaje);
     if (i != ERROR) {
         // Reprograma la alarma
         if (retardo != 0) {

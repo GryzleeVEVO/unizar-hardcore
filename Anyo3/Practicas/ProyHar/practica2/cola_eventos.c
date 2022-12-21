@@ -16,6 +16,7 @@
 */
 
 #include "cola_eventos.h"
+#include "G_IO.h"
 
 // Constantes
 enum {
@@ -56,10 +57,13 @@ void cola_encolar_eventos(uint8_t ID_evento, uint32_t veces, uint32_t auxData) {
     cola[ultimo].veces              = veces;
 
     // Avanza índice
-    (ultimo < TAM_COLA) ? (ultimo++) : (ultimo = 0);
+    if (++ultimo >= TAM_COLA) ultimo = 0;
 
     // Actualiza cuenta elementos. Si desborda se detiene.
-    if (numElem++ > TAM_COLA) while (1); 
+    if (++numElem > TAM_COLA) {
+        IO_marcar_overflow();
+        while (1); 
+    }
 }
 
 /* 
@@ -78,7 +82,7 @@ void cola_obtener_sig_evento(evento *e) {
     *e = cola[primero].unEvento;
     
     // Avanza índice
-    (primero < TAM_COLA) ? (primero++) : (primero = 0);
+    if (++primero >= TAM_COLA) primero = 0;
 
     // Reduce cuenta elementos
     numElem--;

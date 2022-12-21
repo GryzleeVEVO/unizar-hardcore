@@ -19,12 +19,24 @@
 #include "cola_msg.h"
 
 /*
+    Pre: ---
+    Post: Inicializa el gestor de botones, incluyendo las interrupciones 
+            externas EINT1 y EINT2
+*/
+void boton_iniciar() {
+    eint1_iniciar();
+    eint2_iniciar();
+}
+
+/*
     Pre: Recibido evento BOTON1
     Post: Encola una peticíon para programar una alarma periódica que compruebe
-            si el botón 1 está pulsado
+            si el botón 1 está pulsado, y encola un mensaje para realizar una
+            jugada
 */
 void boton1_pulsado() {
-    cola_msg(SET_ALARMA, ((CHK_BOTON1 << 24) | (0x1 << 23) | (100)));
+    cola_msg(SET_ALARMA, ((CHK_BOTON1 << 24) | (0x1 << 23) | (10)));
+    cola_msg(SET_ALARMA, ((GO_SLEEP << 24) | (0x1 << 23) | (10000)));
 }
 
 /*  
@@ -42,10 +54,12 @@ void boton1_comprobar() {
 /*
     Pre: Recibido evento BOTON2
     Post: Encola una peticíon para programar una alarma periódica que compruebe
-            si el botón 2 está pulsado
+            si el botón 2 está pulsado, y encola un mensaje para iniciar la 
+            partida
 */
 void boton2_pulsado() {
-    cola_msg(SET_ALARMA, ((CHK_BOTON2 << 24) | (0x1 << 23) | (100)));
+    cola_msg(SET_ALARMA, ((CHK_BOTON2 << 24) | (0x1 << 23) | (10)));
+    cola_msg(SET_ALARMA, ((GO_SLEEP << 24) | (0x1 << 23) | (10000)));
 }
 
 /*  

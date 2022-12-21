@@ -426,6 +426,11 @@
               <FileType>2</FileType>
               <FilePath>.\Startup.s</FilePath>
             </File>
+            <File>
+              <FileName>SWI.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\SWI.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -450,6 +455,31 @@
         </Group>
         <Group>
           <GroupName>Documentation</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Conecta 4</GroupName>
+          <Files>
+            <File>
+              <FileName>celda.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\celda.h</FilePath>
+            </File>
+            <File>
+              <FileName>tableros.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tableros.h</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_2022.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\conecta4_2022.c</FilePath>
+            </File>
+            <File>
+              <FileName>conecta4_2022.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\conecta4_2022.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Colas</GroupName>
@@ -483,6 +513,16 @@
               <FileName>msg.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\msg.h</FilePath>
+            </File>
+            <File>
+              <FileName>cola_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cola_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>cola_buffer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\cola_buffer.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -534,6 +574,21 @@
               <FileType>2</FileType>
               <FilePath>.\pll.s</FilePath>
             </File>
+            <File>
+              <FileName>irq_control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\irq_control.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -578,6 +633,21 @@
               <FileName>G_Boton.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\G_Boton.h</FilePath>
+            </File>
+            <File>
+              <FileName>G_serie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\G_serie.c</FilePath>
+            </File>
+            <File>
+              <FileName>G_serie.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\G_serie.h</FilePath>
+            </File>
+            <File>
+              <FileName>alarmas.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\alarmas.h</FilePath>
             </File>
           </Files>
         </Group>

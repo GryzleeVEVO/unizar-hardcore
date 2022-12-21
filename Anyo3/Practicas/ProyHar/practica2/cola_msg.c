@@ -17,6 +17,7 @@
 
 #include "cola_msg.h"
 #include "tiempo.h"
+#include "G_IO.h"
 
 // Constantes
 enum {
@@ -57,10 +58,14 @@ void cola_msg(uint8_t ID_msg, uint32_t mensaje) {
     cola[ultimo].tiempo         = temporizador_leer();
 
     // Avanza índice
-    (ultimo < TAM_COLA) ? (ultimo++) : (ultimo = 0);
+    if (++ultimo >= TAM_COLA) ultimo = 0;
 
     // Actualiza cuenta elementos. Si desborda se detiene.
-    if (numElem++ > TAM_COLA) while (1); 
+    
+    if (++numElem > TAM_COLA) {
+        IO_marcar_overflow();
+        while (1); 
+    }
 }
 
 /* 
@@ -80,7 +85,7 @@ void cola_obtener_sig_msg(msg *m) {
     *m = cola[primero].unMsg;
     
     // Avanza índice
-    (primero < TAM_COLA) ? (primero++) : (primero = 0);
+    if (++primero >= TAM_COLA) primero = 0;
 
     // Reduce cuenta elementos
     numElem--;
