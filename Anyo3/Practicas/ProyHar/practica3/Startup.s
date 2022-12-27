@@ -27,6 +27,20 @@
 ; */
 
 
+;   Proyecto Hardware
+; 
+;   Práctica 3
+;
+;   Fichero:
+;       startup.s
+;
+;   Autores:
+;       Dorian Boleslaw Wozniak (817570@unizar.es)
+;       Pablo Latre Villacampa (778043@unizar.es)
+;
+;   Fichero de inicialización ligeramente alterado para permitir usar
+;       FIQ y SWI
+
 ; Standard definitions of Mode bits and Interrupt (I & F) flags in PSRs
 
 Mode_USR        EQU     0x10
@@ -53,7 +67,7 @@ F_Bit           EQU     0x40            ; when F bit is set, FIQ is disabled
 UND_Stack_Size  EQU     0x00000000
 SVC_Stack_Size  EQU     0x00000400
 ABT_Stack_Size  EQU     0x00000000
-FIQ_Stack_Size  EQU     0x00000080		; Tamaño de pila ampliado
+FIQ_Stack_Size  EQU     0x00000080        ; Tamaño de pila ampliado
 IRQ_Stack_Size  EQU     0x00000080
 USR_Stack_Size  EQU     0x00000400
 
@@ -144,11 +158,11 @@ MAMTIM_Val      EQU     0x00000004
 
                 AREA    RESET, CODE, READONLY
                 ARM
-				
-				IMPORT	timer0_RSI
-				IMPORT	SWI_Handler
-					
-				PRESERVE8 {TRUE}
+                
+                IMPORT    timer0_RSI
+                IMPORT    SWI_Handler
+                    
+                PRESERVE8 {TRUE}
 
 ; Exception Vectors
 ;  Mapped to Address 0.
@@ -179,7 +193,7 @@ Undef_Handler   B       Undef_Handler
 PAbt_Handler    B       PAbt_Handler
 DAbt_Handler    B       DAbt_Handler
 IRQ_Handler     B       IRQ_Handler
-FIQ_Handler     B       timer0_RSI				; Timer0 asignado como FIQ
+FIQ_Handler     B       timer0_RSI                ; Timer0 asignado como FIQ
 
 
 ; Reset Handler
@@ -278,7 +292,7 @@ MEMMAP          EQU     0xE01FC040      ; Memory Mapping Control
                 MSR     CPSR_c, #Mode_SVC:OR:I_Bit:OR:F_Bit
                 MOV     SP, R0
                 SUB     R0, R0, #SVC_Stack_Size
-				
+                
 ;  Enter User Mode and set its Stack Pointer
                 MSR     CPSR_c, #Mode_USR
                 MOV     SP, R0

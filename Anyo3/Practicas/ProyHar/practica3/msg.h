@@ -28,18 +28,17 @@ enum {
     
     CHK_BOTON1      = 2,    // Comprobar si botón 1 esta pulsado
     CHK_BOTON2      = 3,    // Comprobar si botón 2 esta pulsado
-    CHK_ENTRADA     = 4,    // Comprobar valor de la entrada
+    CHK_ENTRADA     = 4,    // Preparar jugada si es válida
     
     PARPADEAR       = 5,    // Alternar LED latido
     OFF_REALIZAR    = 6,    // Apagar LED jugada realizada
     
-    REINICIAR       = 7,    // Realizar acción línea serie
-    INICIAR         = 8,
-    SIGUIENTE       = 9,
-    ACABAR          = 10,        
+    INICIAR         = 7,    // Iniciar nueva partida
+    SIGUIENTE       = 8,    // Comprometer jugada
+    ACABAR          = 9,    // Terminar partida
     
-    GO_SLEEP        = 11,    // Dormir procesador
-    FEED_WD         = 12     // Alimentar WD para evitar reinicio
+    GO_SLEEP        = 10,   // Dormir procesador
+    FEED_WD         = 11    // Alimentar WD para evitar reinicio
 }; 
 
 // Definición de un evento

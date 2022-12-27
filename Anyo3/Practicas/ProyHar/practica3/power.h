@@ -3,7 +3,7 @@
     Práctica 3
 
     Fichero:
-        power.c
+        power.h
 
     Autores:
         Dorian Boleslaw Wozniak (817570@unizar.es)

@@ -1,0 +1,4 @@
+userid=a817570@barret.danae04.unizar.es/Ieth7Jah
+control="./partidos/insert_partido.ctl"
+log="./partidos/partido.log"
+data="./partidos/partido.csv"

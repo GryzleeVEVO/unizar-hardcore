@@ -8,8 +8,13 @@
         Dorian Boleslaw Wozniak   (817570@unizar.es)
         Pablo Latre Villacampa    (778043@unizar.es)
 
-    Descripción: Declaraciónes para un juego de conecta 4 adaptado para la 
-        práctica 2.
+    Descripción: Implementación de la lógica de un juego Conecta4. El juego
+        permite recibir movimientos, los cuales trata internamente.
+        
+        El propio juego es para dos jugadores. Estos por turnos apilan fichas
+        en un tablero, y cuando uno de los dos jugadores crea una línea de 
+        cuatro o más fichas, gana. El juego es un empate si se llena el tablero
+        y no hay ganador
 */
 
 #ifndef CONECTA4_H_2022
@@ -18,32 +23,34 @@
 #include <inttypes.h>
 
 /*
-    Pre: ---
-    Post: Inicializa el tablero de juego y prepara el sistema para el juego
+    Inicializa el tablero para una nueva partida
 */
 void conecta4_iniciar(void);
-
-void conecta4_mostrar_tablero(uint8_t mostrar_marcada);
-
-
+    
 /*
-    Pre: 1 <= columna <= NUM_COLUMNAS
-    Post: Devuelve la fila en la que se puede introducir una ficha, o ERROR
-            si la fila o columna dada se encuentran fuera del rango
+    Dada una columna, determina una jugada y, si se puede insertar, almacena la
+    próxima jugada y muestra la posición de la ficha en el tablero.
+
+    c: Valor de la columna donde insertar una ficha
 */
 void conecta4_comprobar_entrada(uint32_t c);
     
 /*
-    Pre: 1 <= fila <= NUM_FILAS, 1 <= columna <= NUM_COLUMNAS
-    Post: Realiza la jugada dados la fila y columna donde insertar una ficha.
-            Devuelve el estado del juego tras la introducción 
-            (pasar turno / victoria blancas / victoria negras / empate)
+    Si hay una jugada pendiente de realizar, la compromete al tablero y actúa
+    según si hay línea, empate o debe cambiar de jugador
 */
 void conecta4_realizar_jugada(void);
 
+/*
+    Si hay una jugada pendiente por realizar, la cancela
+*/
 void conecta4_cancelar_jugada(void);
 
+/*
+    Informa del fin del juego, sea voluntario o realizado por el juego
+
+    razon: Motivo por la que se acaba el juego
+*/
 void conecta4_detener(uint32_t razon);
 
 #endif // CONECTA4_H_2022
-

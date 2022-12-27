@@ -1,9 +1,25 @@
+/*
+    Proyecto Hardware
+    Práctica 3
+
+    Fichero:
+        power.h
+
+    Autores:
+        Dorian Boleslaw Wozniak (817570@unizar.es)
+        Pablo Latre Villacampa (778043@unizar.es)
+
+    Descripción: 
+        Interfaz de una serie de llamadas al sistema para leer y gestionar
+        el estado de las inhibiciones de interrupciones.
+        
+        Todas las funciones están implementadas en SWI.s
+*/
+
 #ifndef IRQ_CONTROL_H
 #define IRQ_CONTROL_H
 
 #include <inttypes.h>
-
-// Definidas en SWI.s
 
 // Habilita interrupciones rápidas
 void __swi(0xff) enable_fiq(void);

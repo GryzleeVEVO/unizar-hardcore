@@ -10,8 +10,8 @@
         Pablo Latre Villacampa (778043@unizar.es)
 
     Descripción: 
-        Implementación de métodos para inicializar y utilizar los periféricos
-        externos eint1 y eint2
+        Implementación de una serie de interrupciones para interactuar con los
+        periféricos externos EINT1 y EINT2
 */
 
 #include <LPC210X.h>
@@ -42,9 +42,12 @@ enum {
     EXTINT_2 = (0x1 << 2)
 };
 
-// Rutinas de servicio
+/******************************************************************************/
+/* EINT1 */
 
-// eint1 cuando se pulsa botón 1
+/*
+    Rutina de servicio para EINT1
+*/
 void eint1_RSI (void) __irq {
     static volatile uint32_t eint1_count = 0;
     
@@ -57,23 +60,8 @@ void eint1_RSI (void) __irq {
     VICVectAddr= 0;
 }
 
-// eint2 cuando se pulsa botón 2
-void eint2_RSI (void) __irq {
-    static volatile uint32_t eint2_count = 0;
-
-    // Trata la interrupción
-    eint2_count++;
-    cola_encolar_eventos(BOTON2, eint2_count, 0);
-    // Baja interrupción y deshabilita EINT1 temporalmente
-    VICIntEnClr |= INT_EINT2;
-    EXTINT |= EXTINT_2;
-    VICVectAddr= 0;
-}
-
 /*
-    Pre:  ---
-    Post: Asigna GPIO (14) como interrupción externa 1, y la asigna a VIC[2].
-            Habilita las interrupciones de EINT1
+    Inicializa la interrupción externa EINT1
 */
 void eint1_iniciar() {
     // Selecciona GPIO(14) como EINT1
@@ -88,16 +76,14 @@ void eint1_iniciar() {
 }
 
 /*
-    Pre: eint1_iniciar()
-    Post: Habilita interrupciones por EINT1
+    Habilita EINT1 para poder interrumpir
 */
 void eint1_habilitar() {
     VICIntEnable |= INT_EINT1;
 }
 
 /*
-    Pre:  eint1_iniciar()
-    Post: Devuelve el estado de la interrupción EINT1
+    Obtiene el estado de la interrupción EINT1
 */
 uint32_t eint1_leer() {
     EXTINT |= EXTINT_1;
@@ -105,10 +91,26 @@ uint32_t eint1_leer() {
     return ((EXTINT & EXTINT_1) >> 1);
 }
 
+/******************************************************************************/
+/* EINT2 */
+
 /*
-    Pre:  ---
-    Post: Asigna GPIO (15) como interrupción externa 2, y la asigna a VIC[3].
-            Habilita las interrupciones de EINT2
+    Rutina de servicio para EINT2
+*/
+void eint2_RSI (void) __irq {
+    static volatile uint32_t eint2_count = 0;
+
+    // Trata la interrupción
+    eint2_count++;
+    cola_encolar_eventos(BOTON2, eint2_count, 0);
+    // Baja interrupción y deshabilita EINT1 temporalmente
+    VICIntEnClr |= INT_EINT2;
+    EXTINT |= EXTINT_2;
+    VICVectAddr= 0;
+}
+
+/*
+    Inicializa la interrupción externa EINT2
 */
 void eint2_iniciar() {
     // Selecciona GPIO(15) como EINT2
@@ -123,16 +125,14 @@ void eint2_iniciar() {
 }
 
 /*
-    Pre: eint2_iniciar()
-    Post: Habilita interrupciones por EINT2
+    Habilita EINT2 para poder interrumpir
 */
 void eint2_habilitar() {
     VICIntEnable |= INT_EINT2;
 }
 
 /*
-    Pre:  eint2_iniciar()
-    Post: Devuelve el estado de la interrupción EINT1
+    Obtiene el estado de la interrupción EINT2
 */
 uint32_t eint2_leer() {
     EXTINT |= EXTINT_2;

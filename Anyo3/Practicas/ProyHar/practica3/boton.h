@@ -10,8 +10,8 @@
         Pablo Latre Villacampa (778043@unizar.es)
 
     Descripción: 
-        Interfaz de métodos para inicializar y utilizar los periféricos
-        externos eint1 y eint2
+        Interfaz de una serie de interrupciones para interactuar con los
+        periféricos externos EINT1 y EINT2
 */
 
 #ifndef BOTON_H
@@ -19,40 +19,40 @@
 
 #include <inttypes.h>
 
+/******************************************************************************/
+/* EINT1 */
+
+
 /*
-    Pre:  ---
-    Post: Asigna GPIO (14) como interrupción externa 1, y la asigna a VIC[2].
-            Habilita las interrupciones de EINT1
+    Inicializa la interrupción externa EINT1
 */
 void eint1_iniciar(void);
+
 /*
-    Pre: eint1_iniciar()
-    Post: Habilita interrupciones por EINT1
+    Habilita EINT1 para poder interrumpir
 */
 void eint1_habilitar(void);
 
 /*
-    Pre:  eint1_iniciar()
-    Post: Devuelve el estado de la interrupción EINT1
+    Obtiene el estado de la interrupción EINT1
 */
 uint32_t eint1_leer(void);
 
+/******************************************************************************/
+/* EINT2 */
+
 /*
-    Pre:  ---
-    Post: Asigna GPIO (15) como interrupción externa 2, y la asigna a VIC[3].
-            Habilita las interrupciones de EINT2
+    Rutina de servicio para EINT2
 */
 void eint2_iniciar(void);
 
 /*
-    Pre: eint2_iniciar()
-    Post: Habilita interrupciones por EINT2
+    Inicializa la interrupción externa EINT2
 */
 void eint2_habilitar(void);
 
 /*
-    Pre:  eint2_iniciar()
-    Post: Devuelve el estado de la interrupción EINT2
+    Obtiene el estado de la interrupción EINT2
 */
 uint32_t eint2_leer(void);
 

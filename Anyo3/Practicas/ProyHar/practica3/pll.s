@@ -9,11 +9,11 @@
 ;        Pablo Latre Villacampa (778043@unizar.es)
 ;
 ;    Descripción: 
-;		 Implementación del reinicio del PLL tras despertar del estado 
-;		 power-down tal y como se configura durante el startup
+;         Implementación del reinicio del PLL tras despertar del estado 
+;         power-down tal y como se configura durante el startup
 
-	AREA datos, DATA
-		
+    AREA datos, DATA
+        
 ; Definiciones de constantes para gestionar PLL
 PLL_BASE        EQU     0xE01FC080      ; PLL Base Address
 PLLCON_OFS      EQU     0x00            ; PLL Control Offset
@@ -37,12 +37,12 @@ PLLSTAT_PLOCK   EQU     (1<<10)         ; PLL Lock Status
 PLL_SETUP       EQU     1
 PLLCFG_Val      EQU     0x00000024
 
-	AREA codigo, CODE
+    AREA codigo, CODE
 
-	EXPORT reiniciar_pll
+    EXPORT reiniciar_pll
 
 reiniciar_pll
-				LDR     R0, =PLL_BASE
+                LDR     R0, =PLL_BASE
                 MOV     R1, #0xAA
                 MOV     R2, #0x55
 
@@ -64,6 +64,6 @@ PLL_Loop        LDR     R3, [R0, #PLLSTAT_OFS]
                 STR     R3, [R0, #PLLCON_OFS]
                 STR     R1, [R0, #PLLFEED_OFS]
                 STR     R2, [R0, #PLLFEED_OFS]
-				
-				BX 		r14
-		END
+                
+                BX         r14
+        END

@@ -8,6 +8,20 @@
 ;/* development tools. Nothing else gives you the right to use this software. */
 ;/*****************************************************************************/
 
+;   Proyecto Hardware
+; 
+;   Práctica 3
+;
+;   Fichero:
+;   SWI.c
+;
+;   Autores:
+;       Dorian Boleslaw Wozniak (817570@unizar.es)
+;       Pablo Latre Villacampa (778043@unizar.es)
+;
+;   Código de inicalización para modo supervisión y llamadas al sistema
+;   definidas en ensamblador
+
 T_Bit           EQU     0x20
 
                 PRESERVE8                      ; 8-Byte aligned Stack
@@ -62,7 +76,7 @@ SWI_Handler
                 LDMFD   SP!, {r8, r12}
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
-				
+                
 SWI_Dead        B       SWI_Dead               ; None Existing SWI
 
 
@@ -83,43 +97,49 @@ SWI_Table
 SWI_End
 
                 ; SWI no vectorizadas
-                ; TODO: Cambiar modo en el que lee/escribe I y F
-				
+                
+; Devuelve el valor del bit IRQ del llamante
 __read_IRQ_bit
                 LDMFD   SP!, {r8, r12}
-				AND		r0, r12, #0x80
-				LSR 	r0, #7
+                AND     r0, r12, #0x80
+                LSR     r0, #7
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
 
+; Devuelve el valor del bit IRQ del llamante                
 __read_FIQ_bit
                 LDMFD   SP!, {r8, r12}
-				AND		r0, r12, #0x40
-				LSR 	r0, #6
+                AND        r0, r12, #0x40
+                LSR     r0, #6
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
                 
+; Habilita todas las interrupciones
 __enable_irq_fiq
                 LDMFD   SP!, {r8, r12}
-				BIC		r12, r12, #0xc0
+                BIC        r12, r12, #0xc0
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
+                
+; Habilita interrupciones rápidas
 __enable_fiq    
                 LDMFD   SP!, {r8, r12}
-				BIC		r12, r12, #0x40
+                BIC        r12, r12, #0x40
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
 
+; Deshabilita todas las interrupciones
 __disable_irq_fiq
                 LDMFD   SP!, {r8, r12}
-				ORR		r12, r12, #0xc0
+                ORR        r12, r12, #0xc0
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
+                
+; Deshabilita interrupciones rápidas
 __disable_fiq
                 LDMFD   SP!, {r8, r12}
-				ORR		r12, r12, #0x40
+                ORR        r12, r12, #0x40
                 MSR     SPSR_cxsf, r12
                 LDMFD   SP!, {r12, PC}^
                 
                 END
-

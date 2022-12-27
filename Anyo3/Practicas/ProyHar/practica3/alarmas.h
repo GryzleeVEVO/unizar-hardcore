@@ -1,3 +1,19 @@
+/*
+    Proyecto Hardware
+    Práctica 3
+
+    Fichero:
+        alarmas.h
+
+    Autores:
+        Dorian Boleslaw Wozniak (817570@unizar.es)
+        Pablo Latre Villacampa (778043@unizar.es)
+
+    Descripción: 
+        Interfaz de una serie de declaraciones de alarmas comunmente activadas
+        en el proyecto
+*/
+
 #ifndef ALARMAS_H
 #define ALARMAS_H
 

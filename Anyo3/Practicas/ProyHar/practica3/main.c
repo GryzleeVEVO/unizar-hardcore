@@ -1,6 +1,6 @@
 /*
     Proyecto Hardware
-    Práctica 2
+    Práctica 3
 
     Fichero:
         main.c
@@ -10,35 +10,44 @@
         Pablo Latre Villacampa (778043@unizar.es)
 
     Descripción: 
-        Fuente principal del proyecto. Implementa un planificador basado en
-        eventos. A través de colas de eventos y mensajes permite la comunicación
-        entre módulos, periféricos y la implementación del juego Conecta 4.
+        Implementación de un planificador que gestiona eventos síncronos, 
+        generados por módulos asociados al planificador; y eventos asíncronos,
+        generados por periféricos.
+        
+        El planificador está asociado a un juego de Conecta 4. Al iniciar, 
+        informa sobre cómo jugar. Al iniciar partida, gestiona el comportamiento
+        de los periféricos y el paso de mensajes. 
+        
+        Además, al finalizar, muestra el tiempo medio en procesar un mensaje
+        en microsegundos, y el tiempo en segundos dedicado al juego.
 */
 
 #include <inttypes.h>
 
+// Programa principal
 #include "conecta4_2022.h"
 
+// Colas
 #include "cola_eventos.h"
 #include "cola_msg.h"
 
+// Gestores
 #include "G_Alarm.h"
 #include "G_Energia.h"
 #include "G_Boton.h"
 #include "G_IO.h"
 #include "G_serie.h"
 
-#include "tiempo.h"
+#include "tiempo.h"             // Para SWI y WD
 
 // Constantes globales para el planificador
 enum {
-    ALARM_PERIODO = 10,      // Periodo de actualización de timer0/alarma
-    WD_FEED_PERIODO = 1000   // Periodo de alimentación de watchdog
+    ALARM_PERIODO   = 10, // Periodo de actualización de timer0/alarma (ms)
+    WD_FEED_PERIODO = 1   // Periodo de alimentación de watchdog (s)
 };
 
-// Indica si el procesador se ha dormido
-static uint8_t dormido = 0;
-static uint8_t jugando = 0;
+static uint8_t dormido = 0; // Indica si el procesador se ha dormido
+static uint8_t jugando = 0; // Indica si hay una partida en curso
 
 /* Trata el evento recibido */
 void tratar_evento(evento* e) {    
@@ -73,11 +82,13 @@ void tratar_evento(evento* e) {
             } else dormido = 1;
             break;
         
+        // UART0 obtiene un caracrer -> Interpreta lo obtenido
         case UART0_LEER:
             cola_msg(SET_ALARMA, ALARM_GO_SLEEP_MSG);
             serie_leer(e -> auxData);
             break;
         
+        // UART1 termina de escribir un caracter -> Envia siguiente carácter 
         case UART0_ESCRIBIR:
             serie_escribir();
             break;
@@ -86,6 +97,13 @@ void tratar_evento(evento* e) {
 
 /* Trata el mensaje recibido */
 void tratar_mensaje (msg* m) {
+    // Estadísticas de la última partida
+    static uint32_t tiempo_total_msg = 0;    // Tiempo total tratando mensajes
+    static uint32_t mensajes_procesados = 0; // Mensajes totales procesados
+    static uint32_t tiempo_juego = 0;        // Tiempo de inicio del juego
+
+    uint32_t start = clock_getus(); // Empieza a medir siguiente tratamiento  
+    
     switch (m -> ID_msg) {
         // Programar/reprogramar/cancelar alarma
         case SET_ALARMA:
@@ -102,36 +120,46 @@ void tratar_mensaje (msg* m) {
             boton2_comprobar(); 
             break;
         
-        // Comprobar entrada
+        // Lee entrada obtenida y prepara acción si fuese necesario
         case CHK_ENTRADA:
             if (jugando) conecta4_comprobar_entrada(m -> mensaje);
             break;
         
-        // Alternar estado latido
+        // Alternar estado del latido
         case PARPADEAR:
             IO_cambiar_latido();
             break;
         
-        // Baja pin jugada realizada
+        // Baja pin de jugada realizada
         case OFF_REALIZAR:
             IO_bajar_jugada_realizada();
             break;
         
+        // Inicia una nueva partida
         case INICIAR:
             if (!jugando) {
                 conecta4_iniciar();
                 jugando = 1;
+                tiempo_total_msg = 0;
+                mensajes_procesados = 0;
+                tiempo_juego = clock_gettime();
             }
             break;
         
+        // Compromete la jugada realizada si no es cancela
         case SIGUIENTE:
             conecta4_realizar_jugada();
             break;
         
+        // Actúa si se acaba la partida
         case ACABAR:
             if (jugando) {
                 conecta4_detener(m -> mensaje);
-                serie_mensaje_reinicio();
+                
+                // Calcula tiempo de juego y QoS
+                tiempo_total_msg += clock_getus() - start;
+                tiempo_juego = clock_gettime() - tiempo_juego;
+                serie_mensaje_reinicio(tiempo_juego, tiempo_total_msg / mensajes_procesados);
                 jugando = 0;
             }
             break;
@@ -142,14 +170,17 @@ void tratar_mensaje (msg* m) {
             energia_dormir();
             break;
            
+        // Alimenta Watchdog para no reiniciar
         case FEED_WD:
             WD_feed();
             break;
     }
+    
+    tiempo_total_msg += clock_getus() - start; mensajes_procesados++;
 }
 
 
-int main(void) {
+ int main(void) {
     // Inicializa periféricos
     serie_iniciar();    
     IO_iniciar();

@@ -28,7 +28,9 @@
 
 // Constantes para registros de los timers
 enum {
-    TIME_SEC    = 15000000,     // 60 MHz -> 1s     = 1 / (1/PCLK * 4)
+    // PCLK = Xtal * 5 / 4
+    
+    TIME_SEC    = 3750000 - 1, // 60 MHz -> 1s     = 1 / (1/PCLK * 4)
     TIME_MS     = 15000 - 1,    // 60 Mhz -> 1ms    = (10 ^-3) / (1/PCLK * 4)
     TIME_US     = 15 - 1,       // 60 Mhz -> 1us    = (10 ^-6) / (1/PCLK * 4)
     
@@ -40,8 +42,8 @@ enum {
     TCR_RESET   = 0x2,
    
     // RTC 
-    PREINT_60MHZ    = 1830, // 60 MHz -> (PCLK / 32768) - 1,
-    PREFRAC_60MHZ   = 1792, // 60 MHz -> (PCLK) - (32768 * (PREINT + 1)),
+    PREINT_60MHZ    = 456, // 60 MHz -> (PCLK / 32768) - 1,
+    PREFRAC_60MHZ   = 27024, // 60 MHz -> (PCLK) - (32768 * (PREINT + 1)),
     
     CCR_ENABLE  = 0x1,
     CCR_RESET   = 0x2,
