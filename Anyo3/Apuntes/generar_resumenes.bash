@@ -20,27 +20,6 @@ generar_pdf () {
     -N \
     -H disable_float.tex \
     -o "$1.pdf"
-} 
+}
 
-if [ $# -ne 0 ]
-then
-    case $1 in
-        IA) generar_pdf "./IArt/resumen"
-        ;;
-
-        IS) generar_pdf "./IngSoft/resumen"
-        ;;
-
-        SI) generar_pdf "./SistInf/resumen"
-        ;;
-        
-        SD) generar_pdf "./SistDist/resumen"
-        ;;
-    esac
-else
-    generar_pdf "./IArt/resumen"
-    generar_pdf "./IngSoft/resumen"
-    generar_pdf "./SistInf/resumen"
-    generar_pdf "./SistDist/resumen"
-fi
-
+generar_pdf $@

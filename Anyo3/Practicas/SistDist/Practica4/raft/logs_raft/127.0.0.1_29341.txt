@@ -1,0 +1,1124 @@
+127.0.0.1_29341 -> 16:46:04.335481 raft.go:196: logger initialized
+127.0.0.1_29341 -> 16:46:04.335569 raft.go:222: NuevoNodo: Maquina creada
+127.0.0.1_29341 -> 16:46:04.335672 raft.go:251: actEstado: Cambiando estado
+127.0.0.1_29341 -> 16:46:04.335709 raft.go:255: actEstado: Entrando a estado SEGUIDOR
+127.0.0.1_29341 -> 16:46:04.335722 raft.go:275: SEGUIDOR: Pongo en marcha timeout de elecciones
+127.0.0.1_29341 -> 16:46:04.341986 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.342006 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 0
+127.0.0.1_29341 -> 16:46:04.342023 raft.go:823: RPC - AppendEntries: Actualizado mandato al mayor
+127.0.0.1_29341 -> 16:46:04.342032 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.342065 raft.go:833: RPC - AppendEntries: PrevLogIndex= 1, Entries= [{2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.342077 raft.go:835: RPC - AppendEntries: MiUltIndex= 0, MiRegistro= [{0 0 {  }}]
+127.0.0.1_29341 -> 16:46:04.342083 raft.go:850: RPC - AppendEntries: Su indice previo no esta en rango
+127.0.0.1_29341 -> 16:46:04.342096 raft.go:860: RPC - AppendEntries: Denegado, mandato o registro
+127.0.0.1_29341 -> 16:46:04.342773 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.342790 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.342802 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.342834 raft.go:833: RPC - AppendEntries: PrevLogIndex= 0, Entries= [{1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.342850 raft.go:835: RPC - AppendEntries: MiUltIndex= 0, MiRegistro= [{0 0 {  }}]
+127.0.0.1_29341 -> 16:46:04.342862 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.342875 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.342887 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.342904 raft.go:794: RPC - AppendEntries: Añadiendo entradas restantes
+127.0.0.1_29341 -> 16:46:04.342937 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.342950 raft.go:804: RPC - AppendEntries: Aplicando entradas comprometidas
+127.0.0.1_29341 -> 16:46:04.343014 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.392572 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.392597 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.392605 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.392614 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.392637 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.392650 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.392662 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.392675 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.392695 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.392708 raft.go:804: RPC - AppendEntries: Aplicando entradas comprometidas
+127.0.0.1_29341 -> 16:46:04.392774 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.443122 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.443164 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.443186 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.443195 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.443220 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.443229 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.443236 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.443242 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.443255 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.443299 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.493786 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.493818 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.493831 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.493846 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.493871 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.493883 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.493895 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.493906 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.493929 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.494001 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.544393 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.544436 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.544456 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.544472 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.544502 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.544516 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.544532 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.544548 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.544568 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.544684 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.595182 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.595208 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.595215 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.595224 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.595244 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.595258 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.595278 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.595291 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.595318 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.595388 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.645598 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.645623 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.645635 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.645650 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.645677 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.645688 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.645700 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.645712 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.645735 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.645810 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.696040 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.696064 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.696071 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.696080 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.696099 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.696109 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.696115 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.696121 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.696133 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.696183 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.746435 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.746456 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.746463 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.746472 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.746486 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.746493 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.746499 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.746505 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.746523 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.746588 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.796906 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.796928 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.796935 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.796944 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.796958 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.796965 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.796971 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.796977 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.796989 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.797049 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.847429 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.847452 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.847464 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.847487 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.847521 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.847533 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.847545 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.847560 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.847584 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.847661 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.898002 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.898029 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.898037 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.898046 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.898064 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.898071 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.898078 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.898084 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.898102 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.898163 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.948405 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.948427 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.948443 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.948453 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.948480 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.948503 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.948510 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.948517 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.948535 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.948603 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:04.998860 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:04.998883 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:04.998890 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:04.998899 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:04.998917 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.998929 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:04.998936 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:04.998942 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:04.998960 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:04.999007 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.049608 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.049642 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.049656 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.049670 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.049695 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.049708 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.049720 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.049730 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.049750 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.049831 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.100328 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.100365 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.100376 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.100390 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.100412 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.100424 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.100434 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.100444 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.100462 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.100573 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.150894 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.150922 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.150930 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.150938 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.150953 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.150966 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.150977 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.150986 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.151003 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.151058 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.201309 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.201344 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.201356 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.201369 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.201395 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.201407 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.201419 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.201430 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.201453 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.201537 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.251867 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.251894 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.251907 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.251920 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.251946 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.251960 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.251972 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.251994 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.252016 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.252116 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.302387 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.302410 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.302417 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.302426 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.302457 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.302468 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.302478 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.302498 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.302520 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.302603 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.352943 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.352964 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.352976 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.352989 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.353022 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.353034 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.353044 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.353056 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.353078 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.353146 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.403483 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.403505 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.403516 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.403530 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.403561 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.403575 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.403587 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.403599 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.403622 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.403691 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.454002 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.454028 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.454041 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.454055 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.454092 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.454103 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.454113 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.454125 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.454159 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.454206 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.504917 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.504941 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.504949 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.504958 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.504992 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.505002 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.505009 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.505015 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.505027 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.505094 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.555738 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.555764 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.555776 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.555791 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.555817 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.555829 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.555841 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.555853 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.555875 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.555940 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.606433 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.606530 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.606576 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.606624 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.606732 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.606786 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.606829 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.606874 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.606960 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.607133 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.656777 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.656801 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.656836 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.656852 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.656879 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.656890 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.656901 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.656913 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.656936 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.657004 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.707729 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.707755 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.707768 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.707781 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.707807 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.707820 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.707831 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.707842 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.707866 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.707938 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.758935 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.758961 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.758969 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.758977 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.758992 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.759003 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.759014 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.759025 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.759053 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.759137 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.809653 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.809677 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.809685 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.809693 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.809718 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.809729 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.809736 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.809765 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.809780 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.809845 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.860809 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.860885 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.860914 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.860942 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.861000 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.861012 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.861019 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.861026 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.861038 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.861122 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.912242 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.912320 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.912351 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.912380 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.912451 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.912488 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.912523 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.912546 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.912594 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.912659 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:05.962296 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:05.962383 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:05.962427 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:05.962454 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:05.962531 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.962556 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:05.962568 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:05.962617 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:05.962701 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:05.962825 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.014444 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.014557 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.014601 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.014647 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.014755 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.014784 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.014795 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.014807 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.014833 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.014951 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.065357 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.065450 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.065484 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.065528 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.065627 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.065681 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.065705 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.065729 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.065777 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.065932 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.116062 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.116109 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.116122 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.116136 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.116159 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.116170 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.116179 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.116189 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.116207 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.116297 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.166696 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.166723 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.166736 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.166750 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.166766 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.166795 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.166808 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.166819 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.166843 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.166905 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.217123 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.217155 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.217168 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.217181 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.217214 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.217232 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.217244 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.217256 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.217279 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.217360 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.267569 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.267596 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.267605 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.267613 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.267628 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.267635 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.267655 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.267663 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.267685 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.267758 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.318226 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.318267 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.318284 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.318304 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.318350 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.318367 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.318374 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.318380 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.318392 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.318495 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.369149 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.369182 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.369196 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.369205 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.369231 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.369244 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.369251 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.369259 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.369273 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.369329 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.419949 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.419978 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.419988 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.420003 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.420039 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.420047 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.420054 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.420061 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.420080 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.420159 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.470916 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.470945 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.470958 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.470967 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.470988 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.471001 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.471008 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.471014 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.471032 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.471115 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.521709 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.521732 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.521740 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.521749 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.521791 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.521802 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.521809 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.521816 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.521829 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.521930 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.572446 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.572473 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.572488 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.572503 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.572533 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.572549 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.572577 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.572591 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.572631 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.572787 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.623406 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.623429 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.623445 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.623460 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.623496 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.623539 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.623572 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.623613 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.623698 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.623872 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.674543 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.674568 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.674580 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.674594 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.674620 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.674633 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.674644 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.674656 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.674693 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.674762 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.725245 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.725275 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.725288 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.725301 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.725327 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.725340 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.725351 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.725370 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.725390 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.725475 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.775571 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.775596 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.775605 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.775613 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.775627 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.775633 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.775639 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.775645 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.775657 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.775717 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.825819 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.825843 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.825851 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.825860 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.825874 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.825881 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.825888 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.825898 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.825909 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.825994 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.876108 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.876145 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.876176 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.876191 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.876216 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.876230 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.876241 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.876262 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.876285 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.876388 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.927298 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.927350 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.927364 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.927377 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.927399 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.927410 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.927430 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.927440 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.927463 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.927586 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:06.977759 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:06.977822 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:06.977836 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:06.977860 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:06.977881 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.977891 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:06.977899 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:06.977908 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:06.977935 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:06.978051 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.028128 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.028169 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.028183 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.028196 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.028225 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.028242 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.028253 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.028283 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.028302 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.028392 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.079824 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.079907 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.079924 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.079953 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.079982 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.079995 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.080011 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.080062 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.080097 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.080361 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.130048 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.130115 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.130140 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.130159 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.130187 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.130200 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.130225 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.130237 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.130261 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.130506 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.180982 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.181024 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.181045 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.181059 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.181079 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.181090 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.181099 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.181108 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.181139 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.181286 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.230923 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.230966 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.230978 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.230992 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.231016 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.231037 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.231047 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.231053 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.231066 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.231135 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.282313 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.282384 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.282398 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.282426 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.282464 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.282478 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.282501 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.282513 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.282533 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.282682 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.332281 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.332308 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.332315 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.332324 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.332343 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.332355 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.332363 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.332369 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.332380 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.332470 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.382645 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.382667 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.382680 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.382690 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.382708 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.382735 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.382745 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.382756 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.382790 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.382850 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.433043 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.433067 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.433075 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.433083 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.433097 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.433103 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.433113 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.433123 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.433135 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.433211 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.483496 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.483528 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.483542 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.483557 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.483583 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.483596 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.483612 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.483623 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.483646 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.483723 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.533908 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.533934 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.533947 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.533962 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.533987 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.534000 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.534012 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.534023 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.534046 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.534130 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.584688 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.584744 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.584759 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.584774 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.584800 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.584812 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.584822 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.584833 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.584857 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.584957 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.635623 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.635650 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.635662 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.635677 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.635702 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.635714 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.635725 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.635737 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.635758 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.635851 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.686031 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.686064 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.686079 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.686093 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.686119 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.686132 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.686142 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.686152 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.686174 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.686264 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.736630 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.736661 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.736671 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.736691 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.736733 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.736749 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.736759 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.736769 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.736791 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.736868 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.787121 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.787154 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.787167 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.787188 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.787213 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.787227 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.787238 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.787249 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.787277 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.787354 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.837617 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.837641 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.837653 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.837666 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.837689 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.837706 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.837717 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.837728 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.837748 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.837818 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.888192 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.888214 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.888221 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.888230 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.888244 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.888251 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.888257 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.888264 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.888285 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.888363 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.938678 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.938704 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.938712 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.938724 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.938744 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.938751 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.938761 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.938772 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.938791 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.938871 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:07.989297 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:07.989331 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:07.989345 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:07.989364 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:07.989395 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.989409 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:07.989424 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:07.989435 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:07.989458 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:07.989534 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.039722 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.039746 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.039757 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.039769 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.039787 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.039801 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.039812 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.039820 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.039833 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.039898 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.090138 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.090160 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.090167 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.090188 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.090203 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.090210 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.090220 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.090231 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.090256 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.090332 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.140591 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.140613 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.140620 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.140628 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.140642 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.140648 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.140654 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.140661 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.140678 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.140749 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.191109 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.191137 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.191149 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.191162 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.191186 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.191198 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.191207 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.191222 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.191243 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.191317 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.241605 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.241634 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.241647 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.241661 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.241688 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.241701 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.241713 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.241743 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.241769 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.241842 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.292047 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.292076 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.292087 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.292101 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.292128 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.292141 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.292153 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.292163 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.292187 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.292264 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.342637 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.342664 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.342677 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.342691 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.342714 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.342726 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.342738 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.342750 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.342771 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.342837 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.393148 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.393174 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.393181 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.393190 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.393204 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.393211 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.393226 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.393236 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.393259 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.393339 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.443673 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.443714 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.443727 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.443756 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.443781 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.443794 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.443806 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.443817 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.443846 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.443925 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.494238 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.494262 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.494271 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.494279 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.494299 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.494307 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.494318 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.494329 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.494349 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.494691 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.544927 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.544952 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.544964 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.544981 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.545008 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.545021 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.545032 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.545043 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.545074 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.545157 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.595358 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.595389 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.595401 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.595415 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.595436 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.595464 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.595487 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.595499 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.595520 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.595601 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.646100 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.646125 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.646133 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.646141 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.646156 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.646163 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.646173 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.646184 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.646205 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.646273 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.696764 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.696789 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.696799 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.696808 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.696824 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.696836 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.696846 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.696853 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.696865 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.696931 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.747264 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.747296 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.747309 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.747322 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.747357 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.747369 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.747381 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.747392 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.747417 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.747528 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.798101 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.798135 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.798145 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.798154 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.798168 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.798175 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.798181 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.798205 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.798222 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.798289 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.848346 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.848375 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.848387 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.848400 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.848424 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.848440 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.848452 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.848463 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.848484 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.848556 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.898822 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.898851 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.898863 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.898875 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.898900 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.898912 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.898923 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.898933 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.898955 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.899028 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.949363 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.949389 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.949401 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.949410 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.949432 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.949458 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:08.949470 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:08.949479 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:08.949491 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:08.949564 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:08.999930 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:08.999951 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:08.999958 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:08.999966 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:08.999991 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.000003 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.000011 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.000021 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.000035 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.000102 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.050810 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.050844 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.050856 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.050868 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.050895 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.050906 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.050916 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.050926 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.050951 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.051013 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.101347 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.101373 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.101381 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.101389 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.101403 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.101412 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.101423 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.101432 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.101448 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.101542 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.151985 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.152008 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.152021 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.152035 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.152065 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.152080 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.152103 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.152117 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.152146 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.152244 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.202967 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.202991 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.203003 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.203016 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.203040 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.203053 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.203064 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.203076 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.203096 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.203162 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.253448 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.253469 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.253476 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.253495 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.253518 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.253526 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.253532 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.253538 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.253550 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.253618 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.304214 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.304246 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.304260 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.304295 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.304323 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.304337 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.304350 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.304362 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.304385 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.304473 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.354885 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.354921 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.354939 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.354963 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.355009 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.355021 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.355032 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.355044 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.355066 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.355125 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.405589 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.405620 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.405633 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.405648 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.405674 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.405686 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.405699 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.405709 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.405731 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.405798 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.456399 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.456444 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.456455 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.456468 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.456492 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.456504 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.456515 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.456540 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.456562 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.456632 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.506876 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.506900 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.506920 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.506935 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.506957 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.506968 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.506975 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.506984 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.507003 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.507076 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.557517 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.557543 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.557555 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.557569 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.557597 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.557606 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.557613 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.557624 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.557643 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.557713 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.608032 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.608058 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.608069 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.608078 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.608098 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.608107 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.608113 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.608119 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.608135 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.608198 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.658662 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.658700 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.658712 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.658726 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= []
+127.0.0.1_29341 -> 16:46:09.658753 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.658766 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.658777 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.658787 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.658807 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.658881 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.698027 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.698065 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.698077 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.698095 raft.go:833: RPC - AppendEntries: PrevLogIndex= 3, Entries= [{4 1 {escribir 789 Valor3}}]
+127.0.0.1_29341 -> 16:46:09.698132 raft.go:835: RPC - AppendEntries: MiUltIndex= 3, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}}]
+127.0.0.1_29341 -> 16:46:09.698150 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.698161 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.698175 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.698185 raft.go:794: RPC - AppendEntries: Añadiendo entradas restantes
+127.0.0.1_29341 -> 16:46:09.698211 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}}]
+127.0.0.1_29341 -> 16:46:09.698283 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.701162 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.701186 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.701193 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.701204 raft.go:833: RPC - AppendEntries: PrevLogIndex= 4, Entries= [{5 1 {leer 123 }}]
+127.0.0.1_29341 -> 16:46:09.701226 raft.go:835: RPC - AppendEntries: MiUltIndex= 4, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}}]
+127.0.0.1_29341 -> 16:46:09.701236 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.701242 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.701248 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.701254 raft.go:794: RPC - AppendEntries: Añadiendo entradas restantes
+127.0.0.1_29341 -> 16:46:09.701278 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}} {5 1 {leer 123 }}]
+127.0.0.1_29341 -> 16:46:09.701286 raft.go:804: RPC - AppendEntries: Aplicando entradas comprometidas
+127.0.0.1_29341 -> 16:46:09.701353 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.703170 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.703190 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.703208 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.703223 raft.go:833: RPC - AppendEntries: PrevLogIndex= 5, Entries= [{6 1 {leer 789 }}]
+127.0.0.1_29341 -> 16:46:09.703249 raft.go:835: RPC - AppendEntries: MiUltIndex= 5, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}} {5 1 {leer 123 }}]
+127.0.0.1_29341 -> 16:46:09.703257 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.703264 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.703270 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.703276 raft.go:794: RPC - AppendEntries: Añadiendo entradas restantes
+127.0.0.1_29341 -> 16:46:09.703295 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}} {5 1 {leer 123 }} {6 1 {leer 789 }}]
+127.0.0.1_29341 -> 16:46:09.703303 raft.go:804: RPC - AppendEntries: Aplicando entradas comprometidas
+127.0.0.1_29341 -> 16:46:09.703353 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.704577 raft.go:817: RPC - AppendEntries: Recibido AppendEntry de 0
+127.0.0.1_29341 -> 16:46:09.704597 raft.go:819: RPC - AppendEntries: Su mandato 1, Mi mandato 1
+127.0.0.1_29341 -> 16:46:09.704610 raft.go:828: RPC - AppendEntries: Aceptado, me vuelvo seguidor
+127.0.0.1_29341 -> 16:46:09.704628 raft.go:833: RPC - AppendEntries: PrevLogIndex= 6, Entries= [{7 1 {leer 345 }}]
+127.0.0.1_29341 -> 16:46:09.704677 raft.go:835: RPC - AppendEntries: MiUltIndex= 6, MiRegistro= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}} {5 1 {leer 123 }} {6 1 {leer 789 }}]
+127.0.0.1_29341 -> 16:46:09.704691 raft.go:843: RPC - AppendEntries: Su indice previo esta en rango
+127.0.0.1_29341 -> 16:46:09.704703 raft.go:845: RPC - AppendEntries: Su último mandato coincide
+127.0.0.1_29341 -> 16:46:09.704715 raft.go:854: RPC - AppendEntries: Replico entradas de lider válido
+127.0.0.1_29341 -> 16:46:09.704727 raft.go:794: RPC - AppendEntries: Añadiendo entradas restantes
+127.0.0.1_29341 -> 16:46:09.704770 raft.go:799: RPC - AppendEntries: Mi registro tras append de lider= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 345 Valor1}} {3 1 {escribir 456 Valor2}} {4 1 {escribir 789 Valor3}} {5 1 {leer 123 }} {6 1 {leer 789 }} {7 1 {leer 345 }}]
+127.0.0.1_29341 -> 16:46:09.704785 raft.go:804: RPC - AppendEntries: Aplicando entradas comprometidas
+127.0.0.1_29341 -> 16:46:09.704865 raft.go:288: SEGUIDOR: Latido/AppendEntry recibido, reinicio timeout
+127.0.0.1_29341 -> 16:46:09.706175 raft.go:649: RPC - ParaNodo: Me piden parar mi servicio, FIN

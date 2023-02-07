@@ -1,0 +1,1546 @@
+127.0.0.1_29352 -> 18:36:04.090744 raft.go:196: logger initialized
+127.0.0.1_29352 -> 18:36:04.090844 raft.go:222: NuevoNodo: Maquina creada
+127.0.0.1_29352 -> 18:36:04.091118 raft.go:254: actEstado: Cambiando estado
+127.0.0.1_29352 -> 18:36:04.091165 raft.go:258: actEstado: Entrando a estado SEGUIDOR
+127.0.0.1_29352 -> 18:36:04.091175 raft.go:278: SEGUIDOR: Pongo en marcha timeout de elecciones
+127.0.0.1_29352 -> 18:36:04.252584 raft.go:296: SEGUIDOR: Timeout de elecciones agotado, comenzando elecciones
+127.0.0.1_29352 -> 18:36:04.252661 raft.go:261: actEstado: Entrando a estado CANDIDATO
+127.0.0.1_29352 -> 18:36:04.252670 raft.go:356: CANDIDATO: Pongo en marcha timeout de elecciones
+127.0.0.1_29352 -> 18:36:04.252694 raft.go:362: CANDIDATO: Pido votos a los demas nodos
+127.0.0.1_29352 -> 18:36:04.253983 raft.go:308: CANDIDATO-GR: Recibido reply de peticionVoto
+127.0.0.1_29352 -> 18:36:04.254018 raft.go:311: CANDIDATO-GR: Me han concedido voto, actualizo
+127.0.0.1_29352 -> 18:36:04.254034 raft.go:373: CANDIDATO: Recibida mayoria de votos, comenzar liderazgo
+127.0.0.1_29352 -> 18:36:04.254048 raft.go:264: actEstado: Entrando a estado LIDER
+127.0.0.1_29352 -> 18:36:04.254059 raft.go:497: LIDER: Inicio timeout de latido a mandar
+127.0.0.1_29352 -> 18:36:04.254074 raft.go:505: LIDER: Mando latido inicial para reconocimiento
+127.0.0.1_29352 -> 18:36:04.254106 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.254127 raft.go:308: CANDIDATO-GR: Recibido reply de peticionVoto
+127.0.0.1_29352 -> 18:36:04.254157 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.255194 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.255216 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.255229 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.255300 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.255320 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.255334 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.304860 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.304989 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.305107 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.305877 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.305901 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.305915 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.305986 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.306004 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.306014 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.355542 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.355664 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.355767 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.356652 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.356676 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.356694 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.356762 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.356784 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.356798 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.406124 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.406262 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.406361 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.407194 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.407219 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.407233 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.407300 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.407318 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.407327 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.456755 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.456874 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.456982 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.457779 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.457805 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.457819 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.457886 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.457900 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.457913 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.507414 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.507554 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.507684 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.508458 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.508483 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.508497 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.508572 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.508592 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.508606 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.558155 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.558279 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.558380 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.559187 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.559211 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.559224 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.559295 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.559313 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.559322 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.608663 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.608743 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.608837 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.609609 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.609633 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.609644 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.609752 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.609769 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.609777 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.658969 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.659126 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.659236 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.659976 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.660001 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.660015 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.659976 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.660037 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.660049 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.709666 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.709795 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.709911 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.710633 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.710664 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.710680 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.710650 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.710706 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.710719 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.760072 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.760188 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.760223 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.761025 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.761045 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.761058 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.761140 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.761160 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.761174 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.810496 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.810614 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.810712 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.811538 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.811560 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.811573 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.811650 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.811672 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.811684 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.861106 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.861224 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.861366 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.862176 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.862199 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.862210 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.862273 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.862293 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.862306 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.911588 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.911717 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.911846 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.912657 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.912687 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.912702 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.912660 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.912725 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.912734 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.962173 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:04.962305 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.962391 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:04.963161 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.963188 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.963201 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:04.963304 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:04.963323 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:04.963337 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.012822 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.012978 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.013019 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.013941 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.013968 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.013983 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.013941 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.014015 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.014026 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.063567 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.063678 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.063781 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.064578 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.064599 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.064611 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.064690 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.064708 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.064722 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.114198 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.114325 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.114431 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.115228 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.115252 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.115266 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.115345 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.115360 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.115390 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.164813 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.165013 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.165082 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.165886 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.165902 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.165910 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.166014 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.166035 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.166054 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.215471 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.215598 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.215747 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.216629 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.216655 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.216671 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.216730 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.216749 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.216763 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.266289 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.266413 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.266524 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.267327 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.267350 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.267363 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.267461 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.267483 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.267498 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.316974 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.317164 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.317306 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.318181 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.318206 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.318221 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.318181 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.318244 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.318256 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.367597 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.367665 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.367760 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.368527 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.368549 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.368562 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.368642 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.368658 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.368671 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.418182 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.418287 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.418413 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.419257 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.419285 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.419306 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.419386 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.419401 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.419422 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.468868 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.468994 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.469092 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.469821 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.469846 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.469860 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.469925 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.469945 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.469959 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.519366 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.519490 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.519598 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.520331 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.520355 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.520369 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.520473 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.520492 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.520506 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.569789 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.569964 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.570060 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.570856 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.570892 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.570907 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.570975 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.570990 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.571003 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.620378 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.620496 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.620596 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.621463 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.621491 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.621520 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.621486 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.621537 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.621544 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.671025 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.671139 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.671237 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.672070 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.672093 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.672105 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.672145 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.672165 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.672178 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.721650 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.721825 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.722010 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.722928 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.722959 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.722975 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.722928 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.722997 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.723009 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.772640 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.772787 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.772899 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.773810 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.773841 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.773855 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.773813 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.773871 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.773877 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.823386 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.823596 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.823643 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.824519 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.824540 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.824552 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.824623 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.824640 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.824648 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.874218 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.874329 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.874465 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.875319 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.875344 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.875364 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.875522 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.875554 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.875567 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.924903 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.924981 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.925111 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.925949 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.925972 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.925985 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.926293 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.926312 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.926324 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.975817 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:05.975938 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.976040 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:05.976910 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.976938 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.976953 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:05.976910 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:05.976967 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:05.976974 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.026447 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.026579 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.026681 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.027514 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.027537 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.027550 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.027624 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.027643 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.027656 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.077026 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.077174 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.077290 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.078054 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.078075 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.078088 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.078171 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.078190 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.078208 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.127618 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.127735 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.127859 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.128720 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.128744 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.128758 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.128854 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.128885 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.128902 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.178282 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.178508 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.178603 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.179433 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.179458 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.179471 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.179554 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.179574 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.179587 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.228996 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.229131 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.229244 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.230145 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.230173 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.230188 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.230156 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.230216 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.230229 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.279626 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.279740 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.279844 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.280748 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.280794 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.280811 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.280894 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.280917 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.280931 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.330334 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.330445 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.330581 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.331380 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.331414 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.331428 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.331380 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.331451 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.331477 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.380648 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.380857 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.380979 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.381805 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.381838 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.381853 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.381989 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.382012 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.382036 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.431467 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.431688 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.431829 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.432944 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.433005 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.433018 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.432957 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.433031 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.433038 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.482547 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.482686 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.482734 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.483606 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.483629 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.483645 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.483732 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.483751 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.483765 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.533320 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.533435 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.533520 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.534581 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.534652 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.534676 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.534597 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.534700 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.534741 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.584319 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.584415 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.584513 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.585744 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.585773 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.585787 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.585744 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.585801 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.585820 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.635513 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.635653 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.635776 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.636566 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.636594 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.636609 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.636577 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.636634 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.636645 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.686296 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.686428 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.686467 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.687834 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.687861 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.687876 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.687958 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.687977 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.687992 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.736531 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.736720 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.736890 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.737740 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.737756 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.737764 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.737850 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.737869 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.737883 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.757788 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.757832 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.757870 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }}]
+127.0.0.1_29352 -> 18:36:06.757884 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.757904 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}}]
+127.0.0.1_29352 -> 18:36:06.757932 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.757979 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{1 1 {escribir 123 Hola mundo!}}]
+127.0.0.1_29352 -> 18:36:06.758082 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{1 1 {escribir 123 Hola mundo!}}]
+127.0.0.1_29352 -> 18:36:06.759011 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.759034 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.759048 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.759077 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.759093 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.759014 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.759125 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.759106 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.759165 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.759183 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.760180 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.760218 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.760247 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}}]
+127.0.0.1_29352 -> 18:36:06.760259 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.760286 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760309 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.760363 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.760380 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.760413 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760426 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.760447 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760472 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.760506 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.760521 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.760522 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760666 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760704 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.760720 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.760750 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760769 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.760800 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760825 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.760180 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:06.760846 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:06.760857 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}}]
+127.0.0.1_29352 -> 18:36:06.760881 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.761011 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761037 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.761100 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761215 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761318 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761352 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:06.761387 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761407 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:06.761463 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761593 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761705 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761820 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.761932 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.762058 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.761934 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.762313 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.762333 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.762300 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:06.762487 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.762505 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.762518 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.762532 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.762545 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.762556 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.762574 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.762586 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.762001 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.762610 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.762598 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.762640 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.762772 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.762785 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.762800 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.762907 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.762922 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.762936 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:06.762949 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:06.762961 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:06.763033 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.762843 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.763084 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.763097 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.762986 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.762600 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.763585 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.763607 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.763621 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.762872 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.762988 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.763739 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.763751 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.762992 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.763789 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.763808 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.763821 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.763882 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:06.763907 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.763929 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.764748 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.764780 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.764796 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.765239 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.765258 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.765270 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.812317 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.812495 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.812686 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.813761 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.813791 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.813766 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.813823 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.813839 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.813807 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.863282 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.863402 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.863472 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.864399 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.864423 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.864437 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.864531 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.864545 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.864559 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.914009 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.914140 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.914232 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.915044 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.915065 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.915077 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.915141 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.915156 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.915164 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.964565 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:06.964699 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.964848 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:06.965711 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.965733 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.965745 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:06.965822 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:06.965840 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:06.965853 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.015089 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.015216 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.015375 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.016797 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.016820 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.016834 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.016932 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.016953 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.016963 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.065413 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.065520 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.065658 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.066616 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.066639 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.066653 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.066735 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.066755 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.066769 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.116095 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.116213 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.116331 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.117227 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.117251 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.117265 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.117346 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.117363 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.117386 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.166870 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.166963 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.167042 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.168014 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.168060 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.168085 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.168013 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.168102 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.168110 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.217575 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.217687 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.217718 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.218561 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.218587 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.218610 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.218736 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.218753 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.218762 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.268125 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.268256 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.268375 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.269276 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.269300 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.269313 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.269404 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.269423 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.269434 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.318706 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.318847 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.318942 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.319820 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.319845 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.319858 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.319942 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.319962 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.319977 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.369163 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.369249 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.369354 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.370298 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.370321 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.370334 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.370394 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.370410 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.370423 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.419829 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.419926 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.419953 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.420987 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.421018 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.421035 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.420987 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.421059 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.421072 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.470384 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.470519 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.470589 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.471628 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.471643 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.471651 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.471789 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.471804 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.471811 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.521233 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.521364 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.521471 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.522363 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.522388 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.522403 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.522453 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.522470 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.522480 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.572010 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.572162 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.572234 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.573178 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.573201 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.573215 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.573305 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.573322 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.573330 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.622798 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.622914 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.623064 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.623873 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.623903 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.623928 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.624006 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.624029 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.624047 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.673534 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.673666 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.673807 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.674676 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.674693 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.674707 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.674798 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.674818 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.674831 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.724152 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.724281 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.724380 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.725187 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.725213 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.725227 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.725297 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.725313 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.725327 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.774752 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.774900 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.775015 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.775924 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.775948 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.775969 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.776044 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.776064 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.776078 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.825512 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.825619 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.825726 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.826630 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.826652 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.826666 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.826745 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.826763 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.826776 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.876091 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.876213 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.876330 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.877314 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.877380 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.877391 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.877314 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.877407 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.877419 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.926868 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.926986 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.927091 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.927885 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.927918 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.927941 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.928067 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.928086 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.928100 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.977542 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:07.977735 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.977860 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:07.978725 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.978753 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.978768 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:07.978817 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:07.978833 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:07.978846 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.028529 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.028652 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.028743 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.029606 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.029634 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.029649 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.029732 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.029765 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.029777 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.079202 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.079407 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.079525 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.080600 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.080648 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.080676 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.080758 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.080777 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.080790 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.130073 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.130194 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.130341 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.131942 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.131997 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.132028 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.131949 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.132072 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.132097 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.180336 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.180449 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.180582 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.182279 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.182338 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.182368 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.182286 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.182412 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.182445 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.230756 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.231010 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.231139 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.232998 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.233076 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.233138 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.233472 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.233529 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.233579 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.281490 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.281742 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.281933 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.283656 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.283739 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.283776 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.284164 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.284223 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.284268 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.332288 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.332514 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.332663 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.334860 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.334900 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.334926 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.335067 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.335105 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.335126 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.383523 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.383799 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.383976 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.385806 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.385879 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.385922 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.386210 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.386274 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.386323 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.434355 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.434632 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.434889 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.437555 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.437627 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.437676 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.438101 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.438166 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.438216 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.484927 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.485196 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.485461 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.488151 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.488232 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.488280 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.488976 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.489054 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.489204 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.536099 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.536320 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.536547 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.539298 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.539388 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.539440 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.539677 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.539739 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.539787 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.586825 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.587063 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.587283 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.590068 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.590157 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.590207 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.590587 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.590651 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.590743 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.637789 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.638015 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.638241 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.641140 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.641218 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.641268 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.641896 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.641958 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.641998 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.688447 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.688702 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.688921 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.692208 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.692277 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.692340 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.692776 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.692840 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.692890 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.738849 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.739034 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.739156 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.741888 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.741971 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.742022 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.742143 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.742214 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.742266 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.789197 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.789468 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.789701 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.792421 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.792619 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.792685 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.792486 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.792776 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.792815 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.839796 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.839986 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.840266 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.842998 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.843063 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.843114 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.843449 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.843552 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.843599 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.890728 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.890919 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.891030 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.893675 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.893739 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.893784 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.894107 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.894175 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.894224 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.940945 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.941188 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.941445 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.944296 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.944368 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.944418 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.944809 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.944869 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.944907 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.991532 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:08.991738 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.991987 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:08.994650 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.994721 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.994769 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:08.995179 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:08.995247 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:08.995294 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.042346 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.042665 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.043082 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.046100 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.046167 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.046214 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.046512 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.046589 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.046636 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.093753 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.094020 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.094229 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.097535 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.097621 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.097679 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.097661 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.097829 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.097873 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.144769 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.144976 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.145287 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.148052 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.148142 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.148198 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.148052 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.148286 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.148332 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.195628 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.195863 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.196079 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.199435 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.199523 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.199571 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.199711 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.199775 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.199820 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.246836 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.247078 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.247320 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.250236 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.250301 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.250349 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.250622 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.250684 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.250732 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.297939 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.298159 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.298385 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.301049 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.301138 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.301186 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.301441 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.301504 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.301537 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.348496 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.348818 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.349049 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.351705 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.351817 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.351869 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.352228 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.352303 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.352356 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.399495 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.399723 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.399962 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.402606 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.402682 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.402731 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.403023 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.403094 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.403146 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.449975 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.450252 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.450487 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.453334 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.453415 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.453507 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.453721 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.453784 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.453832 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.500845 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.501097 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.501310 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.503967 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.504004 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.504024 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.504338 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.504359 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.504377 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.552007 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.552113 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.552252 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.553393 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.553531 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.553595 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.553951 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.553975 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.554011 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.602515 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.602673 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.602861 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.603798 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.603820 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.603833 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.603895 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.603912 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.603920 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.653329 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.653446 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.653553 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.654732 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.654766 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.654780 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.654731 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.654803 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.654815 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.704508 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.704715 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.704899 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.705689 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.705713 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.705730 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.705790 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.705822 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.705841 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.755321 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.755533 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.755639 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.756790 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.756814 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.756833 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.756847 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.756816 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.756870 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.806455 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.806663 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.806870 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.808294 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.808324 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.808343 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.808460 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.808488 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.808508 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.857031 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.857306 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.857641 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.859184 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.859214 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.859231 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.859354 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.859379 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.859398 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.907829 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.908073 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.908222 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.909454 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.909484 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.909500 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.909593 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.909615 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.909635 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.958947 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:09.959042 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.959172 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:09.960473 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.960503 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.960522 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:09.960587 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:09.960611 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:09.960630 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.010080 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.010205 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.010325 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.011727 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.011757 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.011777 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.011887 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.011920 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.011940 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.061192 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.061322 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.061472 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.062817 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.062858 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.062892 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.062882 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.062935 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.062953 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.112195 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.112357 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.112429 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.114044 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.114125 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.114146 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.114159 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.114187 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.114204 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.162472 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.162593 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.162676 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.163868 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.163902 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.163925 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.164060 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.164087 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.164105 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.213390 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.213607 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.213663 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.215135 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.215174 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.215195 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.215135 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.215225 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.215243 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.264483 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.264675 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.264841 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.266436 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.266468 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.266486 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.266592 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.266619 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.266639 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.314918 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.315148 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.315307 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.316588 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.316650 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.316669 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.316841 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.316925 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.316942 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.366082 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.366343 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.366543 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.367671 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.367702 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.367720 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.367825 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.367850 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.367861 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.417186 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.417355 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.417592 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.418929 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.419118 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.419156 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.419246 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.419271 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.419284 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.468379 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.468636 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.468787 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.469968 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.470049 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.470078 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.470068 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.470110 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.470119 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.519417 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.519665 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.519897 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.521065 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.521152 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.521182 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.521165 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.521226 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.521245 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.569728 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.569932 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.570123 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.571774 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.571802 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.571819 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.572801 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.572873 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.572936 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.620305 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.620415 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.620591 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.622388 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.622415 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.622432 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.622977 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.623029 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.623043 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.671431 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.671548 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.671666 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.672769 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.672798 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.672816 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.673099 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.673123 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.673136 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.722456 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.722557 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.722689 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.723777 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.723808 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.723826 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.723934 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.723961 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.723980 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.773513 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.773780 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.774023 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.775901 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.775942 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.775964 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.775901 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.775995 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.776012 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.824674 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.824860 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.825054 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.826615 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.826644 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.826679 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.826760 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.826785 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.826803 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.875257 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.875470 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.875679 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.876885 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.876925 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.876946 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.876930 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.876977 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.876994 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.926491 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.926587 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.926645 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.927987 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.928021 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.928040 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.928046 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.928071 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.928087 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.977552 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:10.977716 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.977857 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:10.978754 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.978788 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.978803 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:10.978892 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:10.978914 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:10.978930 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.028361 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.028476 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.028523 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.029546 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.029575 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.029591 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.029656 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.029678 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.029694 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.079021 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.079160 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.079294 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.080322 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.080351 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.080366 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.080448 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.080469 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.080486 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.129899 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.130000 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.130128 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.131109 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.131135 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.131151 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.131171 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.131193 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.131213 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.180804 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.180905 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.180950 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.182672 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.182707 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.182726 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.182673 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.182759 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.182770 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.231004 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.231118 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.231170 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.232191 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.232227 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.232245 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.232190 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.232275 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.232289 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.281647 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.281757 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.281813 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.282704 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.282737 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.282752 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.282851 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.282879 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.282890 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.332330 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.332443 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.332582 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.333423 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.333448 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.333465 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.333583 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.333619 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.333637 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.382984 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.383105 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.383224 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.384374 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.384413 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.384434 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.384398 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.384460 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.384468 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.434019 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.434118 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.434226 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.435275 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.435306 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.435327 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.435275 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.435363 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.435398 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.484956 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.485071 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.485182 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.486058 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.486093 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.486110 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.486209 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.486240 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.486251 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.535835 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.535973 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.536102 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.537096 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.537138 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.537156 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.537103 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.537175 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.537183 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.586859 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.586961 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.587082 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.588108 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.588143 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.588159 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.588250 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.588294 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.588311 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.637597 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.637700 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.637739 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.638723 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.638750 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.638775 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.638846 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.638923 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.638945 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.688287 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.688508 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.688622 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.689777 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.689805 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.689827 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.689866 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.689890 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.689906 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.739306 raft.go:511: LIDER: Mando latido periodico y lo reprogramo
+127.0.0.1_29352 -> 18:36:11.739422 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.739484 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= []
+127.0.0.1_29352 -> 18:36:11.740516 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.740542 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.740558 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.740664 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.740685 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.740701 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.760113 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:11.760154 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:11.760186 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}}]
+127.0.0.1_29352 -> 18:36:11.760195 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:11.760215 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }}]
+127.0.0.1_29352 -> 18:36:11.760257 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:11.760311 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{7 1 {leer 0 }}]
+127.0.0.1_29352 -> 18:36:11.760437 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{7 1 {leer 0 }}]
+127.0.0.1_29352 -> 18:36:11.761302 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.761328 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.761346 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.761368 raft.go:390: LIDER-GR: MatchIndex de nodo 0 replicado
+127.0.0.1_29352 -> 18:36:11.761384 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:11.761399 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:11.761422 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:11.761442 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.761463 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.761479 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.762107 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:11.762139 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:11.762181 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }}]
+127.0.0.1_29352 -> 18:36:11.762198 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:11.762240 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }}]
+127.0.0.1_29352 -> 18:36:11.762270 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:11.762316 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{8 1 {leer 1 }}]
+127.0.0.1_29352 -> 18:36:11.762466 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{8 1 {leer 1 }}]
+127.0.0.1_29352 -> 18:36:11.763431 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.763455 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.763470 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.763488 raft.go:390: LIDER-GR: MatchIndex de nodo 0 replicado
+127.0.0.1_29352 -> 18:36:11.763503 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:11.763517 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:11.763539 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:11.763578 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.763603 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.763619 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.764219 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:11.764250 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:11.764297 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }}]
+127.0.0.1_29352 -> 18:36:11.764314 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:11.764353 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }} {9 1 {leer 2 }}]
+127.0.0.1_29352 -> 18:36:11.764407 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:11.764467 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{9 1 {leer 2 }}]
+127.0.0.1_29352 -> 18:36:11.764633 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{9 1 {leer 2 }}]
+127.0.0.1_29352 -> 18:36:11.765615 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.765646 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.765661 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.765676 raft.go:390: LIDER-GR: MatchIndex de nodo 0 replicado
+127.0.0.1_29352 -> 18:36:11.765689 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:11.765701 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:11.765721 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:11.765751 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.765775 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.765791 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.766425 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:11.766455 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:11.766495 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }} {9 1 {leer 2 }}]
+127.0.0.1_29352 -> 18:36:11.766511 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:11.766549 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }} {9 1 {leer 2 }} {10 1 {leer 3 }}]
+127.0.0.1_29352 -> 18:36:11.766573 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:11.766621 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{10 1 {leer 3 }}]
+127.0.0.1_29352 -> 18:36:11.766745 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{10 1 {leer 3 }}]
+127.0.0.1_29352 -> 18:36:11.767634 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.767664 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.767680 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.767697 raft.go:390: LIDER-GR: MatchIndex de nodo 1 replicado
+127.0.0.1_29352 -> 18:36:11.767713 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:11.767724 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:11.767744 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:11.767732 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.767819 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.767834 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.768437 raft.go:573: RPC - SOperacion: Petición de cliente recibida
+127.0.0.1_29352 -> 18:36:11.768462 raft.go:581: RPC - SOperacion: Soy lider, acepto petición
+127.0.0.1_29352 -> 18:36:11.768516 raft.go:592: LIDER: Mi registro antes de cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }} {9 1 {leer 2 }} {10 1 {leer 3 }}]
+127.0.0.1_29352 -> 18:36:11.768530 raft.go:593: LIDER: Concateno operacion a mi registro
+127.0.0.1_29352 -> 18:36:11.768574 raft.go:598: LIDER: Mi registro tras cliente= [{0 0 {  }} {1 1 {escribir 123 Hola mundo!}} {2 1 {escribir 0 Rand}} {3 1 {escribir 1 Rand}} {4 1 {escribir 3 Rand}} {5 1 {escribir 2 Rand}} {6 1 {escribir 4 Rand}} {7 1 {leer 0 }} {8 1 {leer 1 }} {9 1 {leer 2 }} {10 1 {leer 3 }} {11 1 {leer 4 }}]
+127.0.0.1_29352 -> 18:36:11.768618 raft.go:522: LIDER: Tratando petición de cliente
+127.0.0.1_29352 -> 18:36:11.768655 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{11 1 {leer 4 }}]
+127.0.0.1_29352 -> 18:36:11.768796 raft.go:463: LIDER-GR: Entradas a replicar por seguidores= [{11 1 {leer 4 }}]
+127.0.0.1_29352 -> 18:36:11.769779 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.769807 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.769824 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.769841 raft.go:390: LIDER-GR: MatchIndex de nodo 0 replicado
+127.0.0.1_29352 -> 18:36:11.769856 raft.go:390: LIDER-GR: MatchIndex de nodo 2 replicado
+127.0.0.1_29352 -> 18:36:11.769870 raft.go:395: LIDER-GR: Entrada comprometida, procedo a aplicar
+127.0.0.1_29352 -> 18:36:11.769881 raft.go:415: LIDER-GR: Recibido reply de AppendEntry
+127.0.0.1_29352 -> 18:36:11.769905 raft.go:425: LIDER-GR: Mi AppendEntry ha sido aceptado
+127.0.0.1_29352 -> 18:36:11.769919 raft.go:430: LIDER-GR: Compruebo si comprometer entrada replicada
+127.0.0.1_29352 -> 18:36:11.769891 raft.go:616: RPC - SOperacion: Fin de petición
+127.0.0.1_29352 -> 18:36:11.772257 raft.go:627: RPC - ParaNodo: Me piden parar mi servicio, FIN

@@ -1,0 +1,84 @@
+# Manifiesto para lanzar tres réplicas Raft tolerantes a fallos
+# junto a un cliente interactivo
+
+# Servicio para dar de alta a los nodos Raft
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: raft-ss-service
+  labels:
+    app: raft
+spec:
+  clusterIP: None
+  selector:
+    app: raft
+  ports:
+  - port: 29311
+    name: raft-port
+    protocol: TCP
+    targetPort: 29311
+---
+
+# Lanza 3 réplicas Raft mediante un Stateful Set
+
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: raft-ss
+spec:
+  serviceName: raft-ss-service
+  replicas: 3
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: raft
+  template:
+    metadata:
+      labels:
+        app: raft
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: raft
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nodo
+        image: localhost:29310/nodo:latest
+        env:
+        - name: DNS_DOMAIN
+          value: raft-ss-service.default.svc.cluster.local
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        command:
+        - /srvraft
+        - $(POD_NAME)
+        - raft-ss-0.$(DNS_DOMAIN):29311
+        - raft-ss-1.$(DNS_DOMAIN):29311
+        - raft-ss-2.$(DNS_DOMAIN):29311
+        ports:
+        - containerPort: 29310
+---
+
+# Cliente interactivo (pod simple)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cliente
+spec:
+  restartPolicy: Never
+  containers:
+  - name: cliente
+    image: localhost:29310/cliente:latest
+    command:
+    - sleep
+    - "3600"
+    ports:
+    - containerPort: 29319
+---
