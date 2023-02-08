@@ -46,8 +46,35 @@ double[n] mochila(double[n] benef, peso, double cap)
     return sol;
 }
 ```
+Su coste temporal es lineal (o logarítmico $\Theta(n\space log\space n)$ si hay que ordenar los vectores).
 
 ## Caminos mínimos en grafos (Dijkstra)
+
+Se desea encontrar el camino de menor peso de un grafo etiquetado con pesos no negativos para cada arista.
+
+
+Una matriz de adyacencia es una matriz cuadrada del tamaño del número de vertices. El elemento en $[i,j]$ es verdadero si existe una arista que vaya del vértice $i$ al $j$. Si los grafos son etiquetados y con pesos, los valores de la matriz representan el peso de la arista. 
+
+Una lista de adyacencia es un vector de listas enlazadas con tantas posiciones como vértices, donde la i-ésima entrada contiene una lista de sus sucesores.
+
+Una lista múltiple de adyacencia 
+
+```cpp
+const int N = /* Cardinal */; 
+
+/* Grafo de adyacencia */
+typedef int[N,N] grafoMatriz; 
+
+/* Lista adyacencia */
+struct nodoAdyacencia {
+    int vertice;
+    nodoAdyacencia *sig;
+}
+
+typedef nodoAdyacencia*[N] grafoLista;
+
+
+```
 
 ## Árboles de recubrimiento de coste mínimo
 
@@ -59,7 +86,7 @@ double[n] mochila(double[n] benef, peso, double cap)
 
 ## Fundamentos teóricos del esquema voraz
 
-## Un problema de planificaciónn de tareas a plazo fijo
+## Un problema de planificación de tareas a plazo fijo
 
 ## Heurísticas voraces
 
