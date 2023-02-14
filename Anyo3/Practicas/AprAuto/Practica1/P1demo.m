@@ -23,7 +23,7 @@ X = [ones(N,1) x1];
 th = [5000 1000]';  % Pongo un valor cualquiera de pesos
 Xextr = [1 min(x1)  % Predicción para los valores extremos
          1 max(x1)];
-yextr = Xextr * th;  
+yextr = Xextr * th;
 plot(Xextr(:,2), yextr, 'r-'); % Dibujo la recta de predicción
 legend('Datos Entrenamiento', 'Prediccion')
 

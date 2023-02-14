@@ -13,7 +13,7 @@ title: Proyecto Software
 
 Un proyecto de git tiene:
 
-- Un repositorio (`.git`, que contiene la historia del proyecto).
+- Un repositorio (`.git`), que contiene la historia del proyecto).
 - El directorio/árbol de trabajo (donde está la copia del repositorio).
 - El área de preparación o índice (dentro de `.git`, con los cambios del proyecto a comprometer).
 
@@ -36,7 +36,7 @@ Los ficheros rastreados pueden estar comprometidos (*committed*, sin cambios des
 # Añadir fichero a rastrear.
 git add <FICHERO>
 
-# Dejar de rastrear un fichero (sin eliminarlo).
+# Dejar de rastrear un fichero (sin eliminarlo del directorio de trabajo).
 git rm --cached <FICHERO>
 ```
 
@@ -51,27 +51,27 @@ git commit -m <MENSAJE>
 # Con -a añade ficheros rastreados y modificados al commit automáticamente
 git commit -a ...
 
-# Añadir ficheros preparados a commit anterior.
+# --amend permite corregir el commit anterior.
 git commit --amend ...
 ```
 
 Si se modifica un fichero pero se quiere desistir de estos cambios:
 
 ```bash
-# Descartar cambios de fichero preparado sin modificarlo.
+# Marca fichero como no preparado sin modificarlo.
 git restore --staged <FICHERO>
 
-# Restaurar fichero a estado desde último commit (se pierden datos).
+# Restaurar fichero a estado en último commit (se pierden datos).
 git checkout -- <FICHERO>
 ```
 
 Alternativamente, se puede deshacer cambios entre commits:
 
 ```bash
-# Realiza un commit que deshace los cambios del anterior
+# Realiza un commit que deshace los cambios del anterior.
 git revert HEAD
 
-# Vuelve a un commit anterior eliminando posteriores (se pierden datos).
+# Vuelve a un commit anterior y borra los posteriores (se pierden datos).
 git reset --hard <HASH>
 ```
 
@@ -89,7 +89,7 @@ git branch -d <RAMA>
 # Cambiar de rama.
 git checkout <RAMA>
 
-# Crear rama y cambiar.
+# -b crea una nueva rama y cambia a ella.
 git checkout -b ...
 
 # Cambiar de rama modifica el directorio de trabajo. Si hay cambios en el
@@ -98,9 +98,9 @@ git checkout --force ...
 ```
 Las ramas se pueden volver a unir de varias formas:
 
-- Si la rama actual se fusiona con un descendiente, se realiza un *fast-forward*.
-- Si las ramas son paralelas pero no hay conflictos, se realiza un *merge commit* (combina recursivamente los cambios).
-- Si hay conflictos, lo indicará y no realizará el *merge*. Además añadirá marcadores dentro de los ficheros afectados para facilitar encontrarlos.
+- Si la rama actual se fusiona con un descendiente, se realiza un ***fast-forward***.
+- Si las ramas son paralelas pero no hay conflictos, se realiza un ***merge commit*** (combina recursivamente los cambios).
+- Si hay conflictos, lo indicará y no realizará el *merge*. Además añadirá **marcadores** dentro de los ficheros afectados para facilitar encontrarlos.
 
 ```bash
 # Mezclar los cambios de una rama con otra 
@@ -127,3 +127,27 @@ git diverge
 ```
 
 ## Repositorios remotos
+
+Los repositorios remotos se encuentran en un servidor o en línea en vez de en una máquina local. Son lo que permite la colaboración sobre un mismo repositorio. Por defecto se le da el nombre de *origin*.
+
+```bash
+# Consultar repositorios remotos
+git remote
+
+# Añadir repositorio remoto
+git remote add <NOMBRE> <URL>
+
+# Descargar cambios del repositorio remoto.
+git fetch <REMOTO>
+
+# Mezclar cambios del repositorio remoto
+git merge <REMOTO>/<RAMA>
+
+# Descargar y mezclar cambios del repositorio remoto.
+git pull <REMOTO>
+
+# Subir cambios a repositorio remoto.
+git push <REMOTO> <RAMA>
+```
+Para subir cambios al remoto, es necesario que el repositorio local tenga los últimos cambios. Por ello, para trabajar se realiza un *pull* primero para obtener el último estado de la rama, y un *push* para enviar cambios una vez se hayan realizado.
+

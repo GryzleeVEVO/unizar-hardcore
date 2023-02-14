@@ -1,18 +1,24 @@
 {
     "cSpell.language": "en,es-ES",
     "cSpell.words": [
+        "acíclico",
         "adyacencia",
         "Heurísticas",
+        "Inicialización",
+        "mezclarlo",
         "minimización",
         "monovariable",
         "multivariable",
+        "Recalcula",
         "recursivamente"
     ],
     "cSpell.ignoreWords": [
+        "Vertice",
         "benef",
         "mainfont",
         "monofont",
         "typedef",
+        "vertice",
         "ésima"
     ]
 }
