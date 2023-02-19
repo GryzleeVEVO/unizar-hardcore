@@ -3,6 +3,7 @@
     "cSpell.words": [
         "acíclico",
         "adyacencia",
+        "Decomposición",
         "Heurísticas",
         "Inicialización",
         "mezclarlo",
@@ -10,7 +11,8 @@
         "monovariable",
         "multivariable",
         "Recalcula",
-        "recursivamente"
+        "recursivamente",
+        "subpaquetes"
     ],
     "cSpell.ignoreWords": [
         "Vertice",
