@@ -180,19 +180,116 @@ Las relaciones se pueden clasificar en:
 
 ### Vista de componentes y conectores
 
-Se compone de los objetos y/o procesos en tiempo de ejecución junto a los caminos que permiten interactuar entre ellos, como pueden ser las API.
+Se compone de los objetos y/o procesos en tiempo de ejecución junto a los caminos que permiten interactuar entre ellos, como pueden ser las API. Se suelen agrupar en ***tiers***.
+
+Los **componentes** son los procesos, objetos, almacenes de datos, ... , que componen los datos. Los **conectores** son las llamadas a métodos, invocaciones de servicios, colas de mensajes, etc...
+
+> TODO: Poner ejemplo vista componentes
 
 ### Vista de despliegue
 
 Refleja la relación entre componentes y conectores, y el hardware donde se ejecutan, en una situación de ejecución con un despliegue concreto. 
 
+> TODO: Poner ejemplo vista despliegue
+
 ## Comportamiento
 
+Las comunicaciones son una combinación de estímulos (un componente comunica a otro algo) e intercambio de datos (un componente hace llegar datos a otro).
 
+La comunicación puede ser:
+
+- **Local** o **remota** (en red).
+- **Síncrona** (el emisor no sigue hasta que le contestan) o **asíncrona** (el emisor no espera respuesta activamente).
+  
+La comunicación se puede expresar:
+
+- **Trazas**: secuencia de actividades o interacciones que describen cómo el sistema responde a ciertos estímulos. Se centran en una fracción del comportamiento global entre componentes.
+- **Modelos comprensivos**: documentan el comportamiento completo de uno o más elementos estructurales. Se centra en el comportamiento de un grupo de elementos entero.
+
+> TODO: Ejemplo trazas y modelos comprensivos
 
 # Arquetipos de aplicaciones
 
+## Arquetipos de aplicaciones comunes
 
+### Aplicaciones móviles
+
+> TODO: Imágenes aaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+Cliente móvil pesado:
+
+- Generalmente siguen el patrón **modelo-vista**.
+- La lógica de la aplicación se encuentran en el cliente.
+- La BD local actúa como cache de la BD del servidor.
+
+Cliente móvil pesado alternativo:
+
+- Parte de la lógica está implementada en el servidor.
+- Opción si se necesita desarrollar múltiples clientes o se comunica con una API web. 
+
+### Aplicaciones web
+
+Cliente web ligero:
+
+- Sigue un patrón **modelo-vista-controlador**.
+- El cliente realiza poco procesamiento: el grueso está en el propio servidor.
+- Seguida por muchas aplicaciones existentes.
+
+Cliente web pesado:
+
+- Siguen un patrón **cliente-servidor**.
+- Parecido a las arquitecturas móviles.
+- Se puede ofrecer una API web para su uso por terceros.
+
+### Aplicaciones de escritorio
+
+- Basados en el patrón **modelo-vista**, pero con una UI bastante distinta.
+- Suele haber solo una BD.
+- El acceso a la BD se puede hacer directamente y sin cifrar si se está en una red confiable.
+
+## Estrategias de despliegue
+
+### Despliegue en 2 niveles
+
+- Despliegue **cliente-servidor**.
+- Se separa lógica de la aplicación de la BD.
+- Solo se utiliza realmente en aplicaciones de Intranet.
+
+### Despliegue en 3 niveles
+
+- El cliente interactúa con una **aplicación en otro *tier* distinto**.
+- El software de aplicación interactúa con la BD.
+- Utilizada en aplicaciones y servicios *web* de baja complejidad y simple de escalar.
+- Normalmente se establece un **WAF** (*web application firewall*) para filtrar el tráfico HTTP.
+
+### Despliegue en 4 niveles
+
+- Se separa el servidor web del servidor de aplicaciones.
+
+## Bases de datos
+
+Se puede elegir entre:
+
+- **BD relacional (SQL)**
+  - Transacciones **ACID**
+  - Esquema de datos rígido.
+  - Buen rendimiento de consultas para modelos de datos desagregados.
+  - Escalado vertical (mejor máquina, mejor rendimiento).
+- **No relacionales (NoSQL)**
+  - Transacciones limitadas.
+  - Esquema de datos flexible.
+  - Escalado horizontal (mas máquinas, mas rendimiento).
+
+Se puede utilizar un *framework de persistencia* o mapeador objeto-relacional para facilitar la programación y evitar código repetitivo. 
+
+Es recomendable crear un *pool* de conexiones con la BD, donde se pueda pedir una conexión ya abierta para acceder a ella, pues abrir conexiones es costoso.
+
+## Aspectos transversales 
+
+- Los componentes se deben distribuir sólo lo estrictamente necesario.
+- Es mejor interfaces con muchos parámetros que muchas llamadas diferentes.
+- Se debe considerar si las comunicaciones contienen estado (lo almacena el servidor por cada petición) o son sin estado (las peticiones vienen acompañadas del estado del cliente).
 
 # Documentación arquitectural
 

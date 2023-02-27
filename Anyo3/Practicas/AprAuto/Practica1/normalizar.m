@@ -1,5 +1,5 @@
 function [XNorm, mu, sigma] = normalizar(X, N)
-    %NORMALIZAR
+    %NORMALIZAR Normaliza un conjunto de atributos
     mu = mean(X(:, 2:end));
     sigma = std(X(:, 2:end));
 

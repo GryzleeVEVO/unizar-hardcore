@@ -2,8 +2,8 @@
 % Práctica 1: Regresión
 % Autor: Dorian Boleslaw Wozniak (817570@unizar.es)
 
-function [theta, thetaHist, i] = descensoHuber(X, Y, alpha, delta)
-    %DESCENSOHUBER Algoritmo de descenso de gradiente para la función de coste de Huber
+function [theta, thetaHist, i] = descensoCuadratico(X, Y, alpha)
+    %DESCENSOGRADIENTE Algoritmo de descenso de gradiente para la función de coste cuardrática
 
     iter = 10 ^ 3; tol = 10 ^ -3;
 
@@ -15,11 +15,8 @@ function [theta, thetaHist, i] = descensoHuber(X, Y, alpha, delta)
     end
 
     for i = 1:iter
-        r = X * theta - Y;
-        good = abs(r) <= delta;
-
         % Calcula el gradiente dados los pesos
-        grad = X(good, :)' * r(good) + delta * X(~good, :)' * sign(r(~good));
+        grad = X' * (X * theta - Y);
 
         % Para si el gradiente aumenta o si el cambio es pequeño
         if (i ~= 1)

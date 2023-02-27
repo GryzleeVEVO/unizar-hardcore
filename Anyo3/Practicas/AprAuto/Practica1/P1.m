@@ -1,3 +1,7 @@
+% Aprendizaje Automático
+% Práctica 1: Regresión
+% Autor: Dorian Boleslaw Wozniak (817570@unizar.es)
+
 close all;
 %% Carga de datos
 datosEntrenamiento = load('PisosTrain.txt');
@@ -12,102 +16,14 @@ superficieTest = datosValidacion(:, 1);
 habitacionesTest = datosValidacion(:, 2);
 precioTest = datosValidacion(:, 3);
 NTest = length(precioTest);
-%% Regresión monovariable, ecuación normal
 
-X = [ones(N, 1), superficie];
+%% Pruebas
+run("P1MonoNormal.m");
 
-% Normalización
-%[XNorm, mu, sigma] = normalizar(X, N);
+run("P1MultiNormal.m");
 
-% Obtiene pesos
-theta = XNorm \ precio;
+run("P1MonoErrorCuad.m");
 
-% Desnormalización
-%theta = desnormalizar(theta, mu, sigma);
+run("P1MultiErrorCuad.m");
 
-% Obtiene predicción
-precioPredicho = X * theta;
-
-%graficaMonovariable(superficie, precio, X, precioPredicho);
-
-mean(abs(precioPredicho - precio) ./ precio)
-
-%% Regresión multivariable, ecuación normal
-
-X = [ones(N, 1), superficie, habitaciones];
-
-% Normalización
-[XNorm, mu, sigma] = normalizar(X, N);
-
-% Obtiene pesos
-theta = XNorm \ precio;
-
-% Desnormalización
-theta = desnormalizar(theta, mu, sigma);
-
-% Obtiene predicción
-precioPredicho = X * theta;
-
-%graficaMultivariable(superficie, habitaciones, precio, precioPredicho, theta);
-
-mean(abs(precioPredicho - precio) ./ precio)
-
-%% Regresión monovariable, descenso de gradiente
-
-X = [ones(N, 1), superficie];
-
-% Normalización
-[XNorm, mu, sigma] = normalizar(X, N);
-
-% Obtiene pesos
-theta = descensoGradiente(XNorm, precio, 5 * 10 ^ -3);
-
-% Desnormalización
-theta = desnormalizar(theta, mu, sigma);
-
-% Obtiene predicción
-precioPredicho = X * theta;
-
-%graficaMonovariable(superficie, precio, X, precioPredicho);
-
-mean(abs(precioPredicho - precio) ./ precio)
-
-%% Regresión multivariable, descenso de gradiente
-
-X = [ones(N, 1), superficie, habitaciones];
-
-% Normalización
-[XNorm, mu, sigma] = normalizar(X, N);
-
-% Obtiene pesos
-theta = descensoGradiente(XNorm, precio, 3 * 10 ^ -3);
-
-% Desnormalización
-theta = desnormalizar(theta, mu, sigma);
-
-% Obtiene predicción
-precioPredicho = X * theta;
-
-graficaMultivariable(superficie, habitaciones, precio, precioPredicho, theta);
-
-mean(abs(precioPredicho - precio) ./ precio)
-
-%% Regresión robusta, coste de Huber
-
-X = [ones(N, 1), superficie, habitaciones];
-
-% Normalización
-[XNorm, mu, sigma] = normalizar(X, N);
-
-% Obtiene pesos
-theta = descensoHuber(XNorm, precio, 3.5, 5);
-
-% Desnormalización
-theta = desnormalizar(theta, mu, sigma);
-
-% Obtiene predicción
-precioPredicho = X * theta;
-
-%graficaMultivariable(superficie, habitaciones, precio, precioPredicho, theta);
-
-mean(abs(precioPredicho - precio) ./ precio)
+run("P1MultiCosteHuber.m");
