@@ -28,7 +28,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/MHcypher",
-            "args": [],
+            "args": [-d, 2, 3, 7, 15, 31, 61, 17],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
