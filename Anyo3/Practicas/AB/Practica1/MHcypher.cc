@@ -97,12 +97,10 @@ int inverse(int a, int N)
  */
 MHPrivateKey generarClavePrivada(vector<int> e, int N, int w)
 {
-    int eSum = 0, prev = 0;
+    int eSum = 0;
 
     for (auto i : e)
     {
-        eSum += i;
-
         // El sistema no funciona para enteros negativos
         if (i < 1)
         {
@@ -110,13 +108,14 @@ MHPrivateKey generarClavePrivada(vector<int> e, int N, int w)
             exit(1);
         }
 
-        // El sistema no funciona para bloques no ascendentes
-        if (prev && prev > i)
+        // El sistema no funciona para bloques no supercrecientes
+        if (eSum >= i)
         {
-            cerr << "El bloque no es ascendente: " << prev << " > " << i << endl;
+            cerr << "El bloque no es supercreciente: " << eSum << " > " << i << endl;
             exit(1);
         }
-        prev = i;
+
+        eSum += i;
     }
 
     // Avisa si la mochila es pequeña
@@ -235,7 +234,7 @@ vector<int> cifrar(MHPublicKey pub, string msg)
             {
                 result[i] += pub[j];
             }
-            
+
             toCypher[i] /= 2;
         }
     }
@@ -267,7 +266,6 @@ string descifrar(MHPrivateKey priv, vector<int> msg)
             {
                 decyphered[i] += pow(2.0, priv.e.size() - j - 1);
                 toDecypher[i] -= priv.e[j];
-                cout << toDecypher[i] << endl;
             }
         }
     }
@@ -280,7 +278,7 @@ string descifrar(MHPrivateKey priv, vector<int> msg)
         if (!ascii)
             result += decyphered[i] + 'A' - 1;
         else
-            result += (char) decyphered[i];
+            result += (char)decyphered[i];
     }
 
     return result;
@@ -365,8 +363,14 @@ int main(int argc, char **argv)
     if (crypt)
     {
         string msg, input;
-        while (cin >> input)
+        while (getline(cin, input))
+        {
             msg += input;
+            if (cin.good())
+            {
+                msg += "\n";
+            }
+        }
 
         MHPublicKey pub = generarClavePublica(priv);
         vector<int> cypher = cifrar(pub, msg);
@@ -385,7 +389,7 @@ int main(int argc, char **argv)
             msg.push_back(atoi(input.c_str()));
 
         string decypher = descifrar(priv, msg);
-        cout << decypher << endl;
+        cout << decypher;
     }
 
     return 0;

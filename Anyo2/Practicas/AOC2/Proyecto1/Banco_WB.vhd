@@ -17,8 +17,8 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,49 +29,49 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Banco_WB is
-Port ( 	ALU_out_MEM : in  STD_LOGIC_VECTOR (31 downto 0); 
-		ALU_out_WB : out  STD_LOGIC_VECTOR (31 downto 0); 
-		MEM_out : in  STD_LOGIC_VECTOR (31 downto 0); 
-		MDR : out  STD_LOGIC_VECTOR (31 downto 0); --memory data register
-        clk : in  STD_LOGIC;
-		reset : in  STD_LOGIC;
-        load : in  STD_LOGIC;
-		MemtoReg_MEM : in  STD_LOGIC;
-        RegWrite_MEM : in  STD_LOGIC;
-		MemtoReg_WB : out  STD_LOGIC;
-        RegWrite_WB : out  STD_LOGIC;
-        RW_MEM : in  STD_LOGIC_VECTOR (4 downto 0); -- registro destino de la escritura
-        RW_WB : out  STD_LOGIC_VECTOR (4 downto 0); -- PC+4 en la etapa IDend Banco_WB;
-        --bits de validez
-        valid_I_WB_in: in STD_LOGIC;
-        valid_I_WB: out STD_LOGIC);
-end Banco_WB;
-architecture Behavioral of Banco_WB is
+ENTITY Banco_WB IS
+   PORT (
+      ALU_out_MEM : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+      ALU_out_WB : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+      MEM_out : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+      MDR : OUT STD_LOGIC_VECTOR (31 DOWNTO 0); --memory data register
+      clk : IN STD_LOGIC;
+      reset : IN STD_LOGIC;
+      load : IN STD_LOGIC;
+      MemtoReg_MEM : IN STD_LOGIC;
+      RegWrite_MEM : IN STD_LOGIC;
+      MemtoReg_WB : OUT STD_LOGIC;
+      RegWrite_WB : OUT STD_LOGIC;
+      RW_MEM : IN STD_LOGIC_VECTOR (4 DOWNTO 0); -- registro destino de la escritura
+      RW_WB : OUT STD_LOGIC_VECTOR (4 DOWNTO 0); -- PC+4 en la etapa IDend Banco_WB;
+      --bits de validez
+      valid_I_WB_in : IN STD_LOGIC;
+      valid_I_WB : OUT STD_LOGIC);
+END Banco_WB;
+ARCHITECTURE Behavioral OF Banco_WB IS
 
-begin
-SYNC_PROC: process (clk)
-   begin
-      if (clk'event and clk = '1') then
-         if (reset = '1') then
+BEGIN
+   SYNC_PROC : PROCESS (clk)
+   BEGIN
+      IF (clk'event AND clk = '1') THEN
+         IF (reset = '1') THEN
             ALU_out_WB <= "00000000000000000000000000000000";
-				MDR <= "00000000000000000000000000000000";
-				RW_WB <= "00000";
-				MemtoReg_WB <= '0';
-				RegWrite_WB <= '0';
-				valid_I_WB <= '0';
-         else
-            if (load='1') then 
-					ALU_out_WB <= ALU_out_MEM;
-					MDR <= Mem_out;
-					RW_WB <= RW_MEM;
-					MemtoReg_WB <= MemtoReg_MEM;
-					RegWrite_WB <= RegWrite_MEM;
-					valid_I_WB <= valid_I_WB_in;
-				end if;	
-         end if;        
-      end if;
-   end process;
+            MDR <= "00000000000000000000000000000000";
+            RW_WB <= "00000";
+            MemtoReg_WB <= '0';
+            RegWrite_WB <= '0';
+            valid_I_WB <= '0';
+         ELSE
+            IF (load = '1') THEN
+               ALU_out_WB <= ALU_out_MEM;
+               MDR <= Mem_out;
+               RW_WB <= RW_MEM;
+               MemtoReg_WB <= MemtoReg_MEM;
+               RegWrite_WB <= RegWrite_MEM;
+               valid_I_WB <= valid_I_WB_in;
+            END IF;
+         END IF;
+      END IF;
+   END PROCESS;
 
-end Behavioral;
-
+END Behavioral;

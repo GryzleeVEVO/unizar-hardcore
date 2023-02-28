@@ -469,7 +469,7 @@ BEGIN
 	-- IMPORTANTE: para detectar un riesgo, primero comprobar que las instrucciones implicadas son v�lidas. �Las instrucciones invalidas no generan riesgos porque no son instrucciones que se vayan a ejecutar
 	-------------------------------------------------------------------------------------
 
-	Unidad_detenci�n_riesgos : UD PORT MAP (valid_I_ID => valid_I_ID, valid_I_EX => valid_I_EX, valid_I_MEM => valid_I_MEM, Reg_Rs_ID => Reg_Rs_ID, Reg_Rt_ID => Reg_Rt_ID, MemRead_EX => MemRead_EX, RW_EX => RW_EX, RegWrite_EX => RegWrite_EX,
+	Unidad_detencion_riesgos : UD PORT MAP (valid_I_ID => valid_I_ID, valid_I_EX => valid_I_EX, valid_I_MEM => valid_I_MEM, Reg_Rs_ID => Reg_Rs_ID, Reg_Rt_ID => Reg_Rt_ID, MemRead_EX => MemRead_EX, RW_EX => RW_EX, RegWrite_EX => RegWrite_EX,
 	RW_Mem => RW_Mem, RegWrite_Mem => RegWrite_Mem, IR_op_code => IR_op_code, salto_tomado => salto_tomado,
 	kill_IF => kill_IF, parar_ID => parar_ID,
 	Mem_ready => Mem_ready, parar_EX => parar_EX);
