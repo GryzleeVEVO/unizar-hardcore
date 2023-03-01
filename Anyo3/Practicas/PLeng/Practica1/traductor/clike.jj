@@ -16,11 +16,7 @@ PARSER_BEGIN(clike)
 
 package traductor;
 
-//...
-
 public class clike {
-	//...
-	
     public static void main(String[] args) {
     	clike parser = null;
     	
@@ -32,8 +28,7 @@ public class clike {
 	            parser = new clike(new java.io.FileInputStream(args[0]));
 			}
 			//Programa es el símbolo inicial de la gramática
-			parser.Programa(at);
-			//...
+			parser.Programa();
 			System.out.println("***** Análisis terminado con éxito *****");
 		}
 		catch (java.io.FileNotFoundException e) {
@@ -41,9 +36,15 @@ public class clike {
 		}
 		catch (TokenMgrError e) {
         	System.err.println("LEX_ERROR: " + e.getMessage());
+        } 
+		catch (ParseException e) {
+            System.err.println("PARSER_ERROR: " + e.getMessage());
         }
-        //...
     }
+
+	public static void printToken(String s, Token t) {
+		System.out.printf("(%d,%d): %s \"%s\"\n", t.beginLine, t.beginColumn, s, t.image);
+	}
 }
 PARSER_END(clike)
 
@@ -53,19 +54,86 @@ TOKEN : {
 }
 
 TOKEN : {
-|	< tBOOL: "bool" >
+
+	/* Palabras reservadas */
+
+	// Tipos de datos básicos
+	< tBOOL: "bool" >
 |	< tCHAR: "char" >
-	...
+| 	< tINT: "int" >
+|	< tVOID: "void" >
+
+	// Condicionales
+| 	< tIF: "if"> 
+|	< tELSE: "else" >
+
+	// Bucles	
+| 	< tWHILE : "while" >
+
+	// Regreso
+| 	< tRETURN : "return">
+
+	/* Delimitadores */
+
+	// Paréntesis (guardas if/while, parametros funciones)
+|	< tPAREN_INI: "(" >
+|	< tPAREN_FIN : ")" >
+
+	// Llaves (delimitadores bloques)
+| 	< tLLAVE_INI : "{" >
+| 	< tLLAVE_FIN : "}" >
+
+	// Separador de variables 
+|	< tCOMA : "," >
+	
+	// Fin de órden
+|	< tPUNTO_COMA : ";" >
+	
+	/* Operadores */
+
+	// Asignación
+|	< tASIGNAR : "=" >
+	
+	// Aritmética
+|	< tSUMA : "+" >
+|	< tRESTA : "-" >
+|	< tMULTI : "*" >
+|	< tDIV : "/" >
+|	< tMODULO : "%" >
+
+	// Lógica 
+|	< tMAYOR : ">" >
+|	< tMENOR : "<" >
+|	< tMAYOR_IGUAL: ">=" >
+|	< tMENOR_IGUAL : "<=" >
+|	< tIGUAL : "==" >
+|	< tDISTINTO : "<>" >
+
+
+	// Corchetes (vectores)
+| 	< tCORCH_INI : "[" >
+| 	< tCORCH_FIN : "]" >
+
+	/* Identificadores */
+|	<tIDENTIFICADOR : ( < LETTER > | "_")( < LETTER > | < DIGIT > | "_" )+ > 
+	{
+		clike.printToken("identificador", matchedToken);
+	}
+}
+
+SKIP : {
+	" " | "\t" | "\n" | <tCOMENTARIO : ("//"(~["\n"])+) > 
 }
 
 //------------ Símbolo inicial de la gramática. Para análisis léxico no hace falta más
 void Programa() : 
 {
-
+	Token t;
 }
 {
 	( 
-		< tBEGIN > | < tBOOL > | < tCHAR > | ...
+		
+		<tIDENTIFICADOR>
 	)+
-	< EOF >
+	< EOF > { }
 }

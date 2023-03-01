@@ -1,0 +1,64 @@
+v 4
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "adder32.vhd" "d7d6246bf4e116e2eaa3ee569a83a04bf3f9b01d" "20230228120203.991":
+  entity adder32 at 20( 486) + 0 on 17;
+  architecture behavioral of adder32 at 40( 1097) + 0 on 18;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "ALU.vhd" "5f42023fd0ea776f78b428badb1ef63fccc533d6" "20230228120204.382":
+  entity alu at 20( 482) + 0 on 41;
+  architecture behavioral of alu at 41( 1278) + 0 on 42;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Banco_EX.vhd" "8637b5581f12c9f14086b17954b34e2471ad83d5" "20230228120204.246":
+  entity banco_ex at 20( 487) + 0 on 33;
+  architecture behavioral of banco_ex at 73( 2253) + 0 on 34;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Banco_ID.vhd" "8850c31c7275730fd91f70229302aaf15735d75c" "20230228120204.053":
+  entity banco_id at 4( 290) + 0 on 21;
+  architecture behavioral of banco_id at 24( 1136) + 0 on 22;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Banco_MEM.vhd" "361b70ee40e2147a04d539c711970f56ec9f282f" "20230228120204.443":
+  entity banco_mem at 20( 488) + 0 on 45;
+  architecture behavioral of banco_mem at 59( 1827) + 0 on 46;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Banco_WB.vhd" "4e1343185455126d67ca372c28a5be79334258d5" "20230228120204.522":
+  entity banco_wb at 20( 487) + 0 on 49;
+  architecture behavioral of banco_wb at 51( 1615) + 0 on 50;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "bits_shifter.vhd" "cb6c7287ece1e14bead1766e9c5cf398e6d72a74" "20230228120204.150":
+  entity two_bits_shifter at 20( 491) + 0 on 27;
+  architecture behavioral of two_bits_shifter at 38( 1007) + 0 on 28;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "BReg.vhd" "b090e55acf04ac5225dbed8af350b410e9fdf4e5" "20230228120204.084":
+  entity breg at 20( 481) + 0 on 23;
+  architecture behavioral of breg at 47( 1527) + 0 on 24;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "counter.vhd" "cf61757e54a01b1e7c81b1b4d61725d8a8787f26" "20230228120204.556":
+  entity counter at 20( 487) + 0 on 51;
+  architecture behavioral of counter at 47( 1283) + 0 on 52;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Ext_signo.vhd" "7451e55da98ef8e224ee871309b8d2328b5b09e1" "20230228120204.124":
+  entity ext_signo at 20( 488) + 0 on 25;
+  architecture behavioral of ext_signo at 38( 993) + 0 on 26;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "memoriaRAM_D_tests.vhd" "4abcddfd8ab51c307a6eac31ef446322d8ae8aa3" "20230228120204.480":
+  entity data_memory_subsystem at 20( 470) + 0 on 47;
+  architecture behavioral of data_memory_subsystem at 47( 1644) + 0 on 48;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "memoriaRAM_I_tests.vhd" "2256ab8872d5dcfa53c65924b43f8a8aae07b281" "20230228120204.018":
+  entity memoriaram_i at 20( 491) + 0 on 19;
+  architecture behavioral of memoriaram_i at 45( 1505) + 0 on 20;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "Mips_segmentado_IRQ_completar_2023.vhd" "658aa827b534a8b6dab76c7d5987990d1b47379e" "20230228120203.782":
+  entity mips_segmentado at 11( 562) + 0 on 13;
+  architecture behavioral of mips_segmentado at 23( 979) + 0 on 14;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "mux2_1.vhd" "8fcc75176c9b4b1fdeeb94a1b0a94f010cf08a87" "20230228120204.355":
+  entity mux2_1 at 20( 493) + 0 on 39;
+  architecture behavioral of mux2_1 at 40( 1053) + 0 on 40;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "mux2_5bits.vhd" "37d129a6c38b902c0423fded7d07041322d4dfb9" "20230228120204.417":
+  entity mux2_5bits at 20( 489) + 0 on 43;
+  architecture behavioral of mux2_5bits at 40( 1072) + 0 on 44;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "mux4_1_32bits.vhd" "66113ce93afdc5dec3f24c2edc1109b5fc41b531" "20230228120204.326":
+  entity mux4_1_32bits at 1( 0) + 0 on 37;
+  architecture behavioral of mux4_1_32bits at 13( 382) + 0 on 38;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "REGISTER.vhd" "c46cfabd7328aca3e2e86c159529f56148092257" "20230228120203.959":
+  entity reg at 2( 2) + 0 on 15;
+  architecture behavioral of reg at 16( 390) + 0 on 16;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "testbench_Mips.vhd" "8a9771f4e0f9d872a17bded8d49e6a9dbc2906c5" "20230228120203.747":
+  entity testbench at 3( 26) + 0 on 11;
+  architecture behavior of testbench at 10( 139) + 0 on 12;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "UA_completar.vhd" "bf7139b75a6ef265095b7c5017839c14545a6f5b" "20230228120204.293":
+  entity ua at 1( 0) + 0 on 35;
+  architecture behavioral of ua at 29( 819) + 0 on 36;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "UC_Mips_solucion.vhd" "c6f6910aece1bdeefbb834a2bb788f88eb01a08d" "20230228120204.176":
+  entity uc at 20( 481) + 0 on 29;
+  architecture behavioral of uc at 51( 1499) + 0 on 30;
+file "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/" "UD_completar.vhd" "813015d7cf88c88eafcc84d2ab5e83d8e1c49bdf" "20230228120204.208":
+  entity ud at 1( 0) + 0 on 31;
+  architecture behavioral of ud at 25( 1425) + 0 on 32;

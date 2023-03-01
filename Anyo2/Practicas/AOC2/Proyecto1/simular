@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ghdl --clean --workdir=workdir
+make
+./testbench --stop-time=500ns --wave=test.ghw
+gtkwave test.ghw &
+disown
