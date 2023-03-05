@@ -1,49 +1,47 @@
 ----------------------------------------------------------------------------------
 -- Description: Banco de registros que separa las etapas IF e ID. Almacena la instrucci�n en IR_ID y el PC+4 en PC4_ID
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY Banco_ID IS
+   PORT (
+      IR_in : IN STD_LOGIC_VECTOR (31 DOWNTO 0); -- instrucci�n leida en IF
+      PC4_in : IN STD_LOGIC_VECTOR (31 DOWNTO 0); -- PC+4 sumado en IF
+      clk : IN STD_LOGIC;
+      reset : IN STD_LOGIC;
+      load : IN STD_LOGIC;
+      IR_ID : OUT STD_LOGIC_VECTOR (31 DOWNTO 0); -- instrucci�n en la etapa ID
+      PC4_ID : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+      --nuevo para excepciones
+      PC_exception : IN STD_LOGIC_VECTOR (31 DOWNTO 0); -- PC al que se volver� si justo esta instrucci�n est� en MEM cuando llega una excepci�n. 
+      PC_exception_ID : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);-- PC+4 en la etapa ID
+      --bits de validez
+      valid_I_IF : IN STD_LOGIC;
+      valid_I_ID : OUT STD_LOGIC);
+END Banco_ID;
 
+ARCHITECTURE Behavioral OF Banco_ID IS
 
-entity Banco_ID is
- Port ( IR_in : in  STD_LOGIC_VECTOR (31 downto 0); -- instrucci�n leida en IF
-        PC4_in:  in  STD_LOGIC_VECTOR (31 downto 0); -- PC+4 sumado en IF
-		clk : in  STD_LOGIC;
-		reset : in  STD_LOGIC;
-        load : in  STD_LOGIC;
-        IR_ID : out  STD_LOGIC_VECTOR (31 downto 0); -- instrucci�n en la etapa ID
-        PC4_ID:  out  STD_LOGIC_VECTOR (31 downto 0);
-         --nuevo para excepciones
-        PC_exception:  in  STD_LOGIC_VECTOR (31 downto 0); -- PC al que se volver� si justo esta instrucci�n est� en MEM cuando llega una excepci�n. 
-        PC_exception_ID:  out  STD_LOGIC_VECTOR (31 downto 0);-- PC+4 en la etapa ID
-        --bits de validez
-        valid_I_IF: in STD_LOGIC;
-        valid_I_ID: out STD_LOGIC ); 
-end Banco_ID;
+BEGIN
+   SYNC_PROC : PROCESS (clk)
+   BEGIN
+      IF (clk'event AND clk = '1') THEN
+         IF (reset = '1') THEN
+            IR_ID <= x"00000000";
+            PC4_ID <= x"00000000";
+            --nuevo
+            PC_exception_ID <= x"00000000";
+            valid_I_ID <= '0';
+         ELSE
+            IF (load = '1') THEN
+               IR_ID <= IR_in;
+               PC4_ID <= PC4_in;
+               valid_I_ID <= valid_I_IF;
+               --nuevo excepciones
+               PC_exception_ID <= PC_exception;
+            END IF;
+         END IF;
+      END IF;
+   END PROCESS;
 
-architecture Behavioral of Banco_ID is
-
-begin
-SYNC_PROC: process (clk)
-   begin
-      if (clk'event and clk = '1') then
-         if (reset = '1') then
-            IR_ID <=  x"00000000";
-			PC4_ID <= x"00000000";
-			--nuevo
-			PC_exception_ID <= x"00000000";
-			valid_I_ID <= '0';
-         else
-            if (load='1') then 
-					IR_ID <= IR_in;
-					PC4_ID <= PC4_in;
-					valid_I_ID <= valid_I_IF;
-					--nuevo excepciones
-					PC_exception_ID <= PC_exception;
-				end if;	
-         end if;        
-      end if;
-   end process;
-
-end Behavioral;
-
+END Behavioral;

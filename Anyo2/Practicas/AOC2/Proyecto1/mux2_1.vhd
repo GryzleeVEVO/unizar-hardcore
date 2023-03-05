@@ -30,17 +30,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 ENTITY mux2_1 IS
-  PORT (
-    DIn0 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-    DIn1 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-    ctrl : IN STD_LOGIC;
-    Dout : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
+    PORT (
+        DIn0 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        DIn1 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        ctrl : IN STD_LOGIC;
+        Dout : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
 END mux2_1;
 
 ARCHITECTURE Behavioral OF mux2_1 IS
 
 BEGIN
-  Dout <= DIn1 WHEN (ctrl = '1') ELSE
-    DIn0;
+    Dout <= DIn1 WHEN (ctrl = '1') ELSE
+        DIn0;
 
 END Behavioral;
