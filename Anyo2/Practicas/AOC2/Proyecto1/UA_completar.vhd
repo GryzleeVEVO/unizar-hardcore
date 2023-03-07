@@ -1,20 +1,10 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
--- Unidad de anticipaciÃ³n incompleta. Ahora mismo selecciona siempre la entrada 0
--- Entradas: 
--- Reg_Rs_EX
--- Reg_Rt_EX
--- RegWrite_MEM
--- RW_MEM
--- RegWrite_WB
--- RW_WB
--- Salidas:
--- MUX_ctrl_A
--- MUX_ctrl_B
+
 ENTITY UA IS
 	PORT (
-		valid_I_MEM : IN STD_LOGIC; --indica si es una instrucciï¿½n de MEM es vï¿½lida
-		valid_I_WB : IN STD_LOGIC; --indica si es una instrucciï¿½n de WB es vï¿½lida
+		valid_I_MEM : IN STD_LOGIC; --indica si es una instrucción de MEM es válida
+		valid_I_WB : IN STD_LOGIC; --indica si es una instrucción de WB es válida
 		Reg_Rs_EX : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 		Reg_Rt_EX : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 		RegWrite_MEM : IN STD_LOGIC;
@@ -29,21 +19,35 @@ END UA;
 ARCHITECTURE Behavioral OF UA IS
 	SIGNAL Corto_A_Mem, Corto_B_Mem, Corto_A_WB, Corto_B_WB : STD_LOGIC;
 BEGIN
-	-- Diseï¿½o incompleto. Os lo ponemos cï¿½mo ejemplo. Debï¿½is completarlo vosotros
-	-- Activamos la seï¿½al corto_A_Mem, cuand detectamos que el operando almacenado en A (Rs) es el mismo en el que va a escribir la instrucciï¿½n que estï¿½ en la etapa Mem
-	-- Importante: sï¿½lo activamos el corto si la instrucciï¿½n de la etapa MEM en vï¿½lida
-	Corto_A_Mem <= '1' WHEN ((Reg_Rs_EX = RW_MEM) AND (RegWrite_MEM = '1') AND (valid_I_MEM = '1')) ELSE
+
+	-- Un corto se puede activar cuando:
+	-- 		- La instrucción de donde se anticipa es válida
+	--		- El registro de escritura seleccionado es utilizado como operando por EX
+	--		- Se realiza una escritura (puede ser que RW no quede utilizada)
+	Corto_A_Mem <=
+		'1' WHEN ((Reg_Rs_EX = RW_MEM) AND (RegWrite_MEM = '1') AND (valid_I_MEM = '1')) ELSE
 		'0';
-	-- Resto de cortos:
-	Corto_B_Mem <= '0';
-	Corto_A_WB <= '0';
-	Corto_B_WB <= '0';
-	-- Con las seï¿½ales anteriores se elige la entrada de los muxes:
-	-- entrada 00: se corresponde al dato del banco de registros
-	-- entrada 01: dato de la etapa Mem
-	-- entrada 10: dato de la etapa WB
-	-- Ponemos un ejemplo para el Corto_A_Mem. Debï¿½is completarlo
-	MUX_ctrl_A <= "01" WHEN (Corto_A_Mem = '1') ELSE
+
+	Corto_B_Mem <=
+		'1' WHEN ((Reg_Rt_EX = RW_MEM) AND (RegWrite_MEM = '1') AND (valid_I_MEM = '1')) ELSE
+		'0';
+
+	Corto_A_WB <=
+		'1' WHEN ((Reg_Rs_EX = RW_WB) AND (RegWrite_WB = '1') AND (valid_I_WB = '1')) ELSE
+		'0';
+
+	Corto_A_WB <=
+		'1' WHEN ((Reg_Rt_EX = RW_WB) AND (RegWrite_WB = '1') AND (valid_I_WB = '1')) ELSE
+		'0';
+
+	-- Los cortos en etapa de memoria tienen prioridad sobre WB por ser mas recientes
+	MUX_ctrl_A <=
+		"10" WHEN (Corto_A_Mem = '0' AND Corto_A_WB = '1') ELSE
+		"01" WHEN (Corto_A_Mem = '1') ELSE
 		"00";
-	MUX_ctrl_B <= "00";
+
+	MUX_ctrl_B <=
+		"10" WHEN (Corto_B_Mem = '0' AND Corto_B_WB = '1') ELSE
+		"01" WHEN (Corto_B_Mem = '1') ELSE
+		"00";
 END Behavioral;
