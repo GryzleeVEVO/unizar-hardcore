@@ -1,0 +1,109 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.55" author="Qfsm">
+  <machine nummooreout="0" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="" description="" version="" name="817570-multi2" arrowtype="1" numbits="4" statefontweight="50" statefont="Helvetica" numin="0" transfontsize="8" transfontweight="50" type="2" numout="0" initialstate="0">
+    <outputnames_moore></outputnames_moore>
+    <inputnames></inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="659" endx="800" xpos="740" endy="659"/>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="659" code="0" xpos="840" linewidth="1">Fetch</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="656" code="1" xpos="1122" linewidth="1">Decode</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="485" code="2" xpos="1458" linewidth="1">ADD_EX</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="483" code="3" xpos="1680" linewidth="1">ADD_WB</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="653" code="4" xpos="1594" linewidth="1">LD_MEM</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="658" code="5" xpos="1797" linewidth="1">LD_WB</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="997" code="6" xpos="1483" linewidth="1">ST_MEM</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="1031" code="7" xpos="1126" linewidth="1">BEQ_EX</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="414" code="8" xpos="1133" linewidth="1">MOV_WB</state>
+    <transition c1x="917.4181986605836" c2y="591.8148477414882" c1y="600.7151161784363" description="" straight="0" type="2" ypos="643.6153846153846" endx="1087.408442135596" xpos="876.9230769230769" endy="635.9145793045399" c2x="1054.91332039809">
+      <from>0</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>IR &lt;- PC</outputs>
+    </transition>
+    <transition c1x="1245.998611617502" c2y="545.0207683617997" c1y="592.9962820061154" description="" straight="1" type="2" ypos="640.9717956504312" endx="1419.856693394634" xpos="1159.069570728936" endy="497.0452547174839" c2x="1332.927652506068">
+      <from>1</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0">OP=ADD</inputs>
+      <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
+    </transition>
+    <transition c1x="1129.13318902964" c2y="508.0820964584376" c1y="562.1780361427612" description="" straight="1" type="2" ypos="616.273975827085" endx="1134.052267283529" xpos="1126.673649902696" endy="453.9861567741139" c2x="1131.592728156585">
+      <from>1</from>
+      <to>8</to>
+      <inputs default="0" any="0" invert="0">OP=MOV</inputs>
+      <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
+    </transition>
+    <transition c1x="1292.672637939361" c2y="654.9737393645923" c1y="654.8988886502583" description="" straight="1" type="2" ypos="654.8240379359243" endx="1554.052493460937" xpos="1161.982710178574" endy="655.0485900789263" c2x="1423.362565700149">
+      <from>1</from>
+      <to>4</to>
+      <inputs default="0" any="0" invert="0">OP=LD</inputs>
+      <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
+    </transition>
+    <transition c1x="1253.605256564649" c2y="880.4565547396645" c1y="777.1725492798314" description="" straight="1" type="2" ypos="673.8885438199983" endx="1445.261594413955" xpos="1157.777087639997" endy="983.7405601994976" c2x="1349.433425489302">
+      <from>1</from>
+      <to>6</to>
+      <inputs default="0" any="0" invert="0">OP=ST</inputs>
+      <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
+    </transition>
+    <transition c1x="1122.916873777821" c2y="892.6796779710111" c1y="794.3398389855054" description="" straight="1" type="2" ypos="695.9999999999995" endx="1124.750609904891" xpos="1122.000005714286" endy="991.0195169565169" c2x="1123.833741841356">
+      <from>1</from>
+      <to>7</to>
+      <inputs default="0" any="0" invert="0">OP=BEQ</inputs>
+      <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
+    </transition>
+    <transition c1x="1043.466152510815" c2y="737.084351906527" c1y="718.4508987863643" description="" straight="0" type="2" ypos="677.2868618087339" endx="877.5917369395374" xpos="1088.13453803156" endy="672.6697225234682" c2x="919.2402056410119">
+      <from>1</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">OP = NOP</inputs>
+      <outputs>PC &lt;- PC + 1</outputs>
+    </transition>
+    <transition c1x="1545.444651420146" c2y="486.9167421712621" c1y="485.5469355388834" description="" straight="1" type="2" ypos="484.1771289065047" endx="1640.350883972695" xpos="1497.991535143871" endy="488.2865488036407" c2x="1592.89776769642">
+      <from>2</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>ALUOut &lt;- A + B</outputs>
+    </transition>
+    <transition c1x="1241.9206545684" c2y="251.5940793436189" c1y="277.8571997049659" description="" straight="0" type="2" ypos="448.6058102463707" endx="845.0865726394146" xpos="1659.578449833783" endy="619.3247334125659" c2x="890.7195310068333">
+      <from>3</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>BR(rd) &lt;- ALUOut, PC &lt;- PC+1</outputs>
+    </transition>
+    <transition c1x="1675.000410106008" c2y="655.7098668402434" c1y="654.8473949009833" description="" straight="1" type="2" ypos="653.9849229617232" endx="1757.025485826098" xpos="1633.987872245963" endy="656.5723387795035" c2x="1716.012947966053">
+      <from>4</from>
+      <to>5</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>MDR &lt;- MD(A)</outputs>
+    </transition>
+    <transition c1x="1830.033143596253" c2y="158.4784936283298" c1y="108.7707180780168" description="" straight="0" type="2" ypos="618.8295832197159" endx="820.1544424657267" xpos="1788.895775838562" endy="624.2702743150217" c2x="566.4278499198177">
+      <from>5</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>BR(rt) &lt;- MDR, PC &lt;- PC+1 </outputs>
+    </transition>
+    <transition c1x="1408.881156926382" c2y="1292.450780221847" c1y="1361.429614625534" description="" straight="0" type="2" ypos="1026.896372747347" endx="807.392783669349" xpos="1456.425446446803" endy="682.1682852875678" c2x="386.9621511310473">
+      <from>6</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>MD(A) &lt;- B, PC &lt;- PC+1</outputs>
+    </transition>
+    <transition c1x="1195.974603198542" c2y="1186.53401305406" c1y="1274.291765536411" description="" straight="0" type="2" ypos="1016.744220778335" endx="833.8249247890557" xpos="1448.212563390552" endy="698.5204813500441" c2x="672.2934822985228">
+      <from>6</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">A != B</inputs>
+      <outputs>PC &lt;- PC+1</outputs>
+    </transition>
+    <transition c1x="1003.770305346644" c2y="830.6461245532082" c1y="928.8969384850794" description="" straight="0" type="2" ypos="995.1477524169505" endx="864.7857715431609" xpos="1108.262572248386" endy="690.3953106213371" c2x="876.2780384449026">
+      <from>7</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">A = B</inputs>
+      <outputs>PC &lt;- Imm(0-7)</outputs>
+    </transition>
+    <transition c1x="1032.484637591848" c2y="570.0632299373723" c1y="509.8424756127869" description="" straight="1" type="2" ypos="449.6217212882015" endx="867.84583344295" xpos="1114.804039666297" endy="630.2839842619578" c2x="950.165235517399">
+      <from>8</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs>BR(rt) &lt;- Ext(Imm), PC &lt;- PC+1</outputs>
+    </transition>
+  </machine>
+</qfsmproject>
