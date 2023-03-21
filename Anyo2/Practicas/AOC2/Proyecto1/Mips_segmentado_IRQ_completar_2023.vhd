@@ -372,6 +372,7 @@ BEGIN
 
     -- Revisar: 
     -- Actualiza estado cuando se produce o se sale de una excepción
+    -- Debe comprobar que sea válida la RTE
     update_status <= Exception_accepted OR RTE_ID;
 
     -- Selector de estado 
@@ -524,6 +525,7 @@ BEGIN
 
     -- Revisar:
     -- Write_output es deshabilitado si hay que parar por dependencia de datos
+    -- Falta que sea instruccion válida
     Write_output <= NOT Parar_ID AND write_output_UC;
 
     -- Indica si se produce salto
@@ -817,15 +819,15 @@ BEGIN
     -- Revisar:
     inc_cycles <= '1'; -- Incrementa siempre
 
-    inc_I <= '1' WHEN valid_I_WB ELSE
+    inc_I <= '1' WHEN valid_I_WB = '1' ELSE
         '0';
-    inc_data_stalls <= '1' WHEN Parar_ID AND NOT parar_EX ELSE
+    inc_data_stalls <= '1' WHEN Parar_ID = '1' AND parar_EX = '0' ELSE
         '0';
-    inc_control_stalls <= '1' WHEN Kill_IF AND NOT Parar_ID ELSE
+    inc_control_stalls <= '1' WHEN Kill_IF = '1' AND Parar_ID = '0' ELSE
         '0';
-    inc_Exceptions <= '1' WHEN Exception_accepted ELSE
+    inc_Exceptions <= '1' WHEN Exception_accepted = '1' ELSE
         '0';
-    inc_Exception_cycles <= '1' WHEN MIPS_status(0) ELSE
+    inc_Exception_cycles <= '1' WHEN MIPS_status(0) = '1' ELSE
         '0';
 
 END Behavioral;

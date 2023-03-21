@@ -27,19 +27,19 @@
       <inputs default="0" any="0" invert="0">OP=ADD</inputs>
       <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
     </transition>
-    <transition c1x="1129.13318902964" c2y="508.0820964584376" c1y="562.1780361427612" description="" straight="1" type="2" ypos="616.273975827085" endx="1134.052267283529" xpos="1126.673649902696" endy="453.9861567741139" c2x="1131.592728156585">
+    <transition c1x="1129.13318902964" c2y="508.0820964584376" c1y="562.1780361427614" description="" straight="1" type="2" ypos="616.273975827085" endx="1134.052267283529" xpos="1126.673649902696" endy="453.9861567741139" c2x="1131.592728156585">
       <from>1</from>
       <to>8</to>
       <inputs default="0" any="0" invert="0">OP=MOV</inputs>
       <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
     </transition>
-    <transition c1x="1292.672637939361" c2y="654.9737393645923" c1y="654.8988886502583" description="" straight="1" type="2" ypos="654.8240379359243" endx="1554.052493460937" xpos="1161.982710178574" endy="655.0485900789263" c2x="1423.362565700149">
+    <transition c1x="1292.672637939362" c2y="654.9737393645922" c1y="654.8988886502583" description="" straight="1" type="2" ypos="654.8240379359243" endx="1554.052493460937" xpos="1161.982710178574" endy="655.0485900789263" c2x="1423.362565700149">
       <from>1</from>
       <to>4</to>
       <inputs default="0" any="0" invert="0">OP=LD</inputs>
       <outputs>A&lt;-BR(rs),B&lt;-BR(rt)</outputs>
     </transition>
-    <transition c1x="1253.605256564649" c2y="880.4565547396645" c1y="777.1725492798314" description="" straight="1" type="2" ypos="673.8885438199983" endx="1445.261594413955" xpos="1157.777087639997" endy="983.7405601994976" c2x="1349.433425489302">
+    <transition c1x="1253.60525656465" c2y="880.4565547396645" c1y="777.1725492798314" description="" straight="1" type="2" ypos="673.8885438199983" endx="1445.261594413955" xpos="1157.777087639997" endy="983.7405601994976" c2x="1349.433425489302">
       <from>1</from>
       <to>6</to>
       <inputs default="0" any="0" invert="0">OP=ST</inputs>
@@ -87,19 +87,19 @@
       <inputs default="0" any="0" invert="0"></inputs>
       <outputs>MD(A) &lt;- B, PC &lt;- PC+1</outputs>
     </transition>
-    <transition c1x="1195.974603198542" c2y="1186.53401305406" c1y="1274.291765536411" description="" straight="0" type="2" ypos="1016.744220778335" endx="833.8249247890557" xpos="1448.212563390552" endy="698.5204813500441" c2x="672.2934822985228">
-      <from>6</from>
-      <to>0</to>
-      <inputs default="0" any="0" invert="0">A != B</inputs>
-      <outputs>PC &lt;- PC+1</outputs>
-    </transition>
     <transition c1x="1003.770305346644" c2y="830.6461245532082" c1y="928.8969384850794" description="" straight="0" type="2" ypos="995.1477524169505" endx="864.7857715431609" xpos="1108.262572248386" endy="690.3953106213371" c2x="876.2780384449026">
       <from>7</from>
       <to>0</to>
       <inputs default="0" any="0" invert="0">A = B</inputs>
       <outputs>PC &lt;- Imm(0-7)</outputs>
     </transition>
-    <transition c1x="1032.484637591848" c2y="570.0632299373723" c1y="509.8424756127869" description="" straight="1" type="2" ypos="449.6217212882015" endx="867.84583344295" xpos="1114.804039666297" endy="630.2839842619578" c2x="950.165235517399">
+    <transition c1x="878.5607541283969" c2y="973.5340130540601" c1y="1079.644173330969" description="" straight="0" type="2" ypos="1042.152407794558" endx="833.8249247890557" xpos="1087.586150929855" endy="698.5204813500441" c2x="816.2934822985228">
+      <from>7</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">A != B</inputs>
+      <outputs>PC &lt;- PC+1</outputs>
+    </transition>
+    <transition c1x="1032.484637591848" c2y="570.0632299373724" c1y="509.8424756127869" description="" straight="1" type="2" ypos="449.6217212882015" endx="867.84583344295" xpos="1114.804039666297" endy="630.2839842619578" c2x="950.1652355173991">
       <from>8</from>
       <to>0</to>
       <inputs default="0" any="0" invert="0"></inputs>

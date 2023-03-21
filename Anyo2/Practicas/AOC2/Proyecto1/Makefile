@@ -4,7 +4,7 @@
 # ghdl --gen-makefile --ieee=synopsys --workdir=WORK testbench
 
 GHDL=ghdl
-GHDLFLAGS= --ieee=synopsys --workdir=WORK
+GHDLFLAGS= --ieee=synopsys -fexplicit --workdir=WORK
 
 # Default target
 all: testbench

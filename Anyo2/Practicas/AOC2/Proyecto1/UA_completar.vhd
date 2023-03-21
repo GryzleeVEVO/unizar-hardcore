@@ -3,8 +3,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY UA IS
 	PORT (
-		valid_I_MEM : IN STD_LOGIC; --indica si es una instrucción de MEM es válida
-		valid_I_WB : IN STD_LOGIC; --indica si es una instrucción de WB es válida
+		valid_I_MEM : IN STD_LOGIC; --indica si es una instrucciï¿½n de MEM es vï¿½lida
+		valid_I_WB : IN STD_LOGIC; --indica si es una instrucciï¿½n de WB es vï¿½lida
 		Reg_Rs_EX : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 		Reg_Rt_EX : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 		RegWrite_MEM : IN STD_LOGIC;
@@ -21,7 +21,7 @@ ARCHITECTURE Behavioral OF UA IS
 BEGIN
 
 	-- Un corto se puede activar cuando:
-	-- 		- La instrucción de donde se anticipa es válida
+	-- 		- La instrucciï¿½n de donde se anticipa es vï¿½lida
 	--		- El registro de escritura seleccionado es utilizado como operando por EX
 	--		- Se realiza una escritura (puede ser que RW no quede utilizada)
 	Corto_A_Mem <=
@@ -36,7 +36,7 @@ BEGIN
 		'1' WHEN ((Reg_Rs_EX = RW_WB) AND (RegWrite_WB = '1') AND (valid_I_WB = '1')) ELSE
 		'0';
 
-	Corto_A_WB <=
+	Corto_B_WB <=
 		'1' WHEN ((Reg_Rt_EX = RW_WB) AND (RegWrite_WB = '1') AND (valid_I_WB = '1')) ELSE
 		'0';
 
