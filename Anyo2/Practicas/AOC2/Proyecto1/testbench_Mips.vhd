@@ -45,12 +45,11 @@ BEGIN
 		reset <= '1';
 		WAIT FOR CLK_period * 2;
 		reset <= '0';
-		WAIT FOR CLK_period * 26;
-		-- Vamos a interrumpir en momentos distintos
-		IRQ <= '1';
-		WAIT FOR CLK_period;
-		IRQ <= '0';
-		WAIT FOR CLK_period * 40;
+
+		--IRQ <= '1';
+		--WAIT FOR CLK_period;
+		--IRQ <= '0';
+		WAIT FOR CLK_period * 10;
 		IRQ <= '1';
 		WAIT FOR CLK_period;
 		IRQ <= '0';
@@ -59,9 +58,10 @@ BEGIN
 		WAIT FOR CLK_period;
 		IRQ <= '0';
 		WAIT FOR CLK_period * 20;
-		-- Ahora interrumpimos sin parar
 		IRQ <= '1';
+
 		WAIT;
+
 	END PROCESS;
 
 END;

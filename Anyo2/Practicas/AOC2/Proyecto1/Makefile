@@ -108,5 +108,5 @@ WORK/memoriaRAM_D_tests.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghd
 WORK/Banco_WB.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/counter.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o /usr/lib/ghdl/ieee/v93/numeric_std.o
 
-clean: 
-	${RM} ./WORK/*
+clean:
+	ghdl --clean --workdir=WORK

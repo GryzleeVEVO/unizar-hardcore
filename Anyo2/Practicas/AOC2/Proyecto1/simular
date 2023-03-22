@@ -1,6 +1,6 @@
 #!/bin/bash
-
-make
-./testbench --stop-time=500ns --wave=resultado.ghw
-gtkwave test.ghw &
-disown
+if make ; then
+    ./testbench --stop-time=1ms --wave=resultado.ghw
+    gtkwave resultado.ghw -a savefile.gtkw &
+    disown
+fi

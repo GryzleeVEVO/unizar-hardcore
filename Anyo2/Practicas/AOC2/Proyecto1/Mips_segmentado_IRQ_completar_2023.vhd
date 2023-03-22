@@ -366,14 +366,12 @@ BEGIN
         Dout => MIPS_status
     );
 
-    -- Revisar: 
     -- Acepta excepciones si hay alguna y estan habilitadas
     Exception_accepted <= (NOT MIPS_status(1)) AND (IRQ OR Data_Abort OR Undef);
 
-    -- Revisar: 
     -- Actualiza estado cuando se produce o se sale de una excepción
     -- Debe comprobar que sea válida la RTE
-    update_status <= Exception_accepted OR RTE_ID;
+    update_status <= Exception_accepted OR (RTE_ID AND Valid_I_ID);
 
     -- Selector de estado 
     -- Desactiva IRQ si se procesa excepción
@@ -408,7 +406,6 @@ BEGIN
         Dout => PC_out
     );
 
-    -- Revisar:
     -- Carga en PC salvo si hay parada y no hay excepción que vaya a sustituir 
     -- a la instrucción que va a esperar
     load_PC <= NOT (Parar_ID AND NOT Exception_accepted);
@@ -523,10 +520,8 @@ BEGIN
         write_output => write_output_UC -- Write_output
     );
 
-    -- Revisar:
     -- Write_output es deshabilitado si hay que parar por dependencia de datos
-    -- Falta que sea instruccion válida
-    Write_output <= NOT Parar_ID AND write_output_UC;
+    Write_output <= NOT Parar_ID AND write_output_UC AND valid_I_ID;
 
     -- Indica si se produce salto
     salto_tomado <= ((Z AND Branch_ID) OR RTE_ID) AND valid_I_ID;
@@ -816,7 +811,6 @@ BEGIN
         count => Exception_cycles
     );
 
-    -- Revisar:
     inc_cycles <= '1'; -- Incrementa siempre
 
     inc_I <= '1' WHEN valid_I_WB = '1' ELSE
