@@ -9,7 +9,7 @@ y = y(p);
 
 %% Modelos gaussianos regularizados
 
-modelo = entrenarGaussianas(X, y, 10, 0, 0);
+modelo = entrenarGaussianas(X, y, 10, 1, 0);
 yhat = clasificacionBayesiana(modelo, X);
 
 

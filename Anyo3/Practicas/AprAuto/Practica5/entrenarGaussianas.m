@@ -1,4 +1,4 @@
-function modelo = entrenarGaussianas( Xtr, ytr, nc, NaiveBayes, landa )
+function modelo = entrenarGaussianas( Xtr, ytr, nc, NaiveBayes, landa)
 % Entrena una Gaussana para cada clase y devuelve:
 % modelo{i}.N     : Numero de muestras de la clase i
 % modelo{i}.mu    : Media de la clase i
