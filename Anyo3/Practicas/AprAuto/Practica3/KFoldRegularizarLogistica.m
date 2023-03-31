@@ -1,53 +1,63 @@
-function [bestLambda, errorTrainHistory, errorValidHistory] = KFoldRegularizarLogistica(X, y, numParticiones, options)
-    %
+function [bestLambda, trainHistory, cvHistory] = KFoldRegularizarLogistica(X, y, numParticiones, options)
+    %KFOLDREGULARIZARHEURISTICA Algoritmo k-fold que devuelve una lambda para una regresión logística regularizada
 
     % Mejor parámetro regularización
     bestLambda = 0;
 
     % Mejor RMSE medio obtenido
-    bestError = Inf;
+    bestError = -Inf;
 
     % Historial de evolución de errores para cada atributo
-    % errorTrainHistory = []; errorValidHistory = [];
-
-    % Prueba para cada atributo en orden
-    %XExp = expandir(X, [10, 10, 10]);
+    trainHistory = []; cvHistory = [];
 
     for lambda = logspace(-8, 2, 50)
         % Expande los atributos con el modelo a probar
-
-        errorTrain = 0;
-        errorValid = 0;
+        precisionTrain = 0; precisionCV = 0;
+        recallTrain = 0; recallCV = 0;
+        f1Train = 0; f1CV = 0;
 
         % Bucle interno prueba con varios folds de los datos
         for fold = 1:numParticiones
             % Obtiene las particiones
-            [XCv, yCv, XTr, yTr] = particion(fold, numParticiones, XExp, y);
-            
+            [XCv, yCv, XTr, yTr] = particion(fold, numParticiones, X, y);
+
             % Realiza predicción
-            theta0 = rand(y);
-            theta = minFunc(@CosteLogReg, theta0, options, xTr, yTr, lambda);
+            theta0 = rand(size(XTr, 2), 1);
+            theta = minFunc(@CosteLogReg, theta0, options, XTr, yTr, lambda);
 
             %  Obtiene predicciones
-            yPred = XTr * theta;
-            yPredCv = XCv * theta;
+            yPred = (XTr * theta) >= 0;
+            yPredCv = (XCv * theta) >= 0;
+            
+            % Calcula precision/recall y f1
+            precisionTrain = precisionTrain + precision(yPred, yTr);
+            recallTrain = recallTrain + recall(yPred, yTr);
+            f1Train = f1Train + f1Score(yPred, yTr);
 
-            % Calcula errores
-            errorTrain = errorTrain + rmse(yPred, yTr);
-            errorValid = errorValid + rmse(yPredCv, yCv);
+            precisionCV = precisionCV + precision(yPredCv, yCv);
+            recallCV = recallCV + recall(yPredCv, yCv);
+            f1CV = f1CV + f1Score(yPredCv, yCv);
+
         end
 
         % Calcula error medio de los folds
-        errorTrain = errorTrain / numParticiones;
-        errorValid = errorValid / numParticiones;
+        precisionTrain = precisionTrain / numParticiones;
+        recallTrain = recallTrain / numParticiones;
+        f1Train = f1Train / numParticiones;
 
-        %errorTrainHistory = cat(1, errorTrainHistory, [lambda, errorTrain]);
-        %errorValidHistory = cat(1, errorValidHistory, [lambda, errorValid]);
+        precisionCV = precisionCV / numParticiones;
+        recallCV = recallCV / numParticiones;
+        f1CV = f1CV / numParticiones;
 
-        if (errorValid < bestError)
+        trainHistory = cat(1, trainHistory, [lambda, precisionTrain, recallTrain, f1Train]);
+        cvHistory = cat(1, cvHistory, [lambda, precisionCV, recallCV, f1CV]);
+
+        % Actualiza lambda si f1 mejor
+        if (f1CV > bestError)
             bestLambda = lambda;
-            bestError = errorValid;
+            bestError = f1CV;
         end
+
     end
 
 end

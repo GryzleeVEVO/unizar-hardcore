@@ -39,41 +39,59 @@ public interface clikeConstants {
   /** RegularExpression Id. */
   int tLLAVE_FIN = 14;
   /** RegularExpression Id. */
-  int tCOMA = 15;
+  int tCORCH_INI = 15;
   /** RegularExpression Id. */
-  int tPUNTO_COMA = 16;
+  int tCORCH_FIN = 16;
   /** RegularExpression Id. */
-  int tASIGNAR = 17;
+  int tCOMA = 17;
   /** RegularExpression Id. */
-  int tSUMA = 18;
+  int tPUNTO_COMA = 18;
   /** RegularExpression Id. */
-  int tRESTA = 19;
+  int tASIGNAR = 19;
   /** RegularExpression Id. */
-  int tMULTI = 20;
+  int tSUMA = 20;
   /** RegularExpression Id. */
-  int tDIV = 21;
+  int tRESTA = 21;
   /** RegularExpression Id. */
-  int tMODULO = 22;
+  int tMULTI = 22;
   /** RegularExpression Id. */
-  int tMAYOR = 23;
+  int tDIV = 23;
   /** RegularExpression Id. */
-  int tMENOR = 24;
+  int tMODULO = 24;
   /** RegularExpression Id. */
-  int tMAYOR_IGUAL = 25;
+  int tMAYOR = 25;
   /** RegularExpression Id. */
-  int tMENOR_IGUAL = 26;
+  int tMENOR = 26;
   /** RegularExpression Id. */
-  int tIGUAL = 27;
+  int tMAYOR_IGUAL = 27;
   /** RegularExpression Id. */
-  int tDISTINTO = 28;
+  int tMENOR_IGUAL = 28;
   /** RegularExpression Id. */
-  int tCORCH_INI = 29;
+  int tIGUAL = 29;
   /** RegularExpression Id. */
-  int tCORCH_FIN = 30;
+  int tDISTINTO = 30;
   /** RegularExpression Id. */
-  int tIDENTIFICADOR = 31;
+  int tAND = 31;
   /** RegularExpression Id. */
-  int tCOMENTARIO = 35;
+  int tOR = 32;
+  /** RegularExpression Id. */
+  int tNOT = 33;
+  /** RegularExpression Id. */
+  int tAMPERSAND = 34;
+  /** RegularExpression Id. */
+  int tIDENTIFICADOR = 35;
+  /** RegularExpression Id. */
+  int tCONST_CHAR = 36;
+  /** RegularExpression Id. */
+  int tCONST_STRING = 37;
+  /** RegularExpression Id. */
+  int tCONST_NUM = 38;
+  /** RegularExpression Id. */
+  int tTRUE = 39;
+  /** RegularExpression Id. */
+  int tFALSE = 40;
+  /** RegularExpression Id. */
+  int tCOMENTARIO = 44;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -95,6 +113,8 @@ public interface clikeConstants {
     "\")\"",
     "\"{\"",
     "\"}\"",
+    "\"[\"",
+    "\"]\"",
     "\",\"",
     "\";\"",
     "\"=\"",
@@ -109,9 +129,16 @@ public interface clikeConstants {
     "\"<=\"",
     "\"==\"",
     "\"<>\"",
-    "\"[\"",
-    "\"]\"",
+    "\"&&\"",
+    "\"||\"",
+    "\"!\"",
+    "\"&\"",
     "<tIDENTIFICADOR>",
+    "<tCONST_CHAR>",
+    "<tCONST_STRING>",
+    "<tCONST_NUM>",
+    "\"true\"",
+    "\"false\"",
     "\" \"",
     "\"\\t\"",
     "\"\\n\"",

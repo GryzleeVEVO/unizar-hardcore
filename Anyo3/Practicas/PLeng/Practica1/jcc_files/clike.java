@@ -20,7 +20,7 @@ public class clike implements clikeConstants {
                         System.err.println ("Fichero " + args[0] + " no encontrado.");
                 }
                 catch (TokenMgrError e) {
-                System.err.println("LEX_ERROR: " + e.getMessage());
+                System.err.println("ERROR L\u00c9XICO: " + e.getMessage());
         }
                 catch (ParseException e) {
             System.err.println("PARSER_ERROR: " + e.getMessage());
@@ -36,13 +36,169 @@ public class clike implements clikeConstants {
         Token t;
     label_1:
     while (true) {
-      jj_consume_token(tIDENTIFICADOR);
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case tBOOL:
+        jj_consume_token(tBOOL);
+        break;
+      case tCHAR:
+        jj_consume_token(tCHAR);
+        break;
+      case tINT:
+        jj_consume_token(tINT);
+        break;
+      case tVOID:
+        jj_consume_token(tVOID);
+        break;
+      case tIF:
+        jj_consume_token(tIF);
+        break;
+      case tELSE:
+        jj_consume_token(tELSE);
+        break;
+      case tWHILE:
+        jj_consume_token(tWHILE);
+        break;
+      case tRETURN:
+        jj_consume_token(tRETURN);
+        break;
+      case tPAREN_INI:
+        jj_consume_token(tPAREN_INI);
+        break;
+      case tPAREN_FIN:
+        jj_consume_token(tPAREN_FIN);
+        break;
+      case tLLAVE_INI:
+        jj_consume_token(tLLAVE_INI);
+        break;
+      case tLLAVE_FIN:
+        jj_consume_token(tLLAVE_FIN);
+        break;
+      case tCOMA:
+        jj_consume_token(tCOMA);
+        break;
+      case tPUNTO_COMA:
+        jj_consume_token(tPUNTO_COMA);
+        break;
+      case tASIGNAR:
+        jj_consume_token(tASIGNAR);
+        break;
+      case tSUMA:
+        jj_consume_token(tSUMA);
+        break;
+      case tRESTA:
+        jj_consume_token(tRESTA);
+        break;
+      case tMULTI:
+        jj_consume_token(tMULTI);
+        break;
+      case tDIV:
+        jj_consume_token(tDIV);
+        break;
+      case tMODULO:
+        jj_consume_token(tMODULO);
+        break;
+      case tMAYOR:
+        jj_consume_token(tMAYOR);
+        break;
+      case tMAYOR_IGUAL:
+        jj_consume_token(tMAYOR_IGUAL);
+        break;
+      case tMENOR:
+        jj_consume_token(tMENOR);
+        break;
+      case tMENOR_IGUAL:
+        jj_consume_token(tMENOR_IGUAL);
+        break;
+      case tIGUAL:
+        jj_consume_token(tIGUAL);
+        break;
+      case tDISTINTO:
+        jj_consume_token(tDISTINTO);
+        break;
+      case tAND:
+        jj_consume_token(tAND);
+        break;
+      case tOR:
+        jj_consume_token(tOR);
+        break;
+      case tNOT:
+        jj_consume_token(tNOT);
+        break;
+      case tCORCH_INI:
+        jj_consume_token(tCORCH_INI);
+        break;
+      case tCORCH_FIN:
+        jj_consume_token(tCORCH_FIN);
+        break;
       case tIDENTIFICADOR:
-        ;
+        jj_consume_token(tIDENTIFICADOR);
+        break;
+      case tCONST_NUM:
+        jj_consume_token(tCONST_NUM);
+        break;
+      case tCONST_CHAR:
+        jj_consume_token(tCONST_CHAR);
+        break;
+      case tCONST_STRING:
+        jj_consume_token(tCONST_STRING);
+        break;
+      case tTRUE:
+        jj_consume_token(tTRUE);
+        break;
+      case tFALSE:
+        jj_consume_token(tFALSE);
+        break;
+      case tAMPERSAND:
+        jj_consume_token(tAMPERSAND);
         break;
       default:
         jj_la1[0] = jj_gen;
+        jj_consume_token(-1);
+        throw new ParseException();
+      }
+      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case tBOOL:
+      case tCHAR:
+      case tINT:
+      case tVOID:
+      case tIF:
+      case tELSE:
+      case tWHILE:
+      case tRETURN:
+      case tPAREN_INI:
+      case tPAREN_FIN:
+      case tLLAVE_INI:
+      case tLLAVE_FIN:
+      case tCORCH_INI:
+      case tCORCH_FIN:
+      case tCOMA:
+      case tPUNTO_COMA:
+      case tASIGNAR:
+      case tSUMA:
+      case tRESTA:
+      case tMULTI:
+      case tDIV:
+      case tMODULO:
+      case tMAYOR:
+      case tMENOR:
+      case tMAYOR_IGUAL:
+      case tMENOR_IGUAL:
+      case tIGUAL:
+      case tDISTINTO:
+      case tAND:
+      case tOR:
+      case tNOT:
+      case tAMPERSAND:
+      case tIDENTIFICADOR:
+      case tCONST_CHAR:
+      case tCONST_STRING:
+      case tCONST_NUM:
+      case tTRUE:
+      case tFALSE:
+        ;
+        break;
+      default:
+        jj_la1[1] = jj_gen;
         break label_1;
       }
     }
@@ -60,7 +216,7 @@ public class clike implements clikeConstants {
   static public Token jj_nt;
   static private int jj_ntk;
   static private int jj_gen;
-  static final private int[] jj_la1 = new int[1];
+  static final private int[] jj_la1 = new int[2];
   static private int[] jj_la1_0;
   static private int[] jj_la1_1;
   static {
@@ -68,10 +224,10 @@ public class clike implements clikeConstants {
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x80000000,};
+      jj_la1_0 = new int[] {0xfffffff8,0xfffffff8,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,};
+      jj_la1_1 = new int[] {0x1ff,0x1ff,};
    }
 
   /** Constructor with InputStream. */
@@ -92,7 +248,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -106,7 +262,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
@@ -123,7 +279,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -133,7 +289,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
@@ -149,7 +305,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -158,7 +314,7 @@ public class clike implements clikeConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 1; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   static private Token jj_consume_token(int kind) throws ParseException {
@@ -209,12 +365,12 @@ public class clike implements clikeConstants {
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[36];
+    boolean[] la1tokens = new boolean[45];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
@@ -226,7 +382,7 @@ public class clike implements clikeConstants {
         }
       }
     }
-    for (int i = 0; i < 36; i++) {
+    for (int i = 0; i < 45; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;
