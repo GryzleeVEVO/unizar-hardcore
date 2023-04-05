@@ -1,0 +1,59 @@
+Profundidad: 1, Bolas: 1
+Bola: 1 , posicion: 1
+
+Profundidad: 2, Bolas: 2
+Bola: 1 , posicion: 2
+Bola: 2 , posicion: 3
+
+Profundidad: 3, Bolas: 4
+Bola: 1 , posicion: 4
+Bola: 2 , posicion: 6
+Bola: 3 , posicion: 5
+Bola: 4 , posicion: 7
+
+Profundidad: 4, Bolas: 8
+Bola: 1 , posicion: 8
+Bola: 2 , posicion: 12
+Bola: 3 , posicion: 10
+Bola: 4 , posicion: 14
+Bola: 5 , posicion: 9
+Bola: 6 , posicion: 13
+Bola: 7 , posicion: 11
+Bola: 8 , posicion: 15
+
+Profundidad: 5, Bolas: 16
+Bola: 1 , posicion: 16
+Bola: 2 , posicion: 24
+Bola: 3 , posicion: 20
+Bola: 4 , posicion: 28
+Bola: 5 , posicion: 18
+Bola: 6 , posicion: 26
+Bola: 7 , posicion: 22
+Bola: 8 , posicion: 30
+Bola: 9 , posicion: 17
+Bola: 10 , posicion: 25
+Bola: 11 , posicion: 21
+Bola: 12 , posicion: 29
+Bola: 13 , posicion: 19
+Bola: 14 , posicion: 27
+Bola: 15 , posicion: 23
+Bola: 16 , posicion: 31
+
+Profundidad: 10, Bolas: 1
+Bola: 1 , posicion: 512
+
+Profundidad: 15, Bolas: 1
+Bola: 1 , posicion: 16384
+
+Profundidad: 20, Bolas: 1
+Bola: 1 , posicion: 524288
+
+Profundidad: 25, Bolas: 1
+Bola: 1 , posicion: 16777216
+
+Profundidad: 30, Bolas: 1
+Bola: 1 , posicion: 536870912
+
+Profundidad: 31, Bolas: 1
+Bola: 1 , posicion: 1073741824
+
