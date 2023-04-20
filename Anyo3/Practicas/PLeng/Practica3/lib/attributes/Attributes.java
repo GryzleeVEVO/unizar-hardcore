@@ -8,11 +8,18 @@
 //*****************************************************************
 
 package lib.attributes;
+
 import lib.symbolTable.*;
+import lib.tools.exceptions.MismatchedTypesException;
+import lib.tools.exceptions.WrongAttrTypeException;
+
 import java.util.ArrayList;
 import java.util.AbstractMap.SimpleEntry;
 
+import org.w3c.dom.Attr;
+
 public class Attributes implements Cloneable {
+
     public Symbol.Types type;
     public Symbol.ParameterClass parClass;
 
@@ -20,26 +27,37 @@ public class Attributes implements Cloneable {
     public boolean valBool;
     public char valChar;
     public String valString;
-    //COMPLETAR
+
+    public boolean isConst;
 
     public Attributes() {
-        //COMPLETAR
+
+    }
+
+    public Attributes(Symbol.Types type) {
+        this.type = type;
+    }
+
+    public boolean checkType(Symbol.Types type) throws WrongAttrTypeException {
+        boolean res = this.type == type;
+
+        if (!res) {
+            throw new WrongAttrTypeException(this.type, type);
+        }
+
+        return res;
     }
 
     public Attributes clone() {
-    	try {
-    		return (Attributes) super.clone();
-    	}
-    	catch (CloneNotSupportedException e) {
-    		return null; 
-    	}
+        try {
+            return (Attributes) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
     }
 
     public String toString() {
-        return
-            "type = " + type + "\n" +
-            "parClass = " + parClass + "\n" ;
-            //COMPLETAR
-        ;
+        return "type = " + type + "\n" +
+                "parClass = " + parClass + "\n";
     }
 }

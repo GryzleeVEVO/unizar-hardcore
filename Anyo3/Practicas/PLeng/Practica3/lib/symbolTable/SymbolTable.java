@@ -22,49 +22,21 @@ import java.util.*;
 import lib.symbolTable.exceptions.SymbolNotFoundException;
 import lib.symbolTable.exceptions.AlreadyDefinedSymbolException;
 
-/**
- * TAD Tabla de símbolos. Es una pila de diccionarios de parejas clave-símbolo.
- * La tabla realiza sus operaciones de derecha a izquierda, apilando y
- * desapilando bloques cada vez que empiece o acabe la sección.
- * 
- * La tabla no permite símbolos con la misma clave, pero si símbolos con los
- * mismos valores.
- */
 public class SymbolTable {
-
-    /** Nivel máximo de bloques en la tabla */
-    private final int ST_SIZE = 16;
-
-    /** Tamaño total del hashmap */
-    private final int HASH_SIZE = 1024;
-
-    /**
-     * Tabla de símbolos. Es un vector de diccionarios clave-símbolo que
-     * actúa como una pila a medida que se añaden y eliminan bloques.
-     */
+    private final int ST_SIZE = 16; // hasta 16 niveles
+    private final int HASH_SIZE = 1024; // buckets
     private ArrayList<HashMap<String, Symbol>> st;
-
-    /** Conjunto de palabras reservadas */
     private Set<String> reservedWords;
 
-    /** Nivel actual */
-    public int level;
+    public int level; // nivel actual
 
-    /**
-     * Crea una nueva tabla de símbolos
-     */
     public SymbolTable() {
         st = new ArrayList<HashMap<String, Symbol>>(ST_SIZE);
-        level = -1;
+        level = -1; // aún no hay ningún bloque intoducido
         insertBlock();
         reservedWords = new HashSet<String>();
     }
 
-    /**
-     * Crea una nueva tabla de símbolos
-     * 
-     * @param pals Conjunto de palabras reservadas de la tabla
-     */
     public SymbolTable(String[] pals) {
         st = new ArrayList<HashMap<String, Symbol>>(ST_SIZE);
         level = -1; // aún no hay ningún bloque introducido
@@ -72,50 +44,29 @@ public class SymbolTable {
         reservedWords = new HashSet<String>(Arrays.asList(pals));
     }
 
-    /**
-     * Apila un nuevo bloque a la tabla
-     */
+    // apila un nuevo bloque
     public void insertBlock() {
         st.add(new HashMap<String, Symbol>(HASH_SIZE));
         level++;
     }
 
-    /**
-     * Desapila el último bloque de la tabla
-     */
+    // elimina un bloque
     public void removeBlock() {
         st.remove(st.size() - 1);
         level--;
     }
 
-    /**
-     * Añade un conjunto de palabras reservadas a la tabla, sobrescribiendo
-     * la anterior si existiera.
-     * 
-     * @param pals Conjunto de palabras reservadas de la tabla
-     */
+    // inserta las palabras reservadas, sustituyendo el anterior contenido
     public void insertReservedWords(String[] pals) {
         reservedWords = new HashSet<String>(Arrays.asList(pals));
     }
 
-    /**
-     * Comprueba si una cadena es una palabra reservada
-     * 
-     * @param word Una cadena cualquiera
-     * @return Verdad sólo si no pertenece al conjunuto de palabras reservadas
-     */
     public boolean isReservedWord(String word) {
         return reservedWords.contains(word);
     }
 
-    /**
-     * Inserta un nuevo símbolo en el bloque actual de la tabla.
-     * 
-     * @param s Símbolo a añadir
-     * @throws AlreadyDefinedSymbolException Hay otro símbolo con el mismo
-     *                                       nombre o el nombre es una palabra
-     *                                       reservada
-     */
+    // Si un símbolo con el mismo nombre está o es palabra reservada, excepción.
+    // Si no, se inserta
     public void insertSymbol(Symbol s) throws AlreadyDefinedSymbolException {
         if (reservedWords.contains(s.name)) {
             throw new AlreadyDefinedSymbolException();
@@ -129,15 +80,7 @@ public class SymbolTable {
         }
     }
 
-    /**
-     * Devuelve un símbolo de la tabla dado su nombre.
-     * 
-     * 
-     * @param name Nombre del símbolo
-     * @return Símbolo de la tabla encontrado
-     * @throws SymbolNotFoundException No se ha encontrado un símbolo con el
-     *                                 mismo nombre
-     */
+    // Si no está, excepción. Si está, devuelve su referencia
     public Symbol getSymbol(String name) throws SymbolNotFoundException {
         Symbol result = findSymbol(name);
         if (result == null) {
@@ -146,22 +89,12 @@ public class SymbolTable {
         return result;
     }
 
-    /**
-     * Comprueba si un símbolo se encuentra en la tabla.
-     * 
-     * @param name Nombre del símbolo
-     * @return Verdad sólo si se encuentra en la tabla.
-     */
+    // comprueba si está el símbolo
     public boolean containsSymbol(String name) {
         return findSymbol(name) != null;
     }
 
-    /**
-     * Busca un símbolo en la tabla dado un nombre
-     * 
-     * @param name Nombre del símbolo
-     * @return El símbolo de la tabla, o null si no lo ha encontrado
-     */
+    // para usar en "getSymbol" y "containsSymbol"
     private Symbol findSymbol(String name) {
         for (int i = st.size() - 1; i >= 0; i--) {
             if (st.get(i).containsKey(name)) {
@@ -171,9 +104,7 @@ public class SymbolTable {
         return null;
     }
 
-    /**
-     * Devuelva la tabla como una cadena
-     */
+    // devuelve la tabla como un string
     public String toString() {
         final String linea = "------------------------------------------------\n";
         StringBuilder builder = new StringBuilder();

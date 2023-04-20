@@ -1,0 +1,591 @@
+//*****************************************************************
+// File:   clike.jj
+// Author: Wozniak, Dorian Boleslaw (817570@unizar.es)
+// Author: Jaime Royo, Oscar (818961@unizar.es)
+// Date:   15/03/2023
+// Coms:   compilar mediante "ant". Solo implementa análisis léxico
+//*****************************************************************
+
+options {
+    IGNORE_CASE = false;
+    COMMON_TOKEN_ACTION = false;
+    //DEBUG_PARSER = true;
+    // ERROR_REPORTING = false;
+}
+
+PARSER_BEGIN(clike)
+
+package traductor;
+
+import lib.symbolTable.*;
+import lib.symbolTable.exceptions.*;
+import lib.errores.ErrorSemantico;
+
+import java.util.ArrayList;
+
+public class clike {
+
+    // Lista de palabras reservadas
+    private static String[] reservadas = {
+        "INT",
+        "BOOL",
+        "CHAR",
+        "VOID",
+        
+        "IF",
+        "ELSE",
+        "WHILE",
+
+        "RETURN"
+    };
+
+    // Tabla de símbolos
+    public static SymbolTable st = new SymbolTable(reservadas);
+
+    public static void main(String[] args) {
+        clike parser = null;
+        
+        try {
+            if (args.length == 0) {
+                parser = new clike(System.in);
+            }
+            else {
+                parser = new clike(new java.io.FileInputStream(args[0]));
+            }
+            //Programa es el símbolo inicial de la gramática
+            parser.Programa();
+            System.out.println("***** Análisis terminado con éxito *****");
+        }
+        catch (java.io.FileNotFoundException e) {
+            System.err.println ("Fichero " + args[0] + " no encontrado.");
+        }
+        catch (TokenMgrError e) {
+            System.err.println("ERROR LÉXICO: " + e.getMessage());
+        } 
+        catch (ParseException e) {
+            System.err.println("PARSER_ERROR: " + e.getMessage());
+        }
+    }
+}
+PARSER_END(clike)
+
+
+/* ***** ANALIZADOR LÉXICO ***** */
+
+
+// Tokens internos
+TOKEN : { 
+    < #LETTER: (["a"-"z","A"-"Z"]) > | 
+    < #DIGIT: ["0"-"9"] > 
+}
+
+// Tokens generados
+TOKEN : {
+
+    /* --- PALABRAS RESERVADAS --- */
+
+    // Tipos de datos básicos
+    < tBOOL: "bool" > |
+    < tCHAR: "char" > | 	
+    < tINT: "int" > |
+    < tVOID: "void" > |
+
+    // Condicionales 	
+    < tIF: "if"> |	
+    < tELSE: "else" > |
+
+    // Bucles	 	
+    < tWHILE : "while" > |
+
+    // Regreso
+ 	< tRETURN : "return"> |
+
+    /* --- DELIMITADORES --- */
+
+    // Paréntesis (guardas if/while, parametros funciones, expresiones...)
+	< tPAREN_INI: "(" >
+
+|	< tPAREN_FIN : ")" >
+
+    // Llaves (delimitadores bloques)
+| 	< tLLAVE_INI : "{" >
+
+| 	< tLLAVE_FIN : "}" >
+
+    // Corchetes (vectores)
+| 	< tCORCH_INI : "[" >
+
+| 	< tCORCH_FIN : "]" >
+
+    // Separador de variables 
+|	< tCOMA : "," > 
+    
+    // Fin de órden
+|	< tPUNTO_COMA : ";" > 
+    
+    /* --- OPERADORES --- */
+
+    // Asignación
+|	< tASIGNAR : "=" > 
+    
+    // Aritmética
+|	< tSUMA : "+" >
+
+|	< tRESTA : "-" >
+
+|	< tMULTI : "*" >
+
+|	< tDIV : "/" >
+
+|	< tMODULO : "%" >
+
+    // Lógica 
+|	< tMAYOR : ">" >
+
+|	< tMENOR : "<" >
+
+|	< tMAYOR_IGUAL: ">=" >
+
+|	< tMENOR_IGUAL : "<=" >
+
+|	< tIGUAL : "==" >
+
+|	< tDISTINTO : "!=" >
+
+| 	< tAND : "&&" >
+
+| 	< tOR : "||" >
+
+| 	< tNOT : "!" >
+
+    // Referencia
+|	< tAMPERSAND : "&" >
+
+    /* --- FUNCIONES INTEGRADAS --- */
+
+|	< tPRINT : "print" >
+
+|	< tPRINT_LN : "print_ln" >
+
+|	< tREAD : "read" >
+
+|	< tREAD_LN : "read_ln" >
+
+|	< tINT2CHAR : "int2char" >
+
+|	< tCHAR2INT : "char2int" >
+
+    /* --- IDENTIFICADORES --- */
+
+|	< tIDENTIFICADOR : ( < LETTER > | "_")( < LETTER > | < DIGIT > | "_" )* >
+
+    /* --- CONSTANTES SIMBÓLICAS --- */
+
+|	< tCONST_CHAR : "'"(~[])"'" >
+
+|	< tCONST_STRING : "\""(~["\""] | "\"\"")*"\"" >
+
+|	< tCONST_NUM : ((< DIGIT >)+ ) >
+
+|	< tTRUE : "true" >
+
+|	< tFALSE : "false" > 
+}
+
+// Expresiones a ignorar
+SKIP : {
+    " " | "\t" | "\n" 						// Espacios en blanco
+    | <tCOMENTARIO : ("//"(~["\n"])*) > 	// Comentarios
+}
+
+/* ***** ANÁLISIS SINTÁCTICO ***** */
+
+/* --- COMÚN --- */
+
+// Devuelve el tipo de dato de una declaración/parámetro
+Symbol.Types tipo() : {} {
+    <tINT>  { return Symbol.Types.INT; } | 
+    <tCHAR> { return Symbol.Types.CHAR; } |
+    <tBOOL> { return Symbol.Types.BOOL; }
+}
+
+// Devuelve el tamaño de la declaración de un vector
+int array() : {
+    int size;
+}
+{
+    <tCORCH_INI> 
+    <tCORCH_FIN> {
+        return 3;
+    }
+}
+
+// Crea un símbolo para un escalar/vector de nombre, tipo y clase dados
+Symbol identificador(String name, Symbol.Types type, Symbol.ParameterClass pc) : {
+    int size;
+} {
+    // Vectorial
+    size = array() {
+        return new SymbolArray(name, size, type, pc);
+    } |
+    // Escalar
+    {          
+        Symbol s = null;
+
+        switch (type) {
+            case INT :  s = new SymbolInt(name, pc); break;
+            case BOOL : s = new SymbolBool(name, pc); break;
+            case CHAR : s = new SymbolChar(name, pc); break;
+        }
+
+        return s;
+    } 
+} 
+
+// Genera un símbolo para una variable de una lista del tipo dado
+void variable(Symbol.Types type) : {
+    Symbol s;
+    Token t;
+} {
+    ( 
+        <tCOMA> 
+        t = <tIDENTIFICADOR> 
+        s = identificador(t.image, type, Symbol.ParameterClass.NONE) {
+            try {
+                st.insertSymbol(s);
+            } catch (AlreadyDefinedSymbolException e) {
+                ErrorSemantico.deteccion(e, t);
+            }   
+        }
+    )
+}
+
+// Devuelve una lista de cero o mas parámetros
+ArrayList<Symbol> lista_param() : {
+    ArrayList<Symbol> param = new ArrayList<Symbol>();
+    Symbol s;
+} {
+    (
+        s = parametro() {
+            param.add(s);
+        } 
+        ( 
+            <tCOMA> 
+            s = parametro() {
+                param.add(s);
+            }
+        )*
+    )? {
+        return param;
+    }
+}  
+
+// Devuelve el símbolo de un parámetro por valor o referencia
+Symbol parametro() : {
+    Symbol.Types type;
+    Symbol s;
+} {
+    type = tipo()
+    s = parametro_val_ref(type) {
+        return s;
+    }
+}
+
+// Desambigua y devuelve el símbolo de un parámetro por valor o referencia
+Symbol parametro_val_ref(Symbol.Types type) : {
+    Symbol s;
+    Token t;
+} {
+    (
+        (
+            <tAMPERSAND>
+            t = <tIDENTIFICADOR>
+            s = identificador(t.image, type, Symbol.ParameterClass.REF)
+        ) | 
+        (
+            t = <tIDENTIFICADOR>
+            s = identificador(t.image, type, Symbol.ParameterClass.VAL) 
+        )
+    ) {
+        return s;
+    } 
+}
+
+
+// // Contiene una lista de cero o más expresiones
+// void lista_expresiones() : {}
+// {
+//     ( lista_expresiones_cont() )?
+// }
+
+// // Contiene una lista de una o más expresiones
+// void lista_expresiones_cont() : {}
+// {
+//     expresion() (<tCOMA> expresion())*
+// }
+
+// // Una guarda para una condición
+// void guarda() : {}
+// {
+//     <tPAREN_INI> expresion() <tPAREN_FIN>
+// }
+
+// // Instrucciones dentro de una llave
+// void bloque_interior() : {}
+// {
+//     <tLLAVE_INI> ( instruccion() )* <tLLAVE_FIN>
+// }
+
+// // || &&
+// void operador_logico(): {}
+// {
+//     <tOR> | <tAND>
+// }
+
+// // == <> < <= > >=
+// void operador_relacional() : {} 
+// {
+//     <tIGUAL> | <tDISTINTO> | <tMENOR> | <tMENOR_IGUAL> | <tMAYOR> | <tMAYOR_IGUAL>
+// }
+
+// // + -
+// void operador_suma() : {}
+// {
+//     <tSUMA> | <tRESTA>
+// }
+
+// // * / %
+// void operador_multi() : {}
+// {
+//     <tMULTI> | <tDIV> | <tMODULO>
+// }
+
+/* ---  PRODUCCIÓN INICIAL --- */
+void Programa() : {} { ( declaracion() )+ < EOF > }
+
+/* --- DECLARACIONES --- */
+
+// Una declaración de variables/procedimientos/funciones
+void declaracion() : {
+    Symbol.Types type;
+    ArrayList<Symbol> param;
+    Token t;
+    Symbol s;
+} {
+    (   
+        // Variable/función
+        (        
+            type = tipo()
+            t = <tIDENTIFICADOR> 
+            decl_var_fun(t, type) 
+        ) |
+        // Procedimientos
+        (        
+            <tVOID>
+            t = <tIDENTIFICADOR>
+            <tPAREN_INI>
+            param = lista_param() {
+                s = new SymbolProcedure(t.image, param);
+
+                try {
+                    st.insertSymbol(s);
+                } catch (AlreadyDefinedSymbolException e) {
+                    ErrorSemantico.deteccion(e, t);
+                }
+                
+                st.insertBlock();
+            }
+            <tPAREN_FIN>
+            bloque()
+        )
+    )
+    { System.err.println(st.toString()); }
+}
+
+void decl_var_fun(Token prev, Symbol.Types type) : {
+    Symbol s;
+    Token t;
+    ArrayList<Symbol> param;
+} {
+    // Función
+    (    
+        <tPAREN_INI>
+        param = lista_param()
+        <tPAREN_FIN> {
+            s = new SymbolFunction(prev.image, param, type);
+
+            try {
+                st.insertSymbol(s);
+            } catch (AlreadyDefinedSymbolException e) {
+                ErrorSemantico.deteccion(e, prev);
+            }
+
+            st.insertBlock();
+        }
+        bloque()
+    )  |
+    // Variables
+    (    
+        s = identificador(prev.image, type, Symbol.ParameterClass.NONE) {
+            try {
+                st.insertSymbol(s);
+            } catch (AlreadyDefinedSymbolException e) {
+                ErrorSemantico.deteccion(e, prev);
+            }
+        }
+        ( variable(type) )*
+        <tPUNTO_COMA>
+    ) 
+}
+
+void bloque() : {} {
+    <tLLAVE_INI> <tLLAVE_FIN> {
+        st.removeBlock();
+    }
+}
+
+// /* --- INSTRUCCIONES --- */
+
+// void instruccion() : {}
+// {
+//     declaracion_variable_local()
+// |   una_instruccion() <tPUNTO_COMA>
+// |	bloque_condicional()
+// |   bloque_bucle()
+// }
+
+// void declaracion_variable_local() : {}
+// {
+//     tipo() <tIDENTIFICADOR> declaracion_variable()
+// }
+
+// // Instrucciones que no forman un bloque de código (acaban en ;)
+// void una_instruccion() : {}
+// {
+//     instruccion_integrada()
+// |   <tRETURN> expresion()                           // Return
+// |   <tIDENTIFICADOR> instr_asignacion_llamada()     // Asignación/llamada
+// }
+
+// // Desambigua si es una instrucción de asignación o de invocación
+// void instr_asignacion_llamada() : {}
+// {
+//     ( var_array() )?  <tASIGNAR> expresion()             // Asignación
+// |	<tPAREN_INI> lista_expresiones() <tPAREN_FIN>	// Llamada
+// }
+
+// // Instrucciones integradas
+// void instruccion_integrada() : {}
+// {
+//     instr_read()                                    // Funciones integradas
+// |   instr_read_ln()
+// |   instr_print()
+// |   instr_print_ln()
+// |   instr_int2char()
+// |   instr_char2int()       
+// }
+
+// void instr_read() : {}
+// {
+//     <tREAD> <tPAREN_INI> lista_expresiones_cont() <tPAREN_FIN> 
+// }
+
+// void instr_read_ln() : {}
+// {
+//     <tREAD_LN> <tPAREN_INI> lista_expresiones() <tPAREN_FIN> 
+// }
+
+// void instr_print() : {}
+// {
+//     <tPRINT> <tPAREN_INI> lista_expresiones_cont() <tPAREN_FIN> 
+// }
+
+// void instr_print_ln() : {}
+// {
+//     <tPRINT_LN> <tPAREN_INI> lista_expresiones() <tPAREN_FIN> 
+// }
+
+// void instr_int2char() : {}
+// {
+//     <tINT2CHAR> <tPAREN_INI> expresion() <tPAREN_FIN> 
+// }
+
+// void instr_char2int() : {}
+// {
+//     <tCHAR2INT> <tPAREN_INI> expresion() <tPAREN_FIN> 
+// }
+
+// /* --- INSTRUCCIONES BLOQUE --- */
+
+// // Un bloque de código condicional
+// void bloque_condicional() : {}
+// {
+//     <tIF> guarda() bloque_interior()			// Condición inicial
+//     ( <tELSE> bloque_interior() )?		// Puede continuar tras un else
+// }
+
+// // Un bloque de código en un búcle
+// void bloque_bucle() : {}
+// {
+//     <tWHILE> guarda() bloque_interior()
+// }
+
+// /* --- CÁLCULO DE EXPRESIONES --- */
+
+// // Expresión -> Prioridad 7
+// void expresion() : {}
+// {
+//     relacion_aritmetica() ( relacion_logica() )?
+// }
+
+// // Relación lógica -> Prioridad 6 (comparaciones lógicas)
+// void relacion_logica() : {}
+// {
+//     ( operador_logico() relacion_aritmetica() )+
+// }
+
+// // Relación aritmética -> Prioridad 5 (comparaciones aritméticas)
+// void relacion_aritmetica() : {}
+// {
+//     expresion_simple() ( operador_relacional() expresion_simple() )?
+// }
+
+// // Expresión simple -> Prioridad 4 (suma/resta)
+// void expresion_simple() : {}
+// {
+//     ( operador_suma() )? termino() ( operador_suma() termino() )*
+// }
+
+// // Término -> Prioridad 3 (multiplicación/división/módulo)
+// void termino() :  {}
+// {
+//     factor() ( operador_multi() factor() )*
+// }
+
+// // Factor -> Prioridad 2 (negación)
+// void factor() : {}
+// {
+//     primario() | <tNOT> primario()
+// }
+
+// // Primario -> Prioridad 1
+// void primario() : {} 
+// {
+//     <tPAREN_INI> expresion() <tPAREN_FIN>		// Paréntesis
+// |	<tCONST_NUM>								// Constantes
+// |	<tCONST_CHAR>
+// |	<tCONST_STRING>
+// |	<tTRUE>
+// |	<tFALSE>
+// |	<tINT2CHAR> <tPAREN_INI> expresion() <tPAREN_FIN>
+// |	<tCHAR2INT> <tPAREN_INI> expresion() <tPAREN_FIN>
+// |	<tIDENTIFICADOR> primario_var_array_func()	// Var, array, func
+// }
+
+// // Desambigua en caso de ser variable, array o función
+// void primario_var_array_func() : {}
+// {
+//     <tPAREN_INI> lista_expresiones() <tPAREN_FIN>	// Función
+// |	<tCORCH_INI> expresion() <tCORCH_FIN>			// Elemento de array
+// | 	{ /* Épsilon */}								// Vacío - Variable
+// }

@@ -1,15 +1,7 @@
-//*****************************************************************
-// File:   clike.jj
-// Author: Wozniak, Dorian Boleslaw (817570@unizar.es)
-// Author: Jaime Royo, Oscar (818961@unizar.es)
-// Date:   15/03/2023
-// Coms:   compilar mediante "ant"
-//*****************************************************************
-
 options {
     IGNORE_CASE = false;
     COMMON_TOKEN_ACTION = false;
-    // DEBUG_PARSER = true;
+    //DEBUG_PARSER = true;
     // ERROR_REPORTING = false;
 }
 
@@ -19,68 +11,65 @@ package traductor;
 
 import lib.symbolTable.*;
 import lib.symbolTable.exceptions.*;
+import lib.errores.ErrorSemantico;
+
+import java.util.ArrayList;
 
 public class clike {
 
-    // Lista de palabras reservadas conocidas
-    private String[] palabrasReservadas = {
-        "void",
-        "int",
-        "bool",
-        "char",
+    // Lista de palabras reservadas
+    private static String[] reservadas = {
+        "INT",
+        "BOOL",
+        "CHAR",
+        "VOID",
+        
+        "IF",
+        "ELSE",
+        "WHILE",
 
-        "if",
-        "else",
-        "while",
-        "return",
+        "RETURN"
+    };
 
-        "print",
-        "print_ln",
-        "read",
-        "read_ln",
-        "int2char",
-        "char2int"
-    }
+    // Tabla de símbolos
+    public static SymbolTable st = new SymbolTable(reservadas);
 
-    // Tabla de símbolos con las palabras reservadas ya incluidas
-    public static SymbolTable st = new SymbolTable(palabrasReservadas);
-
+    public static SemanticFunctions sf = new SemanticFunctions(st);
 
     public static void main(String[] args) {
         clike parser = null;
         
         try {
-            // Si no se suministra un fichero, se lee de entrada estandar
             if (args.length == 0) {
                 parser = new clike(System.in);
-            } else {
+            }
+            else {
                 parser = new clike(new java.io.FileInputStream(args[0]));
             }
-
             //Programa es el símbolo inicial de la gramática
             parser.Programa();
-
             System.out.println("***** Análisis terminado con éxito *****");
-
-        } catch (java.io.FileNotFoundException e) {
+        }
+        catch (java.io.FileNotFoundException e) {
             System.err.println ("Fichero " + args[0] + " no encontrado.");
-        } catch (TokenMgrError e) {
+        }
+        catch (TokenMgrError e) {
             System.err.println("ERROR LÉXICO: " + e.getMessage());
-        } catch (ParseException e) {
+        } 
+        catch (ParseException e) {
             System.err.println("PARSER_ERROR: " + e.getMessage());
         }
     }
 }
-
 PARSER_END(clike)
-
 
 /* ***** ANALIZADOR LÉXICO ***** */
 
+
 // Tokens internos
-TOKEN : {
-    < #LETTER: (["a"-"z","A"-"Z"]) >
-|	< #DIGIT: ["0"-"9"] >
+TOKEN : { 
+    < #LETTER: (["a"-"z","A"-"Z"]) > | 
+    < #DIGIT: ["0"-"9"] > 
 }
 
 // Tokens generados
@@ -89,29 +78,25 @@ TOKEN : {
     /* --- PALABRAS RESERVADAS --- */
 
     // Tipos de datos básicos
-    < tBOOL: "bool" >
+    < tBOOL: "bool" > |
+    < tCHAR: "char" > | 	
+    < tINT: "int" > |
+    < tVOID: "void" > |
 
-|	< tCHAR: "char" >
+    // Condicionales 	
+    < tIF: "if"> |	
+    < tELSE: "else" > |
 
-| 	< tINT: "int" >
-
-|	< tVOID: "void" >
-
-    // Condicionales
-| 	< tIF: "if"> 
-    
-|	< tELSE: "else" >
-
-    // Bucles	
-| 	< tWHILE : "while" >
+    // Bucles	 	
+    < tWHILE : "while" > |
 
     // Regreso
-| 	< tRETURN : "return">
+ 	< tRETURN : "return"> |
 
     /* --- DELIMITADORES --- */
 
     // Paréntesis (guardas if/while, parametros funciones, expresiones...)
-|	< tPAREN_INI: "(" >
+	< tPAREN_INI: "(" >
 
 |	< tPAREN_FIN : ")" >
 
@@ -206,314 +191,255 @@ SKIP : {
     | <tCOMENTARIO : ("//"(~["\n"])*) > 	// Comentarios
 }
 
-/* ***** ANÁLISIS SINTÁCTICO ***** */
-
-/* --- COMÚN --- */
-
-// int char bool
-void tipo() : {}
-{
-    <tINT> | <tCHAR> | <tBOOL>
+Token operador_logico(): {
+    Token t;
+} {
+    ( 
+        t = <tOR> | 
+        t = <tAND> 
+    ) { 
+        return t; 
+    }
 }
 
-void var_array() : {}
-{
-    <tCORCH_INI> expresion() <tCORCH_FIN>
+Token operador_relacional() : {
+    Token t;
+} {
+    (
+        t = <tIGUAL> | 
+        t = <tDISTINTO> | 
+        t = <tMENOR> | 
+        t = <tMENOR_IGUAL> | 
+        t = <tMAYOR> | 
+        t = <tMAYOR_IGUAL>
+    ) { 
+        return t;
+    }
 }
 
-// int/bool/char &? ident [n]?
-void parametro() : {}
-{
-    tipo() ( <tAMPERSAND> )? <tIDENTIFICADOR> ( var_array() )?
+Token operador_suma() : {
+    Token t;
+}{
+    (
+        t = <tSUMA> |
+        t = <tRESTA>
+    ) {
+        return t;
+    }
 }
 
-// Lista de cero o más parámetros
-void lista_parametros() : {}
-{
-    ( parametro() ( <tCOMA > parametro() )* )? 
+Token operador_multi() : {
+    Token t;
+} {
+    (
+        t = <tMULTI> | 
+        t = <tDIV> | 
+        t = <tMODULO>
+    ) {
+        return t;
+    }
 }
 
-// Contiene una lista de cero o más expresiones
-void lista_expresiones() : {}
-{
-    ( lista_expresiones_cont() )?
-}
-
-// Contiene una lista de una o más expresiones
-void lista_expresiones_cont() : {}
-{
-    expresion() (<tCOMA> expresion())*
-}
-
-// Una guarda para una condición
-void guarda() : {}
-{
-    <tPAREN_INI> expresion() <tPAREN_FIN>
-}
-
-// Instrucciones dentro de una llave
-void bloque_interior() : {}
-{
-    <tLLAVE_INI> ( instruccion() )* <tLLAVE_FIN>
-}
-
-// || &&
-void operador_logico(): {}
-{
-    <tOR> | <tAND>
-}
-
-// == <> < <= > >=
-void operador_relacional() : {} 
-{
-    <tIGUAL> | <tDISTINTO> | <tMENOR> | <tMENOR_IGUAL> | <tMAYOR> | <tMAYOR_IGUAL>
-}
-
-// + -
-void operador_suma() : {}
-{
-    <tSUMA> | <tRESTA>
-}
-
-// * / %
-void operador_multi() : {}
-{
-    <tMULTI> | <tDIV> | <tMODULO>
-}
-
-/* ---  PRODUCCIÓN INICIAL --- */
-void Programa() : {}
-{ 
-    ( declaracion() )+ < EOF > 
-}
-
-/* --- DECLARACIONES --- */
-
-// int/char/bool ident ... / void procedimiento
-void declaracion() : {} 
-{
-    tipo() <tIDENTIFICADOR> declaracion_sig()               // Int/char/bool
-|	< tVOID > < tIDENTIFICADOR > declaracion_proc_func()    // Void
-}
-
-// Desambigua en caso de variable global o función
-void declaracion_sig() : {} 
-{
-    declaracion_variable()      // Variable
-|   declaracion_proc_func()     // Función
-}
-
-// ...[n] ... ;
-void declaracion_variable() : {}
-{
-    ( var_array() )? ( declaracion_variable_sig() )* <tPUNTO_COMA>
-}
-
-// , ident2[n], ident3[n], ...
-void declaracion_variable_sig() : {}
-{
-    <tCOMA> <tIDENTIFICADOR> ( var_array() )?
-}
-
-// ... ( ... ) { ... }
-void declaracion_proc_func() : {}
-{
-    <tPAREN_INI> lista_parametros() <tPAREN_FIN> bloque_interior()
-}
-
-/* --- INSTRUCCIONES --- */
-
-void instruccion() : {}
-{
-    declaracion_variable_local()
-|   una_instruccion() <tPUNTO_COMA>
-|	bloque_condicional()
-|   bloque_bucle()
-}
-
-void declaracion_variable_local() : {}
-{
-    tipo() <tIDENTIFICADOR> declaracion_variable()
-}
-
-// Instrucciones que no forman un bloque de código (acaban en ;)
-void una_instruccion() : {}
-{
-    instruccion_integrada()
-|   <tRETURN> expresion()                           // Return
-|   <tIDENTIFICADOR> instr_asignacion_llamada()     // Asignación/llamada
-}
-
-// Desambigua si es una instrucción de asignación o de invocación
-void instr_asignacion_llamada() : {}
-{
-    ( var_array() )?  <tASIGNAR> expresion()             // Asignación
-|	<tPAREN_INI> lista_expresiones() <tPAREN_FIN>	// Llamada
-}
-
-// Instrucciones integradas
-void instruccion_integrada() : {}
-{
-    instr_read()                                    // Funciones integradas
-|   instr_read_ln()
-|   instr_print()
-|   instr_print_ln()
-|   instr_int2char()
-|   instr_char2int()       
-}
-
-void instr_read() : {}
-{
-    <tREAD> <tPAREN_INI> lista_expresiones_cont() <tPAREN_FIN> 
-}
-
-void instr_read_ln() : {}
-{
-    <tREAD_LN> <tPAREN_INI> lista_expresiones() <tPAREN_FIN> 
-}
-
-void instr_print() : {}
-{
-    <tPRINT> <tPAREN_INI> lista_expresiones_cont() <tPAREN_FIN> 
-}
-
-void instr_print_ln() : {}
-{
-    <tPRINT_LN> <tPAREN_INI> lista_expresiones() <tPAREN_FIN> 
-}
-
-void instr_int2char() : {}
-{
-    <tINT2CHAR> <tPAREN_INI> expresion() <tPAREN_FIN> 
-}
-
-void instr_char2int() : {}
-{
-    <tCHAR2INT> <tPAREN_INI> expresion() <tPAREN_FIN> 
-}
-
-/* --- INSTRUCCIONES BLOQUE --- */
-
-// Un bloque de código condicional
-void bloque_condicional() : {}
-{
-    <tIF> guarda() bloque_interior()	// Condición inicial
-    ( <tELSE> bloque_interior() )?		// Puede continuar tras un else
-}
-
-// Un bloque de código en un búcle
-void bloque_bucle() : {}
-{
-    <tWHILE> guarda() bloque_interior()
-}
-
-/* --- CÁLCULO DE EXPRESIONES --- */
 
 // Expresión -> Prioridad 7
-void expresion() : {}
+
+void expresion(Attributes at) : {
+    Attributes at1, at2;
+}
 {
-    
-    relacion_aritmetica() {
-
+    // Sin expresiones lógicas -> Cualquier tipo
+    relacion_aritmetica(at1) {
+        at = at1;
     }
+    // Con expresiones lógicas -> Solo booleanos
+    ( 
+        relacion_logica(at2) {
 
-|   relacion_aritmetica() ( relacion_logica() ) {
-    
-    }
+        }
+    )?
 }
 
 // Relación lógica -> Prioridad 6 (comparaciones lógicas)
-void relacion_logica() : {}
+void relacion_logica(Attributes at) : {
+    Attributes at1;
+    Token t;
+}
 {
-    ( operador_logico() relacion_aritmetica() )+
+    // Solo booleanos
+    ( 
+        t = operador_logico() 
+        relacion_aritmetica(at1) {
+            sf.relacion_logica(t, at, at1);
+        }
+    )+
 }
 
 // Relación aritmética -> Prioridad 5 (comparaciones aritméticas)
-void relacion_aritmetica() : {}
+void relacion_aritmetica(Attributes at) : {
+    Attributes at1, at2;
+    Token t;
+}
 {
-    expresion_simple() ( operador_relacional() expresion_simple() )?
+    // Sin operador -> cualquier tipo
+    expresion_simple(at1) {
+        at = at1;
+    }
+    // Con operador -> Solo datos del mismo tipo
+    ( 
+        t = operador_relacional() 
+        expresion_simple(at2) {
+            sf.relacion_aritmetica(t, at, at1, at2);
+        } 
+    )?
 }
 
 // Expresión simple -> Prioridad 4 (suma/resta)
-void expresion_simple() : {}
+void expresion_simple(Attributes at) : {
+    Attributes at1, at2;
+}
 {
-    ( operador_suma() )? termino() ( operador_suma() termino() )*
+    // Con prefijo -> Solo enteros
+    (
+        operador_suma() {
+        }
+    )? 
+    // Sin prefijo -> Cualquier tipo
+    termino(at1) {
+        at = at1;
+    }
+    // Con operador -> Solo enteros
+    ( 
+        operador_suma()
+        termino(at2) {
+            if (at1.type == Symbol.Types.INT && at2.type == Symbol.Types.INT) {
+                
+            } else {
+                at.type = Symbol.Types.UNDEFINED;
+            }
+        }
+    )*
 }
 
 // Término -> Prioridad 3 (multiplicación/división/módulo)
-void termino() :  {}
+void termino(Attributes at) :  {
+    Attributes at1, at2;
+}
 {
-    factor() ( operador_multi() factor() )*
+    // Sin operador -> Cualquier tipo
+    factor(at1) {
+        at = at1;
+    }
+    // Con operador -> Solo enteros
+    ( 
+        operador_multi() 
+        factor(at2) {
+            if (at1.type == Symbol.Types.INT && at2.type == Symbol.TYPES.INT) {
+                // TODO: Tratamiento de expresiones
+            } else {
+                at.type = Symbol.Types.UNDEFINED;
+            }
+        }
+    )*
 }
 
 // Factor -> Prioridad 2 (negación)
-void factor() : {}
+void factor(Attributes at) : {
+    Attributes at1;
+}
 {
-    primario() 
-|   <tNOT> primario()
+    // Sin negación -> Cualquier tipo
+    primario(at1) {
+        at1 = at;
+    } | 
+    // Con negación -> Solo booleanos
+    <tNOT> primario(at1) {
+        if (at1.type == Symbol.Types.BOOL) {
+            // TODO: Tratamiento de expresion
+        } else {
+            at.type = Symbol.Types.UNDEFINED;
+        }
+    }
 }
 
 // Primario -> Prioridad 1
-void primario() : {
+void primario(Attributes at) : {
+    Attributes at1;
     Token t;
-    SymbolInt s = null;
-    int intVal;
-    char charVal;
-} {
+    Symbol s;
+} 
+{
     // Paréntesis
-    <tPAREN_INI> val = expresion() <tPAREN_FIN>	{
-        return val;
-    }	
-
+    <tPAREN_INI> 
+    expresion(at1)
+    <tPAREN_FIN> {
+        at = at1;
+    } |
     // Constantes
-|	<tCONST_NUM> {
-        return Integer.parseInt(t.image);
-    }
-
-|	<tCONST_CHAR> {
-        return t.image[0];
-    }
-
-|	<tCONST_STRING> {
-        return t.image;
-    }
-
-|	<tTRUE> {
-        return true;
-    }
-
-|	<tFALSE> {
-        return false;
-    }
-
-|	charVal = instr_int2char() {
-        return charVal;
-    }
-
-|	intVal = instr_char2int() {
-        return intVal;
-    }
-
+ 	t = <tCONST_NUM> {
+        at.type = Symbol.Types.INT;
+        at.isConst = true;
+        at.valInt = Integer.parseInt(t.image);
+    } |								
+	t = <tCONST_CHAR> {
+        at.type = Symbol.Types.CHAR;
+        at.isConst = true;
+        at.valChar = t.image[0]; 
+    } |
+	t = <tCONST_STRING> { 
+        at.type = Symbol.Types.STRING;
+        at.isConst = true;mbol.Types.BOOL;
+        at.isConst = true;
+        at.valBool = true;
+    } |
+	t = <tFALSE> { 
+        at.type = Symbol.Types.BOOL;
+        at.isConst = true;
+        at.valBool = false;
+    } |
+        at.valChar = t.image; 
+    } |
+	t = <tTRUE> {
+        at.type = Symbol.Types.BOOL;
+        at.isConst = true;
+        at.valBool = true;
+    } |
+	t = <tFALSE> { 
+        at.type = Symbol.Types.BOOL;
+        at.isConst = true;
+        at.valBool = false;
+    } |
+	// <tINT2CHAR> <tPAREN_INI> expresion() <tPAREN_FIN> |
+	// <tCHAR2INT> <tPAREN_INI> expresion() <tPAREN_FIN> |
     // Var, array, func
-|	<tIDENTIFICADOR> primario_var_array_func() {
-        
+	t = <tIDENTIFICADOR> {
+        // El identificador debe existir
+        try {
+            s = st.getSymbol(t.image)
+        } catch (SymbolNotFoundException e) {
+            // TODO: Tratamiento de error
+        }
+    }
+    primario_var_array_func(t, at1) {
+
     }
 }
 
 // Desambigua en caso de ser variable, array o función
-void primario_var_array_func() : {
-    Token t;
-    int val;
-} {
+void primario_var_array_func(Attributes at) : {}
+{
     // Función
-    <tPAREN_INI> lista_expresiones() <tPAREN_FIN> {
-
-    }	
+    <tPAREN_INI>
+    lista_expresiones()
+    <tPAREN_FIN> |
 
     // Elemento de array
-|	<tCORCH_INI> expresion() <tCORCH_FIN>			
+	<tCORCH_INI> 
+    expresion() 
+    <tCORCH_FIN> {
 
-| 	/* Épsilon */ {
-    
-  } 								
+    } |			
+    // Vacío - Variable
+ 	/* Épsilon */ { 
+
+    }								
 }

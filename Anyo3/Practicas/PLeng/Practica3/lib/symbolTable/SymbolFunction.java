@@ -10,7 +10,7 @@ package lib.symbolTable;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 
-public class SymbolFunction extends Symbol implements Cloneable {
+public class SymbolFunction extends Symbol {
 
     // cada parámetro es un par <id,símbolo> donde "símbolo" es una copia del valor
     // introducido en la tabla de símbolos. Esta duplicación de la información es
@@ -19,7 +19,7 @@ public class SymbolFunction extends Symbol implements Cloneable {
     // locales
     // se eliminan de la tabla, pero la propia función/proc sigue en la tabla,
     // haciendo
-    // necesario mantelner la información de los parámetros.
+    // necesario mantener la información de los parámetros.
     public ArrayList<Symbol> parList;
 
     public Types returnType; // tipo de la función

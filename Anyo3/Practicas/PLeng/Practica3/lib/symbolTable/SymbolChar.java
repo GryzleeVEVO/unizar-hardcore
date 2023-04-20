@@ -7,7 +7,7 @@
 
 package lib.symbolTable;
 
-public class SymbolChar extends Symbol implements Cloneable {
+public class SymbolChar extends Symbol {
     public char value;
 
     public SymbolChar(String _name) {
