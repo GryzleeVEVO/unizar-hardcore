@@ -3,8 +3,6 @@
 -- Dorian Boleslaw Wozniak (817570@unizar.es)
 -- Adrian Arribas Mateo (795593@unizar.es)
 -- Unidad de detención
-
-
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
@@ -49,20 +47,41 @@ BEGIN
 	--		- Va a escribir en RW
 	--		- NOP y RTE nunca generan dependencias
 	dep_rs_EX <=
-		'1' WHEN ((valid_I_EX = '1') AND (Reg_Rs_ID = RW_EX) AND (RegWrite_EX = '1') AND (IR_op_code /= NOP) AND (IR_op_code /= RTE_opcode)) ELSE
+		'1' WHEN ((valid_I_EX = '1')
+				AND (Reg_Rs_ID = RW_EX) 
+				AND (RegWrite_EX = '1') 
+				AND (IR_op_code /= NOP) 
+				AND (IR_op_code /= RTE_opcode)) ELSE
 		'0';
 
 	dep_rs_Mem <=
-		'1' WHEN((valid_I_MEM = '1') AND (Reg_Rs_ID = RW_MEM) AND (RegWrite_Mem = '1') AND (IR_op_code /= NOP) AND (IR_op_code /= RTE_opcode)) ELSE
+		'1' WHEN((valid_I_MEM = '1') 
+				AND (Reg_Rs_ID = RW_MEM) 
+				AND (RegWrite_Mem = '1') 
+				AND (IR_op_code /= NOP) 
+				AND (IR_op_code /= RTE_opcode)) ELSE
 		'0';
 
-	-- En el caso de WRO, no se generan dependencias nunca con Rt
+	-- En el caso de WRO, no se generan dependencias nunca con Rt pues no lo utiliza
+	-- En el caso de LW, no se generan dependencias con Rt pues lo sobreescribe
 	dep_rt_EX <=
-		'1' WHEN ((valid_I_EX = '1') AND (Reg_Rt_ID = RW_EX) AND (RegWrite_EX = '1') AND (IR_op_code /= NOP) AND (IR_op_code /= RTE_opcode) AND (IR_op_code /= WRO_opcode)) ELSE
+		'1' WHEN ((valid_I_EX = '1') 
+				AND (Reg_Rt_ID = RW_EX) 
+				AND (RegWrite_EX = '1') 
+				AND (IR_op_code /= NOP) 
+				AND (IR_op_code /= RTE_opcode) 
+				AND (IR_op_code /= LW)
+				AND (IR_op_code /= WRO_opcode)) ELSE
 		'0';
 
 	dep_rt_Mem <=
-		'1' WHEN((valid_I_MEM = '1') AND (Reg_Rt_ID = RW_MEM) AND (RegWrite_Mem = '1') AND (IR_op_code /= NOP) AND (IR_op_code /= RTE_opcode) AND (IR_op_code /= WRO_opcode)) ELSE
+		'1' WHEN((valid_I_MEM = '1') 
+				AND (Reg_Rt_ID = RW_MEM) 
+				AND (RegWrite_Mem = '1') 
+				AND (IR_op_code /= NOP) 
+				AND (IR_op_code /= RTE_opcode) 
+				AND (IR_op_code /= LW)
+				AND (IR_op_code /= WRO_opcode)) ELSE
 		'0';
 
 	-- ***** Riesgos de datos *****

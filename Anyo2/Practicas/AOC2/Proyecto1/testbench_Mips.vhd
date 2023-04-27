@@ -50,16 +50,28 @@ BEGIN
 
 		-- Código IRQ
 
-		--WAIT FOR CLK_period * 4;
-		--IRQ <= '1';
-		--WAIT FOR CLK_period;
-		--IRQ <= '0';
-		--WAIT FOR CLK_period * 41;
-		--IRQ <= '1';
-		--WAIT FOR CLK_period;
-		--IRQ <= '0';
-		--WAIT FOR CLK_period * 20;
-		--IRQ <= '1';
+		IRQ <= '0';
+		IO_input <= x"00000000";
+		reset <= '1';
+		WAIT FOR CLK_period * 2;
+		reset <= '0';
+		WAIT FOR CLK_period * 26;
+		-- Vamos a interrumpir en momentos distintos
+		IRQ <= '1';
+		WAIT FOR CLK_period;
+		IRQ <= '0';
+		WAIT FOR CLK_period * 40;
+		IRQ <= '1';
+		WAIT FOR CLK_period;
+		IRQ <= '0';
+		WAIT FOR CLK_period * 41;
+		IRQ <= '1';
+		WAIT FOR CLK_period;
+		IRQ <= '0';
+		WAIT FOR CLK_period * 20;
+		-- Ahora interrumpimos sin parar
+		IRQ <= '1';
+		WAIT;
 
 		-- Test 4
 
@@ -69,28 +81,28 @@ BEGIN
 		--IRQ <= '1';
 		--WAIT FOR CLK_period;
 		--IRQ <= '0';
---
+		--
 		---- Genera una interrupción en el segundo ciclo de parada del WRO
 		---- Vuelve a WRO porque por la 1a parada no hay instrucción en EX
 		--WAIT FOR CLK_period * 57;
 		--IRQ <= '1';
 		--WAIT FOR CLK_period;
 		--IRQ <= '0';
---
+		--
 		---- Genera una interrupción en el primer ciclo de parada del ADD
 		---- Vuelve al LW porque no se hace la parada
 		--WAIT FOR CLK_period * 53;
 		--IRQ <= '1';
 		--WAIT FOR CLK_period;
 		--IRQ <= '0';
---
+		--
 		---- Genera una interrupción en el segundo SW
 		---- Vuelve al LW porque el primer SW no pasa a EX
 		--WAIT FOR CLK_period * 54;
 		--IRQ <= '1';
 		--WAIT FOR CLK_period;
 		--IRQ <= '0';
---
+		--
 		---- Interrumpe constantemente durante un tiempo.
 		---- Se realiza tras un salto, por lo que vuelve al IF (1er BEQ)
 		---- Tras las RTE también se vuelve desde la instr. en IF

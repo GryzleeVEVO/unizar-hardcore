@@ -4,13 +4,13 @@
 # ghdl --gen-makefile --ieee=synopsys --workdir=WORK testbench
 
 GHDL=ghdl
-GHDLFLAGS= --ieee=synopsys -fexplicit --workdir=WORK
+GHDLFLAGS= --ieee=synopsys -fexplicit --workdir=WORK 
 
 # Default target
 all: testbench
 
 # Elaboration target
-testbench: /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_1164-body.o /usr/lib/ghdl/ieee/v93/numeric_std.o /usr/lib/ghdl/ieee/v93/numeric_std-body.o WORK/testbench_Mips.o WORK/Mips_segmentado_IRQ_completar_2023.o WORK/REGISTER.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o WORK/adder32.o WORK/memoriaRAM_I_tests.o WORK/Banco_ID.o WORK/BReg.o WORK/Ext_signo.o WORK/bits_shifter.o WORK/UC_Mips_solucion.o WORK/UD_completar.o WORK/Banco_EX.o WORK/UA_completar.o WORK/mux4_1_32bits.o WORK/mux2_1.o WORK/ALU.o WORK/mux2_5bits.o WORK/Banco_MEM.o WORK/memoriaRAM_D_tests.o WORK/Banco_WB.o WORK/counter.o
+testbench: /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_1164-body.o /usr/lib/ghdl/ieee/v93/numeric_std.o /usr/lib/ghdl/ieee/v93/numeric_std-body.o WORK/testbench_Mips.o WORK/Mips_segmentado_IRQ_2023.o WORK/REGISTER.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o WORK/adder32.o WORK/memoriaRAM_I_test_2023.o WORK/Banco_ID.o WORK/BReg.o WORK/Ext_signo.o WORK/bits_shifter.o WORK/UC.o WORK/UD.o WORK/Banco_EX.o WORK/UA.o WORK/mux4_1_32bits.o WORK/mux2_1.o WORK/ALU.o WORK/mux2_5bits.o WORK/Banco_MEM.o WORK/memoriaRAM_D_tests_2023.o WORK/Banco_WB.o WORK/counter.o
 	$(GHDL) -e $(GHDLFLAGS) $@
 
 # Run target
@@ -32,7 +32,7 @@ run: testbench
 	exit 1
 WORK/testbench_Mips.o: testbench_Mips.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/Mips_segmentado_IRQ_completar_2023.o: Mips_segmentado_IRQ_completar_2023.vhd
+WORK/Mips_segmentado_IRQ_2023.o: Mips_segmentado_IRQ_2023.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/REGISTER.o: REGISTER.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
@@ -44,7 +44,7 @@ WORK/REGISTER.o: REGISTER.vhd
 	exit 1
 WORK/adder32.o: adder32.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/memoriaRAM_I_tests.o: memoriaRAM_I_tests.vhd
+WORK/memoriaRAM_I_test_2023.o: memoriaRAM_I_test_2023.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/Banco_ID.o: Banco_ID.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
@@ -54,13 +54,13 @@ WORK/Ext_signo.o: Ext_signo.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/bits_shifter.o: bits_shifter.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/UC_Mips_solucion.o: UC_Mips_solucion.vhd
+WORK/UC.o: UC.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/UD_completar.o: UD_completar.vhd
+WORK/UD.o: UD.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/Banco_EX.o: Banco_EX.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/UA_completar.o: UA_completar.vhd
+WORK/UA.o: UA.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/mux4_1_32bits.o: mux4_1_32bits.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
@@ -72,7 +72,7 @@ WORK/mux2_5bits.o: mux2_5bits.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/Banco_MEM.o: Banco_MEM.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
-WORK/memoriaRAM_D_tests.o: memoriaRAM_D_tests.vhd
+WORK/memoriaRAM_D_tests_2023.o: memoriaRAM_D_tests_2023.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 WORK/Banco_WB.o: Banco_WB.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
@@ -85,28 +85,28 @@ WORK/counter.o: counter.vhd
 /usr/lib/ghdl/ieee/v93/numeric_std.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 /usr/lib/ghdl/ieee/v93/numeric_std-body.o:  /usr/lib/ghdl/ieee/v93/numeric_std.o
 WORK/testbench_Mips.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_1164-body.o /usr/lib/ghdl/ieee/v93/numeric_std.o /usr/lib/ghdl/ieee/v93/numeric_std-body.o
-WORK/Mips_segmentado_IRQ_completar_2023.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
+WORK/Mips_segmentado_IRQ_2023.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/REGISTER.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/numeric_std.o
 /usr/lib/ghdl/ieee/v93/std_logic_arith.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o
 WORK/adder32.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o /usr/lib/ghdl/ieee/v93/numeric_std.o
-WORK/memoriaRAM_I_tests.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o
+WORK/memoriaRAM_I_test_2023.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o
 WORK/Banco_ID.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/BReg.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/numeric_std.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o
 WORK/Ext_signo.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/bits_shifter.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
-WORK/UC_Mips_solucion.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
-WORK/UD_completar.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
+WORK/UC.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
+WORK/UD.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/Banco_EX.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
-WORK/UA_completar.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
+WORK/UA.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/mux4_1_32bits.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/mux2_1.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/ALU.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o /usr/lib/ghdl/ieee/v93/numeric_std.o
 WORK/mux2_5bits.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/Banco_MEM.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
-WORK/memoriaRAM_D_tests.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o
+WORK/memoriaRAM_D_tests_2023.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o
 WORK/Banco_WB.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o
 WORK/counter.o:  /usr/lib/ghdl/ieee/v93/std_logic_1164.o /usr/lib/ghdl/ieee/v93/std_logic_arith.o /usr/lib/ghdl/ieee/v93/std_logic_unsigned.o /usr/lib/ghdl/ieee/v93/numeric_std.o
 
 clean:
-	ghdl --clean --workdir=WORK
+	${RM} WORK/* *.o resultado.ghw testbench
