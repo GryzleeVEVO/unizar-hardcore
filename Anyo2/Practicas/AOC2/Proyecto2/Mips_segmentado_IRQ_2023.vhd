@@ -54,7 +54,7 @@ ARCHITECTURE Behavioral OF MIPs_segmentado IS
     END COMPONENT;
 
     -- Memoria de datos
-    COMPONENT Data_Memory_Subsystem IS PORT (
+    COMPONENT MD_mas_MC IS PORT (
         CLK : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         ADDR : IN STD_LOGIC_VECTOR (31 DOWNTO 0); -- Dir solicitada por el Mips
@@ -341,8 +341,8 @@ ARCHITECTURE Behavioral OF MIPs_segmentado IS
     SIGNAL valid_I_IF, valid_I_ID, valid_I_EX_in, valid_I_EX, valid_I_MEM, valid_I_WB_in, valid_I_WB : STD_LOGIC;
     -- contadores
     SIGNAL cycles : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL Ins, data_stalls, control_stalls, Exceptions, Exception_cycles : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL inc_cycles, inc_I, inc_data_stalls, inc_control_stalls, inc_Exceptions, inc_Exception_cycles : STD_LOGIC;
+    SIGNAL Ins, data_stalls, control_stalls, Exceptions, Exception_cycles, paradas_mem : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL inc_cycles, inc_I, inc_data_stalls, inc_control_stalls, inc_Exceptions, inc_Exception_cycles, inc_paradas_mem : STD_LOGIC;
     -- interfaz con memoria
     SIGNAL Mem_ready : STD_LOGIC;
 
@@ -381,9 +381,9 @@ BEGIN
 
     -- Selector instrucción de retorno de excepción
     Return_I <=
-        PC_exception_EX WHEN (valid_I_EX = '1') ELSE 
-        PC_exception_ID WHEN (valid_I_ID = '1') ELSE  -- Si no hay instr. en EX
-        PC_out;                                       -- Si no hay instr. en ID
+        PC_exception_EX WHEN (valid_I_EX = '1') ELSE
+        PC_exception_ID WHEN (valid_I_ID = '1') ELSE -- Si no hay instr. en EX
+        PC_out; -- Si no hay instr. en ID
 
     -- Registro almacen de dirección de retorno 
     Exception_LR : reg GENERIC MAP(size => 32)
@@ -699,12 +699,12 @@ BEGIN
     RE <= MemRead_MEM AND valid_I_MEM;
 
     -- Memoria de datos
-    Mem_D : Data_Memory_Subsystem PORT MAP(
+    Mem_D : MD_mas_MC PORT MAP(
         CLK => CLK,
         ADDR => ALU_out_MEM,
         Din => BusB_MEM,
-        WE => MemWrite_MEM,
-        RE => MemRead_MEM,
+        WE => WE,
+        RE => RE,
         reset => reset,
         IO_input => IO_input,
         Mem_ready => Mem_ready,
@@ -723,7 +723,7 @@ BEGIN
         MDR => MDR,
         clk => clk,
         reset => reset,
-        load => '1', -- Parar si hay parada de datos y anticipación
+        load => Mem_ready, -- Si memoria no está lista, no avanzar
         MemtoReg_MEM => MemtoReg_MEM,
         RegWrite_MEM => RegWrite_MEM,
         MemtoReg_WB => MemtoReg_WB,
@@ -811,17 +811,33 @@ BEGIN
         count => Exception_cycles
     );
 
+    cont_paradas_mem : counter GENERIC MAP(size => 8)
+    PORT MAP(
+        clk => clk,
+        reset => reset,
+        count_enable => inc_paradas_mem,
+        count => paradas_mem
+    );
+
     inc_cycles <= '1'; -- Incrementa siempre
 
-    inc_I <= '1' WHEN valid_I_WB = '1' OR salto_tomado = '1' ELSE
+    inc_I <=
+        '1' WHEN valid_I_WB = '1' ELSE
         '0';
-    inc_data_stalls <= '1' WHEN Parar_ID = '1' AND parar_EX = '0' ELSE
+    inc_data_stalls <=
+        '1' WHEN Mem_ready = '1' AND Parar_ID = '1' AND parar_EX = '0' ELSE
         '0';
-    inc_control_stalls <= '1' WHEN Kill_IF = '1' AND Parar_ID = '0' ELSE
+    inc_control_stalls <=
+        '1' WHEN Mem_ready = '1' AND Kill_IF = '1' AND Parar_ID = '0' ELSE
         '0';
-    inc_Exceptions <= '1' WHEN Exception_accepted = '1' ELSE
+    inc_Exceptions <=
+        '1' WHEN Exception_accepted = '1' ELSE
         '0';
-    inc_Exception_cycles <= '1' WHEN MIPS_status(0) = '1' ELSE
+    inc_Exception_cycles <=
+        '1' WHEN MIPS_status(0) = '1' ELSE
+        '0';
+    inc_paradas_mem <=
+        '1' WHEN Mem_ready = '0' ELSE
         '0';
 
 END Behavioral;

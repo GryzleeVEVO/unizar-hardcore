@@ -99,7 +99,7 @@ BEGIN
 	-- Memoria de datos de 64 palabras de 32 bits
 	---------------------------------------------------------------------------
 
-	MD_scratch : RAM_64_32 PORT MAP(CLK => CLK, enable => MD_Scratch_enable, ADDR => MD_scratch_addr, Din => Bus_Data, WE => Scratch_WE, RE => Scratch_RE, Dout => MD_Scratch_Dout_int);
+	MD_scratch_64_32 : RAM_64_32 PORT MAP(CLK => CLK, enable => MD_Scratch_enable, ADDR => MD_scratch_addr, Din => Bus_Data, WE => Scratch_WE, RE => Scratch_RE, Dout => MD_Scratch_Dout_int);
 
 	--La salida de la scratch se guarda en un registro
 	output_reg : reg GENERIC MAP(size => 32)

@@ -111,11 +111,11 @@ BEGIN
 	riesgo_datos_ID <= BEQ_rt OR BEQ_rs OR ld_uso_rs OR ld_uso_rt OR WRO_rs;
 
 	-- Parada de ID
-	Parar_ID_internal <= parar_EX_internal OR (valid_I_ID AND riesgo_datos_ID);
+	Parar_ID_internal <= parar_EX_internal OR (NOT Mem_ready OR (valid_I_ID AND riesgo_datos_ID));
 	Parar_ID <= Parar_ID_internal;
 
-	-- Nunca se detiene la etapa de ejecuci�n en este proyecto
-	parar_EX_internal <= '0';
+	-- Se detiene si la etapa de memoria no está lista
+	parar_EX_internal <= NOT Mem_ready;
 	parar_EX <= parar_EX_internal;
 
 END Behavioral;

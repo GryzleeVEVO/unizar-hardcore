@@ -21,6 +21,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE ieee.std_logic_unsigned.ALL;
 USE ieee.numeric_std.ALL; -- se usa para convertir std_logic a enteros
+
 ENTITY MC_datos IS PORT (
 	CLK : IN STD_LOGIC;
 	reset : IN STD_LOGIC;
@@ -113,6 +114,7 @@ ARCHITECTURE Behavioral OF MC_datos IS
 			count_enable : IN STD_LOGIC;
 			count : OUT STD_LOGIC_VECTOR (size - 1 DOWNTO 0));
 	END COMPONENT;
+
 	COMPONENT Via IS
 		GENERIC (num_via : INTEGER); -- se usa para los mensajes. Hay que poner el n�mero correcto al instanciarla
 		PORT (
@@ -159,186 +161,84 @@ BEGIN
 	-- Las direcciones en esa regi�n se env�an a la MD_scratch y cuando responda se reenvia el resultado al procesador. 
 	-- Nunca se debe guardar nada de ese intervalo en MC
 
-	-- Cacheable
-	addr_non_cacheable <=
-		'1' WHEN Addr(31 DOWNTO 8) = x"100000" ELSE -- No (Scratch)
-		'0'; -- Si
-
-	-- Alineamiento
-	unaligned <=
-		'1' WHEN Addr(1 DOWNTO 0) /= "00" ELSE -- Mal (bloque empieza en 00)
-		'0'; -- Bien
-
+	addr_non_cacheable <= '1' WHEN Addr(31 DOWNTO 8) = x"100000" ELSE
+		'0';
+	unaligned <= '1' WHEN Addr(1 DOWNTO 0) /= "00" ELSE
+		'0';
 	tag <= ADDR(31 DOWNTO 6);
-
-	-- Palabra
-	dir_word <=
-		ADDR(3 DOWNTO 2) WHEN (mux_origen = '0') ELSE
+	dir_word <= ADDR(3 DOWNTO 2) WHEN (mux_origen = '0') ELSE
 		palabra_UC;
+	dir_cjto <= ADDR(5 DOWNTO 4); -- es emplazamiento asociativo
+	-- la entrada de datos de la MC puede venir del Mips (acceso normal) o del bus (gesti�n de fallos)
+	MC_Din <= Din WHEN (mux_origen = '0') ELSE
+		MC_bus_Din;
 
-	-- Conjunto
-	dir_cjto <= ADDR(5 DOWNTO 4);
+	Via_0 : Via GENERIC MAP(num_via => 0)PORT MAP(clk => clk, reset => reset, RE => RE, WE => WE_via0, Tags_WE => Tags_WE_via0, hit => hit0, Dir_cjto => Dir_cjto, Dir_word => Dir_word, Tag => Tag, Din => MC_Din, Dout => Dout_via0);
 
-	-- Entrada
-	MC_Din <=
-		Din WHEN (mux_origen = '0') ELSE -- MIPS
-		MC_bus_Din; -- Bus (fallo)
+	Via_1 : Via GENERIC MAP(num_via => 1)PORT MAP(clk => clk, reset => reset, RE => RE, WE => WE_via1, Tags_WE => Tags_WE_via1, hit => hit1, Dir_cjto => Dir_cjto, Dir_word => Dir_word, Tag => Tag, Din => MC_Din, Dout => Dout_via1);
 
-	-- Via 0
-	Via_0 : Via GENERIC MAP(num_via => 0)
-	PORT MAP(
-		clk => clk,
-		reset => reset,
-		RE => RE,
-		WE => WE_via0,
-		Tags_WE => Tags_WE_via0,
-		hit => hit0,
-		Dir_cjto => Dir_cjto,
-		Dir_word => Dir_word,
-		Tag => Tag,
-		Din => MC_Din,
-		Dout => Dout_via0
-	);
-
-	-- Via 1
-	Via_1 : Via GENERIC MAP(num_via => 1)
-	PORT MAP(
-		clk => clk,
-		reset => reset,
-		RE => RE,
-		WE => WE_via1,
-		Tags_WE => Tags_WE_via1,
-		hit => hit1,
-		Dir_cjto => Dir_cjto,
-		Dir_word => Dir_word,
-		Tag => Tag,
-		Din => MC_Din,
-		Dout => Dout_via1
-	);
-
-	-- Salida según hit
-	MC_Dout <=
-		Dout_via1 WHEN (hit1 = '1') ELSE
+	MC_Dout <= Dout_via1 WHEN (hit1 = '1') ELSE
 		Dout_via0;
 
-	-- Carga nuevo bloque
-	new_block <= MC_Tags_WE;
+	new_block <= MC_Tags_WE; -- la info para el fifo se actualiza cada vez que se escribe una nueva etiqueta
 
-	-- A FIFO
-	Info_FIFO : FIFO_reg PORT MAP(
-		clk => clk,
-		reset => reset,
-		cjto => dir_cjto,
-		new_block => new_block,
-		via_2_rpl => via_2_rpl
-	);
+	Info_FIFO : FIFO_reg PORT MAP(clk => clk, reset => reset, cjto => dir_cjto, new_block => new_block, via_2_rpl => via_2_rpl);
 
-	-- Via a reemplazar según respuesta FIFO (via_2_rpl)
+	-- se elige en qu� via se escribe la nueva etiqueta seg�n indique via_2_rpl
 	Tags_WE_via0 <= MC_Tags_WE AND NOT(via_2_rpl);
 	Tags_WE_via1 <= MC_Tags_WE AND via_2_rpl;
-
-	-- UC 
+	-------------------------------------------------------------------------------------------------- 
+	-----MC_UC: unidad de control
+	-------------------------------------------------------------------------------------------------- 
 	Unidad_Control : UC_MC PORT MAP(
-		clk => clk,
-		reset => reset,
-		RE => RE,
-		WE => WE,
-		hit0 => hit0,
-		hit1 => hit1,
-		bus_TRDY => bus_TRDY,
-		bus_DevSel => bus_DevSel,
-		MC_WE0 => WE_via0,
-		MC_WE1 => WE_via1,
-		MC_bus_Rd_Wr => internal_MC_bus_Rd_Wr,
-		MC_tags_WE => MC_tags_WE,
-		palabra => palabra_UC,
-		mux_origen => mux_origen,
-		ready => Mem_ready,
-		MC_send_addr_ctrl => MC_send_addr_ctrl,
-		block_addr => block_addr,
-		MC_send_data => MC_send_data,
-		Frame => MC_Frame,
-		via_2_rpl => via_2_rpl,
-		last_word => MC_last_word,
-		addr_non_cacheable => addr_non_cacheable,
-		mux_output => mux_output,
-		Bus_grant => MC_Bus_grant,
-		Bus_req => MC_Bus_req,
-		internal_addr => internal_addr,
-		unaligned => unaligned,
-		Mem_ERROR => Mem_ERROR,
-		inc_m => inc_m,
-		inc_w => inc_w,
-		load_addr_error => load_addr_error
-	);
-
-	-- Contador fallos
+		clk => clk, reset => reset, RE => RE, WE => WE, hit0 => hit0, hit1 => hit1, bus_TRDY => bus_TRDY,
+		bus_DevSel => bus_DevSel, MC_WE0 => WE_via0, MC_WE1 => WE_via1, MC_bus_Rd_Wr => internal_MC_bus_Rd_Wr,
+		MC_tags_WE => MC_tags_WE, palabra => palabra_UC, mux_origen => mux_origen, ready => Mem_ready, MC_send_addr_ctrl => MC_send_addr_ctrl,
+		block_addr => block_addr, MC_send_data => MC_send_data, Frame => MC_Frame, via_2_rpl => via_2_rpl, last_word => MC_last_word,
+		addr_non_cacheable => addr_non_cacheable, mux_output => mux_output, Bus_grant => MC_Bus_grant, Bus_req => MC_Bus_req,
+		internal_addr => internal_addr, unaligned => unaligned, Mem_ERROR => Mem_ERROR, inc_m => inc_m, inc_w => inc_w, load_addr_error => load_addr_error);
+	--------------------------------------------------------------------------------------------------
+	----------- Contadores de eventos
+	-------------------------------------------------------------------------------------------------- 
 	cont_m : counter GENERIC MAP(size => 8)
-	PORT MAP(
-		clk => clk,
-		reset => reset,
-		count_enable => inc_m,
-		count => m_count
-	);
-
-	-- Contador escrituras
+	PORT MAP(clk => clk, reset => reset, count_enable => inc_m, count => m_count);
 	cont_w : counter GENERIC MAP(size => 8)
-	PORT MAP(
-		clk => clk,
-		reset => reset,
-		count_enable => inc_w,
-		count => w_count
-	);
-
-	--
+	PORT MAP(clk => clk, reset => reset, count_enable => inc_w, count => w_count);
 	inc_mem_stall <= NOT(Mem_ready);
-
-	-- Contador paradas memoria
 	cont_Mem_stall : counter GENERIC MAP(size => 8)
-	PORT MAP(
-		clk => clk,
-		reset => reset,
-		count_enable => inc_mem_stall,
-		count => Mem_stalls
-	);
-	-- Salidas bus
-
-	-- Lectura/escritura a mandar al bus
+	PORT MAP(clk => clk, reset => reset, count_enable => inc_mem_stall, count => Mem_stalls);
+	--------------------------------------------------------------------------------------------------
+	----------- Salidas para el bus
+	-------------------------------------------------------------------------------------------------- 
 	MC_bus_Rd_Wr <= internal_MC_bus_Rd_Wr;
-
-	-- Dirección a leer/escribir a mandar al bus
+	--Si es escritura se manda la direcci�n de la palabra y si es un fallo la direcci�n del bloque que caus� el fallo
+	Internal_MC_Bus_ADDR <= ADDR(31 DOWNTO 2) & "00" WHEN block_addr = '0' ELSE
+		ADDR(31 DOWNTO 4) & "0000";
+	-- se usa la se�al "internal" para poder leerla, porque MC_Bus_ADDR es de salida y no se puede leer
 	MC_Bus_ADDR <= Internal_MC_Bus_ADDR;
 
-	Internal_MC_Bus_ADDR <=
-		ADDR(31 DOWNTO 2) & "00" WHEN block_addr = '0' ELSE -- Enviar palabra
-		ADDR(31 DOWNTO 4) & "0000"; -- Enviar bloque fallo 
+	MC_Bus_data_out <= Din; -- se usa para mandar el dato a escribir
 
-	-- Manda dato a escribir al bus
-	MC_Bus_data_out <= Din;
-
-	-- Error escritura (dirección no pertenece ni a MD ni a Scratch, dirección 0x01000000)
+	--------------------------------------------------------------------------------------------------
+	-- Registro Addr Error
+	-- Cuando se produce un error en el acceso a memoria (porque la direcci�n solicitada no corresponde a nadie) se guarda la direcci�n en este registro
+	-- Su direcci�n asociada es "01000000"
+	--------------------------------------------------------------------------------------------------
 	ADDR_Error_Reg : reg GENERIC MAP(size => 32)
-	PORT MAP(
-		Din => Internal_MC_Bus_ADDR,
-		clk => clk,
-		reset => reset,
-		load => load_addr_error,
-		Dout => Addr_Error
-	);
+	PORT MAP(Din => Internal_MC_Bus_ADDR, clk => clk, reset => reset, load => load_addr_error, Dout => Addr_Error);
+	--------------------------------------------------------------------------------------------------
+	-- Decodificador para detectar si la se�al es interna. Es decir si pertenece a un registro de MC
+	Internal_addr <= '1' WHEN (ADDR(31 DOWNTO 0) = x"01000000") ELSE
+		'0';
 
-	-- Señales address
-	Internal_addr <=
-		'1' WHEN (ADDR(31 DOWNTO 0) = x"01000000") ELSE -- Interna (error)
-		'0'; -- Externa
-
-	-- Salida MIPS
-	Dout <=
-		MC_Dout WHEN mux_output = "00" ELSE -- Cache
-		MC_bus_Din WHEN mux_output = "01" ELSE -- Dato bus
-		Addr_Error WHEN mux_output = "10" ELSE -- Error
+	--------------------------------------------------------------------------------------------------
+	----------- Salidas para el Mips
+	-------------------------------------------------------------------------------------------------- 
+	Dout <= MC_Dout WHEN mux_output = "00" ELSE
+		MC_bus_Din WHEN mux_output = "01" ELSE -- se usa para mandar el dato que ha llegado por el bus directamente al Mips
+		Addr_Error WHEN mux_output = "10" ELSE -- se usa para mandarle al Mips el contenido del registro Addr_Error
 		x"00000000";
 
-	-- Se puede acceder al dato
 	ready <= Mem_ready;
 
 END Behavioral;

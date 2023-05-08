@@ -111,7 +111,7 @@ BEGIN
 	-- Si se accede dos veces a la misma direcci�n la segunda vez no hay retardo inicial
 	---------------------------------------------------------------------------
 	reset_cont_retardos <= reset OR reset_retardo;
-	cont_retardos : counter GENERIC MAP(size => 8) PORT MAP(clk => clk, reset => reset_retardo, count_enable => contar_retardos, count => cuenta_retardos);
+	cont_retardos : counter GENERIC MAP(size => 8) PORT MAP(clk => clk, reset => reset_cont_retardos, count_enable => contar_retardos, count => cuenta_retardos);
 
 	-- este registro almacena la ultima direcci�n accedida. Cada vez que cambia la direcci�n se resetea el contador de retaros
 	-- La idea es simular que cuando accedes a una direcci�n nueva tarda m�s. Si siempre accedes a la misma no introducir� retardos adicionales
