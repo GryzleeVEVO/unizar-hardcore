@@ -3,8 +3,6 @@
 -- Dorian Boleslaw Wozniak (817570@unizar.es)
 -- Adrian Arribas Mateo (795593@unizar.es)
 -- Unidad de anticipación
-
-
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
