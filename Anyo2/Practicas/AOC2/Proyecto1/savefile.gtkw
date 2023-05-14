@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.114 (w)1999-2023 BSI
-[*] Wed Mar 22 18:36:35 2023
+[*] GTKWave Analyzer v3.3.115 (w)1999-2023 BSI
+[*] Wed May 10 13:32:33 2023
 [*]
 [dumpfile] "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/resultado.ghw"
-[dumpfile_mtime] "Wed Mar 22 18:04:18 2023"
-[dumpfile_size] 26246842
+[dumpfile_mtime] "Wed May 10 13:24:26 2023"
+[dumpfile_size] 370690
 [savefile] "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto1/savefile.gtkw"
-[timestart] 87400000
+[timestart] 176200000
 [size] 1920 1000
 [pos] -1 -1
-*-24.705257 140800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-24.705257 195000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.testbench.
 [treeopen] top.testbench.uut.
@@ -17,7 +17,7 @@
 [sst_width] 267
 [signals_width] 335
 [sst_expanded] 1
-[sst_vpaned_height] 398
+[sst_vpaned_height] 352
 @200
 -CONTADORES
 -
@@ -76,14 +76,9 @@ top.testbench.uut.cont_exceptions_cycles.count_int[0]
 @28
 [color] 2
 top.testbench.uut.valid_i_if
-@29
 top.testbench.uut.unidad_detencion_riesgos.kill_if
 @200
 -PC (in/out)
-@22
-[color] 4
-#{top.testbench.uut.pc.din[31:0]} top.testbench.uut.pc.din[31] top.testbench.uut.pc.din[30] top.testbench.uut.pc.din[29] top.testbench.uut.pc.din[28] top.testbench.uut.pc.din[27] top.testbench.uut.pc.din[26] top.testbench.uut.pc.din[25] top.testbench.uut.pc.din[24] top.testbench.uut.pc.din[23] top.testbench.uut.pc.din[22] top.testbench.uut.pc.din[21] top.testbench.uut.pc.din[20] top.testbench.uut.pc.din[19] top.testbench.uut.pc.din[18] top.testbench.uut.pc.din[17] top.testbench.uut.pc.din[16] top.testbench.uut.pc.din[15] top.testbench.uut.pc.din[14] top.testbench.uut.pc.din[13] top.testbench.uut.pc.din[12] top.testbench.uut.pc.din[11] top.testbench.uut.pc.din[10] top.testbench.uut.pc.din[9] top.testbench.uut.pc.din[8] top.testbench.uut.pc.din[7] top.testbench.uut.pc.din[6] top.testbench.uut.pc.din[5] top.testbench.uut.pc.din[4] top.testbench.uut.pc.din[3] top.testbench.uut.pc.din[2] top.testbench.uut.pc.din[1] top.testbench.uut.pc.din[0]
-@200
 -Instr. leida
 @22
 [color] 5

@@ -46,6 +46,12 @@ BEGIN
 		WAIT FOR CLK_period * 2;
 		reset <= '0';
 
+
+		WAIT FOR CLK_period*20;
+		IRQ <= '1';
+		WAIT FOR CLK_period*1;
+		IRQ <= '0';
+		
 		-- SECUENCIAS INTERRUPCIONES
 
 		-- Código IRQ

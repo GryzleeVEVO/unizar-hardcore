@@ -18,7 +18,9 @@ y = y(p);
 XTr = [ones(size(y, 1), 1) X];
 XTestExp = [ones(size(ytest, 1), 1), Xtest];
 
+tic
 [lambda, trainHist, cvHist] = entrenamientoMulticlase(XTr, y, 5, options);
+toc
 
 graficaHistoria(trainHist, cvHist);
 
@@ -52,7 +54,10 @@ accuracyTrain = accuracy(yPred, y)
 
 accuracyTest = accuracy(yPredTest, ytest)
 
-CurvaPrecisionRecall(hTest, ytest);
+%CurvaPrecisionRecall(hTest, ytest);
+
+matrizConfusion(yPred, y);
+matrizConfusion(yPredTest, ytest);
 
 verConfusiones(X, y, yPred);
 verConfusiones(Xtest, ytest, yPredTest);
