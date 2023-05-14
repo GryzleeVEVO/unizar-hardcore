@@ -1,28 +1,31 @@
 [*]
 [*] GTKWave Analyzer v3.3.115 (w)1999-2023 BSI
-[*] Thu May 11 15:15:05 2023
+[*] Sun May 14 18:34:59 2023
 [*]
 [dumpfile] "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto2/resultado.ghw"
-[dumpfile_mtime] "Thu May 11 15:14:06 2023"
-[dumpfile_size] 4163045
+[dumpfile_mtime] "Sun May 14 18:26:14 2023"
+[dumpfile_size] 4621963
 [savefile] "/home/gryzlee/Universidad/Anyo2/Practicas/AOC2/Proyecto2/savefile.gtkw"
-[timestart] 4861600000
-[size] 1920 1000
-[pos] 56 99
-*-25.605257 4614900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 2312500000
+[size] 2560 1360
+[pos] 0 32
+*-25.605257 2381400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.testbench.
 [treeopen] top.testbench.uut.
 [treeopen] top.testbench.uut.mem_d.
 [treeopen] top.testbench.uut.mem_d.controlador_md.md.ram.
 [treeopen] top.testbench.uut.mem_d.mc.
+[treeopen] top.testbench.uut.mem_d.mc.cont_m.
+[treeopen] top.testbench.uut.mem_d.mc.cont_mem_stall.
+[treeopen] top.testbench.uut.mem_d.mc.cont_w.
 [treeopen] top.testbench.uut.mem_d.mc.via_0.bits_validez.
 [treeopen] top.testbench.uut.mem_d.mc.via_0.mc_data.
 [treeopen] top.testbench.uut.mem_d.mc.via_1.bits_validez.
 [sst_width] 267
 [signals_width] 335
 [sst_expanded] 1
-[sst_vpaned_height] 245
+[sst_vpaned_height] 349
 @200
 -CONTADORES
 -
@@ -81,10 +84,21 @@ top.testbench.uut.paradas_mem[0]
 -group_end
 @28
 top.testbench.uut.mem_d.mc.unidad_control.bus_grant
+@29
+top.testbench.uut.mem_d.mc.unidad_control.ready
 @200
 -Fallos
+@22
+#{top.testbench.uut.mem_d.mc.cont_m.count_int[7:0]} top.testbench.uut.mem_d.mc.cont_m.count_int[7] top.testbench.uut.mem_d.mc.cont_m.count_int[6] top.testbench.uut.mem_d.mc.cont_m.count_int[5] top.testbench.uut.mem_d.mc.cont_m.count_int[4] top.testbench.uut.mem_d.mc.cont_m.count_int[3] top.testbench.uut.mem_d.mc.cont_m.count_int[2] top.testbench.uut.mem_d.mc.cont_m.count_int[1] top.testbench.uut.mem_d.mc.cont_m.count_int[0]
+@200
 -Escrituras
+@22
+#{top.testbench.uut.mem_d.mc.cont_w.count_int[7:0]} top.testbench.uut.mem_d.mc.cont_w.count_int[7] top.testbench.uut.mem_d.mc.cont_w.count_int[6] top.testbench.uut.mem_d.mc.cont_w.count_int[5] top.testbench.uut.mem_d.mc.cont_w.count_int[4] top.testbench.uut.mem_d.mc.cont_w.count_int[3] top.testbench.uut.mem_d.mc.cont_w.count_int[2] top.testbench.uut.mem_d.mc.cont_w.count_int[1] top.testbench.uut.mem_d.mc.cont_w.count_int[0]
+@200
 -Stalls
+@22
+#{top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[7:0]} top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[7] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[6] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[5] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[4] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[3] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[2] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[1] top.testbench.uut.mem_d.mc.cont_mem_stall.count_int[0]
+@200
 -Instrucciones procesadas
 @24
 [color] 4
@@ -350,7 +364,7 @@ top.testbench.uut.int_register_bank.reg_file[31][0]
 #{top.testbench.uut.mem_d.controlador_md.md.ram[2][31:0]} top.testbench.uut.mem_d.controlador_md.md.ram[2][31] top.testbench.uut.mem_d.controlador_md.md.ram[2][30] top.testbench.uut.mem_d.controlador_md.md.ram[2][29] top.testbench.uut.mem_d.controlador_md.md.ram[2][28] top.testbench.uut.mem_d.controlador_md.md.ram[2][27] top.testbench.uut.mem_d.controlador_md.md.ram[2][26] top.testbench.uut.mem_d.controlador_md.md.ram[2][25] top.testbench.uut.mem_d.controlador_md.md.ram[2][24] top.testbench.uut.mem_d.controlador_md.md.ram[2][23] top.testbench.uut.mem_d.controlador_md.md.ram[2][22] top.testbench.uut.mem_d.controlador_md.md.ram[2][21] top.testbench.uut.mem_d.controlador_md.md.ram[2][20] top.testbench.uut.mem_d.controlador_md.md.ram[2][19] top.testbench.uut.mem_d.controlador_md.md.ram[2][18] top.testbench.uut.mem_d.controlador_md.md.ram[2][17] top.testbench.uut.mem_d.controlador_md.md.ram[2][16] top.testbench.uut.mem_d.controlador_md.md.ram[2][15] top.testbench.uut.mem_d.controlador_md.md.ram[2][14] top.testbench.uut.mem_d.controlador_md.md.ram[2][13] top.testbench.uut.mem_d.controlador_md.md.ram[2][12] top.testbench.uut.mem_d.controlador_md.md.ram[2][11] top.testbench.uut.mem_d.controlador_md.md.ram[2][10] top.testbench.uut.mem_d.controlador_md.md.ram[2][9] top.testbench.uut.mem_d.controlador_md.md.ram[2][8] top.testbench.uut.mem_d.controlador_md.md.ram[2][7] top.testbench.uut.mem_d.controlador_md.md.ram[2][6] top.testbench.uut.mem_d.controlador_md.md.ram[2][5] top.testbench.uut.mem_d.controlador_md.md.ram[2][4] top.testbench.uut.mem_d.controlador_md.md.ram[2][3] top.testbench.uut.mem_d.controlador_md.md.ram[2][2] top.testbench.uut.mem_d.controlador_md.md.ram[2][1] top.testbench.uut.mem_d.controlador_md.md.ram[2][0]
 #{top.testbench.uut.mem_d.controlador_md.md.ram[3][31:0]} top.testbench.uut.mem_d.controlador_md.md.ram[3][31] top.testbench.uut.mem_d.controlador_md.md.ram[3][30] top.testbench.uut.mem_d.controlador_md.md.ram[3][29] top.testbench.uut.mem_d.controlador_md.md.ram[3][28] top.testbench.uut.mem_d.controlador_md.md.ram[3][27] top.testbench.uut.mem_d.controlador_md.md.ram[3][26] top.testbench.uut.mem_d.controlador_md.md.ram[3][25] top.testbench.uut.mem_d.controlador_md.md.ram[3][24] top.testbench.uut.mem_d.controlador_md.md.ram[3][23] top.testbench.uut.mem_d.controlador_md.md.ram[3][22] top.testbench.uut.mem_d.controlador_md.md.ram[3][21] top.testbench.uut.mem_d.controlador_md.md.ram[3][20] top.testbench.uut.mem_d.controlador_md.md.ram[3][19] top.testbench.uut.mem_d.controlador_md.md.ram[3][18] top.testbench.uut.mem_d.controlador_md.md.ram[3][17] top.testbench.uut.mem_d.controlador_md.md.ram[3][16] top.testbench.uut.mem_d.controlador_md.md.ram[3][15] top.testbench.uut.mem_d.controlador_md.md.ram[3][14] top.testbench.uut.mem_d.controlador_md.md.ram[3][13] top.testbench.uut.mem_d.controlador_md.md.ram[3][12] top.testbench.uut.mem_d.controlador_md.md.ram[3][11] top.testbench.uut.mem_d.controlador_md.md.ram[3][10] top.testbench.uut.mem_d.controlador_md.md.ram[3][9] top.testbench.uut.mem_d.controlador_md.md.ram[3][8] top.testbench.uut.mem_d.controlador_md.md.ram[3][7] top.testbench.uut.mem_d.controlador_md.md.ram[3][6] top.testbench.uut.mem_d.controlador_md.md.ram[3][5] top.testbench.uut.mem_d.controlador_md.md.ram[3][4] top.testbench.uut.mem_d.controlador_md.md.ram[3][3] top.testbench.uut.mem_d.controlador_md.md.ram[3][2] top.testbench.uut.mem_d.controlador_md.md.ram[3][1] top.testbench.uut.mem_d.controlador_md.md.ram[3][0]
 #{top.testbench.uut.mem_d.controlador_md.md.ram[4][31:0]} top.testbench.uut.mem_d.controlador_md.md.ram[4][31] top.testbench.uut.mem_d.controlador_md.md.ram[4][30] top.testbench.uut.mem_d.controlador_md.md.ram[4][29] top.testbench.uut.mem_d.controlador_md.md.ram[4][28] top.testbench.uut.mem_d.controlador_md.md.ram[4][27] top.testbench.uut.mem_d.controlador_md.md.ram[4][26] top.testbench.uut.mem_d.controlador_md.md.ram[4][25] top.testbench.uut.mem_d.controlador_md.md.ram[4][24] top.testbench.uut.mem_d.controlador_md.md.ram[4][23] top.testbench.uut.mem_d.controlador_md.md.ram[4][22] top.testbench.uut.mem_d.controlador_md.md.ram[4][21] top.testbench.uut.mem_d.controlador_md.md.ram[4][20] top.testbench.uut.mem_d.controlador_md.md.ram[4][19] top.testbench.uut.mem_d.controlador_md.md.ram[4][18] top.testbench.uut.mem_d.controlador_md.md.ram[4][17] top.testbench.uut.mem_d.controlador_md.md.ram[4][16] top.testbench.uut.mem_d.controlador_md.md.ram[4][15] top.testbench.uut.mem_d.controlador_md.md.ram[4][14] top.testbench.uut.mem_d.controlador_md.md.ram[4][13] top.testbench.uut.mem_d.controlador_md.md.ram[4][12] top.testbench.uut.mem_d.controlador_md.md.ram[4][11] top.testbench.uut.mem_d.controlador_md.md.ram[4][10] top.testbench.uut.mem_d.controlador_md.md.ram[4][9] top.testbench.uut.mem_d.controlador_md.md.ram[4][8] top.testbench.uut.mem_d.controlador_md.md.ram[4][7] top.testbench.uut.mem_d.controlador_md.md.ram[4][6] top.testbench.uut.mem_d.controlador_md.md.ram[4][5] top.testbench.uut.mem_d.controlador_md.md.ram[4][4] top.testbench.uut.mem_d.controlador_md.md.ram[4][3] top.testbench.uut.mem_d.controlador_md.md.ram[4][2] top.testbench.uut.mem_d.controlador_md.md.ram[4][1] top.testbench.uut.mem_d.controlador_md.md.ram[4][0]
-@25
+@24
 #{top.testbench.uut.mem_d.controlador_md.md.ram[5][31:0]} top.testbench.uut.mem_d.controlador_md.md.ram[5][31] top.testbench.uut.mem_d.controlador_md.md.ram[5][30] top.testbench.uut.mem_d.controlador_md.md.ram[5][29] top.testbench.uut.mem_d.controlador_md.md.ram[5][28] top.testbench.uut.mem_d.controlador_md.md.ram[5][27] top.testbench.uut.mem_d.controlador_md.md.ram[5][26] top.testbench.uut.mem_d.controlador_md.md.ram[5][25] top.testbench.uut.mem_d.controlador_md.md.ram[5][24] top.testbench.uut.mem_d.controlador_md.md.ram[5][23] top.testbench.uut.mem_d.controlador_md.md.ram[5][22] top.testbench.uut.mem_d.controlador_md.md.ram[5][21] top.testbench.uut.mem_d.controlador_md.md.ram[5][20] top.testbench.uut.mem_d.controlador_md.md.ram[5][19] top.testbench.uut.mem_d.controlador_md.md.ram[5][18] top.testbench.uut.mem_d.controlador_md.md.ram[5][17] top.testbench.uut.mem_d.controlador_md.md.ram[5][16] top.testbench.uut.mem_d.controlador_md.md.ram[5][15] top.testbench.uut.mem_d.controlador_md.md.ram[5][14] top.testbench.uut.mem_d.controlador_md.md.ram[5][13] top.testbench.uut.mem_d.controlador_md.md.ram[5][12] top.testbench.uut.mem_d.controlador_md.md.ram[5][11] top.testbench.uut.mem_d.controlador_md.md.ram[5][10] top.testbench.uut.mem_d.controlador_md.md.ram[5][9] top.testbench.uut.mem_d.controlador_md.md.ram[5][8] top.testbench.uut.mem_d.controlador_md.md.ram[5][7] top.testbench.uut.mem_d.controlador_md.md.ram[5][6] top.testbench.uut.mem_d.controlador_md.md.ram[5][5] top.testbench.uut.mem_d.controlador_md.md.ram[5][4] top.testbench.uut.mem_d.controlador_md.md.ram[5][3] top.testbench.uut.mem_d.controlador_md.md.ram[5][2] top.testbench.uut.mem_d.controlador_md.md.ram[5][1] top.testbench.uut.mem_d.controlador_md.md.ram[5][0]
 #{top.testbench.uut.mem_d.controlador_md.md.ram[6][31:0]} top.testbench.uut.mem_d.controlador_md.md.ram[6][31] top.testbench.uut.mem_d.controlador_md.md.ram[6][30] top.testbench.uut.mem_d.controlador_md.md.ram[6][29] top.testbench.uut.mem_d.controlador_md.md.ram[6][28] top.testbench.uut.mem_d.controlador_md.md.ram[6][27] top.testbench.uut.mem_d.controlador_md.md.ram[6][26] top.testbench.uut.mem_d.controlador_md.md.ram[6][25] top.testbench.uut.mem_d.controlador_md.md.ram[6][24] top.testbench.uut.mem_d.controlador_md.md.ram[6][23] top.testbench.uut.mem_d.controlador_md.md.ram[6][22] top.testbench.uut.mem_d.controlador_md.md.ram[6][21] top.testbench.uut.mem_d.controlador_md.md.ram[6][20] top.testbench.uut.mem_d.controlador_md.md.ram[6][19] top.testbench.uut.mem_d.controlador_md.md.ram[6][18] top.testbench.uut.mem_d.controlador_md.md.ram[6][17] top.testbench.uut.mem_d.controlador_md.md.ram[6][16] top.testbench.uut.mem_d.controlador_md.md.ram[6][15] top.testbench.uut.mem_d.controlador_md.md.ram[6][14] top.testbench.uut.mem_d.controlador_md.md.ram[6][13] top.testbench.uut.mem_d.controlador_md.md.ram[6][12] top.testbench.uut.mem_d.controlador_md.md.ram[6][11] top.testbench.uut.mem_d.controlador_md.md.ram[6][10] top.testbench.uut.mem_d.controlador_md.md.ram[6][9] top.testbench.uut.mem_d.controlador_md.md.ram[6][8] top.testbench.uut.mem_d.controlador_md.md.ram[6][7] top.testbench.uut.mem_d.controlador_md.md.ram[6][6] top.testbench.uut.mem_d.controlador_md.md.ram[6][5] top.testbench.uut.mem_d.controlador_md.md.ram[6][4] top.testbench.uut.mem_d.controlador_md.md.ram[6][3] top.testbench.uut.mem_d.controlador_md.md.ram[6][2] top.testbench.uut.mem_d.controlador_md.md.ram[6][1] top.testbench.uut.mem_d.controlador_md.md.ram[6][0]
 @22

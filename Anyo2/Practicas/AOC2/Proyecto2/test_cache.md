@@ -82,7 +82,7 @@
 | 0x64  | 0x04632800 |          | add r5, r3, r3       | r5 = 2*0x9c =0x138                                            |
 | 0x68  | 0x10A50006 |          | beq r5, r5, #5       | Incondicional a TEST4  2c * datos + control                   |
 | ----- | ---------- | -------- | -------------------- | ------------------------------------------------------------  |
-| 0x80  | 0x08A10000 | TEST4    | lw r1, 0(r5)         | r1 = 0x138                                                    |
+| 0x80  | 0x08A10000 | TEST4    | lw r1, 0(r5)         | r1 = 0x138           [RM : (3, 0) <- 4]                       |
 | 0x84  | 0x08020131 |          | lw r2, 131(r0)       | DESALINEADO, ABORT  -> IO_output escribe fallo en bloque @130 |
 | 0x88  | 0x0C030200 |          | sw r3, 200(r0)       | FUERA DE RANGO, ABORT -> " en bloque @512                     |
 | 0x8c  | 0x00000000 |          | NOP                  |                                                               |

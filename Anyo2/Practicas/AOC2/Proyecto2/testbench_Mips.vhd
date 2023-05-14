@@ -46,17 +46,30 @@ BEGIN
 		WAIT FOR CLK_period * 2;
 		reset <= '0';
 
-		-- SECUENCIAS INTERRUPCIONES
+		-- SECUENCIAS INTERRUPCIONES Y ESCRITURAS EN IO_input
 
-		-- Test cache
-		WAIT FOR CLK_period * 30;
-		IRQ <= '1';
-		WAIT FOR CLK_period * 1;
-		IRQ <= '0';
+		-- Test 1
+		--WAIT FOR CLK_period * 100;
+		--IO_input <= x"12345678";
+		--WAIT FOR CLK_period * 128;
+		--IRQ <= '1';
+		--WAIT FOR CLK_period;
+		--IRQ <= '0';
 
+		-- Test 2
+		--WAIT FOR CLK_period * 120;
+		--IRQ <= '1';
+		--WAIT FOR CLK_period;
+		--IRQ <= '0';
+		--WAIT FOR CLK_period * 164;
+		--IRQ <= '1';
+		--WAIT FOR CLK_period;
+		--IRQ <= '0';
 
 		-- FIN SECUENCIAS INTERRUPCIONES
 
+
+		
 		WAIT;
 
 	END PROCESS;
