@@ -9,7 +9,7 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de interrupciones para interactuar con los
         periféricos externos EINT1 y EINT2
 */
@@ -21,7 +21,6 @@
 
 /******************************************************************************/
 /* EINT1 */
-
 
 /*
     Inicializa la interrupción externa EINT1

@@ -9,7 +9,7 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de un gestor de botones, que permite comprobar si un
         botón está pulsado
 */
@@ -19,7 +19,7 @@
 
 /*
     Pre: ---
-    Post: Inicializa el gestor de botones, incluyendo las interrupciones 
+    Post: Inicializa el gestor de botones, incluyendo las interrupciones
             externas EINT1 y EINT2
 */
 void boton_iniciar(void);
@@ -31,9 +31,9 @@ void boton_iniciar(void);
 */
 void boton1_pulsado(void);
 
-/*  
+/*
     Pre: Recibido mensaje CHK_BOTON1
-    Post: Si el botón 1 no está pulsado, rehabilita interrupciones y 
+    Post: Si el botón 1 no está pulsado, rehabilita interrupciones y
             encola una alarma para detener las comprobaciones
 */
 void boton1_comprobar(void);
@@ -45,12 +45,11 @@ void boton1_comprobar(void);
 */
 void boton2_pulsado(void);
 
-/*  
+/*
     Pre: Recibido mensaje CHK_BOTON2
-    Post: Si el botón 2 no está pulsado, rehabilita interrupciones y 
+    Post: Si el botón 2 no está pulsado, rehabilita interrupciones y
             encola una alarma para detener las comprobaciones
 */
 void boton2_comprobar(void);
-
 
 #endif // G_BOTON_H

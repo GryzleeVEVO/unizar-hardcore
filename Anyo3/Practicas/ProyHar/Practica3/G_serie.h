@@ -4,12 +4,12 @@
 
     Fichero:
         uart.h
-        
+
     Autores:
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de funciones para interactuar con la línea
         serie del sistema. Ofrece funcionalidades para conversión de caracteres
         a enteros y viceversa, lectura y escritura de datos cualquiera en
@@ -20,8 +20,8 @@
 #define G_SERIE_H
 
 #include <inttypes.h>
-     \
-/* 
+
+/*
     Convierte un digito a caracter
 
     i: Entero a convertir
@@ -32,7 +32,7 @@ char serie_itoa(uint8_t i);
     Inicializa la línea serie
 */
 void serie_iniciar(void);
-    
+
 /*
     Interpreta el caracter obtenido de la línea serie
 
@@ -65,6 +65,6 @@ void serie_mensaje_reinicio(uint32_t t_juego, uint32_t t_medio);
 
     Se añade un salto de línea a la línea añadida
 */
-void serie_print(char* linea);
+void serie_print(char *linea);
 
 #endif // G_SERIE_H

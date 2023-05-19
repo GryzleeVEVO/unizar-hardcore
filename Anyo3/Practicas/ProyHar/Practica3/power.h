@@ -9,7 +9,7 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de funciones para gestionar el estado
         de energía del procesador
 */

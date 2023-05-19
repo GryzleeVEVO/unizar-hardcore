@@ -9,10 +9,10 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de llamadas al sistema para leer y gestionar
         el estado de las inhibiciones de interrupciones.
-        
+
         Todas las funciones están implementadas en SWI.s
 */
 

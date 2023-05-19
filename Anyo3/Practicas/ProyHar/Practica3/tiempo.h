@@ -9,10 +9,10 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de funciones para iniciar e interactuar con
         una serie de periféricos relacionados con el tiempo:
-        
+
         - Timer0:   Interrumpe periodicamente dado un tiempo en milisegundos
         - Timer1:   Cuenta el tiempo con precisión de microsegundos
         - RTC:      Contador en tiempo real, devuelve tiempo en segundos

@@ -18,7 +18,7 @@
 
 #include <inttypes.h>
 
-/* 
+/*
     Cada celda se codifica en 8 bits. Sólo se usan los 3 menos significativos
     - bit 0: 1: ficha blanca; 0 : no hay ficha blanca
     - bit 1: 1: ficha negra; 0 : no hay ficha negra
@@ -37,7 +37,7 @@ typedef uint8_t CELDA;
 /*
     Vuelve la celda dada en @celdaptr en una celda vacía (= 0)
 
-    Sólo está definida si al compilar se define que se deshaga 
+    Sólo está definida si al compilar se define que se deshaga
     una jugada ganadora y continuar el juego
 */
 __inline static void
@@ -48,23 +48,26 @@ celda_borrar_valor(CELDA *celdaptr) { *celdaptr = 0x00; }
     ficha blanca (val = 1) o negra (val = 2)
 */
 __inline static void
-celda_poner_valor(CELDA *celdaptr, uint8_t val) 
-  { if ((val == 1) || (val == 2 )) *celdaptr = 0x04 + val; }
+celda_poner_valor(CELDA *celdaptr, uint8_t val)
+{
+    if ((val == 1) || (val == 2))
+        *celdaptr = 0x04 + val;
+}
 
 // Devuelve 1 solo si la celda es vacía (bit 2 = 0)
 __inline static uint8_t
-celda_vacia(CELDA celda)    { return (celda & 0x4) == 0; }
+celda_vacia(CELDA celda) { return (celda & 0x4) == 0; }
 
 // Devuelve el color de la celda (0 si vacía, 1 si blanca, 2 si negra)
 __inline static uint8_t
-celda_color(CELDA celda)    { return (celda & 0x03); }
+celda_color(CELDA celda) { return (celda & 0x03); }
 
 // Devuelve distinto de 0 si la celda contiene una ficha blanca
 __inline static uint8_t
-celda_blanca(CELDA celda)   { return celda == 0x05; }
+celda_blanca(CELDA celda) { return celda == 0x05; }
 
 // Devuelve distinto de 0 si la celda contiene una ficha negra
 __inline static uint8_t
-celda_negra(CELDA celda)    { return celda == 0x06; }
+celda_negra(CELDA celda) { return celda == 0x06; }
 
 #endif // CELDA_H
