@@ -9,11 +9,10 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
-        Declaraciones de funciones de un gestor de entrada/salida, que ofrece 
+    Descripción:
+        Declaraciones de funciones de un gestor de entrada/salida, que ofrece
         funciones de alto nivel para manejar los puertos de GPIO
 */
-
 
 #ifndef G_IO_H
 #define G_IO_H

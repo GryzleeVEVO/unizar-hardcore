@@ -110,22 +110,38 @@ my_ratings = zeros(1682, 1);
 
 % Check the file movie_idx.txt for id of each movie in our dataset
 % For example, Toy Story (1995) has ID 1, so to rate it "4", you can set
-my_ratings(1) = 4;
+%my_ratings(1) = 4;
 
 % Or suppose did not enjoy Silence of the Lambs (1991), you can set
-my_ratings(98) = 2;
+%my_ratings(98) = 2;
 
 % We have selected a few movies we liked / did not like and the ratings we
 % gave are as follows:
-my_ratings(7) = 3;
-my_ratings(12) = 5;
-my_ratings(54) = 4;
-my_ratings(64) = 5;
-my_ratings(66) = 3;
-my_ratings(69) = 5;
-my_ratings(183) = 4;
-my_ratings(226) = 5;
-my_ratings(355) = 5;
+%my_ratings(7) = 3;
+%my_ratings(12) = 5;
+%my_ratings(54) = 4;
+%my_ratings(64) = 5;
+%my_ratings(66) = 3;
+%my_ratings(69) = 5;
+%my_ratings(183) = 4;
+%my_ratings(226) = 5;
+%my_ratings(355) = 5;
+
+% Datos propios
+my_ratings(1) = 5; % Toy Story
+my_ratings(50) = 4; % Star Wars
+my_ratings(56) = 4; % Pulp Fiction
+my_ratings(71) = 5; % El Rey León
+my_ratings(72) = 3; % La Máscara
+my_ratings(82) = 4; % Jurasic Park
+my_ratings(96) = 5; % Terminator 2
+my_ratinsgs(172) = 5; % El imperio contraataca
+my_ratings(180) = 5; % Apocalypse Now
+my_ratings(181) = 4; % El retorno del Jedi
+my_ratings(261) = 2; % Air Bud
+my_ratings(313) = 4; % Titanic
+my_ratings(892) = 1; % Flubber
+my_ratings(902) = 3; % El gran Lebowski
 
 fprintf('\n\nNew user ratings:\n');
 
@@ -199,9 +215,9 @@ pause;
 %  the predictions matrix.
 %
 
-
-% Make predictions for yourself in my_predictions (now is random)
-my_predictions = randperm(num_movies);
+% Make predictions for yourself in my_predictions
+predictions = X * Theta';
+my_predictions = predictions(:, 1);
 
 % Sort the predictions and show them
 [r, ix] = sort(my_predictions, 'descend');

@@ -12,6 +12,8 @@
 
 #pragma import(__use_no_semihosting_swi)
 
-void _sys_exit(int return_code) {
-label:  goto label;  /* endless loop */
+void _sys_exit(int return_code)
+{
+label:
+    goto label; /* endless loop */
 }

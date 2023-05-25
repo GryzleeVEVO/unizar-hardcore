@@ -4,12 +4,12 @@
 
     Fichero:
         uart.h
-        
+
     Autores:
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
+    Descripción:
         Interfaz de una serie de funciones para gestionar el periférico
         UART0.
 */
@@ -45,4 +45,3 @@ void uart0_enviar_array(char *ch);
 void uart0_continuar_envio(void);
 
 #endif // UART_H
-

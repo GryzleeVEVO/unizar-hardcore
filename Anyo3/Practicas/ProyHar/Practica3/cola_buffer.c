@@ -9,8 +9,8 @@
         Dorian Boleslaw Wozniak (817570@unizar.es)
         Pablo Latre Villacampa (778043@unizar.es)
 
-    Descripción: 
-        Implementación de un TAD Cola circular que actúa de búfer de 
+    Descripción:
+        Implementación de un TAD Cola circular que actúa de búfer de
         caracteres. Permite añadir cadenas de caracteres al búfer, comprobar
         si está vacío, y obtener el siguiente carácter a desencolar.
 */
@@ -19,13 +19,14 @@
 #include "G_IO.h"
 
 // Constantes
-enum {
-    TAM_COLA = 1024   // Tamaño de la cola
+enum
+{
+    TAM_COLA = 1024 // Tamaño de la cola
 };
 
-static int8_t cola[TAM_COLA];       // Cola
-static uint32_t primero = 0;        // Índice al primer elemento
-static uint32_t ultimo  = 0;        // Índice al último elemento
+static int8_t cola[TAM_COLA]; // Cola
+static uint32_t primero = 0;  // Índice al primer elemento
+static uint32_t ultimo = 0;   // Índice al último elemento
 
 /*
     Añade una cadena de caracteres a la cola
@@ -34,14 +35,18 @@ static uint32_t ultimo  = 0;        // Índice al último elemento
 
     Si se desborda, para el programa. Las cadenas deben estar terminadas en NULL
 */
-void buffer_anyadir(char* c) { 
-    for (uint32_t i = 0; c[i] != '\0'; i++) {
+void buffer_anyadir(char *c)
+{
+    for (uint32_t i = 0; c[i] != '\0'; i++)
+    {
         // Si desborda se detiene.
-        if ((ultimo + 1) % TAM_COLA == primero) {
+        if ((ultimo + 1) % TAM_COLA == primero)
+        {
             IO_marcar_overflow();
-            while (1); 
+            while (1)
+                ;
         }
-        
+
         // Añade a la cola
         cola[ultimo] = c[i];
 
@@ -60,12 +65,13 @@ uint8_t buffer_vacio() { return ultimo == primero; }
 
     El búfer no debe estar vacío al extraer
 */
-int8_t buffer_siguiente() {
+int8_t buffer_siguiente()
+{
     // Obtiene el evento
     uint8_t c = cola[primero];
-    
+
     // Avanza índice
     primero = (primero + 1) % TAM_COLA;
-    
+
     return c;
 }
