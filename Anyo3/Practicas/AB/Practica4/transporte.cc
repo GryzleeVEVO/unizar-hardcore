@@ -1,14 +1,11 @@
 /**
- * @file MHcypher.cc
+ * @file transporte.cc
  * @author Dorian Boleslaw Wozniak  (817570@unizar.es)
  * @author Jesus Mendoza Aranda (777524@unizar.es)
  *
- * @brief Programa que permite encriptar o desencriptar texto utilizando el
- * sistema criptográfico Merkle-Hellman. Para enriptar se utiliza la opción
- * -e; para desencriptar la opción -d. Los últimos parámetros deben ser
- * los elementos de la mochila, y los números N y w.
- *
- * Vease el LEEME o usar -h para una explicación mas detallada del uso
+ * @brief Programa que calcula, a partir de una serie de trenes con destino y
+ *          capacidad conocidos, y una serie de pedidos de transporte de pasajeros,
+ *          el beneficio
  */
 
 #include <iostream>
@@ -17,15 +14,16 @@
 #include <vector>
 #include <cmath>
 #include <chrono>
+#include <climits>
 #include <fstream>
-#include <string.h>
+#include <cstring>
 
 using namespace std;
 
 // Vector para los trenes a evaluar
-int allTrains[100][3];
+int allTrains[10000][3] = {};
 // Vector para los posibles trayectos
-static int allTrips[100][100][3];
+static int allTrips[10000][10000][3] = {};
 
 // Variables para poda
 struct Nodo
@@ -57,24 +55,25 @@ bool sePuedeAceptar(Nodo &nodo)
             hayEspacio = false;
             break;
         }
-        nodo.asientosLibres[i] -= pasajeros;
     }
     return hayEspacio;
 }
 
 int calcularGanancia(vector<Nodo> nodos)
 {
-    int desperdicioMinimo = 1000000000;
+    int desperdicioMinimo = nodos[0].cota;
+
     while (true)
     {
         // Se elige el nodo mas prometedor
-        int expandido;
-        int expandidoCoste = 1000000000;
-        for (int i = 0; i < nodos.size(); i++)
+        int expandido = 0;
+        int expandidoCoste = INT_MAX;
+        for (int i = 0; i < (int)nodos.size(); i++)
         {
             if (nodos[i].coste < expandidoCoste)
             {
                 expandido = i;
+                expandidoCoste = nodos[i].coste;
             }
         }
         // Se generan los hijos del nodo mas prometedor
@@ -85,6 +84,14 @@ int calcularGanancia(vector<Nodo> nodos)
             // Comprobamos si se puede aceptar el viaje
             if (sePuedeAceptar(hijo))
             {
+                int inicio = allTrips[hijo.tren][hijo.x - 1][0];
+                int final = allTrips[hijo.tren][hijo.x - 1][1];
+                int pasajeros = allTrips[hijo.tren][hijo.x - 1][2];
+                for (int i = inicio; i < final; i++)
+                {
+                    hijo.asientosLibres[i] -= pasajeros;
+                }
+
                 hijo.cota -= gananciaViaje(hijo);
                 // Actualizamos la cota
                 if (hijo.cota < desperdicioMinimo)
@@ -104,59 +111,52 @@ int calcularGanancia(vector<Nodo> nodos)
         }
         // Quitamos el nodo expandido de la lista de vivos
         nodos.erase(nodos.begin() + expandido);
+
         // Podamos los nodos cuyo coste sea mayor que el desperdicio minimo
-        int vectorOffset = 0;
-        for (int i = 0; i < nodos.size(); i++)
+        for (int i = 0; i < (int)nodos.size(); i++)
         {
-            if (nodos[i - vectorOffset].coste > desperdicioMinimo)
+            if (nodos[i].coste > desperdicioMinimo)
             {
-                nodos.erase(nodos.begin() + expandido);
-                vectorOffset++;
+                nodos.erase(nodos.begin() + i);
+                i--;
             }
         }
+
         // Si no quedan mas nodos vivos que expandir salimos
         if (nodos.size() == 0)
         {
             break;
         }
     }
+
     return desperdicioMinimo;
 }
 
 int main(int argc, char **argv)
 {
     // Mensaje de ayuda
-    if (argc == 1)
+    if (argc < 3)
     {
-        cout << "calculaTrenes fichero_entrada fichero salida;";
+        cout << "calculaTrenes fichero_entrada fichero salida" << endl;
         exit(1);
     }
 
-    // Ejemplo de uso
-    if (argc < 2)
-    {
-        cerr << "Argumentos insuficientes." << endl
-             << "Ejemplo de uso:" << endl
-             << "\t./calculaTrenes datos.txt salida.txt"
-             << "Para mas ayuda: ./calculaTrenes" << endl;
-        exit(1);
-    }
-    int stringSize;
+    // int stringSize;
     char line[256];
     int temp[3];
-    stringstream ss;
+    // stringstream ss;
     ifstream reader;
-    int index;
+    // int index;
     int it = 0;
-    int seatNum;
-    int stops;
+    // int seatNum;
+    // int stops;
     int remainingTrips = 0;
     int trainNum = 0;
-    int tripsNum;
+    // int tripsNum;
     // Vector para la ganancia maxima de cada tren
-    float trainPay[100];
+    float trainPay[10000] = {};
     // Vector para el tiempo de calculo de cada tren
-    double trainTime[100];
+    double trainTime[10000] = {};
     // Vector para las particiones intermedias
     reader.open(argv[1]);
     // Leemos el fichero
@@ -185,23 +185,30 @@ int main(int argc, char **argv)
             if (temp[0] < 1)
             {
                 cout << "No tiene sentido que un tren tenga una capacidad de menos de un pasajero" << endl;
-                exit(0);
+                exit(1);
             }
             if (temp[1] < 1)
             {
                 cout << "El tren debe ir por lo menos de una estacion 0 a una estacion 1" << endl;
-                exit(0);
+                exit(1);
             }
             else if (temp[1] > 7)
             {
                 cout << "El numero de estacion final debe ser como maximo 7" << endl;
-                exit(0);
+                exit(1);
             }
-            if (temp[2] < 1)
+
+            else if (temp[2] < 1)
             {
                 cout << "Se debe presentar al menos un viaje posible" << endl;
-                exit(0);
+                exit(1);
             }
+            else if (temp[2] > 22)
+            {
+                cout << "Se aceptan como máximo 22 pedidos" << endl;
+                exit(1);
+            }
+
             allTrains[trainNum][0] = temp[0];
             allTrains[trainNum][1] = temp[1];
             allTrains[trainNum][2] = temp[2];
@@ -214,14 +221,27 @@ int main(int argc, char **argv)
             {
                 cout << "La estacion de llegada debe ser posterior a la de salida" << endl;
                 cout << "Salida: " << temp[0] << "    Llegada: " << temp[1] << endl;
-                exit(0);
+                exit(1);
             }
             if (temp[2] > allTrains[trainNum - 1][0])
             {
                 cout << "El viaje propuesto no puede tener mas pasajeros de la capacidad maxima del tren" << endl;
                 cout << "Pasajeros viaje: " << temp[2] << "    Capacidad tren: " << allTrains[trainNum - 1][0] << endl;
-                exit(0);
+                exit(1);
             }
+
+            if (temp[1] > allTrains[trainNum - 1][1])
+            {
+                cout << "La estación de destino del pedido no puede ser posterior a la del fin del trayecto" << endl;
+                exit(1);
+            }
+
+            if (temp[2] < 1)
+            {
+                cout << "El viaje propuesto debe llevar al menos a un pasajero" << endl;
+                exit(1);
+            }
+
             remainingTrips--;
             allTrips[trainNum - 1][allTrains[trainNum - 1][2] - remainingTrips - 1][0] = temp[0];
             allTrips[trainNum - 1][allTrains[trainNum - 1][2] - remainingTrips - 1][1] = temp[1];
@@ -252,11 +272,13 @@ int main(int argc, char **argv)
         trainTime[i] = (double)(std::chrono::high_resolution_clock::now() - calc_begin).count() / std::chrono::high_resolution_clock::period::den;
     }
     ofstream writer(argv[2]);
-    writer << endl
-           << "<Ganancias>" << setw(25) << "<Tiempo de calculo>" << endl;
+    // writer << endl
+    //        << "<Ganancias>" << setw(25) << "<Tiempo de calculo>" << endl;
     for (int i = 0; i < trainNum; i++)
     {
-        writer << setw(3) << trainPay[i] << setw(20) << trainTime[i] << endl;
+        writer << fixed << setprecision(1) << trainPay[i] << " " << fixed << setprecision(10) << trainTime[i] << endl;
     }
     writer.close();
+
+    return 0;
 }

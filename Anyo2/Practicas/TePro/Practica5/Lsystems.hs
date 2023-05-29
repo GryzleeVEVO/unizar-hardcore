@@ -6,7 +6,7 @@
 
     Autor: Dorian Boleslaw Wozniak  817570
     Descripción: Módulo que contiene una función para calcular los pasos
-    necesarios para crear sistemas de Lindenmayer, junto a un conjunto de 
+    necesarios para crear sistemas de Lindenmayer, junto a un conjunto de
     reglas que generan sistemas varios
 -}
 
@@ -43,6 +43,7 @@ curvaKochCuad x = [x]
 copoKoch :: Char -> String
 copoKoch 'F' = "F-F++F-F"
 copoKoch x = [x]
+
 {-
     Axioma: F++F--F+F
     Distancia: 1
@@ -51,7 +52,7 @@ copoKoch x = [x]
 anticopoKoch :: Char -> String
 anticopoKoch 'F' = "F+F--F+F"
 anticopoKoch x = [x]
- 
+
 {-
     Axioma: F+F+F+F
     Distancia: 1
@@ -111,9 +112,9 @@ lsystem regla axioma 0 = axioma
 -- Devuelve una lista vacía si no hay axioma donde aplicar sustitución
 lsystem regla [] prof = []
 -- Caso complejo:
-lsystem regla (x:xs) prof = 
-    -- Llamada recursiva con la sustitucion de la cabeza, profundidad - 1
-    (lsystem regla (regla x) (prof - 1))
+lsystem regla (x : xs) prof =
+  -- Llamada recursiva con la sustitucion de la cabeza, profundidad - 1
+  (lsystem regla (regla x) (prof - 1))
     ++
     -- Llamada recutsiva con el resto de axioma, misma profundidad
     (lsystem regla xs prof)
