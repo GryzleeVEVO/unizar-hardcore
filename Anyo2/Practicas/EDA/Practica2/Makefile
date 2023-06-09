@@ -1,8 +1,8 @@
-CC = g++
-CPPFLAGS = -I. -std=c++11
-LDFLAGS = 
-SRC = src/
-BLD = build/
+CC=g++
+CPPFLAGS=-Wall -Wextra -I. -std=c++11
+LDFLAGS=
+SRC=src/
+BLD=build/
 
 all: practica2
 

@@ -5,21 +5,20 @@
     Autores: Dorian Boleslaw Wozniak        817570
              Jorge Pérez Liesa              821011
 
-    Descripción: Archivo de especificación de un tipo fecha, que almacena una 
-    fecha válida del calendario gregoriano junto a operaciones de acceso y 
+    Descripción: Archivo de especificación de un tipo fecha, que almacena una
+    fecha válida del calendario gregoriano junto a operaciones de acceso y
     comparación de utilidad, según la especificación a continuación
 */
 
 #ifndef FECHAS_H
 #define FECHAS_H
 
-
 /******************************************************************************/
 /* ESPECIFIACIÓN                                                              */
 /******************************************************************************/
 
 /*
-    Género fecha: Los valores del TAD fechas representan fechas válidas según 
+    Género fecha: Los valores del TAD fechas representan fechas válidas según
                     las reglas del calendario gregoriano (adoptado en 1583)
 */
 
@@ -43,7 +42,7 @@ struct Fecha;
     válida según el calendario gregoriano
 */
 
-bool crear(int d, int m, int a, Fecha& f);
+bool crear(int d, int m, int a, Fecha &f);
 
 /*
     dia: fecha f -> entero
@@ -51,7 +50,7 @@ bool crear(int d, int m, int a, Fecha& f);
     Dada una fecha f, se obtiene el entero que corresponde al día en la fecha f
 */
 
-int dia(const Fecha& f);
+int dia(const Fecha &f);
 
 /*
     mes: fecha f -> entero
@@ -60,7 +59,7 @@ int dia(const Fecha& f);
 
 */
 
-int mes(const Fecha& f);
+int mes(const Fecha &f);
 
 /*
     año: fecha f -> entero
@@ -68,35 +67,35 @@ int mes(const Fecha& f);
     Dada una fecha f, se obtiene el entero que corresponde al año en la fecha f
 */
 
-int anyo(const Fecha& f);
+int anyo(const Fecha &f);
 
 /*
     iguales: fecha f1, fecha f2 -> booleano
 
     Dadas dos fechas f1 y f2, se obtienen un booleano con valor verdad si y solo
-    si la fecha f1 es igual que la fecha f2, es decir, corresponden al mismo 
+    si la fecha f1 es igual que la fecha f2, es decir, corresponden al mismo
     día, mes y año
 */
 
-bool iguales(const Fecha& f1, const Fecha& f2);
+bool iguales(const Fecha &f1, const Fecha &f2);
 
 /*
     anterior: fecha f1, fecha f2 -> booleano
 
-    Dadas dos fechas f1 y f2, se obtiene un booleano con valor verdad si y solo 
+    Dadas dos fechas f1 y f2, se obtiene un booleano con valor verdad si y solo
     si la fecha f1 es cronológicamente anterior a la fecha f2
 */
 
-bool anterior(const Fecha& f1, const Fecha& f2);
+bool anterior(const Fecha &f1, const Fecha &f2);
 
 /*
     posterior: fecha f1, fecha f2 -> booleano
 
-    Dadas dos fechas f1 y f2, se obtiene un booleano con valor verdad si y solo 
+    Dadas dos fechas f1 y f2, se obtiene un booleano con valor verdad si y solo
     si la fecha f1 es cronológicamente posterior a la fecha f2
 */
 
-bool posterior(const Fecha& f1, const Fecha& f2);
+bool posterior(const Fecha &f1, const Fecha &f2);
 
 /******************************************************************************/
 /* IMPLEMENTACIÓN                                                             */
@@ -106,19 +105,20 @@ bool posterior(const Fecha& f1, const Fecha& f2);
 /* Tipo Fecha                                                                 */
 /******************************************************************************/
 
-struct Fecha{
-    friend bool crear(const int d, const int m, const int a, Fecha& f);
-    friend int dia(const Fecha& f);
-    friend int mes(const Fecha& f);
-    friend int anyo(const Fecha& f);
-    friend bool iguales(const Fecha& f1, const Fecha& f2);
-    friend bool anterior(const Fecha& f1, const Fecha& f2);
-    friend bool posterior(const Fecha& f1, const Fecha& f2);
+struct Fecha
+{
+    friend bool crear(const int d, const int m, const int a, Fecha &f);
+    friend int dia(const Fecha &f);
+    friend int mes(const Fecha &f);
+    friend int anyo(const Fecha &f);
+    friend bool iguales(const Fecha &f1, const Fecha &f2);
+    friend bool anterior(const Fecha &f1, const Fecha &f2);
+    friend bool posterior(const Fecha &f1, const Fecha &f2);
 
-    private:
-        int suDia;
-        int suMes;
-        int suAnyo;
+private:
+    int suDia;
+    int suMes;
+    int suAnyo;
 };
 
 #endif

@@ -21,7 +21,7 @@ using namespace std;
 // ESPECIFICACION
 
 /*
-    Género programas: Los valores del TAD programas representan la información 
+    Género programas: Los valores del TAD programas representan la información
                         de que disponemos sobre un programa informático
 */
 
@@ -31,20 +31,20 @@ struct Programa;
 
 /*
     crear: cadena nom, fecha cre, cadena leng, cadena desc -> programa
-    
-    Crea un programa de nombre nom, con fecha de creación cre, codificado en 
+
+    Crea un programa de nombre nom, con fecha de creación cre, codificado en
     lenguaje leng, y con descripción desc
 */
 
-void crear(Programa& p, const string& nom, const Fecha& cre, const string& leng, const string& desc);
+void crear(Programa &p, const string &nom, const Fecha &cre, const string &leng, const string &desc);
 
 /*
     suNombre: programa p -> cadena
-    
+
     Devuelve el nombre del programa p
 */
 
-string suNombre(const Programa& p);
+string suNombre(const Programa &p);
 
 /*
     suFecha: programa p -> fecha
@@ -52,7 +52,7 @@ string suNombre(const Programa& p);
     Devuelve la fecha del programa p
 */
 
-Fecha suFecha(const Programa& p);
+Fecha suFecha(const Programa &p);
 
 /*
     suLenguaje: programa p -> fecha
@@ -60,7 +60,7 @@ Fecha suFecha(const Programa& p);
     Devuelve la fecha del programa p
 */
 
-string suLenguaje(const Programa& p); 
+string suLenguaje(const Programa &p);
 
 /*
     suDescripción: programa p -> cadena
@@ -68,8 +68,7 @@ string suLenguaje(const Programa& p);
     Devuelve la descripción del programa p
 */
 
-string suDescripcion(const Programa& p);
-
+string suDescripcion(const Programa &p);
 
 /*
     operador ==: programa p1, programa p2 -> booleano
@@ -77,21 +76,22 @@ string suDescripcion(const Programa& p);
     Devuelve verdad si y solo si los programas p1 y p2 son iguales
 */
 
-bool operator==(const Programa& p1, const Programa& p2);
+bool operator==(const Programa &p1, const Programa &p2);
 
-struct Programa{
-    friend void crear(Programa& p, const string& nom, const Fecha& cre, const string& leng, string& desc);
-    friend string suNombre(const Programa& p);
-    friend Fecha suFecha(const Programa& p);
-    friend string suLenguaje(const Programa& p);
-    friend string suDescripcion(const Programa& p);
-    friend bool operator==(const Programa& p1, const Programa& p2);
+struct Programa
+{
+    friend void crear(Programa &p, const string &nom, const Fecha &cre, const string &leng, string &desc);
+    friend string suNombre(const Programa &p);
+    friend Fecha suFecha(const Programa &p);
+    friend string suLenguaje(const Programa &p);
+    friend string suDescripcion(const Programa &p);
+    friend bool operator==(const Programa &p1, const Programa &p2);
 
-    private:
-        string nombre;
-        string lenguaje;
-        string descripcion;
-        Fecha creacion;
+private:
+    string nombre;
+    string lenguaje;
+    string descripcion;
+    Fecha creacion;
 };
 
 #endif

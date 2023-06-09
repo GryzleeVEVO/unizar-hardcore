@@ -25,7 +25,8 @@
             un lenguaje de codificación leng, y una descripción desc
 */
 
-void crear(Programa& p, const string& nom, const Fecha& cre, const string& leng, string& desc){
+void crear(Programa &p, const string &nom, const Fecha &cre, const string &leng, string &desc)
+{
     p.nombre = nom;
     p.lenguaje = leng;
     p.descripcion = desc;
@@ -37,7 +38,8 @@ void crear(Programa& p, const string& nom, const Fecha& cre, const string& leng,
     Post: Devuelve el nombre del programa p
 */
 
-string suNombre(const Programa& p){
+string suNombre(const Programa &p)
+{
     return p.nombre;
 }
 
@@ -46,7 +48,8 @@ string suNombre(const Programa& p){
     Post: Devuelve la fecha de creación del programa p
 */
 
-Fecha suFecha(const Programa& p){
+Fecha suFecha(const Programa &p)
+{
     return p.creacion;
 }
 
@@ -55,7 +58,8 @@ Fecha suFecha(const Programa& p){
     Post: Devuelve el lenguaje de codificación del programa p
 */
 
-string suLenguaje(const Programa& p){
+string suLenguaje(const Programa &p)
+{
     return p.lenguaje;
 }
 
@@ -64,7 +68,8 @@ string suLenguaje(const Programa& p){
     Post: Devuelve la descripción del programa p
 */
 
-string suDescripcion(const Programa& p){
+string suDescripcion(const Programa &p)
+{
     return p.descripcion;
 }
 
@@ -79,7 +84,7 @@ string suDescripcion(const Programa& p){
         iguales
 */
 
-bool operator==(const Programa& p1, const Programa& p2){
-    return(p1.nombre == p2.nombre && p1.lenguaje == p2.lenguaje 
-        && p1.descripcion == p2.descripcion && iguales(p1.creacion, p2.creacion));
+bool operator==(const Programa &p1, const Programa &p2)
+{
+    return (p1.nombre == p2.nombre && p1.lenguaje == p2.lenguaje && p1.descripcion == p2.descripcion && iguales(p1.creacion, p2.creacion));
 }

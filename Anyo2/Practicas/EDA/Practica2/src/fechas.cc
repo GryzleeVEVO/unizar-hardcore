@@ -5,8 +5,8 @@
     Autores: Dorian Boleslaw Wozniak        817570
              Jorge Pérez Liesa              821011
 
-    Descripción: Archivo de implementación de un tipo fecha, que almacena una 
-    fecha válida del calendario gregoriano junto a operaciones de acceso y 
+    Descripción: Archivo de implementación de un tipo fecha, que almacena una
+    fecha válida del calendario gregoriano junto a operaciones de acceso y
     comparación de utilidad
 */
 
@@ -23,10 +23,11 @@
 /*
     Pre: true
     Post: Verdad si y solo si el entero es múltiplo de 4 y simultaneamente no
-            es múltiplo de 100, o si el entero es múltiplo de 400 
+            es múltiplo de 100, o si el entero es múltiplo de 400
 */
 
-bool esBisiesto(int a) {
+bool esBisiesto(int a)
+{
     return ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0);
 }
 
@@ -40,24 +41,37 @@ bool esBisiesto(int a) {
     contrario, solo si 1 ≤ d ≤ 28
 */
 
-bool esFechaValida(int d, int m, int a) {
+bool esFechaValida(int d, int m, int a)
+{
     bool valida = 1583 <= a && 1 <= m && m <= 12;
-    if (valida) {
-        switch (m) {
-            case 4: case 6: case 9: case 11: 
-                valida = 1 <= d && d <= 30; 
-                break;
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-                valida = 1 <= d && d <= 31;
-                break;
-            case 2: 
-                if (!esBisiesto(a)) {
-                    valida = 1 <= d && d <= 28;
-                }
-                else
-                    valida = 1 <= d && d <= 29;
-                    break;
-        }         
+    if (valida)
+    {
+        switch (m)
+        {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            valida = 1 <= d && d <= 30;
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            valida = 1 <= d && d <= 31;
+            break;
+        case 2:
+            if (!esBisiesto(a))
+            {
+                valida = 1 <= d && d <= 28;
+            }
+            else
+                valida = 1 <= d && d <= 29;
+            break;
+        }
     }
     return valida;
 }
@@ -72,15 +86,18 @@ bool esFechaValida(int d, int m, int a) {
     los enteros dia, mes y anyo
 */
 
-bool crear(int dia, int mes, int anyo, Fecha& f){
-    if(esFechaValida(dia, mes, anyo)){
+bool crear(int dia, int mes, int anyo, Fecha &f)
+{
+    if (esFechaValida(dia, mes, anyo))
+    {
         f.suDia = dia;
         f.suMes = mes;
         f.suAnyo = anyo;
         return true;
     }
 
-    else{
+    else
+    {
         return false;
     }
 }
@@ -90,7 +107,8 @@ bool crear(int dia, int mes, int anyo, Fecha& f){
     Post: Devuelve el dia de f
 */
 
-int dia(const Fecha& f){
+int dia(const Fecha &f)
+{
     return f.suDia;
 }
 
@@ -99,7 +117,8 @@ int dia(const Fecha& f){
     Post: Devuelve el dia de f
 */
 
-int mes(const Fecha& f){
+int mes(const Fecha &f)
+{
     return f.suMes;
 }
 
@@ -108,17 +127,19 @@ int mes(const Fecha& f){
     Post: Devuelve el mes de f
 */
 
-int anyo(const Fecha& f){
+int anyo(const Fecha &f)
+{
     return f.suAnyo;
 }
 
 /*
     Pre: true
     Post: Verdad solo si las fechas f1 y f2 son iguales, es decir, sus valores
-            día, mes y año son iguales 
+            día, mes y año son iguales
 */
 
-bool iguales(const Fecha& f1, const Fecha& f2){
+bool iguales(const Fecha &f1, const Fecha &f2)
+{
     return (f1.suDia == f2.suDia && f1.suMes == f2.suMes && f1.suAnyo == f2.suAnyo);
 }
 
@@ -131,12 +152,10 @@ bool iguales(const Fecha& f1, const Fecha& f2){
     solo si el dia de f1 es menor que el día de f2.
 */
 
-bool anterior(const Fecha& f1, const Fecha& f2){
-    return(
-        (f1.suAnyo < f2.suAnyo) 
-        || (f1.suAnyo == f2.suAnyo && f1.suMes < f2.suMes)
-        || (f1.suAnyo == f2.suAnyo && f1.suMes == f2.suMes && f1.suDia < f2.suDia)
-        );
+bool anterior(const Fecha &f1, const Fecha &f2)
+{
+    return (
+        (f1.suAnyo < f2.suAnyo) || (f1.suAnyo == f2.suAnyo && f1.suMes < f2.suMes) || (f1.suAnyo == f2.suAnyo && f1.suMes == f2.suMes && f1.suDia < f2.suDia));
 }
 
 /*
@@ -145,6 +164,7 @@ bool anterior(const Fecha& f1, const Fecha& f2){
             son iguales ni f1 es anterior a f2
 */
 
-bool posterior(const Fecha& f1, const Fecha& f2){
-    return(!iguales(f1, f2) && !anterior(f1, f2));
+bool posterior(const Fecha &f1, const Fecha &f2)
+{
+    return (!iguales(f1, f2) && !anterior(f1, f2));
 }

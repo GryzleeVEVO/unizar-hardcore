@@ -21,7 +21,7 @@ using namespace std;
 /* PREDECLARACIONES                                                           */
 /******************************************************************************/
 
-template<typename T>
+template <typename T>
 struct Pila;
 
 /******************************************************************************/
@@ -31,11 +31,11 @@ struct Pila;
 /*
     nuevaPila: -> Pila
 
-    Crea una nueva pila vacía 
+    Crea una nueva pila vacía
 */
 
-template<typename T>
-void nuevaPila(Pila<T>& p);
+template <typename T>
+void nuevaPila(Pila<T> &p);
 
 /*
     apilar: Pila p, T e -> Pila
@@ -44,8 +44,8 @@ void nuevaPila(Pila<T>& p);
     anterior
 */
 
-template<typename T>
-void apilar(Pila<T>& p, const T& e);
+template <typename T>
+void apilar(Pila<T> &p, const T &e);
 
 /*
     parcial desapilar: Pila p, T e -> Pila
@@ -64,8 +64,8 @@ void apilar(Pila<T>& p, const T& e);
     Parcial: La operación no está definida si p es vacía
 */
 
-template<typename T>
-void desapilar(Pila<T>& p, T& e);
+template <typename T>
+void desapilar(Pila<T> &p, T &e);
 
 /*
     esPilaVacía?: Pila p -> booleano
@@ -73,33 +73,34 @@ void desapilar(Pila<T>& p, T& e);
     Devuelve verdad solo si la pila es vacía
 */
 
-template<typename T>
-bool esPilaVacia(const Pila<T>& p);
+template <typename T>
+bool esPilaVacia(const Pila<T> &p);
 
 /******************************************************************************/
 /* IMPLEMENTACIÓN                                                             */
 /******************************************************************************/
 
-
 /******************************************************************************/
 /* Tipo Pila                                                                  */
 /******************************************************************************/
 
-template<typename T>
-struct Pila{
-    friend void nuevaPila<T>(Pila<T>& p);
-    friend void apilar<T>(Pila<T>& p, const T& e);
-    friend void desapilar<T>(Pila<T>& p, T& e);
-    friend bool esPilaVacia<T>(const Pila<T>& p);
+template <typename T>
+struct Pila
+{
+    friend void nuevaPila<T>(Pila<T> &p);
+    friend void apilar<T>(Pila<T> &p, const T &e);
+    friend void desapilar<T>(Pila<T> &p, T &e);
+    friend bool esPilaVacia<T>(const Pila<T> &p);
 
-    private:    
-        struct Elem{
-            T elem;
-            Elem* sig;
-        };
+private:
+    struct Elem
+    {
+        T elem;
+        Elem *sig;
+    };
 
-        Elem* cima;
-        int tamanyo;
+    Elem *cima;
+    int tamanyo;
 };
 
 /******************************************************************************/
@@ -111,8 +112,9 @@ struct Pila{
  * Post: Devuelve una pila vacía, sin elementos.
  */
 
-template<typename T>
-void nuevaPila(Pila<T>& p){
+template <typename T>
+void nuevaPila(Pila<T> &p)
+{
     p.cima = nullptr; // La cima no apunta a nada
     p.tamanyo = 0;
 }
@@ -122,12 +124,13 @@ void nuevaPila(Pila<T>& p){
  * Post: Devuelve la pila resultante de añadir el elemento e a p
  */
 
-template<typename T>
-void apilar(Pila<T>& p, const T& e){
-    typename Pila<T>::Elem* aux = p.cima; // El puntero aux ahora apunta a la cima de la pila
-    p.cima = new typename Pila<T>::Elem; // Crea un nuevo elemento en la cima de la pila
-    p.cima -> elem = e; // Asigna e a la cima de la pila
-    p.cima -> sig = aux; //El elemento siguiente de la cima apunta a aux, último elemento creado.
+template <typename T>
+void apilar(Pila<T> &p, const T &e)
+{
+    typename Pila<T>::Elem *aux = p.cima; // El puntero aux ahora apunta a la cima de la pila
+    p.cima = new typename Pila<T>::Elem;  // Crea un nuevo elemento en la cima de la pila
+    p.cima->elem = e;                     // Asigna e a la cima de la pila
+    p.cima->sig = aux;                    // El elemento siguiente de la cima apunta a aux, último elemento creado.
     p.tamanyo++;
 }
 
@@ -137,11 +140,12 @@ void apilar(Pila<T>& p, const T& e){
  *       Si p es vacía, devuelve una pila igual a p
  */
 
-template<typename T>
-void desapilar(Pila<T>& p, T& e){
-    typename Pila<T>::Elem* aux = p.cima; // El puntero aux ahora apunta a la cima de la pila
-    p.cima = aux -> sig; // La cima apunta ahora a el siguiente elemento a borrar
-    e = aux -> elem; // Obtiene el elemento desapilado
+template <typename T>
+void desapilar(Pila<T> &p, T &e)
+{
+    typename Pila<T>::Elem *aux = p.cima; // El puntero aux ahora apunta a la cima de la pila
+    p.cima = aux->sig;                    // La cima apunta ahora a el siguiente elemento a borrar
+    e = aux->elem;                        // Obtiene el elemento desapilado
 
     delete aux; // Elimina la antigua cima
     p.tamanyo--;
@@ -152,8 +156,9 @@ void desapilar(Pila<T>& p, T& e){
  * Post: Devuelve verdad si y solo si p no tiene elementos
  */
 
-template<typename T>
-bool esPilaVacia(const Pila<T>& p){
+template <typename T>
+bool esPilaVacia(const Pila<T> &p)
+{
     return p.tamanyo == 0;
 }
 
