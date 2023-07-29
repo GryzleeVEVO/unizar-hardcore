@@ -1,8 +1,0 @@
-LOAD DATA INTO TABLE Jornada
-INSERT
-FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY "'"
-(
-clvJornada,
-numero,
-clvTemporada
-)

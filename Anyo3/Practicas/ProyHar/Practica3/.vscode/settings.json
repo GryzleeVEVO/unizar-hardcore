@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.cl": "c",
-        "*.jj": "java",
-        "g_alarm.h": "c"
-    }
-}
