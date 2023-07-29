@@ -1,0 +1,17 @@
+CIFAR-10
+
+OPERATION           DATA DIMENSIONS   WEIGHTS(N)   WEIGHTS(%)
+
+           Input   #####     32   32    3
+          Conv2D    \|/  -------------------       896     2.1%
+            relu   #####     30   30   32
+    MaxPooling2D   Y max -------------------         0     0.0%
+                   #####     15   15   32
+          Conv2D    \|/  -------------------     18496    43.6%
+            relu   #####     13   13   64
+    MaxPooling2D   Y max -------------------         0     0.0%
+                   #####      6    6   64
+         Flatten   ||||| -------------------         0     0.0%
+                   #####        2304
+           Dense   XXXXX -------------------     23050    54.3%
+         softmax   #####          10

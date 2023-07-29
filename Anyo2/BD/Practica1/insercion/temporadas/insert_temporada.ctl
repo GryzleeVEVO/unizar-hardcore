@@ -1,0 +1,8 @@
+LOAD DATA INTO TABLE Temporada
+INSERT
+FIELDS TERMINATED BY "," OPTIONALLY ENCLOSED BY "'"
+(
+clvTemporada,
+anyo,
+clvLiga
+)

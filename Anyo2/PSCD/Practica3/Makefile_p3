@@ -1,0 +1,66 @@
+#*****************************************************************
+# File:   Makefile_p3
+# Author: PSCD-Unizar
+# Date:   noviembre 2020
+# Coms:   Ejecutar "make -f Makefile_p3" para compilar
+#         Ejecutar "make -f Makefile_p3 clean" para limpiar (borrar lo que genere)
+#*****************************************************************
+
+# Programación de sistemas concurrentes y distribuidos
+# Practica
+# Autores: Dorian Boleslaw Wozniak	817570
+#	   Jaime Velasco Gimeno		816818
+#
+
+
+# MACROS
+
+# Cmd para limpiar
+RM = /bin/rm -f
+# Compilador
+CC = g++
+
+# DIRECTORIOS Y CLASES OBJETIVO
+
+# Directorio de librería Semáforos
+SEM_LIB = ./librerias/Semaphore_V4
+# Clase Semáforos
+SEMAPHORE = ${SEM_LIB}/Semaphore_V4
+
+# Directorio de librería Logger
+LOG_LIB = ./librerias/Logger_V3
+# Clase Logger
+LOGGER = ${LOG_LIB}/Logger
+
+# OPCIONES DE COMPILACIÓN Y ENLAZADO
+
+CPPFLAGS = -I. -I${LOG_LIB} -I${SEM_LIB} -O2 -std=c++11 -fmax-errors=1 -D LOGGING_MODE
+LDFLAGS = -pthread
+
+# EJECUTABLE OBJETIVO
+
+EJEC = practica_3
+
+# REGLAS
+
+all: ${EJEC}
+
+# Enlazado
+
+${EJEC}: ${EJEC}.o ${SEMAPHORE}.o ${LOGGER}.o
+	${CC} ${EJEC}.o ${SEMAPHORE}.o ${LOGGER}.o -o ${EJEC} ${CPPFLAGS} ${LDFLAGS}
+
+# Compilado
+
+${EJEC}.o: ${EJEC}.cpp
+	${CC} -c ${EJEC}.cpp -o ${EJEC}.o ${CPPFLAGS}
+
+${SEMAPHORE}.o: ${SEMAPHORE}.hpp ${SEMAPHORE}.cpp
+	${CC} -c ${SEMAPHORE}.cpp -o ${SEMAPHORE}.o ${CPPFLAGS}
+
+${LOGGER}.o: ${LOGGER}.hpp ${LOGGER}.cpp
+	${CC} -c ${LOGGER}.cpp -o ${LOGGER}.o ${CPPFLAGS}
+
+# Limpieza (no hay prompt de confirmación, rm elimina directamente)
+clean:
+	$(RM) ${LOGGER}.o ${SEMAPHORE}.o ${EJEC}.o ${EJEC}

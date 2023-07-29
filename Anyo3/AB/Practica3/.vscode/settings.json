@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.cl": "c",
+        "*.jj": "java",
+        "ostream": "cpp",
+        "iostream": "cpp"
+    }
+}

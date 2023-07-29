@@ -1,0 +1,34 @@
+***************************************************************************
+* Notas de instalación de minFunc_2012
+* Juan D. Tardós, Enero 2023
+***************************************************************************
+
+Para utilizar minFunc, desde Matlab/octave, cambiarse a este directorio y ejecutar:
+
+>> addpath(genpath(pwd))
+
+Para comprobar que funciona, ejecutar:
+
+>> example_minFunc
+
+
+************************** Si no funciona ********************************
+
+El directorio minFunc/mex contiene cuatro funciones programadas en C.
+Las versiones pre-compiladas para distintos tipos de sistemas están en el
+directorio minFunc/compiled
+
+Si al ejecutar example_minFunc se obtiene un error al llamar a lbfgsAddC,
+es que tu sistema no reconoce ninguna de las versiones pre-compiladas.
+Para solucionarlo, en el directorio de minFunc ejecuta desde Matlab:
+
+>> mexAll
+
+Si tampoco funciona, para usar la version sin compilar (algo más lenta),
+añade a tus programas la instrucción:
+
+options.useMex = 0
+
+
+
+

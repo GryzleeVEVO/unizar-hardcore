@@ -1,0 +1,35 @@
+# 817570, Wozniak, Dorian Boleslaw, M, 3, A
+# 820532, Pérez Guillén, Marcos, M, 3, A
+
+
+Pregunta 1: Busca la llamada al sistema que se emplea para ejecutar un scrit y 
+explica su funcionamiento
+
+Respuesta: Utiliza la llamada al sistema execve(), la cual sustituye la subshell
+lanzada con un binario o un script tal que contenga en la primera línea la ruta
+al interprete a utilizar
+
+Pregunta 2: ¿A que se debe el error (de que no ejecute el script)? ¿Cómo podria 
+arreglarse el problema?
+
+Respuesta: El fichero es generado por defecto sin permisos de ejecucuón. Se debe
+cambiar sus permisos con chmod u+x o pasarlo como parámetro del comando bash
+
+Pregunta 3: 
+hola
+mundo
+Aparecen dos líneas porque realiza un echo por cada cadena indicada al iterador,
+y al final de cada comando se realiza un salto de línea
+
+Pregunta 4: Añade una nueva variable final_cadena que contenga la cadena: 
+“, como estas?” e imprímela dentro del mismo comando echo
+
+Respuesta: 
+hola, como estas?
+mundo, como estas?
+
+Pregunta 5: ¿Se produce algún error si añadimos un subdirectorio en el directorio actual?
+
+Respuesta: Si
+cat: directorio: Is a directory
+

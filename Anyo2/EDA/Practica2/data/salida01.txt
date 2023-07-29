@@ -1,0 +1,16 @@
+NO LOCALIZADO: heapsort
+LENGUAJE: Ada:::
+ANTERIORES A: 2010-10-10:::
+-----LISTADO: 0
+-----
+NO BORRADO: heapsort
+-----LISTADO: 0
+-----
+NO PURGADOS: 2010-10-10
+-----LISTADO: 0
+-----
+NO LOCALIZADO: ordenacion heapsort
+-----LISTADO: 0
+-----
+-----LISTADO: 0
+-----

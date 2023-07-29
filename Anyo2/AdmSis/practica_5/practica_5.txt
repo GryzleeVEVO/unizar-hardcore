@@ -1,0 +1,108 @@
+#817570, Wozniak, Dorian, M, 3, A
+#820532, Pérez Guillén, Marcos, M, 3, A
+
+PRIMERA PARTE
+
+Una vez añadido a la MV el disco duro de 32MiB, se procede a particionarlo 
+mediante la herramienta parted:
+
+$ sudo parted /dev/sdb			# (puede cambiar al arrancar)
+(parted) mklabel
+(parted) mkpart primary ext3 0M 16M
+(parted) mkpart primary ext4 16M 32M
+(parted) align-check opt 1
+(parted) align-check opt 2
+(parted) quit
+
+A continuación se formatea las particiones con sudo mkfs.ext{3|4} sdb{1|2}
+
+A partir de la salida de
+
+sudo bash -c "ls -l /dev/disk/by-uuid/ | tr -d '.','/' | cut -d ' ' -f 9,11 >> /etc/fstab" 
+
+se obtienen los UUID de todos los discos. Luego se queda con entradas que interesan de esta forma:
+
+# Los UUID cambiarán al replicarse estos pasos
+UUID=7beb21c5-d4c2-41b4-80ae-41e8ba1f9bd1 	/home/as/part1	ext3	defaults	0 1
+UUID=e03af65f-9b9f-46ef-ba62-0895f295ffa2 	/home/as/part2	ext4	defaults	0 1
+
+Finalmente, se montan todos las particiones en fstab (nuevas particiones incluidas) con mount -a
+
+SEGUNDA PARTE
+
+practica5_parte2.sh
+
+El script comprueba que se le pasen al menos un parámetro (la IP). Si es así, 
+comprueba que sea alcanzable desde ssh. En caso de éxito. se utiliza sfisk y df 
+para obtener la información necesaria.
+
+Para los discos duros disponibles junto a sus bloques, se utiliza sfdisk -s.
+Se selecciona las líneas con /dev/ para no imprimir el total de bloques.
+
+Para las particiones y sus tamaños, se formatea cogiendo las lineas que empiezen 
+con /dev/ mediante grep, se elimina los asteriscos que puedan salir (para que 
+las columnas no queden desalineadas) (tr -d) y colapsan los espacios (tr -d), 
+y se seleccionan las columnas de nombre y tamaño con cut -d  ' ' -f 1,5.
+
+De la información de montaje se elimina las entradas tmpfs con grep -v y 
+selecciona las columnas 1,2,3 y 5 con cut.
+
+TERCERA PARTE
+
+Se ha añadido un nuevo disco duro de 24MiB. Se ha formateado de la siguiente manera
+
+sudo fdisk /dev/sdc
+: g                     # Nueva tabla GUID
+: n                     # Nueva partición
+: 1                     # Número 1
+: <espacio><espacio>    # Ocupar espacio entero
+: t                     # Cambiar tipo de la partición 1
+: 31                    # 31 corresponde con Linux LVM
+: w                     # Escribir
+
+A continuación, se crea un nuevo grupo de volumen en el nuevo disco LVM
+
+sudo vgcreate vg_p5 /dev/sdc1
+
+Los dos scripts a continuación requieren privilegios de administrador.
+
+practica5_parte3_vg.sh
+
+Comprueba que se le suministren al menos el grupo volumen a extender como primer
+parámetro, y al menos una partición con la que extenderlo.
+
+Primero comprueba que encuentra la entrada del VG suministrado en vgs. Si la 
+encuentra, almacena el nombre en una variable, desplaza los parámetros a la 
+izquierda e itera en un bucle hasta que se quede sin parámetros.
+
+Dentro del bucle, si encuentra la partición leida (en sfdisk -l) comprueba si 
+la tiene que desmontar (entrada en df). Si es así, la desmonta primero y la 
+añade con el comando vgextend
+
+practica5_parte3_lv.sh
+
+Cada vez que lee una línea de entrada estandar, realiza una serie de comprobaciones:
+
+- El VG existe
+- El tamaño sigue un formato adecuado (un número seguido de B,K,M ó G)
+- El sistema de ficheros es uno válido para el kernel del sistema 
+    (lo encuentra en /proc/filesystems)
+- El directorio de montaje existe y es accesible
+
+Si los cumple, busca el volumen lógico
+
+- Si no lo encuentra, lo crea con lvcreate, donde -n indica el nombre del volumen
+    lógico a crear, -L el tamaño (en bytes) y -y para borrar la firma del sistema de
+    ficheros que haya podido tener anteriormente, formatea con mkfs.tipo, concatena
+    a /etc/fstab una nueva entrada con el siguiente formato:
+
+    UUID=xxxx... /pto/montaje tipoFS defaults 0 0
+    
+    obteniendo el UUID con blkid /dev/$VGname/$LVname | cut -d ' ' -f 2 | cut -d '"' -f 2
+    y finalmente lo monta
+
+- Si lo encuentra, lo desmonta, extiende con lvextend (añade bytes respecto al
+    tamaño anterior), reescala el FS con resize2fs. (NOTA: solo funciona con ext, en 
+    caso contrario sería necesario buscar una solución equivalente para cada FS
+    ó borrar la entrada antigua de fstab, reformatear el volumen, y añadir a fstab
+    el volumen pues cambia el UUID), y remontar el sistema de ficheros con mount.

@@ -1,0 +1,17 @@
+O
+heapsort
+NL
+Ada
+NO
+2010-10-10
+L
+B
+heapsort
+L
+P
+2010-10-10
+L
+O
+ordenacion heapsort
+L
+L

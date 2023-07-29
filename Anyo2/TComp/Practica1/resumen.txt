@@ -1,0 +1,41 @@
+RESUMEN DE PATRONES DE FLEX (ANALIZADOR LÉXICO):
+
+OPERACIONES BÁSICAS
+Nombre                  Simbolo             Significado                         Ejemplo
+
+Unión                   |                   Uno u otro                          (r|s)   --> Una r o una s
+Concatenación           (Yuxtaposición)     Uno, seguido de otro                rs      --> Una r seguida de una s
+Cerradura de Kleene     *                   Cero o mas                          r*      --> Cero o mas r concatenados
+Parentesis              ()                  Prioridad                           (r|s)t  !=  r|st
+
+OTRAS OPERACIONES
+
+Cerradura positiva      +                   Uno o mas                           r+      --> Uno o mas r concatenados
+
+Interrogante            ?                   Carácter opcional                   r?      --> Cero o una r
+
+Conjunción              ^                   En una clase, cualquier carácter    [^A-Z]  --> Cualquier carácter salvo
+                                            de la clase salvo los indicados                 las letras mayusculas
+
+                                            Concatenado, indica solo al         ^r      --> r al iniciar el análisis
+                                            comienzo de la línea                            o despues de \n
+
+Dolar                   $                   Indica solo al final de una linea   r$      --> r solo al final de una línea
+
+Rango                   {}                  Numero de apariciones               r{2, 5} --> Entre 2 y 5 r
+                                                                                r{2, }  --> 2 o mas r
+                                                                                r{2}    --> Exactamente 2 r
+
+Escape                  \                   Escapa de caractertes especiales    \"      --> " para el analizador
+
+Condicional             /                   Uno si y solo si otro               r/s     --> r pero solo si va seguido
+                                                                                            de s
+
+PATRONES
+
+Punto                   .                   Cualquier caracter salvo \n
+Clases de caractereres  []                  Cualquier caracter de la clase      [0-9] --> Cualquier cifra
+                                            indicada
+
+Cadena vacía            SIN EQUIVALENCIA DIRECTA
+Conjunto vacío          SIN EQUIVALENCIA

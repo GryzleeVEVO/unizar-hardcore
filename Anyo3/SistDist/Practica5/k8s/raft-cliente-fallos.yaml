@@ -1,0 +1,127 @@
+# Manifiesto para lanzar tres réplicas raft no tolerantes a fallos
+# junto a un cliente interactivo
+
+# Servicio Headless para DNS de los nodos
+apiVersion: v1
+kind: Service
+metadata:
+  name: raft-fallos
+spec:
+  clusterIP: None
+  selector:
+    app: raft-fallos
+  ports:
+  - port: 29311
+---
+
+# Tres nodos Raft no tolerantes a fallos
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodo-0
+  labels:
+    app: raft-fallos
+spec:
+  hostname: nodo-0
+  subdomain: raft-fallos
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  containers:
+  - name: nodo
+    image: localhost:29310/nodo:latest
+    env:
+    - name: DNS_DOMAIN
+      value: raft-fallos.default.svc.cluster.local
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    command:
+    - /srvraft
+    - $(POD_NAME)
+    - nodo-0.$(DNS_DOMAIN):29311
+    - nodo-1.$(DNS_DOMAIN):29311
+    - nodo-2.$(DNS_DOMAIN):29311
+    ports:
+    - containerPort: 29311
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodo-1
+  labels:
+    app: raft-fallos
+spec:
+  hostname: nodo-1
+  subdomain: raft-fallos
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  containers:
+  - name: nodo
+    image: localhost:29310/nodo:latest
+    env:
+    - name: DNS_DOMAIN
+      value: raft-fallos.default.svc.cluster.local
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    command:
+    - /srvraft
+    - $(POD_NAME)
+    - nodo-0.$(DNS_DOMAIN):29311
+    - nodo-1.$(DNS_DOMAIN):29311
+    - nodo-2.$(DNS_DOMAIN):29311
+    ports:
+    - containerPort: 29311
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodo-2
+  labels:
+    app: raft-fallos
+spec:
+  hostname: nodo-2
+  subdomain: raft-fallos
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  containers:
+  - name: nodo
+    image: localhost:29310/nodo:latest
+    env:
+    - name: DNS_DOMAIN
+      value: raft-fallos.default.svc.cluster.local
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    command:
+    - /srvraft
+    - $(POD_NAME)
+    - nodo-0.$(DNS_DOMAIN):29311
+    - nodo-1.$(DNS_DOMAIN):29311
+    - nodo-2.$(DNS_DOMAIN):29311
+    ports:
+    - containerPort: 29311
+---
+
+# Cliente interactivo
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cliente
+spec:
+  restartPolicy: Never
+  containers:
+  - name: cliente
+    image: localhost:29310/cliente:latest
+    command:
+    - sleep
+    - "3600"
+    ports:
+    - containerPort: 29319
+---

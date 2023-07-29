@@ -1,0 +1,3 @@
+127.0.0.1_29001 -> 17:44:29.960509 raft.go:160: logger initialized
+127.0.0.1_29001 -> 17:44:29.960584 raft.go:188: 
+	Se ha puesto en marcha la máquina 0
