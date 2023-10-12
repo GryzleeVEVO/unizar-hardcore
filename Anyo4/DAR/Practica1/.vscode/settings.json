@@ -1,0 +1,10 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "memoria.md",
+        "cmd": "pandoc memoria.md -o memoria.pdf"
+      }
+    ]
+  }
+}
