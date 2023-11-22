@@ -1,0 +1,73 @@
+Seral Gracia, Álvaro    819425@unizar.es    a819425
+Wozniak, Dorian Boleslaw    817570@unizar.es    a817570
+
+# Descripción
+
+Existen dos programas, uno con los algoritmos de ordenación (practica1), 
+y otro destinado a generar ficheros de prueba.
+
+# practica1
+
+practica1 está dividida en 4 secciones. Cada una de las 3 primeras contienen
+las funciones relativas a los 3 algoritmos de ordenación. La última sección
+contiene otras funciones para leer los contenidos de ficheros, ejecutar
+los 3 algoritmos de ordenación (en caso de que sea posible) y medir sus tiempos.
+Como el algoritmo RadixSort solo funciona con enteros, el programa, antes de
+ejecutar este algoritmo, comprobará que el tipo de dato del vector sea correcto.
+Para que el vector sea de tipo entero, es necesario indicarlo en los argumentos
+del programa al ejecutarlo.
+
+El programa contiene una serie de funciones fill que se encargan de leer las
+filas de un fichero y copiarlas en el vector de entrada. Dicho vector puede ser
+de tipo int, double o string.
+
+A través del programa practica1 se pueden u ordenar los elementos de un único 
+fichero, u ordenar los elementos de los N primeros ficheros de un directorio.
+Para manejar ambas opciones existen 2 funciones distintas (execSingle y 
+execMultiple) que se ejecutan en según el tipo de argumentos insertados por el 
+usuario a la hora de ejecutar el programa, principalmente por el contenido del
+primero (--single o --multiple). execSingle se encarga ordenar y medir
+el tiempo de un único fichero, mientras que execMultiple hace lo mismo pero con 
+los N primeros ficheros de un directorio. 
+
+Hay que tener en cuenta que a la hora de ejecutarlo con la opción --multiple, 
+el programa leerá los ficheros del directorio que tengan como nombre 1.txt, 
+2.txt, 3.txt, ..., N.txt.
+
+A la hora de ejecutar el programa, los argumentos que hay que poner para cada
+una de las dos opciones son:
+    ./practica1 --single [tipo (0-entero, 1-decimal, 2-string)] 
+            [ruta fichero origen] [ruta fichero resultados]
+    ./practica1 --multiple [tipo (0-entero, 1-decimal, 2-string)] 
+            [ruta directorio origen] [num ficheros a ordenar] [ruta fichero resultados]
+
+Si los argumentos son incorrectos el programa terminará.
+
+# generarPruebas
+
+generarPruebas está dividido en 3 zonas. La primera incluye la función random
+para los tipos int, double y string. Devuelven o un número o una cadena de
+carácteres aleatoria. En la segunda zona están las funciones generar, que sirven
+para rellenar ficheros de texto con datos, ya sean sintéticos o de otros
+ficheros csv dependiendo de la función generar implicada. Por último, la tercera
+zona es el main principal, que trata todas las opciones posibles de ejecución
+del programa llamando a distintas funciones generar dependiendo del caso.
+
+A la hora de ejecutar el programa, los argumentos que se pueden poner para las 
+distintas opciones son:
+    ./generarPruebas --(int, double) [fichero destino] [tamaño lista] [valor min] 
+            [valor max]
+    ./generarPruebas --string [fichero destino] [tamaño lista]
+    ./generarPruebas --(ordered, reversed) [fichero destino] [valor min] 
+            [valor max]
+    ./generarPruebas --Nrandom [directorio (en carpeta dataset/synthetic)] 
+            [tamaño lista] [valor min] [valor max] [num veces]
+    ./generarPruebas --Nscalar [directorio (en carpeta dataset/synthetic)] 
+            [tamaño max] [valor min] [valor max] [frecuencia de crecimiento]
+    ./generarPruebas --fromCsv [fichero origen (en carpeta dataset/real/raw)] 
+            [fichero destino (en carpeta dataset/real/processed)] [columna csv] 
+            [separador csv]
+
+Si los argumentos son incorrectos el programa terminará.
+
+
