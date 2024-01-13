@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="app-debug.apk" version="4">
+  <OBJECT>
+    <ID name="app-debug.apk" mc="Standard.Artifact" uid="ebf28b9b-af82-472f-b630-87e0e96f178c"/>
+    <PID name="Gestor hotel rural diseño" mc="Standard.Package" uid="f75edb00-14cd-4dcb-b816-6f7717c257a5"/>
+    <ATTRIBUTES>
+      <ATT name="FileName"></ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[app-debug.apk]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Dependency" uid="76d64e97-e704-46b7-8815-6e92b2c696db"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="SQLite" mc="Standard.Artifact" uid="259e2a2c-90f1-49bd-b3c7-2f0601d49eee"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.Usage" uid="7d22772a-0ffc-48e7-9e0a-d303213462ed"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="Whatsapp" mc="Standard.Artifact" uid="04ae1114-877b-48d7-b459-983067729c03"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.Usage" uid="4eb91618-57c8-4700-9c27-a2d3b51f6026"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="Sms" mc="Standard.Artifact" uid="aa40192c-6679-4901-8591-09cfc62211b5"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,614 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="MenuReserva" version="4">
+  <OBJECT>
+    <ID name="MenuReserva" mc="Standard.Class" uid="a4deab07-5d08-47c3-bd76-65884ed72d8e"/>
+    <PID name="reservas" mc="Standard.Package" uid="fb9179fb-db63-49b3-8949-a18afbb310b3"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[MenuReserva]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="onCreate" mc="Standard.Operation" uid="70e14c30-a543-4645-98e3-3cb86c752b9d"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onCreate]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="onCreateOptionsMenu" mc="Standard.Operation" uid="0c95a45e-c71c-4820-9b8a-36839109dcca"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onCreateOptionsMenu]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="p1" mc="Standard.Parameter" uid="1bf16b01-c5e1-40c2-8100-82fc16233cc1"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[p1]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="onOptionsItemSelected" mc="Standard.Operation" uid="fc1f60a9-0870-45e6-bf1f-adbf6f710000"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onOptionsItemSelected]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="p1" mc="Standard.Parameter" uid="2613c74c-dd8a-46d7-9aa7-04b21647722b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[p1]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="onCreateContextMenu" mc="Standard.Operation" uid="8b161758-0018-4a0a-b4c3-aca999350cff"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onCreateContextMenu]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="onContextItemSelected" mc="Standard.Operation" uid="71d1a9d2-6a16-4c77-a505-935804d3bafe"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onContextItemSelected]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="p1" mc="Standard.Parameter" uid="bd90047b-36fd-40b3-8093-51b2ccc585a3"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[p1]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="boolean" mc="Standard.DataType" uid="00000004-0000-0005-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="onActivityResult" mc="Standard.Operation" uid="3a3d473a-0a60-4d94-a990-84c02e583931"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[onActivityResult]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="requestCode" mc="Standard.Parameter" uid="1ca17d4a-6b2f-4ec0-ba5f-18b1fb8f73cb"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[requestCode]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="resultCode" mc="Standard.Parameter" uid="a3fb636e-298c-4ceb-8cad-1ec683f48eb6"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[resultCode]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="intent" mc="Standard.Parameter" uid="f8c14eaa-e34f-4efb-813a-ed6efdd61c9b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[intent]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Intent" mc="Standard.Class" uid="21060bcd-261b-42bd-93b9-40ae68c902ba"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="createReserva" mc="Standard.Operation" uid="9fdb2e41-f114-4643-b6be-fc21c2f205b1"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[createReserva]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="editReserva" mc="Standard.Operation" uid="47e728c1-fa9a-4fbd-a076-d72eb1dc3715"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[editReserva]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="id" mc="Standard.Parameter" uid="f8ddec57-6232-4080-9457-a3903ac5185b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[id]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="long" mc="Standard.DataType" uid="00000004-0000-0011-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="consultarReserva" mc="Standard.Operation" uid="316094ea-9f3b-44ae-a62d-9167ed6839c8"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[consultarReserva]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="id" mc="Standard.Parameter" uid="32840ab2-18e2-4d04-b315-4833972a09a5"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[id]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="long" mc="Standard.DataType" uid="00000004-0000-0011-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="eliminarReserva" mc="Standard.Operation" uid="1bca19ea-8432-48ad-a70d-29a0419fda12"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[eliminarReserva]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="fillData" mc="Standard.Operation" uid="301f2f89-1523-410a-9d33-4576a013f09d"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[fillData]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="enviarMensajeConfirmacion" mc="Standard.Operation" uid="9a68e388-46c1-49f4-80d1-ab571b316e7c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[enviarMensajeConfirmacion]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="28902f62-7767-4c94-a31a-4ee2f2df580f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <ID name="SendAbstraction" mc="Standard.Interface" uid="66fcdfa6-c8b1-4ef0-8184-0153dd68ac83"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="mDbHelper" mc="Standard.Attribute" uid="dbe85d98-2398-4a97-85ec-61e633ae8ee7"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[mDbHelper]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="ReservaDbAdapter" mc="Standard.Class" uid="a6c7e6ad-78c9-45ca-bc9a-e89acc38e7ae"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="mList" mc="Standard.Attribute" uid="b010fdb9-1504-48f6-ade4-6883a6af755d"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[mList]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="ListView" mc="Standard.Class" uid="b0bab5d8-3167-4c86-bc91-e1c11e326b56"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
+        <OBJECT>
+          <ID name="mDbHelper" mc="Standard.AssociationEnd" uid="0fc51797-1a2e-4f7e-a9dd-f9ad1b9113c6"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[mDbHelper]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="mCtx" mc="Standard.AssociationEnd" uid="1a5d200c-b996-4a23-9e50-f0b0fb12a023"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[mCtx]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="mDbHelper" mc="Standard.AssociationEnd" uid="0fc51797-1a2e-4f7e-a9dd-f9ad1b9113c6"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="5590fa04-a11f-436c-a8f2-437a5f0e5953"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="5590fa04-a11f-436c-a8f2-437a5f0e5953"/>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="mList" mc="Standard.AssociationEnd" uid="1c26014a-1a93-4b1a-aef9-1c7067b029ef"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[mList]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="ListView" mc="Standard.Class" uid="b0bab5d8-3167-4c86-bc91-e1c11e326b56"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="1ee08d84-81e4-4969-bfbe-2b2c8c956108"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="mList" mc="Standard.AssociationEnd" uid="1c26014a-1a93-4b1a-aef9-1c7067b029ef"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="d5cb1929-0944-4503-9a32-fab2195953f9"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="d5cb1929-0944-4503-9a32-fab2195953f9"/>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Standard.Generalization" uid="b617937a-0d7a-4c95-82a9-75b249d9f73e"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="AppCompatActivity" mc="Standard.Class" uid="96a34a49-1d4a-498d-8d3a-7fc12ccc8665"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Dependency" uid="c0bb5cbb-5c35-4d72-843c-ba8e0754826d"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="ConsultarReservas" mc="Standard.Class" uid="0f37ebc7-4e15-4c54-844b-94d7e6b55188"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Dependency" uid="dbe26139-37a4-4ac0-9556-2973ad15163c"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="EditarReserva" mc="Standard.Class" uid="bfa7af9e-c669-404f-aa4c-9549186f0aad"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

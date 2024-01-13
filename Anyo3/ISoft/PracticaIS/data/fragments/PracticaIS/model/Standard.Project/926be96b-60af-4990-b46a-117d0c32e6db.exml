@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="PracticaIS" version="4">
+  <OBJECT>
+    <ID name="PracticaIS" mc="Standard.Project" uid="926be96b-60af-4990-b46a-117d0c32e6db"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[PracticaIS]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="Gestor hotel rural analisis" mc="Standard.Package" uid="b4a3cc82-c8ad-4067-ad0d-5ab116fa02fc"/>
+        <COMPID name="Gestor hotel rural diseño" mc="Standard.Package" uid="f75edb00-14cd-4dcb-b816-6f7717c257a5"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="PracticaIS" mc="Infrastructure.DiagramSet" uid="80bf8e5a-657d-4a9a-a230-70cdeefcb7cf"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

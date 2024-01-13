@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SendImplementor" version="4">
+  <OBJECT>
+    <ID name="SendImplementor" mc="Standard.Interface" uid="b02f1d98-fe08-4340-b3c8-831423f1dc3f"/>
+    <PID name="send" mc="Standard.Package" uid="2e858c55-0b78-4dd8-bda4-01c9b14cbf60"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[SendImplementor]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="send" mc="Standard.Operation" uid="ccacce60-e1bd-4495-b5bc-3b206c4e6ede"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[send]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="phone" mc="Standard.Parameter" uid="c2d92f20-2532-41b5-9700-3c1a5bef21b2"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[phone]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="message" mc="Standard.Parameter" uid="523de77a-ec10-4134-a7de-a760d0146217"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[message]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setSourceActivity" mc="Standard.Operation" uid="01dabe5b-f0bc-4582-bef9-559b67eda5a9"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setSourceActivity]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="source" mc="Standard.Parameter" uid="180ba863-b48d-4187-8137-4191ba60a278"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[source]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Activity" mc="Standard.Class" uid="78baf4f0-b7a3-40c6-9389-29d80fd5de80"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getSourceActivity" mc="Standard.Operation" uid="a01f333e-053e-4ac4-8486-b071ff474def"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getSourceActivity]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="p1" mc="Standard.Parameter" uid="2f9b20be-6ec1-41ae-8c47-0a72ef75ae16"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[p1]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Activity" mc="Standard.Class" uid="78baf4f0-b7a3-40c6-9389-29d80fd5de80"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="16b37b0f-6f31-452a-8f5b-dfa08a0b0f8e"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<Enter note text here>]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaInterface" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0267-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

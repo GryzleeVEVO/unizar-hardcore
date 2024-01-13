@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="android" version="4">
+  <OBJECT>
+    <ID name="android" mc="Standard.Package" uid="3f4f9d06-45c6-44af-9f93-32f57a4fade0"/>
+    <PID name="Gestor hotel rural diseño" mc="Standard.Package" uid="f75edb00-14cd-4dcb-b816-6f7717c257a5"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[android]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="SQLiteDatabase" mc="Standard.Class" uid="27b99bd1-7f8d-4d04-bd49-6c871f22c064"/>
+        <COMPID name="SQLiteOpenHelper" mc="Standard.Class" uid="abc98640-f060-4063-bc7a-9f4c11576864"/>
+        <COMPID name="Widget" mc="Standard.Package" uid="351f2c91-b16f-4c66-b87f-483f41cae48a"/>
+        <COMPID name="database" mc="Standard.Package" uid="6b65ccd5-4395-43e5-a88f-ac5bd0ff8032"/>
+        <COMPID name="support/v7/app" mc="Standard.Package" uid="4d3686a8-ceda-4c1e-8831-b6f94658357b"/>
+        <COMPID name="content" mc="Standard.Package" uid="25aea8c7-5139-4d0c-9bfd-e59a9e78c39e"/>
+        <COMPID name="app" mc="Standard.Package" uid="ebf3cbf7-3570-4429-b38a-e40513e6b849"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

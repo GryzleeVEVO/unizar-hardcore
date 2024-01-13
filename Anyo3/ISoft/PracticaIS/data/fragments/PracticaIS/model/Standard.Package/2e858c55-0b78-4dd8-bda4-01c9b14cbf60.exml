@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="send" version="4">
+  <OBJECT>
+    <ID name="send" mc="Standard.Package" uid="2e858c55-0b78-4dd8-bda4-01c9b14cbf60"/>
+    <PID name="es.unizar.eina" mc="Standard.Package" uid="72495afc-e04d-47cb-84ea-69c66c2a17d5"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[send]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="SendAbstractionImpl" mc="Standard.Class" uid="9b96f2d7-25cd-48df-8970-4777646524b3"/>
+        <COMPID name="WhatsAppImplementor" mc="Standard.Class" uid="e1fd05da-3b15-4333-8d8f-d91a0a13fa9b"/>
+        <COMPID name="SMSImplementor" mc="Standard.Class" uid="f77fa970-6c12-4f6a-a3ed-b730fc44534e"/>
+        <COMPID name="SendAbstraction" mc="Standard.Interface" uid="66fcdfa6-c8b1-4ef0-8184-0153dd68ac83"/>
+        <COMPID name="SendImplementor" mc="Standard.Interface" uid="b02f1d98-fe08-4340-b3c8-831423f1dc3f"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

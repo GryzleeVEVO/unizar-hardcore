@@ -1,0 +1,280 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Seleccion" version="4">
+  <OBJECT>
+    <ID name="Seleccion" mc="Standard.Class" uid="520e862d-dae5-42bf-9a6a-634a3e81805c"/>
+    <PID name="Gestor hotel rural" mc="Standard.Package" uid="b4a3cc82-c8ad-4067-ad0d-5ab116fa02fc"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Seleccion]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="añadir" mc="Standard.Operation" uid="192d652f-cf56-402b-a2e3-07a9f59c4ad1"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[añadir]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="numOcupantes" mc="Standard.Parameter" uid="3f260e13-3352-48da-9667-de6980d5ee20"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[numOcupantes]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Infrastructure.Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="eliminar" mc="Standard.Operation" uid="4a5631e0-558e-4600-8fd6-010688e4e510"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[eliminar]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Extension">
+              <FOREIGNID name="destroy" mc="Infrastructure.Stereotype" uid="00700680-0000-0206-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getNumOcupantes" mc="Standard.Operation" uid="07bda7c7-a5d0-442d-a442-d9f65c0deb29"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getNumOcupantes]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="44e06e5e-09bb-4ec3-bd5b-9880056caa78"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f0-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="08ff126f-4a33-4771-978f-cf00ede85811"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="numOcupantes" mc="Standard.Attribute" uid="d9214e19-19cb-40c3-a1e7-8be5a4745a25"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-012b-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="da11eedd-099b-4954-9ed9-240b3709e425"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="0cc9e63c-eb4b-4442-9dee-e2044ea744ba"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return this.numOcupantes;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setNumOcupantes" mc="Standard.Operation" uid="e6a14e84-a53e-41a0-b1b6-39dd55b7b2a3"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setNumOcupantes]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="value" mc="Standard.Parameter" uid="139dbea6-de03-4d7e-8f16-1bde7409230e"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[value]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f5-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="092c6803-8d44-451c-9448-c80df2a97c7a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="numOcupantes" mc="Standard.Attribute" uid="d9214e19-19cb-40c3-a1e7-8be5a4745a25"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0130-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4f608b3b-67da-40c1-b773-cd33e51542f0"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.
+this.numOcupantes = value;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="numOcupantes" mc="Standard.Attribute" uid="d9214e19-19cb-40c3-a1e7-8be5a4745a25"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[numOcupantes]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

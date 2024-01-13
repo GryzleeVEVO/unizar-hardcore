@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ListaHabitaciones" version="4">
+  <OBJECT>
+    <ID name="ListaHabitaciones" mc="Standard.Class" uid="7c0206cd-dc5f-42ad-820d-2c9e6727a2b5"/>
+    <PID name="practicais" mc="Standard.Package" uid="b4a3cc82-c8ad-4067-ad0d-5ab116fa02fc"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ListaHabitaciones]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="getHabitaciones" mc="Standard.Operation" uid="f3ad53bc-7b3a-481e-8eee-b16653a7e04d"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getHabitaciones]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="5f286541-ca87-430c-a405-427c3b74f773"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Habitacion" mc="Standard.Class" uid="6958dae2-185e-4870-9d66-b29e3dc4bc9c"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f0-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="3d3f4715-24f0-4e9f-a4e6-da61c9adc3cd"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="habitaciones" mc="Standard.Attribute" uid="4734cbe8-4693-4f04-9beb-0afae65c1a03"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-012b-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="ad05d329-5780-4341-9355-01bc3949375b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6073eefd-2aa0-44f3-a676-ca4f087a4237"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return this.habitaciones;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setHabitaciones" mc="Standard.Operation" uid="152405f4-26fb-492c-af66-42c554f12c40"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setHabitaciones]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="value" mc="Standard.Parameter" uid="de381b3a-eac6-4931-8871-5f41eb922f1f"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[value]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Habitacion" mc="Standard.Class" uid="6958dae2-185e-4870-9d66-b29e3dc4bc9c"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f5-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="ce92a169-1f61-4372-95eb-1b4c0e4e7c5d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="habitaciones" mc="Standard.Attribute" uid="4734cbe8-4693-4f04-9beb-0afae65c1a03"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0130-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="a0f1ffad-14a4-4d07-ac49-6e1e2c4038b9"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.
+this.habitaciones = value;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Operation" mc="Standard.Operation" uid="dcba9adf-8186-4a7a-a4fa-e53a58f47871"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Operation]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="habitaciones" mc="Standard.Attribute" uid="4734cbe8-4693-4f04-9beb-0afae65c1a03"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[habitaciones]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Habitacion" mc="Standard.Class" uid="6958dae2-185e-4870-9d66-b29e3dc4bc9c"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="7de10824-bd46-4b33-9e99-dde15f019777"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<Enter note text here>]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

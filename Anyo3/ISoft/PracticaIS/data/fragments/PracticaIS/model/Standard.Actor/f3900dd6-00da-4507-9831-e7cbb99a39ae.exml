@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Propietario" version="4">
+  <OBJECT>
+    <ID name="Propietario" mc="Standard.Actor" uid="f3900dd6-00da-4507-9831-e7cbb99a39ae"/>
+    <PID name="Gestor hotel rural diseño" mc="Standard.Package" uid="f75edb00-14cd-4dcb-b816-6f7717c257a5"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Propietario]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

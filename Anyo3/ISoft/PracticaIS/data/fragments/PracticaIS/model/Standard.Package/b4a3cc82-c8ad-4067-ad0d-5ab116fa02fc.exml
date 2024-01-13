@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Gestor hotel rural analisis" version="4">
+  <OBJECT>
+    <ID name="Gestor hotel rural analisis" mc="Standard.Package" uid="b4a3cc82-c8ad-4067-ad0d-5ab116fa02fc"/>
+    <PID name="PracticaIS" mc="Standard.Project" uid="926be96b-60af-4990-b46a-117d0c32e6db"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Gestor hotel rural analisis]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Añadir habitación" mc="Standard.Interaction" uid="7abc0221-8cc5-4aaf-9f7b-957d8a6a67ab"/>
+        <COMPID name="Eliminar habitación" mc="Standard.Interaction" uid="205033e9-e46d-4a86-84df-2c28a9d52614"/>
+        <COMPID name="Modificar habitación" mc="Standard.Interaction" uid="6244c0c5-24a3-455f-b007-09ec434ab494"/>
+        <COMPID name="Consultar Habitaciones" mc="Standard.Interaction" uid="b6a5cdf8-65a3-4e8b-b0c4-53cebc62226c"/>
+        <COMPID name="Añadir reserva" mc="Standard.Interaction" uid="0122ea76-591e-4700-a07e-5e3c9f8b6bdf"/>
+        <COMPID name="Eliminar reserva" mc="Standard.Interaction" uid="c0115682-2385-42e6-9f32-0e0c186930fe"/>
+        <COMPID name="Modificar Reserva" mc="Standard.Interaction" uid="7cd55e0a-da90-42b3-b9de-b405787f3720"/>
+        <COMPID name="Consultar Reservas" mc="Standard.Interaction" uid="ccc29df6-a98e-4da1-b438-c593fed9b5d5"/>
+        <COMPID name="Confirmar Reservas" mc="Standard.Interaction" uid="ad00e911-f73c-4440-b173-4b8265633e12"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Propietario" mc="Standard.Actor" uid="d759faed-65ca-4e5e-a93b-1877dd9ab152"/>
+        <COMPID name="Añadir habitación" mc="Standard.UseCase" uid="08551184-a66f-40c5-9ee7-3c943c852d5a"/>
+        <COMPID name="Eliminar habitación" mc="Standard.UseCase" uid="7a6e1987-28bc-4902-a470-05f582ce0834"/>
+        <COMPID name="Consultar habitaciones" mc="Standard.UseCase" uid="7ec79b8a-1f0a-4075-81b9-d5f52b4e3aea"/>
+        <COMPID name="Modificar habtación" mc="Standard.UseCase" uid="dfc63d80-0e04-42b8-9ba0-08491cf5f2be"/>
+        <COMPID name="Ordenar habitaciones" mc="Standard.UseCase" uid="b01c3d9f-4616-4628-b8f1-a6c9ed0c67e1"/>
+        <COMPID name="Consultar reservas" mc="Standard.UseCase" uid="0a860284-2f88-4573-b114-b9c6ae4a48cd"/>
+        <COMPID name="Añadir reserva" mc="Standard.UseCase" uid="ffac734c-ece4-4269-9dd1-fae4bfa2c618"/>
+        <COMPID name="Modificar reserva" mc="Standard.UseCase" uid="538b29eb-0546-458e-8a59-f37d0bae4b29"/>
+        <COMPID name="Eliminar reserva" mc="Standard.UseCase" uid="e6035e84-2546-446b-9715-78c3fa6b44ce"/>
+        <COMPID name="Enviar mensaje de confirmación" mc="Standard.UseCase" uid="0874d896-8634-4869-8e54-76066837fa6e"/>
+        <COMPID name="Calcular precio reserva" mc="Standard.UseCase" uid="c4b77376-2c09-4ebd-99ad-afc202bf5058"/>
+        <COMPID name="Verificar validez reserva" mc="Standard.UseCase" uid="95218720-e386-4d78-9d57-06264c6a6d44"/>
+        <COMPID name="Ordenar reservas" mc="Standard.UseCase" uid="d42e13e9-0e4f-4f5e-b8f8-b24366b4cdcd"/>
+        <COMPID name="Reserva" mc="Standard.Class" uid="43ba8b7c-5b16-46dc-a452-1d324a79c8c9"/>
+        <COMPID name="Habitacion" mc="Standard.Class" uid="16a11123-5ebc-45bc-93e0-9f90f495622b"/>
+        <COMPID name="HabitacionReservada" mc="Standard.Class" uid="961a206d-3d38-491c-bbf6-32b8bcb68505"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="Diagrama Casos de Uso" mc="Standard.UseCaseDiagram" uid="15ee167e-ae5b-425e-a1b4-1acbf1631656"/>
+        <COMPID name="Diagrama de Clases" mc="Standard.ClassDiagram" uid="253053be-788a-4db1-8f9c-6e89ef187afc"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

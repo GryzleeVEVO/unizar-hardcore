@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Manifiesto de recursos disponibles para la aplicación
+-->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GestorRural"
+        tools:targetApi="31">
+
+        <!-- Página principal -->
+        <activity
+            android:name=".main.PaginaPrincipal"
+            android:exported="true">
+            <intent-filter> <!-- Indica que es punto de inserción -->
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- HABITACIONES -->
+
+        <!-- Lista de habitaciones -->
+        <activity
+            android:name=".habitaciones.MenuHabitaciones">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.PaginaPrincipal" />
+        </activity>
+
+        <!-- Añadir/modificar habitaciones -->
+        <activity
+            android:name=".habitaciones.EditarHabitacion"
+            android:configChanges="orientation|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".habitaciones.MenuHabitaciones"/>
+        </activity>
+
+        <!-- Consultar habitaciones -->
+        <activity
+            android:name=".habitaciones.ConsultarHabitacion">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".habitaciones.MenuHabitaciones"/>
+        </activity>
+
+        <!-- RESERVAS -->
+
+        <!-- Lista de reservas -->
+        <activity
+            android:name=".reservas.MenuReservas">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.PaginaPrincipal" />
+        </activity>
+
+        <!-- Añadir/modificar reservas -->
+        <activity
+            android:name=".reservas.EditarReserva"
+            android:configChanges="orientation|screenSize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".reservas.MenuReservas"/>
+        </activity>
+
+        <!-- Consultar reservas -->
+        <activity
+            android:name=".reservas.ConsultarReserva">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".reservas.MenuReservas"/>
+        </activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="AccessorsGeneration" version="4">
+  <OBJECT>
+    <ID name="AccessorsGeneration" mc="Infrastructure.EnumeratedPropertyType" uid="92fec342-d5a7-4ee6-bb1e-5738ec64b345"/>
+    <PID name="JavaDesigner" mc="Infrastructure.ModuleComponent" uid="003800a8-0000-022e-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="BaseType">String</ATT>
+      <ATT name="Name"><![CDATA[AccessorsGeneration]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Litteral">
+        <OBJECT>
+          <ID name="Always" mc="Infrastructure.PropertyEnumerationLitteral" uid="95db82cf-f023-41d1-b4ad-83d95b19fc8f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Always]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Smart" mc="Infrastructure.PropertyEnumerationLitteral" uid="741498fe-0ccf-4660-bff7-3a9b53da413f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Smart]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Never" mc="Infrastructure.PropertyEnumerationLitteral" uid="0980588a-07cb-4562-9680-0c680f7a79bf"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Never]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

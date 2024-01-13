@@ -1,0 +1,62 @@
+Seral Gracia, Álvaro    819425@unizar.es    a819425
+Wozniak, Dorian Boleslaw    817570@unizar.es    a817570
+
+# Descripción
+
+El programa es un simulador que modela un sistema de rutas entre diferentes
+intersecciones de una ciudad.
+
+El programa utiliza una clase 'Grafo' que almacena la información
+sobre las intersecciones, las rutas entre ellas, los tiempos de viaje y
+las probabilidades de transición.
+
+Hay tres funciones principales:
+- 'casa_es_alcanzable': Determina si una intersección destino es alcanzable
+  desde una intersección origen.
+- 'simular': Realiza simulacioes de viaje entre una intersección de origen y
+  una intersección de destino.
+- 'bootstrap': Calcula intervalos de confianza utilizando el método de bootstrap
+  para estimar la media de tiempos de llegada.
+
+# Compilación y ejecución
+
+El programa compila ejecutando el comando:
+  make all
+
+Para la ejecución del programa es necesario un archivo de entrada
+con la información sobre las intersecciones, rutas, tiempos de viaje y
+probabilidades:
+
+  ./practica3 <archivo-de-entrada.txt>
+
+El programa no puede ejecutarse satisfactoriamente sin un archivo de entrada
+que contenga la información necesaria en el formato adecuado sobre las rutas,
+sus tiempos y probabilidades.
+
+Restricciones:
+- El número de intersecciones debe estar en el rango [3, 900].
+- El número de carreteras debe estar entre la mitad y el máximo posible
+  dado el número de intersecciones.
+- Las intersecciones de destino y de origen deben estar dentro del rango
+  de intersecciones.
+- Las probabilidades deben estar en el rango de (0, 1] y la suma de
+  probabilidades de salida desde una intersección debe ser igual a 1.
+  - En el caso de la intersección de destino, las probabilidades de tomar otras
+    carreteras es 0.
+- Los tiempos de las carreteras deben ser positivos.
+- Las intersecciones de una misma carretera deben ser diferentes, y deben
+  encontrarse dentro del rango de intersecciones.
+
+# Pruebas
+
+El programa incluye un conjunto de entradas de prueba con la que se han obtenido
+información sobre el rendimiento. Estas pruebas son realizadas al ejecutar
+el script:
+
+  ./ejecutar3.sh
+
+Las pruebas consisten en fijar el número de intersecciones y variar el número
+de carreteras. Se han realizado pruebas con:
+
+- 100 aristas, intersecciones desde 25 a 200 en incrementos de 25.
+- 100 intersecciones, aristas desde 50 a 300 en incrementos de 25.

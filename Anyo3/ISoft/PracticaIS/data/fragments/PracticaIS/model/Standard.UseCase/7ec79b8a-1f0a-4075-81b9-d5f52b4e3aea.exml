@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consultar habitaciones" version="4">
+  <OBJECT>
+    <ID name="Consultar habitaciones" mc="Standard.UseCase" uid="7ec79b8a-1f0a-4075-81b9-d5f52b4e3aea"/>
+    <PID name="practicais" mc="Standard.Package" uid="b4a3cc82-c8ad-4067-ad0d-5ab116fa02fc"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Consultar habitaciones]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <OBJECT>
+          <ID name="" mc="Standard.AssociationEnd" uid="4540a16a-e8df-44a5-ba78-d971d61391e0"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Propietario" mc="Standard.Actor" uid="d759faed-65ca-4e5e-a93b-1877dd9ab152"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="67740758-e432-48f6-bd70-da27aa1158a3"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="" mc="Standard.AssociationEnd" uid="4540a16a-e8df-44a5-ba78-d971d61391e0"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="e9c0fd93-cb3c-4378-b982-17e1ffa0b57e"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="e9c0fd93-cb3c-4378-b982-17e1ffa0b57e"/>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="30e96df5-887c-4ef0-8806-c46c66c41875"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="8bf0cf94-ed5b-48b2-947f-930a25aa1bf8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="constraint" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="74f3b2b3-7cb7-45ea-b3f2-2ae291c259a9"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="non-functional constraint" mc="Infrastructure.NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="95fde7c0-955a-4dfb-a857-dd3138d6f75a"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="exception" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="f708352f-e26e-4b86-ba1f-9bb588cab435"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="precondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="591f3d07-3398-4e1a-9486-8b8f3d44c511"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="postcondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

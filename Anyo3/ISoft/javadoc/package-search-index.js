@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"eina.unizar.gestorrural.habitaciones"},{"l":"eina.unizar.gestorrural.helper"},{"l":"eina.unizar.gestorrural.main"},{"l":"eina.unizar.gestorrural.reservas"},{"l":"eina.unizar.send"}]

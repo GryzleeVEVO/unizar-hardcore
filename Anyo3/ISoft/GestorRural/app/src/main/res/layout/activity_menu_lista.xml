@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Describe el diseño del menú con el listado de habitaciones
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Listado -->
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        />
+
+    <!-- Texto cuando la lista está vacía -->
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="24sp"/>
+
+</LinearLayout>

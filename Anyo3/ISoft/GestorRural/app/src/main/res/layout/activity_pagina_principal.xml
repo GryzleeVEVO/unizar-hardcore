@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Describe el diseño del menú principal
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" >
+
+    <!-- TEXTO DE BIENVENIDA -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_pagina_principal"
+        android:textSize="24sp" />
+
+    <!-- BOTÓN "GESTIONAR HABITACIONES" -->
+    <Button
+        android:id="@+id/boton_a_menu_habitaciones"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="25dp"
+        android:text="@string/title_menu_habitaciones"
+        android:textSize="24sp"
+        android:onClick="actividadMenuHabitaciones" />
+
+    <!-- BOTÓN "GESTIONAR RESERVAS" -->
+    <Button
+        android:id="@+id/boton_a_menu_reservas"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="25dp"
+        android:text="@string/title_menu_reservas"
+        android:textSize="24sp"
+        android:onClick="actividadMenuReservas"/>
+
+</LinearLayout>

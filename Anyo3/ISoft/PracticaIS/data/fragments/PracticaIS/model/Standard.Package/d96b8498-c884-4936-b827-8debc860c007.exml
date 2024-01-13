@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="gestorhotel" version="4">
+  <OBJECT>
+    <ID name="gestorhotel" mc="Standard.Package" uid="d96b8498-c884-4936-b827-8debc860c007"/>
+    <PID name="es.unizar.eina" mc="Standard.Package" uid="72495afc-e04d-47cb-84ea-69c66c2a17d5"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[gestorhotel]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="GRPrincipal" mc="Standard.Class" uid="ceef16a1-fbb7-4396-ab32-fb408c682201"/>
+        <COMPID name="habitaciones" mc="Standard.Package" uid="8ccee5ba-f859-4a12-8d37-7b7fcce73fff"/>
+        <COMPID name="reservas" mc="Standard.Package" uid="fb9179fb-db63-49b3-8949-a18afbb310b3"/>
+        <COMPID name="heplersbd" mc="Standard.Package" uid="f13ede94-43c5-4a59-b061-03b36824865e"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

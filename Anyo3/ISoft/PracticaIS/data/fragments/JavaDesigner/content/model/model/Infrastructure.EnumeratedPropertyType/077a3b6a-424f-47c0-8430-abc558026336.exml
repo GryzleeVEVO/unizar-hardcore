@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="PublicModifierVisibility" version="4">
+  <OBJECT>
+    <ID name="PublicModifierVisibility" mc="Infrastructure.EnumeratedPropertyType" uid="077a3b6a-424f-47c0-8430-abc558026336"/>
+    <PID name="JavaDesigner" mc="Infrastructure.ModuleComponent" uid="003800a8-0000-022e-0000-000000000000"/>
+    <ATTRIBUTES>
+      <ATT name="BaseType">String</ATT>
+      <ATT name="Name"><![CDATA[PublicModifierVisibility]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Litteral">
+        <OBJECT>
+          <ID name="Public" mc="Infrastructure.PropertyEnumerationLitteral" uid="b279b36a-872b-487d-9ace-cb1993191f80"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Public]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Protected" mc="Infrastructure.PropertyEnumerationLitteral" uid="dd33e280-cd8d-417a-8c45-d6434d9f584a"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Protected]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Friendly" mc="Infrastructure.PropertyEnumerationLitteral" uid="5cdcf14b-8d83-4b97-b884-a49ad8f5ed4e"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Friendly]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Private" mc="Infrastructure.PropertyEnumerationLitteral" uid="d38066f3-f395-4b3b-a2a7-68c9f98c6de8"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[Private]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

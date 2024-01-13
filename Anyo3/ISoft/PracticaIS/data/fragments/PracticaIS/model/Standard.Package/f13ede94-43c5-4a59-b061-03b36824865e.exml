@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="heplersbd" version="4">
+  <OBJECT>
+    <ID name="heplersbd" mc="Standard.Package" uid="f13ede94-43c5-4a59-b061-03b36824865e"/>
+    <PID name="gestorhotel" mc="Standard.Package" uid="d96b8498-c884-4936-b827-8debc860c007"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[heplersbd]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="DatabaseHelper" mc="Standard.Class" uid="20c41ae7-cd4b-4774-a9ae-2217f274030b"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,28 @@
+# Spring Datasource
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:.
+    username: sa
+    password:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /api/docs
+  api-docs:
+    path: /api

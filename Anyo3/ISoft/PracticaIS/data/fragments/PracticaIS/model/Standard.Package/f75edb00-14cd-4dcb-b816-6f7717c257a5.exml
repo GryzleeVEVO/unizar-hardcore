@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Gestor hotel rural diseño" version="4">
+  <OBJECT>
+    <ID name="Gestor hotel rural diseño" mc="Standard.Package" uid="f75edb00-14cd-4dcb-b816-6f7717c257a5"/>
+    <PID name="PracticaIS" mc="Standard.Project" uid="926be96b-60af-4990-b46a-117d0c32e6db"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Gestor hotel rural diseño]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Añadir habitacion" mc="Standard.Interaction" uid="941560c3-e0f4-4253-8651-2b59e7e21916"/>
+        <COMPID name="Modificar habitacion" mc="Standard.Interaction" uid="62015430-a79e-48c6-a580-c99bd95d85ec"/>
+        <COMPID name="Eliminar habitacion" mc="Standard.Interaction" uid="980f0fe6-0513-4c8b-adc6-cdb657000894"/>
+        <COMPID name="Consultar habitacion" mc="Standard.Interaction" uid="550427ea-fc0c-4b56-824d-0c5a8658f6c1"/>
+        <COMPID name="Entrar en gestor habitaciones" mc="Standard.Interaction" uid="3f58e9d9-c5f5-408a-b96e-6e65b32696e6"/>
+        <COMPID name="Añadir reserva" mc="Standard.Interaction" uid="f8f6e886-5c00-4fe3-8df7-1ca82261be83"/>
+        <COMPID name="Modificar reserva" mc="Standard.Interaction" uid="dfceb45d-c838-4c5e-9e74-a3d97645cd0d"/>
+        <COMPID name="Eliminar reserva" mc="Standard.Interaction" uid="10ad0504-170a-474e-80f3-a58f635fce63"/>
+        <COMPID name="Consultar reserva" mc="Standard.Interaction" uid="d7a96386-ed39-47d3-a140-e4a975428712"/>
+        <COMPID name="Entrar en gestor reservas" mc="Standard.Interaction" uid="68b75647-70a1-4831-86f9-ccf82c0080bc"/>
+        <COMPID name="Enviar mensaje confirmacion" mc="Standard.Interaction" uid="e3da91d2-b325-4bb2-8fa4-1addd3c08eca"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="AppCompatActivity" mc="Standard.Class" uid="96a34a49-1d4a-498d-8d3a-7fc12ccc8665"/>
+        <COMPID name="es.unizar.eina" mc="Standard.Package" uid="72495afc-e04d-47cb-84ea-69c66c2a17d5"/>
+        <COMPID name="android" mc="Standard.Package" uid="3f4f9d06-45c6-44af-9f93-32f57a4fade0"/>
+        <COMPID name="application" mc="Standard.Component" uid="96f04a51-ff98-4988-aa12-3d90462412e5"/>
+        <COMPID name="database" mc="Standard.Component" uid="9f93a2c2-566d-40e7-b970-d5dc226e3856"/>
+        <COMPID name="Propietario" mc="Standard.Actor" uid="f3900dd6-00da-4507-9831-e7cbb99a39ae"/>
+        <COMPID name="DispositivoAndroid" mc="Standard.Node" uid="700aea7d-b087-469f-a446-0c28c7b75831"/>
+        <COMPID name="app-debug.apk" mc="Standard.Artifact" uid="ebf28b9b-af82-472f-b630-87e0e96f178c"/>
+        <COMPID name="SQLite" mc="Standard.Artifact" uid="259e2a2c-90f1-49bd-b3c7-2f0601d49eee"/>
+        <COMPID name="ServidorWhatsApp" mc="Standard.Node" uid="b9f15a31-628a-400c-b8f6-ab03742bd097"/>
+        <COMPID name="ServidorSMS" mc="Standard.Node" uid="ba346362-1f3e-4fab-9f9f-6b3ac97de6e3"/>
+        <COMPID name="Whatsapp" mc="Standard.Artifact" uid="04ae1114-877b-48d7-b459-983067729c03"/>
+        <COMPID name="Sms" mc="Standard.Artifact" uid="aa40192c-6679-4901-8591-09cfc62211b5"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="Diagrama de clases" mc="Standard.ClassDiagram" uid="bd81c35f-6373-42bd-a6c8-383b1f527557"/>
+        <COMPID name="Diagrama de paquetes" mc="Standard.ClassDiagram" uid="a1c0f768-197e-478d-961c-44de6fe5c3eb"/>
+        <COMPID name="Diagrama de componentes" mc="Standard.ClassDiagram" uid="120e7600-3bd7-4d70-b8f0-a6c56439fb86"/>
+        <COMPID name="Diagrama de despliegue" mc="Standard.DeploymentDiagram" uid="726579d0-70ed-487f-8707-62e0dc857f7d"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

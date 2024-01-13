@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="habitaciones" version="4">
+  <OBJECT>
+    <ID name="habitaciones" mc="Standard.Package" uid="8ccee5ba-f859-4a12-8d37-7b7fcce73fff"/>
+    <PID name="gestorhotel" mc="Standard.Package" uid="d96b8498-c884-4936-b827-8debc860c007"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[habitaciones]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ConsultarHabitacion" mc="Standard.Class" uid="87b28ab9-aea0-4e81-ad9a-1527fd0c41aa"/>
+        <COMPID name="EditarHabitacion" mc="Standard.Class" uid="4ac4226e-19b4-4cc3-a507-bdb0a4c483cb"/>
+        <COMPID name="MenuHabitaciones" mc="Standard.Class" uid="7e05de9a-e795-4742-abef-0885325106d9"/>
+        <COMPID name="HabitacionDbAdapter" mc="Standard.Class" uid="d83558e6-7bd1-4aee-bc47-222f92af147a"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

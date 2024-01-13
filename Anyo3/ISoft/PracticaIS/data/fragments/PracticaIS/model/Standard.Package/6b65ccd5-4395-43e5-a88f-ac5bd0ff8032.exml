@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="database" version="4">
+  <OBJECT>
+    <ID name="database" mc="Standard.Package" uid="6b65ccd5-4395-43e5-a88f-ac5bd0ff8032"/>
+    <PID name="android" mc="Standard.Package" uid="3f4f9d06-45c6-44af-9f93-32f57a4fade0"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[database]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="sqlite" mc="Standard.Package" uid="0c8181ba-fb41-4037-8779-348090c7fdf0"/>
+        <COMPID name="Cursor" mc="Standard.Class" uid="bdc37845-7061-473f-8fdf-5376d35d1278"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

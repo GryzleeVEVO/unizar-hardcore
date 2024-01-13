@@ -1,0 +1,14 @@
+#Thu Jan 19 20:35:52 CET 2023
+org.modelio.app.diagram.editor.OpenedDiagrams4='Secuencia a\u00F1adir habitacion' {d5add148-abcc-4049-8665-02bed8bfaf38} Standard.SequenceDiagram
+org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/modelio/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
+org.modelio.app.diagram.editor.OpenedDiagrams3='Diagrama de despliegue' {726579d0-70ed-487f-8707-62e0dc857f7d} Standard.DeploymentDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams2='Diagrama de componentes' {120e7600-3bd7-4d70-b8f0-a6c56439fb86} Standard.ClassDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams1='Diagrama de paquetes' {a1c0f768-197e-478d-961c-44de6fe5c3eb} Standard.ClassDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams0='Diagrama de clases' {bd81c35f-6373-42bd-a6c8-383b1f527557} Standard.ClassDiagram
+org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/modelio/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts
+org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/modelio/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right
+org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/modelio/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom
+org.modelio.app.diagram.editor.OpenedDiagrams8='Secuencia a\u00F1adir reserva' {490505ff-aec6-486e-8ae3-f69b97f0589e} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams7='Secuencia Consultar Habitacion' {eb1845e0-9c2b-49de-b987-0ef0b2001815} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams6='Secuencia Eliminar Habitacion' {f9680e25-c897-4e20-9047-351c8088f616} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams5='Secuencia Modificar habitacion' {6e765f73-0bfb-4f86-89dc-353abad207d8} Standard.SequenceDiagram

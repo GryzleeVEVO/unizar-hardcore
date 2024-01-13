@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Gestor Rural</string>
+
+    <!-- Página principal -->
+    <string name="title_pagina_principal">Menú principal</string>
+    <string name="text_pagina_principal">¡Bienvenido! ¿Qué deseas hacer?</string>
+
+    <!-- Menú habitaciones-->
+    <string name="title_menu_habitaciones">Gestionar habitaciones</string>
+    <string name="menu_habitaciones_none">Sin habitaciones. Añada una habitación.</string>
+
+    <!-- Editar habitación -->
+    <string name="title_habitacion_insert">Añadir habitación</string>
+    <string name="title_habitacion_edit">Modificar habitación</string>
+
+    <!-- Consultar habitacion -->
+    <string name="title_consultar_habitacion">Consultar habitación</string>
+
+    <!-- Elementos de opciones menú habitaciones-->
+    <string name="menu_habitacion_delete">Eliminar habitación</string>
+    <string name="menu_habitacion_order_name">Ordenar por nombre</string>
+    <string name="menu_habitacion_order_occupancy">Ordenar por ocupantes</string>
+    <string name="menu_habitacion_order_price">Ordenar por precio</string>
+
+    <!-- Nombres de los campos de texto de la consulta habitaciones -->
+    <string name="text_nombre_habitacion">Nombre</string>
+    <string name="text_descripcion_habitacion">Descripción</string>
+    <string name="text_ocupantes_habitacion">Número de ocupantes</string>
+    <string name="text_precio_habitacion">Precio por noche para un solo ocupante</string>
+    <string name="text_recargo_habitacion">Recargo por cada ocupante extra</string>
+
+    <!-- Pistas para el formulario habitaciones -->
+    <string name="hint_nombre_habitacion">Añade aquí el nombre de la habitación</string>
+    <string name="hint_descripcion_habitacion">Describe tu habitación</string>
+    <string name="hint_precio_habitacion">€</string>>
+    <string name="hint_recargo_habitacion">%</string>
+
+    <!-- Menú reservas -->
+    <string name="title_menu_reservas">Gestionar reservas</string>
+    <string name="menu_reservas_none">Sin reservas. Añada una reserva.</string>
+
+    <!-- Editar reserva -->
+    <string name="title_reserva_insert">Añadir reserva</string>
+    <string name="title_reserva_edit">Modificar reserva</string>
+
+    <!-- Consultar reservas -->
+    <string name="title_consultar_reserva">Consultar reserva</string>
+    <string name="habitaciones_reservadas_none">No hay habitaciones reservadas</string>
+
+    <!-- Elementos de opciones menú reservas-->
+    <string name="menu_reserva_delete">Eliminar reserva</string>
+    <string name="menu_reserva_order_name">Ordenar por nombre</string>
+    <string name="menu_reserva_order_phone">Ordenar por telefono</string>
+    <string name="menu_reserva_order_date">Ordenar por fecha</string>
+    <string name="menu_reservas_desplegable_habitaciones">Seleccione las habitaciones a reservar</string>
+
+    <!-- Nombres de los campos de texto de la consulta reservas -->
+    <string name="text_nombre_cliente_reserva">Nombre del cliente</string>
+    <string name="text_telefono_cliente_reserva">Teléfono del cliente</string>
+    <string name="text_fecha_entrada_reserva">Fecha de entrada</string>
+    <string name="text_fecha_salida_reserva">Fecha de salida</string>
+    <string name="text_habitaciones_disponibles">Habitaciones disponibles</string>
+    <string name="text_precio_total">Precio total</string>
+
+    <!-- Texto para el botón Aceptar -->
+    <string name="button_text_aceptar">Aceptar</string>
+    <!-- Texto para el botón Continuar -->
+    <string name="button_text_continuar">Continuar</string>
+    <!-- Texto para el botón Añadir -->
+    <string name="button_text_anadir">Añadir</string>
+
+
+</resources>

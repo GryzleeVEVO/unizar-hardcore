@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Describe el diseño de la pantalla de consulta de una reserva y las habitaciones reservadas
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    android:orientation="vertical">
+
+    <!-- NOMBRE -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/text_nombre_cliente_reserva" />
+    <TextView
+        android:id="@+id/textview_nombre_cliente_reserva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp" />
+
+    <!-- TELÉFONO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/text_telefono_cliente_reserva" />
+        <TextView
+            android:id="@+id/textview_tlf_cliente_reserva"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end" />
+    </LinearLayout>
+
+    <!-- FECHA ENTRADA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/text_fecha_entrada_reserva" />
+
+        <TextView
+            android:id="@+id/textview_fecha_entrada_reserva"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- FECHA SALIDA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/text_fecha_salida_reserva" />
+
+        <TextView
+            android:id="@+id/textview_fecha_salida_reserva"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- PRECIO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/text_precio_total" />
+
+        <TextView
+            android:id="@+id/textview_precio_reserva"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_habitaciones_reservadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="24sp"/>
+
+</LinearLayout>
