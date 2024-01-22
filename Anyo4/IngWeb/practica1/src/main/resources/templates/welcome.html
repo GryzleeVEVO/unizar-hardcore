@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- The project uses Thymeleaf for creating HTML templates -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello world</title>
+    <link th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/assets/logo.svg" alt="">
+    <h1 class="dispolay-5 fw-bold">My first Web App</h1>
+    <div class="col-lg-6 mx-auto">
+        <!-- Here's an example of a Thymeleaf template. The text is set by
+        the controller when the -->
+        <p class="lead mb-4" th:text="${message}">Hello student.</p>
+
+        <!-- This button requests a new page -->
+        <a href="/click"><button class="btn btn-primary">Click me!</button></a>
+    </div>
+</div>
+<script th:src="@{/webjars/bootstrap/pooper/js/2.9.3/umd/popper.min.js}"
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script
+        th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+</body>
+</html>
